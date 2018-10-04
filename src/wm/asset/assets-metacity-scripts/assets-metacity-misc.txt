@@ -1,0 +1,2 @@
+light/thumbnail
+dark/thumbnail
