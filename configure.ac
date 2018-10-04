@@ -64,7 +64,7 @@ if test x"$ENABLE_PARALLEL" = xyes; then
 fi
 
 if test x"$ENABLE_GNOME" = xyes; then
-	ADAPTA_GNOME
+	PLATA_GNOME
 fi
 AM_CONDITIONAL(GNOME_IS_326_OR_NEWER, [test x"$GNOME_SCSS_VERSION" = x3.26])
 
@@ -73,6 +73,7 @@ PLATA_COLOR_SCHEME
 AC_CONFIG_FILES([
 	Makefile \
 	src/gtk/Makefile \
+	src/wm/Makefile \
 	data/Makefile
 ])
 AC_OUTPUT
