@@ -10,6 +10,7 @@ noircompactdir   = $(DESTDIR)$(themedir)/Plata-Noir-Compact
 
 SUBDIRS = \
 	src/gtk \
+	src/wm \
 	data
 
 EXTRA_DIST = \
