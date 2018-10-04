@@ -72,7 +72,7 @@ echo \
 
 // Destruction (Tertiary) color
 \$key_destruction_color: `echo $DESTRUCTION`;" \
-> ./gtk/sass/common/resources/_key_colors.scss
+> ./src/gtk/sass/common/resources/_key_colors.scss
 
 AC_MSG_RESULT([creating ./src/gtk/sass/common/resources/_key_colors.scss])
 ])
