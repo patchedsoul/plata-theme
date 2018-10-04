@@ -4365,7 +4365,7 @@ row.activatable {
   &.has-open-popup, // this is for indicating which sidebar row
                     // generated a popover
   &:hover {         // see https://bugzilla.gnome.org/show_bug.cgi?id=754411
-    background-color: $trk_bg;
+    background-color: track(currentColor, $a_trk_1 / 2);
   }
   &:active {
     // use shallower ink
