@@ -1149,6 +1149,7 @@ button {
       padding: 0;
 
       label {
+        margin-bottom: 0;
         padding: 0 rem($txt_button_lr_space / 2) rem($baseline, $sw: 1.0);
       }
 
@@ -5494,8 +5495,8 @@ decoration {
 
   button.titlebutton {
     // optimize sizes with flat-style
-    min-width: rem($widget_size);
-    min-height: rem($widget_size);
+    min-width: calc(#{rem($widget_size)} - 0.5px * 2);
+    min-height: calc(#{rem($widget_size)} - 0.5px * 2);
     margin: calc(#{$toolbar_padding} + 0.75px)
             0
             calc(#{$toolbar_padding} + 0.5px);
