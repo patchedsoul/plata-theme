@@ -12,6 +12,7 @@ SUBDIRS = \
 	src/gtk \
 	src/shell \
 	src/wm \
+	src/extra \
 	data
 
 EXTRA_DIST = \

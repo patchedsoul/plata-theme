@@ -75,6 +75,7 @@ AC_CONFIG_FILES([
 	src/gtk/Makefile \
 	src/shell/Makefile \
 	src/wm/Makefile \
+	src/extra/Makefile \
 	data/Makefile
 ])
 AC_OUTPUT
