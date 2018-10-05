@@ -3686,7 +3686,7 @@ $provider_icon_size: 32px; // for < 3.25
 }
 
 #lockDialogGroup {
-  background-color: black;
+  background-color: mix(color($grey, 900), black, 87%);
   @include image-loader($url: 'noise-texture.png');
   background-repeat: repeat;
 }
