@@ -73,6 +73,7 @@ PLATA_COLOR_SCHEME
 AC_CONFIG_FILES([
 	Makefile \
 	src/gtk/Makefile \
+	src/shell/Makefile \
 	src/wm/Makefile \
 	data/Makefile
 ])

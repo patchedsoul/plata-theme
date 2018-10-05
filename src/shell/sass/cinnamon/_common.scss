@@ -1,0 +1,2260 @@
+//
+// This is the RIGHT PLACE to edit the stylesheet
+//
+
+// /***********
+//  * Globals *
+//  ***********/
+
+* {
+  transition-timing-function : $tr_t_std;
+  transition-duration: $tr_d_std;
+
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+$font-family: Roboto, Sans-Serif;
+
+stage {
+  @include fontscaling($ref_size);
+  color: $fg;
+  font-family: $font-family;
+  font-weight: 400;
+}
+
+.label-shadow { color: transparent; }
+
+// /***********
+//  * Buttons *
+//  ***********/
+
+%button {
+  min-height: 2em;
+  padding: 7px 16px 8px;
+  border-radius: $r_2;
+  font-weight: 500;
+  @include button(flat-normal);
+  &:focus { @include button(flat-focus); }
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-disabled); }
+}
+
+%osd_button {
+  min-height: 2.5em;
+  padding: 9px 16px 10px;
+  border: 0 none transparent;
+  border-radius: $r_2;
+  @include button(flat-normal, $tc: $osd_fg);
+  &:focus { @include button(flat-focus, $tc: $osd_fg); }
+  &:hover { @include button(flat-hover, $tc: $osd_fg); }
+  &:active { @include button(flat-active, $tc: $osd_fg); }
+  &:insensitive { @include button(flat-disabled, $tc: $osd_fg); }
+}
+
+// /***********
+//  * Entries *
+//  ***********/
+
+%entry {
+  min-height: 1.2em;
+  padding: 7px 8px 8px;
+  border-radius: $r_4 $r_4 0 0;
+  border: 0 none transparent;
+  caret-size: 1px;
+  transition: none;
+  selection-background-color: $sel_bg;
+  selected-color: $sel_fg;
+  @include entry(normal);
+  &:hover { @include entry(hover); }
+  &:focus,
+  &:focus:hover { @include entry(focus); }
+  &:insensitive { @include entry(insensitive); }
+
+  StIcon.capslock-warning {
+    icon-size: $icon_size;
+    padding: 0 2px;
+    warning-color: $warn;
+  }
+}
+
+%osd_entry {
+  min-height: 1.2em;
+  padding: 7px 8px 8px;
+  border-radius: $r_4 $r_4 0 0;
+  border: 0 none transparent;
+  caret-size: 1px;
+  selection-background-color: $sel_bg;
+  selected-color: $sel_fg;
+  @include entry(normal, $tc: $osd_fg);
+  &:hover { @include entry(hover, $tc: $osd_fg); }
+  &:focus,
+  &:focus:hover { @include entry(focus, $tc: $osd_fg); }
+  &:insensitive { @include entry(disabled, $tc: $osd_fg); }
+}
+
+// /**************
+//  * Scrollbars *
+//  **************/
+
+StScrollView {
+  &.vfade { -st-vfade-offset: 0; }
+  &.hfade { -st-hfade-offset: 0; }
+}
+
+StScrollBar {
+  padding: 0;
+
+  StScrollView & {
+    min-width: 0.45em;
+    min-height: 0.45em;
+  }
+
+  StBin#trough {
+    margin: 0;
+    border-radius: 0;
+    background-color: $base;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    margin: 0;
+    border-radius: 0;
+    background-color: opacity($fg, $a_fg_3rd * $a_fg_3rd);
+    &:hover { background-color: opacity($fg, $a_fg_2nd * $a_fg_3rd); }
+    &:active { background-color: $fg; }
+  }
+}
+
+// /*************
+//  * Separator *
+//  *************/
+
+.separator {
+  height: 1px; // not really the whole box
+  margin: 0;
+  padding: 0;
+  border-color: if($variant != dark,
+                   $div_fg,
+                   mix(white, $dark_bg, percentage($a_div_2)));
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background-color: transparent;
+}
+
+// /**********
+//  * Slider *
+//  **********/
+
+.popup-slider-menu-item,
+.slider {
+  height: $icon_size;
+  min-width: 15em;
+  border: 0 solid transparent;
+  border-right-width: 3px;
+  border-left-width: 3px;
+  color: $acc_bg;
+  -slider-height: 2px;
+  -slider-background-color: $out_fg; // background of the trough
+  -slider-border-color: transparent; // trough border color
+  -slider-active-background-color: $acc_bg; // active trough fill
+  -slider-active-border-color: transparent; // active trough border
+  -slider-border-width: 0;
+  -slider-handle-radius: $icon_size / 2;
+}
+
+// /***************
+//  * Check Boxes *
+//  ***************/
+
+.check-box {
+  CinnamonGenericContainer {
+    spacing: 0.2em;
+    min-height: 30px;
+    padding-top: 2px;
+  }
+
+  StLabel { font-weight: 500; }
+
+  StBin {
+    width: $icon_size;
+    height: $icon_size;
+    background-image: url("assets/checkbox/checkbox-unchecked.svg");
+  }
+
+  &:focus StBin {
+  }
+
+  &:checked StBin {
+    background-image: url("assets/checkbox/checkbox-checked.svg");
+  }
+
+  &:focus:checked StBin {
+  }
+}
+
+// /*****************
+//  * Radio Buttons *
+//  *****************/
+
+.radiobutton {
+  CinnamonGenericContainer {
+    height: 26px;
+    spacing: 0.2em;
+    padding-top: 2px;
+  }
+
+  StLabel {
+    @include fontscaling($ref_size * 0.9);
+    padding-top: 4px;
+  }
+
+  StBin {
+    width: $icon_size;
+    height: $icon_size;
+    background-image: url("assets/checkbox/radiobutton-unchecked.svg");
+  }
+
+  &:focus StBin {
+  }
+
+  &:checked StBin {
+    background-image: url("assets/checkbox/radiobutton-checked.svg");
+  }
+
+  &:focus:checked StBin {
+  }
+}
+
+// /************
+//  * Switches *
+//  ************/
+
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-size: contain;
+
+  &-us, &-intl {
+    background-image: url("assets/switch/switch-off.svg");
+
+    &:checked { background-image: url("assets/switch/switch-on.svg"); }
+  }
+}
+
+// /*********
+//  * Links *
+//  *********/
+
+.cinnamon-link {
+  border-radius: $r_2;
+  color: $link_fg;
+  text-decoration: underline;
+  &:hover {
+    color: $link_fg;
+    background-color: pacity($link_fg, $a_trk_1);
+  }
+  &:active {
+    color: $link_fg;
+    background-color: opacity($link_fg, $a_trk_2);
+  }
+}
+
+// /***********
+//  * ToolTip *
+//  ***********/
+
+#Tooltip {
+  @include fontscaling($ref_size * 1.0);
+  padding: 7px 8px 8px;
+  border-radius: $r_2;
+  background-color: opacity($osd_bg, $a_osd);
+  color: $osd_fg;
+  box-shadow: $empty_shadow;
+  font-weight: 400;
+  text-align: center;
+}
+
+// /******************
+//  * Popovers/Menus *
+//  ******************/
+
+// .popup-menu-boxpointer and .popup-menu are kept for compatibility
+// with cinnamon version under 3.2. Use .menu in version 3.2 and above
+
+.menu {
+  padding: 0;
+  background-color: $dark_bg;
+  color: $sec_fg;
+}
+
+.popup-menu,
+.menu {
+  min-width: 0;
+  padding: 0;
+  border-image: url("assets/menu/menu.svg") 9 9 9 9;
+  color: $sec_fg;
+
+  &-arrow { icon-size: $icon_size; }
+
+  .popup-sub-menu {
+    min-width: 0;
+    // 8 8 2 2 is the experimental values
+    border-image: url("assets/menu/submenu.svg") 8 8 2 2;
+    background-gradient-direction: none;
+    box-shadow: $empty_shadow;
+
+    StScrollBar {
+      padding: 4px;
+
+      StBin#trough,
+      StBin#vhandle { border-width: 0; }
+    }
+  }
+
+  .popup-menu-content {
+    // embed parent border-image region as asymmetrical padding
+    padding: 0.3em * 2 2px 0.33em * 2;
+  }
+
+  .popup-menu-item {  // FIXME: do not set min-width affected to fav-box
+    padding: 0.4em 1.75em;
+    spacing: 1em;
+    border-width: 0 1px;
+    color: $sec_fg;
+    &:active {
+      border-image: url("assets/menu/menu-hover.svg") 9 9 0 0;
+      color: $fg;
+      background-color: transparent;
+    }
+    &:insensitive {
+      color: $dis_fg;
+      background: none;
+    }
+
+    StLabel { max-width: 45em; } // set horizontal limit
+  }
+
+  // all icons and other graphical elements
+  .popup-inactive-menu-item {
+    color: $sec_fg;
+    &:insensitive { color: $dis_fg; }
+  }
+
+  &-icon { icon-size: $icon_size; }
+}
+
+.popup {
+  &-menu-boxpointer {
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -arrow-box-shadow: $empty_shadow; // dreaming. bug #689995
+    margin: 0.4em 0.5em 0.5em;
+    border-radius: $r_4;
+    border: 1px solid $div_sld_fg;
+    background-color: $dark_bg;
+    box-shadow: $z-depth-3;
+  }
+
+  &-combo-menu {
+    padding: 1em;
+    border: 1px solid $div_fg;
+    border-radius: $r_4;
+    color: $osd_fg;
+    background-color: opacity($osd_bg, $a_osd);
+  }
+
+  &-image-menu-item {
+  }
+
+  &-combobox-item { spacing: 1em; }
+
+  &-separator-menu-item {
+    height: 1px; // not really the whole box
+    margin: 0;
+    padding: 0;
+    border-color: if($variant != dark,
+                     $div_fg,
+                     mix(white, $dark_bg, percentage($a_div_2)));
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    background-color: transparent;
+    // cinnamon always looked for these properties?
+    // meaningless, useless dummy gradients
+    -gradient-start: transparent;
+    -gradient-end: transparent;
+  }
+
+  &-alternating-menu-item:alternate { font-weight: 500; }
+
+  &-device-menu-item { spacing: 0.5em; }
+
+  &-subtitle-menu-item { font-weight: 500; }
+}
+
+.nm-menu-item-icons { spacing: 0.5em; }
+
+// /*********
+//  * Panel *
+//  *********/
+
+#panel {
+  @include fontscaling($ref_size * 1.0);
+  height: 28px;
+  width: 32px; // setting under 32px causes blurred window-list icons
+  color: $osd_fg;
+  background-color: $panel_bg;
+  font-weight: 700;
+
+  &:highlight { background-color: $acc_fill_bg; }
+}
+
+#panel,
+.panel {
+  &Left {
+    spacing: 4px;
+
+    &:dnd {
+      background-gradient-direction: vertical;
+      background-gradient-start: opacity($err, $a_fg_bdp);
+      background-gradient-end: opacity($err, $a_fg_bdp);
+    }
+    &:ltr { padding-right: 4px; }
+    &:rtl { padding-left: 4px; }
+
+    &.vertical {
+      padding: 0;
+      spacing: 0;
+    }
+  }
+
+  &Right {
+    &:dnd {
+      background-gradient-direction: vertical;
+      background-gradient-start: opacity($link, $a_fg_bdp);
+      background-gradient-end: opacity($link, $a_fg_bdp);
+    }
+    &:ltr {
+      padding-left: 4px;
+      spacing: 0;
+    }
+    &:rtl {
+      padding-right: 4px;
+      spacing: 0;
+    }
+
+    &.vertical {
+      padding: 0;
+      spacing: 0;
+    }
+  }
+
+  &Center {
+    spacing: 4px;
+
+    &:dnd {
+      background-gradient-direction: vertical;
+      background-gradient-start: opacity($sccs, $a_fg_bdp);
+      background-gradient-end: opacity($sccs, $a_fg_bdp);
+    }
+
+    &.vertical {
+      padding: 0;
+      spacing: 0;
+    }
+  }
+}
+
+.panel {
+  padding: 0;
+
+  &-dummy {
+    // placeholder fill-area for 'Move Panels'
+    background-color: opacity($panel_bg, $a_fg_bdp);
+
+    &:entered { background-color: $acc_fill_bg; }
+  }
+
+  &-status-button {
+    height: 22px;
+    -natural-hpadding: 3px;
+    -minimum-hpadding: 3px;
+    border-width: 0;
+    font-weight: 700;
+    color: $osd_fg;
+    &:hover { color: if($variant != light, $sel_fg, black); }
+  }
+
+  &-button {
+    -natural-hpadding: 6px;
+    -minimum-hpadding: 3px;
+    background-color: $hidden_fill_bg;
+    color: $osd_fg;
+    font-weight: 700;
+    transition-duration: $tr_d_std;
+    &:hover,
+    &:active {
+      color: if($variant != light, $sel_fg, black);
+      background-color: $hidden_fill_bg;
+    }
+  }
+
+  &-top {
+    .panel-button,
+    .panel-status-button {
+      &:hover { box-shadow: inset 0 2px 0 $osd_out_fg; }
+      &:active { box-shadow: inset 0 2px 0 $sel_bg; }
+    }
+  }
+
+  &-bottom {
+    .panel-button,
+    .panel-status-button {
+      &:hover { box-shadow: inset 0 -2px 0 $osd_out_fg; }
+      &:active { box-shadow: inset 0 -2px 0 $sel_bg; }
+    }
+  }
+
+  &-left {
+    .panel-button,
+    .panel-status-button {
+      -natural-hpadding: 0;
+      -minimum-hpadding: 0;
+      -natural-vpadding: 2px;
+      -minimum-vpadding: 2px;
+      &:hover { box-shadow: inset 2px 0 0 $osd_out_fg; }
+      &:active { box-shadow: inset 2px 0 0 $sel_bg; }
+    }
+  }
+
+  &-right {
+    .panel-button,
+    .panel-status-button {
+      -natural-hpadding: 0;
+      -minimum-hpadding: 0;
+      -natural-vpadding: 2px;
+      -minimum-vpadding: 2px;
+      &:hover { box-shadow: inset -2px 0 0 $osd_out_fg; }
+      &:active { box-shadow: inset -2px 0 0 $sel_bg; }
+    }
+  }
+
+  StIcon { icon-size: $icon_size; }
+
+  &-corner {
+    &,
+    &:active,
+    &:overview,
+    &:focus {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: $panel_bg;
+      -panel-corner-inner-border-width: 0;
+      -panel-corner-inner-border-color: transparent;
+      -panel-corner-outer-border-width: 0;
+      -panel-corner-outer-border-color: transparent;
+    }
+  }
+
+  // &-menu { -boxpointer-gap: 4px }
+}
+
+.system-status-icon {
+  icon-size: $icon_size;
+  margin: 0;
+  spacing: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  &.warning { color: $warn; }
+
+  &.error { color: $err; }
+}
+
+// /************
+//  * Overview *
+//  ************/
+
+#overview { spacing: 12px; }
+
+.window-caption {
+  -cinnamon-caption-spacing: 12px;
+  spacing: 25px;
+  padding: 7px 8px 8px;
+  border-radius: $r_2;
+  color: $osd_fg;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $empty_shadow;
+
+  // FIXME: Cinnamon does not have 'window-clone-border'
+  // and the name 'selected' looks incorrect, should be 'focused' instead
+  &#selected {
+    spacing: 25px;
+    color: $sel_fg;
+    background-color: $sel_bg;
+    box-shadow: $empty_shadow;
+  }
+}
+
+$ws_thumb_spacing: 32px;
+
+.workspace {
+  &-controls { visible-height: $ws_thumb_spacing; }
+
+  &-thumbnails {
+    spacing: $ws_thumb_spacing;
+
+    &-background,
+    &-background:rtl { padding: 8px; }
+  }
+
+  &-thumbnail-indicator {
+    outline: 0 none transparent;
+    border: 2px solid $sel_bg;
+  }
+
+  &-add-button {
+    height: 200px;
+    width: 35px;
+    background-image: url("assets/misc/add-workspace.svg");
+    transition-duration: $tr_d_std;
+    &:hover {
+      background-image: url("assets/misc/add-workspace-hover.svg");
+      transition-duration: $tr_d_std;
+    }
+    &:active {
+      background-image: url("assets/misc/add-workspace-active.svg");
+      transition-duration: $tr_d_std;
+    }
+  }
+
+  &-overview-background-shade { background-color: opacity(black, $a_fg_3rd); }
+}
+
+.workspace-close-button,
+.window-close {
+  height: 36px;
+  width: 36px;
+  -cinnamon-close-overlap: 24px;
+  background-image: url("assets/misc/close.svg");
+  background-size: 36px;
+  &:hover {
+    height: 36px;
+    width: 36px;
+    background-image: url("assets/misc/close-hover.svg");
+    background-size: 36px;
+  }
+  &:active {
+    height: 36px;
+    width: 36px;
+    background-image: url("assets/misc/close-active.svg");
+    background-size: 36px;
+  }
+}
+
+.window-close:rtl {
+}
+
+.window-close-area {
+  width: 400px;
+  height: 120px;
+  background-image: url("assets/misc/trash-icon.svg");
+}
+
+.overview-icon {
+  padding: 9px;
+  border: none;
+  border-radius: $r_2;
+  color: $osd_fg;
+  transition-duration: $tr_d_std;
+  text-align: center;
+
+  StLabel { padding-top: 6px; }
+}
+
+// /*****************
+//  * Looking Glass *
+//  *****************/
+
+#LookingGlassDialog {
+  spacing: 4px;
+  padding: 6px;
+  border: none;
+  border-radius: $r_8;
+  background-color: opacity($osd_bg, $a_osd);
+  color: $osd_fg;
+  box-shadow: $z-depth-4;
+}
+
+// /************
+//  * Calendar *
+//  ************/
+
+.calendar {
+  padding: 0.4em 1.75em;
+  spacing-rows: 0;
+  spacing-columns: 0;
+
+  // .calendar-background class allows the date applet calendar
+  // to be themed separately from other applet menus
+  &-background {
+  }
+
+  &-month-label {
+    @include fontscaling($ref_size * 0.8);
+    margin: 0 2px;
+    padding-top: (1.5em + 0.5em) / 8; // label centering
+    color: $fg;
+    font-weight: 400;
+  }
+
+  &-change-month-back,
+  &-change-month-forward {
+    @include fontscaling($ref_size * 0.8);
+    width: 1.5em + 0.5em; // embed padding of -month-label
+    height: 1.5em + 0.5em;
+    margin: 0;
+    padding: 0;
+    border-radius: $r;
+    &:focus,
+    &:hover { background-color: $semi_fill_bg; }
+    &:active { background-color: $fill_bg; }
+  }
+
+  // arrow back
+  &-change-month-back {
+    background-image: url("assets/misc/calendar-arrow-left.svg");
+    &:rtl {
+      background-image: url("assets/misc/calendar-arrow-right.svg");
+    }
+  }
+
+  // arrow forward
+  &-change-month-forward {
+    background-image: url("assets/misc/calendar-arrow-right.svg");
+    &:rtl {
+      background-image: url("assets/misc/calendar-arrow-left.svg");
+    }
+  }
+}
+
+.datemenu-date-label {
+  @include fontscaling($ref_size * 0.8);
+  padding: 0.4em 1.75em;
+  border-radius: $r_2;
+  color: $fg;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calendar-day {
+  border-width: 0;
+  color: $fg;
+
+  &-base {
+    @include fontscaling($ref_size * 0.8);
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 2px;
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  &-heading {
+    @include fontscaling($ref_size * 0.7);
+    width: 25px;
+    height: 20px;
+    margin-top: 2px;
+    padding: 5px 0 0;
+    background-color: transparent;
+    color: $ter_fg;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &-top { border-top-width: 0; }
+
+  &-left { border-left-width: 0; }
+
+  &-with-events {
+    background-image: none;
+    color: $link_fg;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+}
+
+.calendar-week-number {
+  width: 25px;
+  height: 20px;
+  margin: 2px;
+  padding: 5px 0 0;
+  background-color: transparent;
+  color: $ter_fg;
+  font-weight: 700;
+  font-size: inherit;
+  text-align: center;
+}
+
+.calendar-nonwork-day {
+  color: $sec_fg;
+  background-color: transparent;
+}
+
+.calendar {
+  &-today {
+    border-width: 0;
+    color: $sel_fg;
+    background-color: $sel_bg;
+    font-weight: 700;
+  }
+
+  &-other-month-day { color: opacity($ter_fg, $a_fg_3rd); }
+}
+
+// /*****************
+//  * Notifications *
+//  *****************/
+
+#notification {
+  width: 34em;
+  spacing-rows: 10px;
+  spacing-columns: 10px;
+  margin-from-right-edge-of-screen: 20px;
+  padding: 13px;
+  border-radius: $r_8;
+  background-color: opacity($osd_bg, $a_osd);
+  color: $osd_fg;
+  box-shadow: $z-depth-4;
+
+  .menu &,
+  .popup-menu & {
+    &, &.multi-line-notification {
+      border-image: url("assets/misc/message.svg") 9 9 9 9;
+      color: $fg;
+      box-shadow: $empty_shadow;
+    }
+
+    .notification-button,
+    .notification-icon-button {
+      @extend %button;
+      padding: 5px;
+    }
+
+    StEntry { @extend %entry; }
+  }
+
+  &.multi-line-notification {
+    padding-bottom: 13px;
+    color: $osd_fg;
+  }
+
+  &-scrollview {
+    max-height: 10em;
+
+    > .top-shadow, > .bottom-shadow { height: 1em; }
+
+    &:ltr > StScrollBar { padding-left: 6px; }
+    &:rtl > StScrollBar { padding-right: 6px; }
+  }
+
+  &-body { spacing: 5px; }
+
+  &-actions { spacing: 10px; }
+}
+
+.notification {
+  // We use row-span = 2 for the image cell, which prevents its height
+  // preferences to be taken into account during allocation, so its height
+  // ends up being limited by the height of the content in the other rows.
+  // To avoid showing a stretched image, we set the minimum height of the
+  // table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159
+  &-with-image {
+    min-height: 159px;
+    color: $osd_fg;
+  }
+
+  &-button,
+  &-icon-button {
+    @extend %osd_button;
+    padding: 5px;
+  }
+
+  &-icon-button > StIcon { icon-size: 36px; }
+
+  StEntry { @extend %osd_entry; }
+}
+
+// /****************
+//  * App Switcher *
+//  ****************/
+
+#altTabPopup {
+  padding: 8px;
+  spacing: 16px;
+}
+
+.switcher-list {
+  padding: 20px;
+  border: none;
+  border-radius: $r_8;
+  color: $osd_fg;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $z-depth-4;
+
+  > StBoxLayout { padding: 4px; }
+
+  &-item-container { spacing: 8px; }
+
+  .item-box {
+    padding: 8px;
+    border-radius: $r_2;
+    &:outlined {
+      padding: 6px;
+      border: 2px solid $osd_out_fg;
+    }
+    &:selected {
+      background-color: $acc_fill_bg;
+      color: if($variant != light, $inv_acc_fg, $acc_fg);
+    }
+  }
+
+  .thumbnail { width: 256px; }
+
+  .thumbnail-box {
+    padding: 2px;
+    spacing: 4px;
+  }
+
+  .separator {
+    width: 1px;
+    background: if($variant != dark,
+                   $div_fg,
+                   mix(white, $dark_bg, percentage($a_div_2)));
+  }
+}
+
+.switcher-arrow { // :highlighted pseudo-class does not exist?
+  border-color: transparent;
+  color: $osd_fg;
+}
+
+.switcher-preview-backdrop {
+}
+
+.thumbnail-scroll-gradient {
+  &-left {
+    width: 60px;
+    border-radius: 24px;
+    border-radius-topright: 0;
+    border-radius-bottomright: 0;
+    background-color: transparent;
+  }
+
+  &-right {
+    width: 60px;
+    border-radius: 24px;
+    border-radius-topleft: 0;
+    border-radius-bottomleft: 0;
+    background-color: transparent;
+  }
+}
+
+// /**********************
+//  * Activities Ripples *
+//  **********************/
+
+.ripple-box {
+  width: 104px;
+  height: 104px;
+  background-image: url("assets/misc/corner-ripple.svg");
+  background-size: contain;
+  &:rtl { background-image: url("assets/misc/corner-ripple.svg"); }
+}
+
+// /*****************
+//  * Modal Dialogs *
+//  *****************/
+
+.modal-dialog {
+  padding: 0 5px 6px 5px;
+  border: none;
+  border-radius: $r_8;
+  color: $osd_fg;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $z-depth-4;
+
+  > StBoxLayout:first-child { padding: 20px 10px 10px 10px; }
+
+  &-button-box {
+    spacing: 0;
+    margin: 0;
+    padding: 14px 10px;
+    border: none;
+    background: none;
+
+    .modal-dialog-button {
+      padding: 7px 16px 8px;
+      border: 0 none transparent;
+      border-radius: $r_2;
+      font-weight: 700;
+      @if $variant != light {
+        @include button(flat-normal, $tc: $inv_acc_fg);
+        &:hover { @include button(flat-hover, $tc: $inv_acc_fg); }
+        &:focus { @include button(flat-focus, $tc: $inv_acc_fg); }
+        &:active { @include button(flat-active, $tc: $inv_acc_fg); }
+        &:insensitive { @include button(flat-disabled, $tc: $osd_fg); }
+      }
+      @else {
+        @include button(flat-normal, $tc: $acc_fg);
+        &:hover { @include button(flat-hover, $tc: $acc_fg); }
+        &:focus { @include button(flat-focus, $tc: $acc_fg); }
+        &:active { @include button(flat-active, $tc: $acc_fg); }
+        &:insensitive { @include button(flat-disabled, $tc: $fg); }
+      }
+    }
+  }
+}
+
+// /***************
+//  * Run Dialogs *
+//  ***************/
+
+.run-dialog {
+  padding: 0 15px 10px 15px;
+  border-radius: $r_8;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $z-depth-4;
+
+  > * { padding: 0; }
+
+  &-label {
+    @include fontscaling($ref_size * 0.9);
+    padding-bottom: 0;
+    color: $osd_ter_fg;
+    font-weight: 400;
+  }
+
+  &-error-label { color: $err; }
+
+  &-error-box {
+    @include fontscaling($ref_size * 0.9);
+    padding-top: 15px;
+    spacing: 5px;
+    color: $err;
+  }
+
+  &-completion-box {
+    @include fontscaling($ref_size * 1.0);
+    padding-left: 15px;
+  }
+
+  &-entry {
+    @extend %osd_entry;
+    width: 28em;
+    padding: 7px;
+    border-radius: 0;
+    caret-color: $osd_fg;
+    selected-color: $sel_fg;
+    selection-background-color: $sel_bg;
+  }
+
+  .modal-dialog-button-box {
+    border: none;
+    background: none;
+    background-gradient-direction: none;
+    box-shadow: $empty_shadow;
+  }
+}
+
+.lightbox {
+}
+
+// /**********************************
+//  * CinnamonMountOperation Dialogs *
+//  **********************************/
+
+.cinnamon-mount-operation-icon { icon-size: $icon_size * 3; }
+
+.mount-password-reask { color: $warn; }
+
+.show-processes-dialog,
+.mount-question-dialog {
+  spacing: 24px;
+
+  &-subject {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    
+    &:ltr { padding-left: 17px; }
+    &:rtl { padding-right: 17px; }
+  }
+
+  &-description {
+    width: 28em;
+
+    &:ltr { padding-left: 17px; }
+    &:rtl { padding-right: 17px; }
+  }
+}
+
+.show-processes-dialog-app-list {
+  max-height: 200px;
+  padding-top: 24px;
+
+  &:ltr {
+    padding-left: 49px;
+    padding-right: 32px;
+  }
+  &:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+  }
+
+  &-item {
+    color: $osd_sec_fg;
+    &:hover { color: $osd_fg; }
+
+    &:ltr { padding-right: 1em; }
+    &:rtl { padding-left: 1em; }
+
+    &-icon:ltr { padding-right: 17px; }
+    &-icon:rtl { padding-left: 17px; }
+
+    &-name { @include fontscaling($ref_size * 1.1); }
+  }
+}
+
+// /*************
+//  * Magnifier *
+//  *************/
+
+.magnifier-zoom-region {
+  border: 2px solid $sel_bg;
+
+  &.full-screen { border-width: 0; }
+}
+
+
+// /************
+//  * Keyboard *
+//  ************/
+
+#keyboard {
+  border-width: 0;
+  background-color: if($variant != light, opacity(black, $a_fg_3rd),
+                                          opacity(white, $a_fg_dis));
+}
+
+.keyboard {
+  &-layout {
+    spacing: $ref_size * 0.3px;
+    padding: $ref_size * 0.3px;
+  }
+
+  &-row { spacing: $ref_size * 0.3px; }
+
+  &-key {
+    min-height: $ref_size * 2px;
+    min-width: $ref_size * 2px;
+    border-radius: $r_2;
+    border: none;
+    background-color: $osd_bg;
+    color: $osd_sec_fg;
+    box-shadow: $empty_shadow;
+    text-shadow: none;
+    icon-shadow: none;
+    font-size: $ref_size * 2px; // use unscalable unit
+    font-weight: 700;
+    transition-timing-function: $tr_t_dec;
+    &:focus,
+    &:hover,
+    &:checked {
+      color: $osd_fg;
+      background-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_1));
+      transition-timing-function: $tr_t_dec;
+    }
+    &:active {
+      color: $osd_fg;
+      background-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_2));
+      transition-timing-function: $tr_t_dec;
+    }
+    &:grayed { // FIXME
+      color: $osd_ter_fg;
+      background-color: $panel_bg;
+      transition-timing-function: $tr_t_dec;
+    }
+  }
+
+  &-subkeys { // long press on a key popup
+    padding: 0;
+    border-radius: $r_2;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -boxpointer-gap: $ref_size * 0.3px;
+    background-color: $sggt_bg;
+    color: $sel_fg;
+    box-shadow: $z-depth-2;
+  }
+}
+
+// /*****************************
+//  * Cinnamon Specific Section *
+//  *****************************/
+
+// /******************
+//  * Menu (menu.js) *
+//  ******************/
+
+.menu {
+  // menu-background class allows the menu applet to be themed separately
+  // from other applet menus
+  &-background {
+  }
+
+  &-favorites-box {
+    padding: 7px;
+    border-radius: 0;
+    border: 0 solid if($variant != dark,
+                       $div_fg,
+                       mix(white, $dark_bg, percentage($a_div_2)));
+    background-color: transparent;
+    &:ltr { border-right-width: 1px; }
+    &:rtl { border-left-width: 1px; }
+
+    // FIXME: override generic menuitem padding with default theme's value.
+    // And we have no way to override the min-width of global section here,
+    // so do not add min-width into .menu > .popup-menu-item.
+    .popup-menu-item { padding: 10px; }
+  }
+
+  &-favorites-button {
+    padding: 10px;
+    &:hover { @include button(flat-hover); }
+  }
+
+  &-places {
+    &-box { padding: 7px; }
+
+    &-button { padding: 10px; }
+  }
+
+  &-categories-box {
+    padding: 7px 7px 0 7px;
+    border: 0 solid if($variant != dark,
+                       $div_fg,
+                       mix(white, $dark_bg, percentage($a_div_2)));
+    &:ltr { border-right-width: 1px; }
+    &:rtl { border-left-width: 1px; }
+  }
+
+  &-applications-inner-box,
+  &-applications-outer-box { padding: 7px 7px 0 7px; }
+
+  &-application-button {
+    padding: 0 7px;
+    border: 1px solid transparent;
+    color: $sec_fg;
+
+    // This style is used in menu application buttons
+    // for applications which were newly installed
+    &:highlighted { font-weight: 700; }
+
+    &-selected {
+      @include button(flat-hover);
+      padding: 0 7px;
+      border: 1px solid transparent;
+      &:highlighted { font-weight: 700; }
+    }
+
+    &-label { // embed vertical padding directly
+      &:ltr { padding: 6px 0 7px 5px; }
+      &:rtl { padding: 6px 5px 7px 0; }
+    }
+  }
+
+  StScrollView.menu-application-button { // extracted submenu container
+    padding: 0;
+    border-radius: $r_2;
+    border: 1px solid $div_fg;
+    background-color: $bg;
+
+    .popup-menu-item {
+      padding: 0;
+      spacing: 0;
+      &:ltr { padding-left: 7px; }
+      &:rtl { padding-right: 7px; }
+
+      &:active {
+        border-image: none; // image independent
+        background-color: $semi_fill_bg;
+      }
+
+      StIcon { min-width: 22px; } // indentation
+
+      StLabel {
+        &:ltr { padding: 6px 0 7px 5px; }
+        &:rtl { padding: 6px 5px 7px 0; }
+      }
+    }
+  }
+
+  &-category-button {
+    padding: 0 7px;
+    border: 1px solid transparent;
+    color: $sec_fg;
+
+    &-hover,
+    &-selected {
+      padding: 0 7px;
+      border-radius: $r_2;
+      border: 1px solid transparent;
+      background-color: opacity($sel_bg, $a_trk_1);
+      color: $sel_label;
+    }
+
+    &-greyed {
+      padding: 0 7px;
+      border: 1px solid transparent;
+      color: $dis_fg;
+    }
+
+    &-label { // embed vertical padding directly
+      &:ltr { padding: 6px 0 7px 5px; }
+      &:rtl { padding: 6px 5px 7px 0; }
+    }
+  }
+
+  // Name and description of the currently hovered item in the menu
+  // This appears on the bottom right hand corner of the menu
+  &-selected-app {
+    &-box {
+      margin-bottom: 0.33em * 2 + 0.4em;
+      padding: 0 30px;
+      text-align: right;
+    }
+
+    &-title {
+      @include fontscaling($ref_size * 0.9);
+      margin-top: 0.4em;
+      color: $sec_fg;
+      font-weight: 700;
+    }
+
+    &-description {
+      @include fontscaling($ref_size * 0.9);
+      max-width: 150px;
+      color: $ter_fg;
+    }
+  }
+
+  &-search-box {
+    margin-bottom: 7px;
+    &:ltr { padding-left: 30px; }
+    &:rtl { padding-right: 30px; }
+  }
+}
+
+#menu-search-entry {
+  @extend %entry;
+  width: 24em;
+  caret-color: $fg;
+  font-weight: 500;
+}
+
+.menu-search-entry-icon {
+  icon-size: $icon_size;
+  color: $fg;
+}
+
+// Context menu (at the moment only for favorites)
+.menu-context-menu {
+}
+
+// /*******
+//  * OSD *
+//  *******/
+
+.info-osd {
+  spacing: 1em;
+  padding: 16px;
+  border-radius: $r_8;
+  background-color: opacity($osd_bg, $a_osd);
+  color: $osd_fg;
+  box-shadow: $z-depth-4;
+  text-align: center;
+  font-weight: 700;
+}
+
+.osd-window {
+  min-width: 64px;
+  min-height: 64px;
+  spacing: 1em;
+  padding: 20px;
+  margin: 32px;
+  border: none;
+  border-radius: $r_8;
+  color: $osd_fg;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $z-depth-4;
+  font-weight: 700;
+  text-align: center;
+
+  .osd-monitor-label { @include fontscaling($ref_size * 3.0); }
+
+  .level { // for legacy
+    height: 3px;
+    padding: 0;
+    border-radius: 0;
+    background-color: $osd_out_fg;
+    color: $sccs;
+  }
+
+  .level-bar {
+    border-radius: 0;
+    background-color: $sccs;
+  }
+}
+
+// /*******************************
+//  * Window list (windowList.js) *
+//  *******************************/
+
+.window-list {
+  &-box {
+    spacing: 0;
+
+    .panel-top,
+    .panel-bottom & {
+      &:ltr { padding: 0 0 0 8px; }
+      &:rtl { padding: 0 8px 0 0; }
+    }
+
+    &.vertical { padding: 6px 0 0 0; }
+
+    &:highlight { background-color: $acc_fill_bg; }
+  }
+
+  &-item-box {
+    border: 0 none transparent;
+    border-image: none;
+    background-image: none;
+    background-color: $hidden_fill_bg;
+    color: $osd_fg;
+    box-shadow: $empty_shadow;
+    font-weight: 400;
+    &:hover {
+      background-color: $osd_semi_fill_bg;
+      color: if($variant != light, $sel_fg, black);
+
+      @each $position, $_indicator in (top, 0 2px),
+                                      (bottom, 0 -2px),
+                                      (left, 2px 0),
+                                      (right, -2px 0) {
+        .panel-#{$position} & {
+          box-shadow: inset #{$_indicator} $osd_out_fg;
+        }
+      }
+    }
+    &:active,
+    &:checked,
+    &:focus {
+      &, &:hover {
+        background-color: $osd_semi_fill_bg;
+        color: if($variant != light, $sel_fg, black);
+
+        @each $position, $_indicator in (top, 0 2px),
+                                        (bottom, 0 -2px),
+                                        (left, 2px 0),
+                                        (right, -2px 0) {
+          .panel-#{$position} & {
+            box-shadow: inset #{$_indicator} $sel_bg;
+          }
+        }
+      }
+    }
+
+    StIcon,
+    StBin {
+      .panel-top &,
+      .panel-bottom & { padding: 0 (6px - 2px); }
+    }
+
+    &.vertical StIcon,
+    &.vertical StBin { padding: 0; }
+
+    StLabel {
+      font-weight: 400;
+
+      .panel-top &,
+      .panel-bottom & {
+        &:ltr { padding: 0 (6px - 2px) 0 0; }
+        &:rtl { padding: 0 0 0 (6px - 2px); }
+      }
+    }
+
+    &:progress,
+    .progress {
+      background-gradient-start: $acc_fill_bg;
+      background-gradient-end: $acc_fill_bg;
+    }
+  }
+
+  &-item-demands-attention {
+    background-gradient-start: $acc_fill_bg;
+    background-gradient-end: $acc_fill_bg;
+    color: if($variant != light, $sel_fg, black);
+
+    @each $position, $_indicator in (top, 0 2px),
+                                    (bottom, 0 -2px),
+                                    (left, 2px 0),
+                                    (right, -2px 0) {
+      .panel-#{$position} & {
+        box-shadow: inset #{$_indicator} $acc_bg;
+      }
+    }
+  }
+
+  // >= 3.6.7
+  &-preview { // thumbnail popup windows = .switcher-list
+    padding: 20px - 8px; // = .switcher-list - .item-box
+    spacing: 8px; // = .switcher-list-item-container
+    border: none;
+    border-radius: $r_8;
+    color: $osd_fg;
+    background-color: opacity($osd_bg, $a_osd);
+    box-shadow: $z-depth-4;
+  }
+}
+
+// /***********************************
+//  * Sound Applet (status/volume.js) *
+//  ***********************************/
+
+.sound-player {
+  padding: 0 3px;
+
+  > StBoxLayout:first-child {
+    padding: 0.4em (1.75em - 0.75em) 0.4em * 2;
+
+    StLabel { padding: 0 0.4em 1px; }
+
+    StButton:small {
+      width: $icon_size;
+      height: $icon_size;
+      padding: 1px 0.4em 0;
+
+      StIcon { icon-size: $icon_size; }
+    }
+  }
+
+  &-generic-coverart { background-color: $bg; }
+
+  &-overlay {
+    width: 290px;
+    height: 70px;
+    padding: 0.4em (1.75em - 0.75em) 0.4em * 3;
+    spacing: 5px;
+    border: 0 solid $osd_bg;
+    border-bottom-width: 1px;
+    color: $osd_fg;
+    background: opacity($osd_bg, $a_osd);
+
+    StButton {
+      width: $icon_size * 2;
+      height: $icon_size * 2;
+      padding: 0;
+      border-radius: $r;
+      border: 0 none transparent;
+      color: $osd_sec_fg;
+      &:hover{ @include button(flat-hover, $tc: $osd_fg); }
+      &:active { @include button(flat-active, $tc: $osd_fg); }
+
+      StIcon { icon-size: $icon_size; }
+    }
+
+    StLabel { padding: 0 5px 1px; }
+  }
+
+  .slider {
+    height: 4px;
+    padding: 0;
+    border: 0 none transparent;
+    -slider-height: 4px;
+    // FIXME: do not use transparentize
+    -slider-background-color: mix($dark_bg,
+                                  $acc_bg, percentage(1 - $a_trk_out));
+    -slider-border-color: transparent;
+    -slider-active-background-color: $acc_bg;
+    -slider-active-border-color: transparent;
+    -slider-border-width: 0;
+    -slider-handle-radius: 0;
+  }
+}
+
+// /****************************************************
+//  * Workspace Switcher applet (workspaceSwitcher.js) *
+//  ****************************************************/
+
+#workspaceSwitcher {
+  spacing: 0;
+  padding: 3px;
+}
+
+// Controls the styling when using the "Simple buttons" option
+.workspace-switcher {
+  .panel-top &,
+  .panel-bottom & {
+    padding-left: 3px;
+    padding-right: 3px;
+    // padding: 0 3px; // NEEDS_REVIEW
+  }
+
+  .panel-left &,
+  .panel-right & {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    // padding: 3px; // NEEDS_REVIEW
+  }
+}
+
+.workspace-button { // numeric buttons
+  // in future, we will drop damned fixed width/height properties
+  width: 20px;
+  height: 10px;
+  // padding: 0 6px; // NEEDS_REVIEW
+  color: $osd_fg;
+  background-color: $hidden_fill_bg;
+  transition-duration: 0.2s;
+
+  // .vertical & { padding: 3px; } // NEEDS_REVIEW
+
+  &:hover {
+    color: if($variant != light, $sel_fg, black);
+
+    @each $position, $_indicator in (top, 0 2px),
+                                    (bottom, 0 -2px),
+                                    (left, 2px 0),
+                                    (right, -2px 0) {
+      .panel-#{$position} & {
+        box-shadow: inset #{$_indicator} 0 $sel_bg;
+      }
+    }
+  }
+  &:outlined {
+    color: $sel_label;
+    &, &:hover {
+      @each $position, $_indicator in (top, 0 2px),
+                                      (bottom, 0 -2px),
+                                      (left, 2px 0),
+                                      (right, -2px 0) {
+        .panel-#{$position} & {
+          box-shadow: inset #{$_indicator} 0 $sel_bg;
+        }
+      }
+    }
+  }
+}
+
+// Controls the style when using the "Visual representation" option
+.workspace-graph {
+  padding: 3px;
+  spacing: 3px;
+
+  .workspace {
+    border: 1px solid opacity($osd_fg, $a_trk_out);
+    background-gradient-direction: none;
+    background-color: $panel_bg;
+    &:active {
+      border: 1px solid $sel_bg;
+      background-gradient-direction: none;
+      background-color: mix($sel_bg, $osd_bg, percentage($a_fg_bdp));
+    }
+
+    .windows {
+      -active-window-background: mix($osd_fg, $osd_bg, percentage($a_trk_2));
+      -active-window-border: opacity($osd_fg, $a_trk_out);
+      -inactive-window-background: mix($osd_fg, $osd_bg, percentage($a_trk_1));
+      -inactive-window-border: opacity($osd_fg, $a_trk_out);
+    }
+  }
+
+  .workspace:active .windows {
+    -active-window-background: $sel_bg;
+    -active-window-border: $sel_bg;
+    -inactive-window-background: mix($sel_bg, $osd_bg, percentage($a_fg_bdp));
+    -inactive-window-border: $sel_bg;
+  }
+}
+
+// /**********************************************
+//  * Panel Launchers Applet (panelLaunchers.js) *
+//  **********************************************/
+
+#panel-launchers-box { padding: 0 7px; }
+
+.panel-launcher {
+  border: 0 solid transparent;
+
+  @each $position, $_padding in (top, 0 4px 2px 4px),
+                                (bottom, 2px 4px 0 4px),
+                                (left, 2px 2px 2px 0),
+                                (right, 2px 0 2px 2px) {
+    .panel-#{$position} & {
+      padding: #{$_padding};
+      border-#{$position}-width: 2px;
+    }
+  }
+
+  &:hover {
+    border: 0 solid $sel_bg;
+    background-gradient-direction: none;
+
+    @each $position, $_padding in (top, 0 4px 2px 4px),
+                                  (bottom, 2px 4px 0 4px),
+                                  (left, 2px 2px 2px 0),
+                                  (right, 2px 0 2px 2px) {
+      .panel-#{$position} & {
+        padding: #{$_padding};
+        border-#{$position}-width: 2px;
+      }
+    }
+  }
+}
+
+// 3.2.x
+.launcher {
+  padding: 2px;
+  spacing: 2px;
+  transition-duration: $tr_d_std;
+  &:hover {
+    border: 0 solid $sel_bg;
+    background-gradient-direction: none;
+
+    @each $position in (top),
+                       (bottom),
+                       (left),
+                       (right) {
+      .panel-#{$position} & {
+        padding-#{$position}: 0;
+        border-#{$position}-width: 2px;
+      }
+    }
+  }
+
+  .icon-box {
+    padding: 0 2px;
+
+    &.vertical { padding: 2px 0; }
+  }
+}
+
+.panel-launchers {
+  padding: 0 0 0 4px;
+  spacing: 2px;
+
+  &.vertical {
+    padding: 2px 0 0 0;
+    spacing: 2px;
+  }
+
+  .launcher {
+    .icon-box {
+      padding: 0 2px;
+
+      &.vertical { padding: 2px 0; }
+    }
+  }
+}
+
+// /*******************
+//  * Overview corner *
+//  *******************/
+
+#overview-corner {
+  background-image: url("assets/misc/overview.svg");
+  &:hover { background-image: url("assets/misc/overview-hover.svg"); }
+}
+
+// /***********************
+//  * Applets (applet.js) *
+//  ***********************/
+
+.applet {
+  &-separator { padding: 1px 4px; }
+
+  &-separator-line {
+    width: 1px;
+    background: $osd_out_fg;
+
+    &-vertical {
+      height: 1px;
+      background: $osd_out_fg;
+    }
+  }
+
+  &-box {
+    color: $osd_fg;
+    text-shadow: none;
+    &:hover,
+    &:checked {
+      color: if($variant != light, $sel_fg, black);
+      background-color: $hidden_fill_bg;
+    }
+    &:highlight { background-color: $acc_fill_bg; }
+
+    @each $position, $_padding, $_indicator in (top, 0 6px, 0 2px),
+                                               (bottom, 0 6px, 0 -2px),
+                                               (left, 2px 0, 2px 0),
+                                               (right, 2px 0, -2px 0) {
+      .panel-#{$position} & {
+        padding: #{$_padding};
+        spacing: 2px;
+        &:hover,
+        &:checked {
+          box-shadow: inset #{$_indicator} 0 $sel_bg;
+        }
+      }
+    }
+  }
+
+  &-label {
+    color: $osd_fg;
+    font-weight: 700;
+
+    &:hover,
+    .applet-box:hover &,
+    .applet-box:checked & {
+      color: if($variant != light, $sel_fg, black);
+      text-shadow: none;
+    }
+  }
+
+  &-icon {
+    icon-size: $icon_size;
+    color: $osd_fg;
+
+    &:hover,
+    .applet-box:hover > &,
+    .applet-box:checked > & {
+      color: if($variant != light, $sel_fg, black);
+      text-shadow: none;
+    }
+  }
+}
+
+// /***************
+//  * User Applet *
+//  ***************/
+
+.user {
+  &-icon {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  &-label {
+    @include fontscaling($ref_size * 1.0);
+    margin: 0;
+    color: $fg;
+    font-weight: 700;
+  }
+}
+
+// /*************************
+//  * Desklets (desklet.js) *
+//  *************************/
+
+.desklet {
+  color: $osd_sec_fg;
+
+  &-with-borders {
+    padding: 12px;
+    padding-bottom: 16px;
+    border-image: url("assets/misc/osd.svg") 9 9 9 9;
+    color: $osd_fg;
+  }
+
+  &-with-borders-and-header {
+    padding: 12px;
+    padding-bottom: 17px;
+    border-radius: 0;
+    border-radius-topleft: 0;
+    border-radius-topright: 0;
+    border-image: url("assets/misc/desklet.svg") 9 9 9 9;
+    color: $osd_fg;
+  }
+
+  &-header {
+    @include fontscaling($ref_size * 1.0);
+    padding: 12px;
+    padding-bottom: 6px;
+    border-image: url("assets/misc/desklet-header.svg") 9 9 9 9;
+    color: $osd_fg;
+  }
+
+  &-drag-placeholder { 
+    border: 2px solid $acc_bg;
+    background-color: opacity($acc_bg, $a_trk_out);
+  }
+
+  // 3.2.x?
+  &:highlight,
+  &:highlight-with-borders,
+  &:highlight-with-borders-and-header {
+    background-color: $acc_fill_bg;
+  }
+}
+
+.photoframe-box {
+  padding: 12px;
+  padding-bottom: 16px;
+  border-radius: $r_8;
+  background-color: opacity($osd_bg, $a_osd);
+  color: $osd_fg;
+  box-shadow: $z-depth-4;
+  &:highlight { background-color: $acc_fill_bg; }
+}
+
+// /*******************************************
+//  * About Dialog (applet.js and desklet.js) *
+//  *******************************************/
+
+.about {
+  &-content {
+    width: 550px;
+    height: 250px;
+    spacing: 8px;
+    padding-bottom: 10px;
+  }
+
+  &-title {
+    @include fontscaling($ref_size * 2.0);
+    font-weight: 700;
+  }
+
+  &-uuid {
+    @include fontscaling($ref_size * 1.0);
+    color: $ter_fg;
+  }
+
+  &-icon {
+    padding-right: 20px;
+    padding-bottom: 14px;
+  }
+
+  &-scrollBox {
+    padding: 4px;
+    padding-right: 0;
+    border: 1px solid $div_fg;
+    border-radius: 0;
+    background-color: $base;
+
+    &-innerBox {
+      padding: 1.2em;
+      spacing: 1.2em;
+    }
+  }
+
+  &-description {
+    padding-top: 4px;
+    padding-bottom: 16px;
+  }
+
+  &-version {
+    @include fontscaling($ref_size * 1.0);
+    padding-left: 7px;
+    color: $ter_fg;
+  }
+}
+
+// /*****************
+//  * Workspace OSD *
+//  *****************/
+
+.workspace-osd { // workspace name
+  @include fontscaling($ref_size * 3.0);
+  padding: 0.2em 0.8em;
+  border-radius: $r_8;
+  background-color: opacity($osd_bg, $a_osd);
+  color: $osd_fg;
+  box-shadow: $z-depth-4;
+  font-weight: 400;
+  text-shadow: none;
+}
+
+$top_gap: 2px;
+$bottom_gap: 4px;
+
+.expo {
+  &-workspaces-name-entry {
+    @include fontscaling($ref_size * 0.9);
+    -cinnamon-caption-spacing: 12px;
+    // FIXME: use 'height' property instead of min-height since total height
+    // affects to the size of vertically gap between thumbnails. And we can't
+    // use margins either. Foolish...
+    height: $ws_thumb_spacing - $top_gap - $bottom_gap;
+    padding: 0 8px;
+    border-radius: 0;
+    border-top: $top_gap solid transparent; // add extra top gap
+    border-bottom: $bottom_gap solid transparent; // add extra bottom gap
+    background-color: $hidden_fill_bg;
+    color: opacity($osd_fg, $a_fg_2nd);
+    caret-color: opacity($osd_fg, $a_fg_2nd);
+    caret-size: 1px;
+    selection-background-color: $sel_bg;
+    selected-color: $sel_fg;
+    font-weight: 700;
+    &:focus { @include entry(focus, $tc: $osd_fg); }
+
+    &#selected {
+      color: $osd_fg;
+      caret-color: $osd_fg;
+    }
+  }
+
+  &-workspace-thumbnail-frame {
+    border-radius: $r_2;
+    border: 2px solid $osd_out_fg;
+    background-color: transparent;
+
+    &#active {
+      border-radius: $r_2;
+      border: 2px solid $sel_bg;
+    }
+  }
+
+  &-background {
+    background-color: if($variant != light, opacity(black, $a_fg_3rd),
+                                            opacity(white, $a_fg_dis));
+  }
+}
+
+// /***********************
+//  * Notification Applet *
+//  ***********************/
+
+.notification-applet {
+  &-padding { padding: 0.5em 1em; }
+
+  &-container { max-height: 100px; }
+}
+
+.flashspot { background-color: $sel_fg; }
+
+// /****************
+//  * Tile Preview *
+//  ****************/
+
+.tile-preview,
+.tile-hud {
+  &,
+  &.snap {
+    border: 1px solid $sel_bg;
+    border-radius: 0;
+    background-color: opacity($sel_bg, $a_trk_out);
+  }
+}
+
+// /****************
+//  * Xkcd Desklet *
+//  ****************/
+
+.xkcd-box {
+  padding: 6px;
+  border: none;;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+// /******************
+//  * Systray Applet *
+//  ******************/
+
+.systray,
+#CinnamonTrayIcon {
+  spacing: 0;
+  padding: 0;
+}
+
+// /********************
+//  * Slingshot Applet *
+//  ********************/
+
+.slingshot {
+  &.popup-menu-content {
+    // horizontal padding is non-sense
+    // so add outer spacing instead
+    margin: 0 3px;
+    padding: 0.45em 0;
+  }
+
+  .button {
+    padding: 4px;
+    border-radius: $r_2;
+    border-color: $div_sld_fg;
+    background-color: $light_bg;
+    &:hover {
+      background-color: $semi_fill_bg;
+      color: $fg;
+    }
+    &:checked,
+    &:active:checked {
+      &, &:hover {
+        background-color: $sel_bg;
+        color: $sel_fg;
+      }
+    }
+    &:insensitive {
+      background-color: $hidden_fill_bg;
+      color: $dis_fg;
+    }
+  }
+
+  .sidebar .button,
+  .button.app {
+    background-color: $hidden_fill_bg;
+    &:hover {
+      background-color: $semi_fill_bg;
+      color: $fg;
+    }
+    &:checked,
+    &:active:checked {
+      &, &:hover {
+        border-color: transparent;
+        background-color: opacity($sel_bg, $a_trk_2);
+        color: $sel_label;
+      }
+    }
+  }
+
+  .entry {
+    min-height: 16px + 4px * 2;
+    padding: 0 8px; // do not set vertical padding causes truncation of StLabel
+    border-radius: $r_2;
+    border-color: transparent;
+    background-color: $light_bg;
+    color: $sec_fg;
+    caret-color: $sec_fg;
+    box-shadow: inset 0 0 0 1px $div_sld_fg;
+    &:ltr { margin-right: 3px; }
+    &:rtl { margin-left: 3px; }
+
+    &:focus,
+    &:focus:hover {
+      border-color: transparent;
+      background-color: $base;
+      color: $fg;
+      caret-color: $fg;
+      box-shadow: inset 0 0 0 1px $sel_bg;
+    }
+    &:insensitive {
+      border-color: transparent;
+      background-color: $hidden_fill_bg;
+      color: $dis_fg;
+      box-shadow: inset 0 0 0 1px $div_sld_fg;
+    }
+  }
+
+  // insert vertical spacing
+  > StBoxLayout > StBoxLayout { margin: 3px 0; }
+}
+
+// /*******************************
+//  * IcingTaskListManager Applet *
+//  *******************************/
+
+.applet-box { // the parent container
+  .window-list-item-box { // actual childs
+    .panel-top &,
+    .panel-bottom &,
+    .panel-left &,
+    .panel-right & {
+      StIcon, StBin { padding: 0; }
+    }
+
+    @each $position, $_indicator in (top, 0 2px),
+                                    (bottom, 0 -2px),
+                                    (left, 2px 0),
+                                    (right, -2px 0) {
+      .panel-#{$position} & {
+        spacing: 0;
+        padding: 0;
+        border: 0 none transparent;
+        border-image: none;
+        background-color: $hidden_fill_bg;
+        box-shadow: inset #{$_indicator} $osd_out_fg;
+        &:hover {
+          background-color: $osd_semi_fill_bg;
+          box-shadow: inset #{$_indicator} $osd_out_fg;
+        }
+        &:focus,
+        &:active,
+        &:checked {
+          background-color: $osd_semi_fill_bg;
+          box-shadow: inset #{$_indicator} $sel_bg;
+        }
+        &:closed {
+          &,
+          &:hover,
+          &:focus,
+          &:active,
+          &:checked { // return to :normal state
+            background-color: $hidden_fill_bg;
+            box-shadow: $empty_shadow;
+          }
+        }
+      }
+    }
+  }
+
+  .window-icon-list-numlabel {
+    @include fontscaling($ref_size * 0.9);
+    color: if($variant != light, $sel_fg, black);
+    font-weight: 700;
+  }
+}
+
+StBin.popup-menu,
+StBin.menu {
+  // .switcher-list should be with StBin
+  // at the root metaWindow
+  StBoxLayout.switcher-list {
+    margin: 10px - 4px;
+    border-radius: $r_4;
+    background-color: $osd_bg; // use opaque
+
+    .item-box {
+      background-color: $hidden_fill_bg;
+      border-radius: $r_4;
+      &:selected {
+        background-color: mix($osd_bg, $acc_bg, percentage(1 - $a_trk_2));
+      }
+
+      > StBoxLayout { // icon and title
+        &:ltr { margin: 6px 0 0 6px; }
+        &:rtl { margin: 6px 6px 0 0; }
+
+        StLabel { padding-bottom: 0.1em; }
+      }
+
+      > StButton { // close button
+        &:ltr { margin: 6px 6px 0 0; }
+        &:rtl { margin: 6px 0 0 6px; }
+      }
+
+      > StBin.thumbnail { margin: 6px; }
+    }
+  }
+}

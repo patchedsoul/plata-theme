@@ -1,0 +1,153 @@
+//
+// When color definition differs for dark and light variant,
+// it gets @if ed depending on $variant
+//
+
+// Import base components from Gtk+ theming
+@import '../../../gtk/sass/common/resources/color_palette';
+@import '../../../gtk/sass/common/resources/functions';
+@import '../../../gtk/sass/common/resources/variables';
+@import '../../../gtk/sass/common/resources/key_colors';
+@import 'resources/function';
+
+//
+// Foreground colors
+//
+
+$fg: if($variant == dark, color($grey, 100),
+                          mix(color($grey, 900), black));
+$sec_fg: opacity($fg, $a_fg_2nd);
+$ter_fg: opacity($fg, $a_fg_3rd);
+$dis_fg: opacity($fg, $a_fg_dis);
+$dis_sec_fg: opacity($sec_fg, $a_fg_dis);
+
+$sel_fg: white;
+$sec_sel_fg: opacity($sel_fg, $a_fg_sel_2nd);
+
+//
+// OSD Foreground colors
+//
+
+$osd_fg: if($variant == light, mix(color($grey, 900), black),
+                               color($grey, 100));
+$osd_sec_fg: opacity($osd_fg, $a_fg_2nd);
+$osd_ter_fg: opacity($osd_fg, $a_fg_3rd);
+$dis_osd_fg: opacity($osd_fg, $a_fg_dis);
+$dis_osd_sec_fg: opacity($osd_sec_fg, $a_fg_dis);
+
+$ovv_fg: white;
+$ovv_sec_fg: opacity($ovv_fg, $a_fg_2nd);
+$ovv_ter_fg: opacity($ovv_fg, $a_fg_3rd);
+$ovv_dis_fg: opacity($ovv_fg, $a_fg_dis);
+
+//
+// Background colors
+//
+
+$bg: if($variant == dark,
+        mix(color($grey, 900), black, 87%),
+        mix(color($grey, 50), color($grey, 100)));
+$base: if($variant == dark,
+          mix(color($grey, 900), black),
+          white);
+$light_bg: $base;
+$dark_bg: if($variant == dark,
+             mix(color($grey, 900), black, 25%),
+             mix(color($grey, 200), color($grey, 300)));
+
+$semi_fill_bg: opacity($fg, $a_trk_1);
+$fill_bg: opacity($fg, $a_trk_2);
+$hidden_fill_bg: rgba(0, 0, 0, 0.01);
+
+$sel_bg: $key_selection_color;
+$sel_label: if($variant == dark,
+               saturate(
+                 lighten($sel_bg, percentage($a_trk_2)),
+                 percentage($a_trk_2)),
+               $sel_bg);
+$ovv_sel_label: saturate(
+                  lighten($sel_bg, percentage($a_trk_2)),
+                  percentage($a_trk_2));
+
+$out_fg: opacity($fg, $a_trk_out);
+$dis_out_fg: opacity($out_fg, $a_fg_dis);
+
+//
+// OSD Background colors
+//
+
+$osd_bg: if($variant == light,
+             mix(color($grey, 200), color($grey, 300)),
+             mix(color($grey, 900), black, 25%));
+$osd_semi_fill_bg: opacity($osd_fg, $a_trk_1);
+$osd_fill_bg: opacity($osd_fg, $a_trk_2);
+
+$osd_out_fg: opacity($osd_fg, $a_trk_out);
+$dis_osd_out_fg: opacity($osd_out_fg, $a_fg_dis);
+
+$ovv_semi_fill_bg: opacity($ovv_fg, $a_trk_1);
+$ovv_fill_bg: opacity($ovv_fg, $a_trk_2);
+
+$ovv_out_fg: opacity($ovv_fg, $a_trk_out);
+
+//
+// Accent colors
+//
+
+$acc_bg: $key_accent_color;
+$acc_fg: if($variant == dark,
+            saturate(
+              lighten($acc_bg, percentage($a_trk_1)),
+              percentage($a_trk_1)),
+            saturate(
+              darken($acc_bg, percentage($a_trk_2)),
+              percentage($a_trk_2)));
+$sec_acc_fg: opacity($acc_fg, $a_fg_2nd);
+$dis_acc_fg: opacity($acc_fg, $a_fg_dis);
+
+$acc_semi_fill_bg: opacity($acc_fg, $a_trk_1);
+$acc_fill_bg: opacity($acc_fg, $a_trk_2);
+$acc_out_fg: opacity($acc_fg, $a_trk_out);
+
+$inv_acc_fg: mix($acc_bg, $osd_fg, percentage($a_fg_3rd));
+$inv_sec_acc_fg: track($inv_acc_fg, $a_fg_2nd);
+$ovv_acc_fg: saturate(
+             lighten($acc_bg, percentage($a_trk_1)),
+             percentage($a_trk_1));
+$ovv_sec_acc_fg: track($ovv_acc_fg, $a_fg_2nd);
+
+//
+// Misc colors
+//
+
+$div_fg: if($variant == dark, opacity(black, $a_div_0),
+                              opacity(black, $a_div_1));
+$div_sld_fg: if($variant == dark, mix(black, $base, percentage($a_div_0)),
+                                  mix(black, $bg, percentage($a_div_1)));
+
+$link: color($blue, $primary_level);
+$link_vst: color($purple, $primary_level);
+
+$link_fg: if($variant == dark,
+             saturate(lighten($link, percentage($a_trk_1)),
+               percentage($a_trk_1)),
+             $link);
+$link_vst_fg: if($variant == dark,
+                 saturate(lighten($link_vst, percentage($a_trk_2)),
+                   percentage($a_trk_2)),
+                 $link_vst);
+
+$warn: color($orange, $primary_level);
+$err: color($red, $primary_level);
+$sccs: color($green, $primary_level);
+
+$sggt_bg: $key_suggestion_color;
+$dest_bg: $key_destruction_color;
+
+//
+// Panel colors
+//
+
+$panel_bg: if($variant == light, color($grey, 300), black);
+$panel_trans_bg: opacity($panel_bg, 0.0);
+$panel_hidden_bg: opacity($panel_bg, 0.01);
