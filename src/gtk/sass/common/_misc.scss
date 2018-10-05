@@ -713,8 +713,16 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
   > .linked.raised > button {
     // 'archive' button
     &:not(.image-button):not(.text-button):not(.suggested-action) {
-      > widget > box > image { // archive icon
-        margin-top: rem($baseline, $sw: 1.0); // reset baseline
+      > widget > box {
+        > label {
+          padding-bottom: 0;
+          &:dir(ltr) { padding-left: 0; }
+          &:dir(rtl) { padding-right: 0; }
+        }
+
+        > image { // archive icon
+          margin-top: rem($baseline, $sw: 1.0); // reset baseline
+        }
       }
     }
   }
