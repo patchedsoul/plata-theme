@@ -2432,26 +2432,10 @@ dialog.background.csd > headerbar.titlebar {
       }
     }
 
-    &.text-button:not(.image-button) {
-      padding: 0 rem($pathbar_min_size, $sw: 1.0);
-
-      label {
-        margin-left: rem($pathbar_min_size * 2);
-        margin-right: rem($pathbar_min_size * 2);
-      }
-    }
-
-    &.image-button {
-      padding: 0 rem($pathbar_min_size, $sw: 1.0);
-
-      image {
-        margin-left: rem($pathbar_min_size * 2);
-        margin-right: rem($pathbar_min_size * 2);
-        padding: 0;
-      }
-    }
-
-    &.text-button.image-button,
+    @at-root %pathbar_button,
+    &,
+    &.text-button,
+    &.image-button,
     &.toggle {
       padding: 0 rem($pathbar_min_size, $sw: 1.0);
 
@@ -2459,6 +2443,14 @@ dialog.background.csd > headerbar.titlebar {
       image {
         margin-left: rem($pathbar_min_size);
         margin-right: rem($pathbar_min_size);
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      // move baseline from margin to padding
+      label {
+//        margin-bottom: 0;
+//        padding-bottom: rem($baseline, $sw: 1.0);
       }
     }
 
@@ -2466,17 +2458,7 @@ dialog.background.csd > headerbar.titlebar {
       min-width: $icon_size;
       padding: 0 rem($pathbar_min_size, $sw: 1.0);
 
-      image {
-        margin-left: rem($pathbar_min_size);
-        margin-right: rem($pathbar_min_size);
-        padding: 0;
-      }
-    }
-
-    // move baseline from margin to padding
-    label {
-      margin-bottom: 0;
-      padding-bottom: rem($baseline, $sw: 1.0);
+      image { margin: 0 rem($pathbar_min_size); }
     }
   }
 }
