@@ -151,7 +151,7 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
     box-shadow: $z-depth-2;
   }
   @else if $t == raised-active {
-    border-color: $sel_bg;
+    border: 2px solid transparent;
     background-color: $sel_bg;
     color: $sel_fg;
     box-shadow: $z-depth-1;
