@@ -2446,12 +2446,6 @@ dialog.background.csd > headerbar.titlebar {
         padding-left: 0;
         padding-right: 0;
       }
-
-      // move baseline from margin to padding
-      label {
-//        margin-bottom: 0;
-//        padding-bottom: rem($baseline, $sw: 1.0);
-      }
     }
 
     &.slider-button {
@@ -4803,8 +4797,8 @@ stacksidebar {
     @extend %sidebar_row_template;
 
     > label {
-      padding-left: $toolbar_padding;
-      padding-right: $toolbar_padding;
+      padding-left: rem($pathbar_min_size * 1.5, $sw: 1.0);
+      padding-right: rem($pathbar_min_size * 1.5, $sw: 1.0);
     }
 
     &.needs-attention > label { @extend %needs_attention; }
@@ -4855,14 +4849,14 @@ placessidebar {
 
     image.sidebar-icon {
       opacity: $a_fg_2nd;
-      &:dir(ltr) { padding-right: $toolbar_padding; }
-      &:dir(rtl) { padding-left: $toolbar_padding; }
+      &:dir(ltr) { padding-right: rem($pathbar_min_size * 2, $sw: 1.0); }
+      &:dir(rtl) { padding-left: rem($pathbar_min_size * 2, $sw: 1.0); }
     }
 
     label.sidebar-label {
       padding-bottom: rem(1.3px, $sw: 1.0);
-      &:dir(ltr) { padding-right: $toolbar_padding; }
-      &:dir(rtl) { padding-left: $toolbar_padding; }
+      &:dir(ltr) { padding-right: rem($pathbar_min_size * 1.5, $sw: 1.0); }
+      &:dir(rtl) { padding-left: rem($pathbar_min_size * 1.5, $sw: 1.0); }
     }
 
     button.image-button { // Eject button for removable storages
