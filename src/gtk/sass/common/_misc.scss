@@ -2315,14 +2315,12 @@ scrolledwindow.view > viewport.frame > stack > list { // left-pane
     }
 
     &:selected {
-      background-color: $trk_bg;
-      color: $sel_label;
-
-      label,
-      image { color: $sel_label; }
-      &:hover {
+      &, &:hover {
         background-color: $trk_bg;
-        color: $sel_hi_label;
+        color: $sel_label;
+
+        label,
+        image { color: $sel_label; }
       }
     }
   }
@@ -2453,18 +2451,12 @@ scrolledwindow > viewport.frame list.categories {
   > row.category.activatable {
     font-weight: 500;
     &:selected {
-      background-color: $trk_bg;
-      color: $sel_label;
-
-      image.category-icon,
-      label.category-label { color: $sel_label; }
-
-      &:hover {
+      &, &:hover {
         background-color: $trk_bg;
-        color: $sel_hi_label;
+        color: $sel_label;
 
         image.category-icon,
-        label.category-label { color: $sel_hi_label; }
+        label.category-label { color: $sel_label; }
       }
     }
   }
@@ -2683,14 +2675,10 @@ window.background > box.vertical > overlay > stack > box.horizontal {
         }
         &:active,
         &:selected {
-          background-color: $trk_bg;
-
-          &, > label.sidebar { color: $sel_label; }
-
-          &:hover {
+          &, &:hover {
             background-color: $trk_bg;
 
-            &, > label.sidebar { color: $sel_hi_label; }
+            &, > label.sidebar { color: $sel_label; }
           }
         }
       }

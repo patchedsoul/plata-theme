@@ -458,12 +458,10 @@ window.budgie-popover:not(.csd) {
       @include radius(0); // remove roundness
       &:not(:active) { transition-duration: $tr_d_sht; } // use list-transition
       &:checked {
-        background-image: none;
-        background-color: $trk_bg;
-        color: $sel_label;
-        &:hover {
+        &, &:hover {
+          background-image: none;
           background-color: $trk_bg;
-          color: $sel_hi_label;
+          color: $sel_label;
         }
         &:disabled {
           color: track($sel_fg, $a_fg_bdp);
@@ -4063,16 +4061,11 @@ box.vertical > stack > box > revealer > stack > scrolledwindow {
 
     > row.activatable {
       &:selected {
-        background-color: $trk_bg;
+        &, &:hover {
+          background-color: $trk_bg;
 
-        &, label { color: $sel_label; }
-
-        &:hover {
-          background-image: image($trk_bg);
-
-          &, label { color: $sel_hi_label; }
+          &, label { color: $sel_label; }
         }
-
       }
 
       > label { font-weight: 500; }

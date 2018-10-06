@@ -91,19 +91,9 @@ $sel_label: if($variant == dark,
                  lighten($sel_bg, percentage($a_trk_2)),
                  percentage($a_trk_2)),
                $sel_bg);
-$sel_hi_label: if($variant == dark,
-                  saturate(
-                    lighten($sel_bg, percentage($a_trk_2 + $a_trk_1)),
-                    percentage($a_trk_2 + $a_trk_1)),
-                  desaturate(
-                    darken($sel_bg, percentage($a_trk_1)),
-                    percentage($a_trk_1)));
 $inv_sel_label: saturate(
                   lighten($sel_bg, percentage($a_trk_2)),
                   percentage($a_trk_2));
-$inv_sel_hi_label: saturate(
-                     lighten($sel_bg, percentage($a_trk_2 + $a_trk_1)),
-                     percentage($a_trk_2 + $a_trk_1));
 
 //
 // Accent (secondary) colors

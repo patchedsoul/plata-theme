@@ -1004,7 +1004,7 @@ button {
         &:disabled { @include button(flat-disabled); }
         &:checked {
           @include button(flat-lined-checked, $tc: $sel_label);
-          &:hover { @include button(flat-hover, $tc: $sel_hi_label); }
+          &:hover { @include button(flat-hover, $tc: $sel_label); }
         }
 
         headerbar &:not(.suggested-action):not(.destructive-action) {
@@ -1026,7 +1026,7 @@ button {
             }
             &:checked {
               @include button(flat-lined-checked, $tc: $inv_sel_label);
-              &:hover { @include button(flat-hover, $tc: $inv_sel_hi_label); }
+              &:hover { @include button(flat-hover, $tc: $inv_sel_label); }
             }
           }
         }
@@ -3181,7 +3181,7 @@ notebook {
     color: $ter_fg;
     font-weight: 500;
     @if $variant == dark {
-      @include ink-reaction(tab-normal, $fc: $sel_hi_label, $bs: 10, $i: 2); }
+      @include ink-reaction(tab-normal, $fc: $sel_label, $bs: 10, $i: 2); }
     @else {
       @include ink-reaction(tab-normal, $fc: $sel_bg, $bs: 10, $i: 2); }
     &:hover {
@@ -3193,12 +3193,12 @@ notebook {
     &:checked {
       color: $sel_label;
       @if $variant == dark {
-        @include ink-reaction(tab-active, $fc: $sel_hi_label, $bs: 10);
+        @include ink-reaction(tab-active, $fc: $sel_label, $bs: 10);
       }
       @else {
         @include ink-reaction(tab-active, $fc: $sel_bg, $bs: 10);
       }
-      &:hover { color: $sel_hi_label; }
+      &:hover { color: $sel_label; }
     }
 
     &.reorderable-page { // revert to fg
@@ -4744,10 +4744,10 @@ filechooserbutton:drop(active) {
       background-color: $trk_bg;
       color: $sel_label;
       &:hover {
-        background-color: track($sel_label, $a_trk_2);
-        color: $sel_hi_label;
+        background-color: $trk_bg;
+        color: $sel_label;
 
-        label { color: $sel_hi_label; }
+        label { color: $sel_label; }
       }
     }
   }
@@ -4763,16 +4763,16 @@ filechooserbutton:drop(active) {
 
   &:hover {
     background-color: $trk_bg;
-    color: $sel_hi_label;
+    color: $sel_label;
 
-    label { color: $sel_hi_label; }
+    label { color: $sel_label; }
   }
 
   button.flat {
-    color: $sel_label;
+    color: track($sel_label, $a_fg_2nd);
     &:hover,
     &:active,
-    &:checked { color: $sel_hi_label; }
+    &:checked { color: $sel_label; }
     &:disabled { color: $dis_fg; }
   }
 }
@@ -4841,10 +4841,10 @@ placessidebar {
     @extend %sidebar_row_template;
     &:selected {
       button.image-button {
-        color: $sel_label;
+        color: track($sel_label, $a_fg_2nd);
         &:hover, // use opaque and brighter color
         &:active {
-          color: $sel_hi_label;
+          color: $sel_label;
         }
       }
     }
