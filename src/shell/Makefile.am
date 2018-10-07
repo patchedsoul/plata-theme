@@ -732,9 +732,7 @@ if ENABLE_CINNAMON
 	cp -Rv $(cinnamon_asset_switch_file) \
 		$(platadir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_asset_thumb_file) \
-		$(platadir)/cinnamon/assets
-	cd $(platadir)/cinnamon && \
-		ln -sf ./assets/thumbnail.png thumbnail.png
+		$(platadir)/cinnamon
 
 	$(MKDIR_P) $(luminedir)/cinnamon
 	$(MKDIR_P) $(luminedir)/cinnamon/assets
@@ -755,9 +753,7 @@ if ENABLE_CINNAMON
 	cp -Rv $(cinnamon_lumine_asset_switch_file) \
 		$(luminedir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_lumine_asset_thumb_file) \
-		$(luminedir)/cinnamon/assets
-	cd $(luminedir)/cinnamon && \
-		ln -sf ./assets/thumbnail.png thumbnail.png
+		$(luminedir)/cinnamon
 
 	$(MKDIR_P) $(noirdir)/cinnamon
 	$(MKDIR_P) $(noirdir)/cinnamon/assets
@@ -778,9 +774,7 @@ if ENABLE_CINNAMON
 	cp -Rv $(cinnamon_noir_asset_switch_file) \
 		$(noirdir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_noir_asset_thumb_file) \
-		$(noirdir)/cinnamon/assets
-	cd $(noirdir)/cinnamon && \
-		ln -sf ./assets/thumbnail.png thumbnail.png
+		$(noirdir)/cinnamon
 endif
 
 # *******************
