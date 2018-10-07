@@ -2471,9 +2471,10 @@ $provider_icon_size: 32px; // for < 3.25
   &:rtl { border-radius: $r_2 0 0 $r_2; }
 
   .placeholder {
+    width: 24px;
     height: 24px;
     @include image-loader($url: 'assets/dash-placeholder.svg');
-    background-size: contain;
+    background-size: 24px 24px;
   }
 
   .empty-dash-drop-target {
