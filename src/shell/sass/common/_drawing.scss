@@ -76,7 +76,7 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
 // raised-disabled;
 //
 
-@mixin button($t, $c: $light_bg, $tc: $fg) {
+@mixin button($t, $c: $base, $tc: $fg) {
   @if $t == normal {
     border: 1px solid mix($tc, $c, percentage($a_div_1));
     background-color: $c;

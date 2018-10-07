@@ -2495,7 +2495,8 @@ $provider_icon_size: 32px; // for < 3.25
                                   6px 7px 7px);
   border-radius: $r_2;
   color: $osd_fg;
-  background-color: opacity($osd_bg, $a_osd);
+  background-color: if($variant == mixed, opacity($inv_tooltip_bg, $a_osd),
+                                          opacity($tooltip_bg, $a_osd));
   box-shadow: $empty_shadow;
   text-align: center;
   -x-offset: 8px;

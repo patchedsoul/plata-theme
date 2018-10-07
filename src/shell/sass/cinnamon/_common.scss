@@ -268,7 +268,8 @@ StScrollBar {
   @include fontscaling($ref_size * 1.0);
   padding: 7px 8px 8px;
   border-radius: $r_2;
-  background-color: opacity($osd_bg, $a_osd);
+  background-color: if($variant == mixed, opacity($inv_tooltip_bg, $a_osd),
+                                          opacity($tooltip_bg, $a_osd));
   color: $osd_fg;
   box-shadow: $empty_shadow;
   font-weight: 400;
@@ -2104,7 +2105,7 @@ $bottom_gap: 4px;
     padding: 4px;
     border-radius: $r_2;
     border-color: $div_sld_fg;
-    background-color: $light_bg;
+    background-color: $base;
     &:hover {
       background-color: $semi_fill_bg;
       color: $fg;
@@ -2144,7 +2145,7 @@ $bottom_gap: 4px;
     padding: 0 8px; // do not set vertical padding causes truncation of StLabel
     border-radius: $r_2;
     border-color: transparent;
-    background-color: $light_bg;
+    background-color: $base;
     color: $sec_fg;
     caret-color: $sec_fg;
     box-shadow: inset 0 0 0 1px $div_sld_fg;

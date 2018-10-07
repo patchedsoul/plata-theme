@@ -68,23 +68,23 @@
 
 %stackswitcher_box {
   border-color: $div_sld_fg;
-  background-color: $light_bg;
+  background-color: $base;
 }
 
 %stackswitcher_button {
   padding: if($ref_weight >= 1.0, 7px 0.8em 8px, 5px 0.6em 6px);
   border-color: $div_sld_fg;
-  background-color: $light_bg !important;
+  background-color: $base !important;
   color: $sec_fg;
   box-shadow: $empty_shadow;
   font-weight: 500;
   &:hover,
   &:focus {
-    background-color: mix($light_bg, $fg, percentage(1 - $a_trk_1)) !important;
+    background-color: mix($base, $fg, percentage(1 - $a_trk_1)) !important;
     color: $fg;
   }
   &:active {
-    background-color: mix($light_bg, $fg, percentage(1 - $a_trk_2)) !important;
+    background-color: mix($base, $fg, percentage(1 - $a_trk_2)) !important;
     color: $fg;
   }
   &:checked { // ignored?
@@ -94,7 +94,7 @@
     }
   }
   &:insensitive {
-    background-color: $light_bg;
+    background-color: $base;
     color: $dis_fg;
   }
 }
@@ -107,7 +107,7 @@
       min-height: 0;
       padding: if($ref_weight >= 1.0, 7px 0.8em 8px, 5px 0.6em 6px);
       border-color: $div_sld_fg;
-      background-color: $light_bg;
+      background-color: $base;
       box-shadow: $empty_shadow;
     }
   }

@@ -50,7 +50,6 @@ $bg: if($variant == dark,
 $base: if($variant == dark,
           mix(color($grey, 900), black),
           white);
-$light_bg: $base;
 $dark_bg: if($variant == dark,
              mix(color($grey, 900), black, 25%),
              mix(color($grey, 200), color($grey, 300)));
@@ -143,6 +142,14 @@ $sccs: color($green, $primary_level);
 
 $sggt_bg: $key_suggestion_color;
 $dest_bg: $key_destruction_color;
+
+//
+// Tooltip background color
+//
+
+$tooltip_bg: if($variant == dark, color($grey, 800),
+                                  color($grey, 400));
+$inv_tooltip_bg: color($grey, 800);
 
 //
 // Panel colors
