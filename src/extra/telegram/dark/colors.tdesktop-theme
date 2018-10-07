@@ -34,7 +34,8 @@ SEMI_FILL_COLOR: #373737;                       // Hovered button background col
 FILL_COLOR: #535353;                            // Active button/ripple background color (Bg + 25%)
 ACCENT_FILL_COLOR: #2F3034;                     // Hovered button accent color (Bg + 12%)
 ACCENT_ACTIVE_FILL_COLOR: #42444D;              // Active button/ripple accent color (Bg + 25%)
-OSD_BG_COLOR: #080808ED;                        // Tooltip background color (93%)
+OSD_BG_COLOR: #080808ED;                        // OSD background color (93%)
+TOOLTIP_BG_COLOR: #424242ED;                    // Tooltip background color (93%)
 SUGGESTED_HOVER_COLOR: #7952C0;                 // Hovered suggested action color
 SUGGESTED_ACTIVE_COLOR: #8D6BC9;                // Active/ripple suggested action color
 DESTRUCTIVE_FILL_COLOR: #37220;                 // Hovered destructive action color (Bg + 12%)
@@ -152,9 +153,9 @@ checkboxFg: FG_COLOR;
 sliderBgInactive: INSENSITIVE_FG_COLOR;         // Inactive media player button (prev/next song)
 sliderBgActive: ACCENT_COLOR;                   // Active media player button (prev/next song)
 
-tooltipBg: OSD_BG_COLOR;
+tooltipBg: TOOLTIP_BG_COLOR;
 tooltipFg: OSD_FG_COLOR;
-tooltipBorderFg: OSD_BG_COLOR;
+tooltipBorderFg: TOOLTIP_BG_COLOR;
 
 // custom title bar for Windows and macOS
 titleBg: DARK_COLOR;                            // Title bar
