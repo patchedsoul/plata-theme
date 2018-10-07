@@ -3762,7 +3762,7 @@ notebook.psppire-data-editor widget.view {
       padding: 0 3px;
       @include radius(0, none);
       border: 0 solid $sel_bg;
-      background-color: $light_bg;
+      background-color: $base;
       box-shadow: none;
       transition: none;
       &:dir(ltr) { border-left-width: 2px; }
@@ -3781,14 +3781,14 @@ notebook.psppire-data-editor widget.view {
     &,
     entry.flat {
       border: none;
-      background-color: $light_bg;
+      background-color: $base;
     }
 
     button {
       &.up, &.down {
         min-height: $icon_size;
         min-width: $icon_size;
-        background-color: $light_bg;
+        background-color: $base;
       }
     }
 

@@ -1514,7 +1514,7 @@ eggsearchbar box.search-bar { background-color: $dark_bg; }
   &:not(:hover):not(:active) > entry {
     @if $variant == mixed {
       background-image:
-        image(mix($inv_fg, $inv_light_bg, percentage($a_trk_1 / 2)));
+        image(mix($inv_fg, $inv_base, percentage($a_trk_1 / 2)));
       caret-color: $inv_sec_fg;
 
       &,
@@ -1531,7 +1531,7 @@ eggsearchbar box.search-bar { background-color: $dark_bg; }
   &:hover > entry {
     @if $variant == mixed {
       background-image:
-        image(mix($inv_fg, $inv_light_bg, percentage($a_trk_1 / 2)));
+        image(mix($inv_fg, $inv_base, percentage($a_trk_1 / 2)));
       caret-color: $inv_fg;
 
       &,

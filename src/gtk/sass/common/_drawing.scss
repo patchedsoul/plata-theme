@@ -289,7 +289,7 @@ $z-depth-1-label: 0 0 1px rgba(0, 0, 0, 0.26),
 // normal, focus, disabled, flat-normal, flat-focus, flat-disabled;
 //
 
-@mixin entry($t, $c: $light_bg, $tc: $fg, $fc: $sel_bg) {
+@mixin entry($t, $c: $base, $tc: $fg, $fc: $sel_bg) {
   @if $t == normal {
     border-color: mix($tc, $c, percentage($a_div_1));
     background-color: mix($tc, $c, percentage($a_trk_1 / 2));
@@ -354,7 +354,7 @@ $z-depth-1-label: 0 0 1px rgba(0, 0, 0, 0.26),
 // $tc:   optional text color for colored* types
 //
 
-@mixin button($t, $c: $light_bg, $tc: $fg) {
+@mixin button($t, $c: $base, $tc: $fg) {
   @if $t == normal {
     border-color: mix($tc, $c, percentage($a_div_1));
     background-color: $c;
@@ -478,7 +478,7 @@ $z-depth-1-label: 0 0 1px rgba(0, 0, 0, 0.26),
 // $tc:   optional text color for colored* types
 //
 
-@mixin combobutton($t, $c: $light_bg, $tc: $fg) {
+@mixin combobutton($t, $c: $base, $tc: $fg) {
   @if $t == normal {
     border: none;
     background-color: track($tc, $a_trk_1);

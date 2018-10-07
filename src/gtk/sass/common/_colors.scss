@@ -59,7 +59,6 @@ $bg: if($variant == dark,
 $base: if($variant == dark,
           mix(color($grey, 900), black),
           white);
-$light_bg: $base;
 $dark_bg: if($variant == dark,
              mix(color($grey, 900), black, percentage($a_trk_2)),
              mix(color($grey, 200), color($grey, 300)));
@@ -70,7 +69,6 @@ $dark_bg: if($variant == dark,
 
 $inv_bg: mix(color($grey, 900), black, percentage($a_fg_2nd));
 $inv_base: mix(color($grey, 900), black);
-$inv_light_bg: $inv_base;
 $inv_dark_bg: mix(color($grey, 900), black, percentage($a_trk_2));
 
 //
@@ -172,6 +170,14 @@ $info_bg: color($teal, $secondary_level - 100);
 $ques_bg: color($yellow, $secondary_level - 100);
 $warn_bg: color($orange, $secondary_level - 100);
 $err_bg: $err;
+
+//
+// Tooltip background color
+//
+
+$tooltip_bg: if($variant == dark, color($grey, 800),
+                                  color($grey, 400));
+$inv_tooltip_bg: color($grey, 800);
 
 //
 // Solid panel color

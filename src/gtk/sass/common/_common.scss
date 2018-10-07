@@ -637,16 +637,16 @@ entry {
 }
 
 %inv_entry {
-  @include entry(normal, $c: $inv_light_bg,
+  @include entry(normal, $c: $inv_base,
                          $tc: $inv_fg);
   caret-color: $inv_fg;
   &:focus {
-    @include entry(focus, $c: $inv_light_bg,
+    @include entry(focus, $c: $inv_base,
                           $tc: $inv_fg);
   caret-color: $inv_fg;
   }
   &:disabled {
-    @include entry(disabled, $c: $inv_light_bg,
+    @include entry(disabled, $c: $inv_base,
                              $tc: $inv_fg);
   }
 
@@ -676,7 +676,7 @@ button {
 
   // active state for non-native apps
   &:active {
-    background-color: mix($fg, $light_bg, percentage($a_trk_2));
+    background-color: mix($fg, $base, percentage($a_trk_2));
   }
 
   // active state for native apps
@@ -1354,27 +1354,27 @@ buttonbox {
 }
 
 %inv_button {
-  @include button(normal, $c: $inv_light_bg,
+  @include button(normal, $c: $inv_base,
                           $tc: $inv_fg);
   @include ink-reaction(
              normal, $fc: $inv_fg, $tr: ink-normal-dec);
   &:hover {
-    @include button(hover, $c: $inv_light_bg,
+    @include button(hover, $c: $inv_base,
                            $tc: $inv_fg);
   }
   &:active {
-    @include button(active, $c: $inv_light_bg,
+    @include button(active, $c: $inv_base,
                             $tc: $inv_fg);
     @include ink-reaction(
                active-dec, $fc: $inv_fg, $tr: ink-active-dec);
   }
   &:disabled {
-    @include button(disabled, $c: $inv_light_bg,
+    @include button(disabled, $c: $inv_base,
                               $tc: $inv_fg);
   }
   &:checked { @include button(checked, $tc: $sel_fg); }
   &:checked:disabled {
-    @include button(checked-disabled, $c: $inv_light_bg,
+    @include button(checked-disabled, $c: $inv_base,
                                       $tc: $inv_fg);
   }
 }
@@ -5133,10 +5133,10 @@ tooltip {
       // even if alpha-value was 0.1%, so real backgrounds are drawn with
       // background-image property instead.
       background-color: track($base, 0.001);
-      background-image: image(track($inv_dark_bg, ($a_osd + 0.001)));
+      background-image: image(track($inv_tooltip_bg, ($a_osd + 0.001)));
     }
     @else {
-      background-color: track($dark_bg, $a_osd);
+      background-color: track($tooltip_bg, $a_osd);
     }
   }
 
@@ -5164,8 +5164,8 @@ tooltip {
 
 .tooltip:not(tooltip) {
   // FIXME: This should be purged! Only for ancient Marco.
-  background-color: if($variant == mixed, track($inv_dark_bg, $a_osd),
-                                          track($dark_bg, $a_osd));
+  background-color: if($variant == mixed, track($inv_tooltip_bg, $a_osd),
+                                          track($tooltip_bg, $a_osd));
 
   > label { // for Marco
       color: if($variant == mixed, $inv_fg, $fg);
