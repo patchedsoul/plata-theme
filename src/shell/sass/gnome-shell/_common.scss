@@ -849,13 +849,12 @@ $extra_spacing: 2.5px;
 
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
-  -arrow-border-radius: $r_2;
+  -arrow-border-radius: $icon_size * 1.5; // affects boxpointer placement
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 48px; // 'popup-menu-arrow' base * 3
+  -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: $empty_shadow; // dreaming. bug #689995
-  margin: 0.1em 0.3em 0.5em;
   border-radius: $r_4;
   border: 1px solid $div_sld_fg;
   box-shadow: $z-depth-3;
