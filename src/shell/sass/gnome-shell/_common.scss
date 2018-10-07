@@ -2703,34 +2703,47 @@ $provider_icon_size: 32px; // for < 3.25
 }
 
 .page-indicator {
-  padding: 14px 20px;
+  padding: $icon_size $icon_size * 1.5;
 
   .page-indicator-icon {
-    width: 12px;
-    height: 12px;
+    width: $icon_size - 2px;
+    height: $icon_size - 2px;
     margin: 2px;
     padding: 0;
-    border-radius: 12px;
+    border-radius: $r;
     background-image: none;
-    background-color: $ovv_out_fg;
+    background-color: $hidden_fill_bg;
+    box-shadow: inset 0 0 0 2px $ovv_ter_fg;
   }
   &:hover .page-indicator-icon {
     margin: 0;
     padding: 2px;
     background-image: none;
-    background-color: $ovv_fill_bg;
+    background-color: $hidden_fill_bg;
+    box-shadow: inset 0 0 0 2px $ovv_fg;
   }
   &:active .page-indicator-icon {
     margin: 2px;
     padding: 0;
     background-image: none;
     background-color: opacity($sel_bg, $a_fg_2nd);
+    box-shadow: $empty_shadow;
   }
   &:checked .page-indicator-icon {
     margin: 0;
     padding: 2px;
     background-image: none;
     background-color: $sel_bg;
+    box-shadow: $empty_shadow;
+  }
+  &:checked:hover .page-indicator-icon {
+    margin: 0;
+    padding: 2px;
+    background-image: none;
+    background-color: mix($sel_bg, $sel_fg, percentage($a_fg_2nd));
+    box-shadow: 0 0 0 ($icon_size / 2)
+                opacity(mix($sel_bg, $sel_fg, percentage($a_fg_2nd)),
+                        $a_trk_out);
   }
 }
 
