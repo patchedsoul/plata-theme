@@ -4113,4 +4113,7 @@ window#GeanyMainWindow {
       }
     }
   }
+
+  // stock CSS gets in our way
+  button#geany-close-tab-button { @include radius($r_2, none); }
 }
