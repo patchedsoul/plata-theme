@@ -2524,36 +2524,47 @@ $provider_icon_size: 32px; // for < 3.25
 
 .app-view-controls { // favorites | all toggle container
   width: if($ref_weight >= 1.0, 400px, 340px);
-  padding-bottom: if($ref_weight >= 1.0, 24px, 18px);
+  margin-bottom: if($ref_weight >= 1.0, 24px, 18px);
+  border-radius: $r;
   background-color: $hidden_fill_bg !important;
-  box-shadow: inset 0 1px $ovv_out_fg;
+  box-shadow: $empty_shadow;
 }
 
 .app-view-control { // favorites | all toggle button
   padding: if($ref_weight >= 1.0, 7px 32px 8px, 5px 32px 6px);
-  border-radius: 0;
-  font-weight: 500;
+  border-radius: $r;
   color: $ovv_sec_fg;
   background-color: $hidden_fill_bg !important;
+  box-shadow: inset 0 0 0 1px $ovv_out_fg;
+  font-weight: 500;
+  &:ltr {
+    &:first-child { margin-right: 6px; }
+    &:last-child { margin-left: 6px; }
+  }
+  &:rtl {
+    &:first-child { margin-left: 6px; }
+    &:last-child { margin-right: 6px; }
+  }
+
   &:hover {
     color: $ovv_fg;
     background-color: $ovv_semi_fill_bg !important;
-    box-shadow: inset 0 2px $ovv_out_fg;
+    box-shadow: $empty_shadow;
   }
   &:active {
     color: $ovv_fg;
     background-color: $ovv_fill_bg !important;
-    box-shadow: inset 0 2px $sel_bg;
+    box-shadow: $empty_shadow;
   }
   &:checked {
-    color: $ovv_sel_label;
-    background-color: $hidden_fill_bg !important;
-    box-shadow: inset 0 2px $sel_bg;
+    color: $sel_fg;
+    background-color: $sel_bg !important;
+    box-shadow: $empty_shadow;
   }
   &:hover:checked {
-    color: $ovv_sel_label;
-    background-color: opacity($ovv_sel_label, $a_trk_1) !important;
-    box-shadow: inset 0 2px $sel_bg;
+    color: $sel_fg;
+    background-color: mix($sel_bg, $sel_fg, percentage($a_fg_2nd)) !important;
+    box-shadow: $empty_shadow;
   }
 }
 
