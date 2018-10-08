@@ -223,13 +223,13 @@ StScrollBar {
 //  *********/
 
 .shell-link {
-  border-radius: 2px;
-  color: $link_fg;
+  border-radius: $r_2;
+  color: $osd_link_fg;
   &:hover {
-    @include button(flat-hover, $tc: $link_fg);
+    @include button(flat-hover, $tc: $osd_link_fg);
   }
   &:active {
-    @include button(flat-active, $tc: $link_fg);
+    @include button(flat-active, $tc: $osd_link_fg);
   }
 }
 
@@ -3703,19 +3703,27 @@ $tool_icon_size: 24px;
 
 #LookingGlassDialog {
   spacing: 4px;
-  padding: 0;
+  padding: 4px;
   border: none;
-  border-radius: 0 0 $r_8 $r_8;
+  border-radius: $r_8; // affects small OSD while inspecting
   background-color: opacity($osd_bg, $a_osd);
   color: $osd_fg;
   box-shadow: $z-depth-4;
+
+  &.lg-dialog {
+    padding: 0;
+    border-radius: 0 0 $r_8 $r_8; // shape bottom-only radius for main window
+  }
 
   > #Toolbar {
     padding: if($ref_weight >= 1.0, 0 8px, 0 6px);
     border: none;
     border-radius: 0;
-    background: $hidden_fill_bg;
-    box-shadow: inset 0 -1px $div_sld_fg;
+    background-color: $hidden_fill_bg;
+    box-shadow:
+      inset 0 -1px if($variant != light,
+                      mix(white, $osd_bg, percentage($a_div_2)),
+                      mix(black, $dark_bg, percentage($a_div_1)));
 
     > StIcon { // 'color-picker' and 'trash'
       // base-line shift
@@ -3746,7 +3754,11 @@ $tool_icon_size: 24px;
       border-bottom-width: 0;
       border-color: transparent;
       background-color: $hidden_fill_bg;
-      color: $sel_label;
+      color:
+        if($variant != light,
+           saturate(lighten($sel_bg, percentage($a_trk_2)),
+             percentage($a_trk_2)),
+           $sel_bg);
       box-shadow: inset 0 -2px $sel_bg;
       text-shadow: none;
       transition-duration: $tr_d_std;
@@ -3755,12 +3767,11 @@ $tool_icon_size: 24px;
     StLabel { padding-bottom: 0.1em; }
   }
 
-  StBoxLayout#EvalBox {
+  StBoxLayout#EvalBox,
+  StBoxLayout#ResultsArea {
     padding: 4px;
     spacing: 4px;
   }
-
-  StBoxLayout#ResultsArea { spacing: 4px; }
 }
 
 .lg-dialog {
@@ -3771,11 +3782,6 @@ $tool_icon_size: 24px;
     &:hover { @include entry(hover, $tc: $osd_fg); }
     &:focus { @include entry(focus, $tc: $osd_fg); }
     &:insensitive { @include entry(disabled, $tc: $osd_fg); }
-  }
-
-  .shell-link {
-    color: $link_fg;
-    &:hover { color: $link_fg; }
   }
 }
 
@@ -3822,17 +3828,11 @@ $tool_icon_size: 24px;
 
 #LookingGlassPropertyInspector {
   padding: 6px;
-  border: 1px solid $div_fg;
-  background: $osd_bg;
+  border: 1px solid if($variant != light,
+                       mix(white, $osd_bg, percentage($a_div_2)),
+                       $div_sld_fg);
+  border-radius: 0;
+  background-color: $osd_bg;
   color: $osd_fg;
   box-shadow: $empty_shadow;
-  // scroll-bar is included in the parent ScrollView widget
-  &:ltr {
-    border-radius: $r_2 0 0 $r_2;
-    border-left-color: transparent;
-  }
-  &:rtl {
-    border-radius: 0 $r_2 $r_2 0;
-    border-right-color: transparent;
-  }
 }

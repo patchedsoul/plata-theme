@@ -135,6 +135,10 @@ $link_vst_fg: if($variant == dark,
                  saturate(lighten($link_vst, percentage($a_trk_2)),
                    percentage($a_trk_2)),
                  $link_vst);
+$osd_link_fg: if($variant != light,
+                 saturate(lighten($link, percentage($a_trk_1)),
+                   percentage($a_trk_1)),
+                 $link);
 
 $warn: color($orange, $primary_level);
 $err: color($red, $primary_level);
