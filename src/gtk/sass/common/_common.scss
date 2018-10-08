@@ -3462,12 +3462,12 @@ switch {
   }
   &:checked {
     background-image: -gtk-scaled(
-                      url("assets/toggle-on#{$asset_suffix}.png"),
-                      url("assets/toggle-on#{$asset_suffix}@2.png"));
+                      url("assets/toggle-on.png"),
+                      url("assets/toggle-on@2.png"));
     &:hover {
       background-image: -gtk-scaled(
-                        url("assets/toggle-on-hover#{$asset_suffix}.png"),
-                        url("assets/toggle-on-hover#{$asset_suffix}@2.png"));
+                        url("assets/toggle-on-hover.png"),
+                        url("assets/toggle-on-hover@2.png"));
     }
     &:disabled,
     &:disabled:hover {
@@ -3497,12 +3497,12 @@ switch {
   }
   &:checked {
     background-image: -gtk-scaled(
-                      url("assets/toggle-on-dark.png"),
-                      url("assets/toggle-on-dark@2.png"));
+                      url("assets/toggle-on.png"),
+                      url("assets/toggle-on@2.png"));
     &:hover {
       background-image: -gtk-scaled(
-                        url("assets/toggle-on-hover-dark.png"),
-                        url("assets/toggle-on-hover-dark@2.png"));
+                        url("assets/toggle-on-hover.png"),
+                        url("assets/toggle-on-hover@2.png"));
     }
     &:disabled,
     &:disabled:hover {
