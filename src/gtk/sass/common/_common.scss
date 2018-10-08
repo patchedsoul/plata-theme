@@ -3795,13 +3795,13 @@ scale {
                      (':active', '-active'),
                      (':disabled', '-insensitive') {
       &#{$s} {
-        $_url: 'assets/slider#{$as}#{$asset_suffix}';
+        $_url: 'assets/slider#{$as}';
         background-image: -gtk-scaled(url('#{$_url}.png'),
                                       url('#{$_url}@2.png'));
         background-size: $scale;
 
         @if $s == ':hover' {
-          $_url: 'assets/slider#{$as}#{$asset_suffix}';
+          $_url: 'assets/slider#{$as}';
           background-image: -gtk-scaled(url('#{$_url}.png'),
                                         url('#{$_url}@2.png')),
                             -gtk-scaled(url('#{$_url}.png'),
@@ -3810,6 +3810,11 @@ scale {
         }
         @if $s == ':active' {
           background-size: 100% 100%;
+        }
+        @if $s == ':disabled' {
+          $_url: 'assets/slider#{$as}#{$asset_suffix}';
+          background-image: -gtk-scaled(url('#{$_url}.png'),
+                                        url('#{$_url}@2.png'));
         }
       }
     }
@@ -3973,12 +3978,12 @@ scale { // marks color
                         (':disabled','-insensitive') {
           &#{$s} {
             @extend %#{$we}_#{$dn}; // negative margin makes trough shrinking
-            $_url: 'assets/slider-#{$dn}-#{$w}#{$as}#{$asset_suffix}';
+            $_url: 'assets/slider-#{$dn}-#{$w}#{$as}';
             background-image: -gtk-scaled(url('#{$_url}.png'),
                                           url('#{$_url}@2.png'));
 
             @if $s == ':hover' {
-              $_url: 'assets/slider-#{$dn}-#{$w}#{$asset_suffix}';
+              $_url: 'assets/slider-#{$dn}-#{$w}';
               background-image: -gtk-scaled(url('#{$_url}.png'),
                                             url('#{$_url}@2.png')),
                                 -gtk-scaled(url('#{$_url}.png'),
@@ -3986,6 +3991,11 @@ scale { // marks color
               background-size: $scale, 100% 100%;
             }
             @if $s == ':active' { background-size: 100% 100%; }
+            @if $s == ':disabled' {
+              $_url: 'assets/slider-#{$dn}-#{$w}#{$as}#{$asset_suffix}';
+              background-image: -gtk-scaled(url('#{$_url}.png'),
+                                            url('#{$_url}@2.png'));
+            }
           }
         }
       }

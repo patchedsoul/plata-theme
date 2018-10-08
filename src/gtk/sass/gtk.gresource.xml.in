@@ -117,18 +117,10 @@
     <file>assets/radio-unchecked-selected.png</file>
     <file>assets/slider@2.png</file>
     <file>assets/slider-active@2.png</file>
-    <file>assets/slider-active-dark@2.png</file>
-    <file>assets/slider-active-dark.png</file>
     <file>assets/slider-active.png</file>
-    <file>assets/slider-dark@2.png</file>
-    <file>assets/slider-dark.png</file>
     <file>assets/slider-horz-scale-has-marks-above@2.png</file>
     <file>assets/slider-horz-scale-has-marks-above-active@2.png</file>
-    <file>assets/slider-horz-scale-has-marks-above-active-dark@2.png</file>
-    <file>assets/slider-horz-scale-has-marks-above-active-dark.png</file>
     <file>assets/slider-horz-scale-has-marks-above-active.png</file>
-    <file>assets/slider-horz-scale-has-marks-above-dark@2.png</file>
-    <file>assets/slider-horz-scale-has-marks-above-dark.png</file>
     <file>assets/slider-horz-scale-has-marks-above-insensitive@2.png</file>
     <file>assets/slider-horz-scale-has-marks-above-insensitive-dark@2.png</file>
     <file>assets/slider-horz-scale-has-marks-above-insensitive-dark.png</file>
@@ -136,11 +128,7 @@
     <file>assets/slider-horz-scale-has-marks-above.png</file>
     <file>assets/slider-horz-scale-has-marks-below@2.png</file>
     <file>assets/slider-horz-scale-has-marks-below-active@2.png</file>
-    <file>assets/slider-horz-scale-has-marks-below-active-dark@2.png</file>
-    <file>assets/slider-horz-scale-has-marks-below-active-dark.png</file>
     <file>assets/slider-horz-scale-has-marks-below-active.png</file>
-    <file>assets/slider-horz-scale-has-marks-below-dark@2.png</file>
-    <file>assets/slider-horz-scale-has-marks-below-dark.png</file>
     <file>assets/slider-horz-scale-has-marks-below-insensitive@2.png</file>
     <file>assets/slider-horz-scale-has-marks-below-insensitive-dark@2.png</file>
     <file>assets/slider-horz-scale-has-marks-below-insensitive-dark.png</file>
@@ -153,11 +141,7 @@
     <file>assets/slider.png</file>
     <file>assets/slider-vert-scale-has-marks-above@2.png</file>
     <file>assets/slider-vert-scale-has-marks-above-active@2.png</file>
-    <file>assets/slider-vert-scale-has-marks-above-active-dark@2.png</file>
-    <file>assets/slider-vert-scale-has-marks-above-active-dark.png</file>
     <file>assets/slider-vert-scale-has-marks-above-active.png</file>
-    <file>assets/slider-vert-scale-has-marks-above-dark@2.png</file>
-    <file>assets/slider-vert-scale-has-marks-above-dark.png</file>
     <file>assets/slider-vert-scale-has-marks-above-insensitive@2.png</file>
     <file>assets/slider-vert-scale-has-marks-above-insensitive-dark@2.png</file>
     <file>assets/slider-vert-scale-has-marks-above-insensitive-dark.png</file>
@@ -165,11 +149,7 @@
     <file>assets/slider-vert-scale-has-marks-above.png</file>
     <file>assets/slider-vert-scale-has-marks-below@2.png</file>
     <file>assets/slider-vert-scale-has-marks-below-active@2.png</file>
-    <file>assets/slider-vert-scale-has-marks-below-active-dark@2.png</file>
-    <file>assets/slider-vert-scale-has-marks-below-active-dark.png</file>
     <file>assets/slider-vert-scale-has-marks-below-active.png</file>
-    <file>assets/slider-vert-scale-has-marks-below-dark@2.png</file>
-    <file>assets/slider-vert-scale-has-marks-below-dark.png</file>
     <file>assets/slider-vert-scale-has-marks-below-insensitive@2.png</file>
     <file>assets/slider-vert-scale-has-marks-below-insensitive-dark@2.png</file>
     <file>assets/slider-vert-scale-has-marks-below-insensitive-dark.png</file>
