@@ -2353,7 +2353,7 @@ dialog.background.csd {
 
       > .item {
         @if $maj_ver == 3 {
-          @if $mnr_ver < 23 { margin: (-$toolbar_padding) 0; }
+          @if $mnr_ver < 21 { margin: (-$toolbar_padding) 0; }
           @else { margin: 0; }
         }
         @else { margin: 0; }
