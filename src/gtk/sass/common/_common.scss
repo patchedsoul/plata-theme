@@ -5347,8 +5347,9 @@ button.flat.scale { // standalone Speaker/Mic buttons
   padding: 0;
   border: 1px solid transparent;
   border-radius: 0;
-  color: if($variant == light, $sec_fg, $inv_sec_fg);
-  background-color: if($variant == light, $dark_bg, $inv_dark_bg);
+  color: if($variant == mixed, $inv_fg, $fg);
+  background-color: if($variant == mixed, $inv_tooltip_bg,
+                                          $tooltip_bg);
   font-size: 90%;
 
   label { min-height: rem($icon_size * 1.75); }
