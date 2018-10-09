@@ -4428,24 +4428,24 @@ row:selected { // buttons inside the selected-row
 
 .app-notification {
   @extend %app_slider;
-  @if $variant == light {
-    background-color: track($dark_bg, $a_osd);
-    color: $fg;
+  @if $variant == mixed {
+    background-color: track($inv_tooltip_bg, $a_osd);
+    color: $inv_fg;
   }
   @else {
-    background-color: track($inv_dark_bg, $a_osd);
-    color: $inv_fg;
+    background-color: track($tooltip_bg, $a_osd);
+    color: $fg;
   }
 
   box.vertical {
     > label {
       &#summary {
-        color: $fg;
+        color: if($variant == mixed, $inv_fg, $fg);
         font-weight: 700;
       }
 
       &#body {
-        color: $sec_fg;
+        color: if($variant == mixed, $inv_sec_fg, $sec_fg);
       }
     }
   }
