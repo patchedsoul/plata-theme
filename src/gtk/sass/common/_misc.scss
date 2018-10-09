@@ -1307,7 +1307,7 @@ window.background {
 .gedit-bottom-panel-paned {
   .gedit-search-slider {
     @extend %app_slider;
-    background-color: track($dark_bg, $a_osd);
+    background-color: track($tooltip_bg, $a_osd);
     color: $fg;
   }
 }
