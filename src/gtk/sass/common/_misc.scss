@@ -195,6 +195,13 @@ gp-applet > separator {
 //  * Gnome Tweaks *
 //  ****************/
 
+headerbar.titlebar.tweak-titlebar {
+  &-left,
+  &-right { // unset baseline correction
+    > label.title { margin-bottom: 0; }
+  }
+}
+
 // sidebar
 .tweak-categories {
   @extend %sidebar_template;
