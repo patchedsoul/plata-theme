@@ -3628,12 +3628,6 @@ headerbar > box.horizontal.linked {
   }
 }
 
-headerbar.titlebar > stack {
-  > widget > label.title { // stack title
-    margin-bottom: rem(5.3px - 1.3px);
-  }
-}
-
 // left-side revealer
 window.background > overlay > revealer { // parent container
   @each $_position, $_side_margin in (left, right),
