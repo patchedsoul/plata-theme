@@ -67,6 +67,8 @@
   box-shadow: none; // unset standard wnck styling
   @include ink-reaction(normal, $tr: ink-normal-dec);
 
+  label { margin-bottom: 0; } // unset baseline
+
   image {
     min-width: 0;
     min-height: $icon_size * 1.5;
@@ -2346,6 +2348,8 @@ window.background:not(.csd) > box.vertical {
       box-shadow: inset 0 -2px $sel_bg;
     }
 
+    label { margin-bottom: 0; } // unset baseline
+
     &#launcher-arrow { // launcher applet
       // FIXME: quite weird pseudo-class transitions, especially :hover
       // state can't be cleared properly ( -> an upstream issue)
@@ -2862,6 +2866,8 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
     &:hover { box-shadow: inset 2px 0 $trk_out_fg; }
     &:checked,
     &:hover:checked { box-shadow: inset 2px 0 $sel_bg; }
+
+    label { margin-bottom: 0; } // unset baseline
   }
 
   #clock-applet-button label { padding: rem(4px * 1.5, $sw: 1.0) 0; }
@@ -2893,6 +2899,8 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
         @include button(flat-lined-checked, $tc: black);
       }
     }
+
+    label { margin-bottom: 0; } // unset baseline
   }
 
   // vertical panel mode?
@@ -3866,6 +3874,8 @@ button.flat.-panel-button { // generic panel buttons
     }
   }
 
+  label { margin-bottom: 0; } // unset baseline
+
   box.vertical & {
     &:checked { box-shadow: inset 2px 0 $sel_bg; }
   }
@@ -4050,7 +4060,6 @@ window#live_installer {
   }
 }
 
-
 // /*********
 //  * Pamac *
 //  *********/
@@ -4075,7 +4084,6 @@ box.vertical > stack > box > revealer > stack > scrolledwindow {
     }
   }
 }
-
 
 // /*********
 //  * Geany *

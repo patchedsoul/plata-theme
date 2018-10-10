@@ -125,6 +125,8 @@ gp-applet menubar > menuitem {
       &:hover:checked { box-shadow: inset #{$_line} $sel_bg; }
     }
   }
+
+  label { margin-bottom: 0; } // unset baseline
 }
 
 #tasklist-button {
