@@ -2233,7 +2233,8 @@ headerbar {
   spinbutton,
   scale { margin: $toolbar_padding 0; }
 
-  > box.vertical {
+  > box.vertical,
+  > stack > box.vertical {
     > .title { margin: 0; }
 
     > .subtitle { margin: rem(-$baseline * 2) 0; }
