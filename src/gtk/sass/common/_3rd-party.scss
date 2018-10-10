@@ -3408,6 +3408,15 @@ box#InkSpinScale { // >= 0.92+
   }
 }
 
+box#DockBox > paned#DockBoxPane {
+  // dock control buttons have 8px * 8px child widget?
+  widget#GdlDock paned widget > widget > button.flat {
+    min-width: $icon_size;
+    min-height: $icon_size;
+    padding: $icon_size / 4;
+  }
+}
+
 // /**************
 //  * Emacs24/25 *
 //  **************/
