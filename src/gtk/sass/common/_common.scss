@@ -904,7 +904,7 @@ button {
         &:hover {
           background-color:
             if($variant == light,
-               track(mix($dark_bg, $fg, percentage($a_fg_2nd)),
+               track(mix($dark_bg, $acc_fg, percentage($a_fg_2nd)),
                      $a_osd),
                track(mix($inv_dark_bg, $acc_fg, percentage($a_fg_2nd)),
                      $a_osd));
@@ -923,7 +923,7 @@ button {
           &:hover {
             background-color:
               if($variant == light,
-                 track(mix($dark_bg, $fg, percentage($a_fg_2nd)),
+                 track(mix($dark_bg, $acc_fg, percentage($a_fg_2nd)),
                        $a_osd),
                  track(mix($inv_dark_bg, $acc_fg, percentage($a_fg_2nd)),
                        $a_osd));
