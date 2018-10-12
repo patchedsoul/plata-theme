@@ -862,13 +862,30 @@ button {
       &, &.flat {
         min-height: rem($widget_size);
         min-width: rem($widget_size);
-        @include button(flat-normal, $tc: $inv_sec_acc_fg);
+        @include button(flat-normal, $tc: $inv_acc_fg);
         &:hover { @include button(flat-hover, $tc: $inv_acc_fg); }
         &:active { @include button(flat-active, $tc: $inv_acc_fg); }
         &:disabled { @include button(flat-disabled, $tc: $inv_fg); }
         &:checked { @include button(flat-checked, $tc: $inv_acc_fg); }
         &:checked:disabled {
           @include button(flat-checked-disabled, $tc: $inv_acc_fg);
+        }
+      }
+    }
+  }
+  @else {
+    &.osd,
+    .osd & {
+      &, &.flat {
+        min-height: rem($widget_size);
+        min-width: rem($widget_size);
+        @include button(flat-normal, $tc: $acc_fg);
+        &:hover { @include button(flat-hover, $tc: $acc_fg); }
+        &:active { @include button(flat-active, $tc: $acc_fg); }
+        &:disabled { @include button(flat-disabled, $tc: $fg); }
+        &:checked { @include button(flat-checked, $tc: $acc_fg); }
+        &:checked:disabled {
+          @include button(flat-checked-disabled, $tc: $acc_fg);
         }
       }
     }
