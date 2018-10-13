@@ -2352,7 +2352,7 @@ window:not(.maximized):not(.fullscreen):not(.tiled):not(.solid-csd) {
 
 @if $maj_ver == 4 {
   // Development versions of apps to use a differently styled headerbar
-  headerbar {
+  headerbar:last-child {
     window.devel & {
       @if $variant == light {
         background-image: linear-gradient(to bottom,
