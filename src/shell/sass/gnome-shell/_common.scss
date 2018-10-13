@@ -1985,13 +1985,15 @@ $extra_spacing: 2.5px;
 //  * Close Buttons *
 //  *****************/
 
+$cose_button_size: 32px;
+
 .window-close {
-  height: 32px;
-  width: 32px;
-  -shell-close-overlap: 24px;
+  width: $cose_button_size;
+  height: $cose_button_size;
+  -shell-close-overlap: $cose_button_size * 0.75;
   -st-background-image-shadow: $z-depth-1;
   @include image-loader($url: 'assets/window-close.svg');
-  background-size: 32px;
+  background-size: $cose_button_size;
   &:hover {
     @include image-loader($url: 'assets/window-close-hover.svg');
     -st-background-image-shadow: $z-depth-2;
@@ -3795,14 +3797,24 @@ $tool_icon_size: 24px;
   &-title { spacing: 4px; }
 
   &-button {
-    padding: 4px;
+    height: $cose_button_size - 1px; // subtract bottom-padding
+    padding: 0 16px 1px;
     border-radius: $r_2;
     font-weight: 500;
-    @include button(raised-normal, $c: $sggt_bg, $tc: $sel_fg);
-    &:hover,
-    &:focus { @include button(raised-hover, $c: $sggt_bg, $tc: $sel_fg); }
-    &:active { @include button(raised-active); }
-    &:insensitive { @include button(flat-disabled, $tc: $sel_fg); }
+    @if $variant == mixed {
+      @include button(flat-normal, $tc: $inv_acc_fg);
+      &:hover { @include button(flat-hover, $tc: $inv_acc_fg); }
+      &:focus { @include button(flat-focus, $tc: $inv_acc_fg); }
+      &:active { @include button(flat-active, $tc: $inv_acc_fg); }
+      &:insensitive { @include button(flat-disabled, $tc: $osd_fg); }
+    }
+    @else {
+      @include button(flat-normal, $tc: $acc_fg);
+      &:hover { @include button(flat-hover, $tc: $acc_fg); }
+      &:focus { @include button(flat-focus, $tc: $acc_fg); }
+      &:active { @include button(flat-active, $tc: $acc_fg); }
+      &:insensitive { @include button(flat-disabled, $tc: $osd_fg); }
+    }
   }
 }
 
@@ -3835,4 +3847,9 @@ $tool_icon_size: 24px;
   background-color: $osd_bg;
   color: $osd_fg;
   box-shadow: $empty_shadow;
+
+  StButton.window-close {
+    // unset drop-shadows
+    &, &:hover { -st-background-image-shadow: $empty_shadow; }
+  }
 }
