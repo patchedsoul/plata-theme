@@ -3633,15 +3633,28 @@ headerbar > box.horizontal.linked {
   > button.toggle.session-sidebar-button { // left-most revealer button
     > box { // reduce the gap between label and image
       > label {
-        &:dir(ltr) { padding: 0 rem(1.3px) 0 rem(4px); }
-        &:dir(rtl) { padding: 0 rem(4px) 0 rem(1.3px); }
+        &:dir(ltr) {
+          padding: 0 rem(1.3px) 0 rem($txt_button_lr_space / 2);
+        }
+        &:dir(rtl) {
+          padding: 0 rem($txt_button_lr_space / 2) 0 rem(1.3px);
+        }
       }
 
       > image { // down-arrow
-        &:dir(ltr) { padding: 0 rem(4px) 0 rem(1.3px); }
-        &:dir(rtl) { padding: 0 rem(1.3px) 0 rem(4px); }
+        &:dir(ltr) {
+          padding: 0 rem($txt_button_lr_space / 2) 0 rem(1.3px);
+        }
+        &:dir(rtl) {
+          padding: 0 rem(1.3px) 0 rem($txt_button_lr_space / 2);
+        }
       }
     }
+  }
+
+  > button.image-button.session-new-button { // down-arrow button
+    // hard-coded 2px L/R padding
+    min-width: calc(#{rem($widget_size)} - (1px + 2px) * 2);
   }
 }
 
