@@ -312,12 +312,16 @@ entry {
   min-width: calc(#{rem($widget_size)} - 2px * 2);
   padding: 0 rem($entry_lr_space);
   border: 2px solid transparent; // initialize borders
-  @include radius($r, none);
+  @include radius($r_2, none);
   background-clip: border-box;
   @include transition(dec);
   @include entry(normal);
   &:focus { @include entry(focus); }
   &:disabled { @include entry(disabled); }
+
+  .background & {
+    @include radius($r, none);
+  }
 
   @at-root %flat_entry_sizing,
   toolbar *:not(.linked) &,
@@ -447,8 +451,12 @@ entry {
     }
     &:dir(ltr) {
       &:first-child {
-        @include radius($r 0 0 $r, none); 
+        @include radius($r_2 0 0 $r_2, none);
         @include linked-entry-outline($dir: ltr, $cld: first);
+
+        .background & {
+          @include radius($r 0 0 $r, none);
+        }
 
         @if $maj_ver == 4 {
           progress { @include radius($r 0 0 $r, none); }
@@ -460,8 +468,12 @@ entry {
         }
       }
       &:last-child {
-        @include radius(0 $r $r 0, none);
+        @include radius(0 $r_2 $r_2 0, none);
         @include linked-entry-outline($dir: ltr, $cld: last);
+
+        .background & {
+          @include radius(0 $r $r 0, none);
+        }
 
         @if $maj_ver == 4 {
           progress { @include radius(0 $r $r 0, none); }
@@ -475,8 +487,12 @@ entry {
     }
     &:dir(rtl) {
       &:first-child {
-        @include radius(0 $r $r 0, none);
+        @include radius(0 $r_2 $r_2 0, none);
         @include linked-entry-outline($dir: rtl, $cld: first);
+
+        .background & {
+          @include radius(0 $r $r 0, none);
+        }
 
         @if $maj_ver == 4 {
           progress { @include radius(0 $r $r 0, none); }
@@ -488,8 +504,12 @@ entry {
         }
       }
       &:last-child {
-        @include radius($r 0 0 $r, none);
+        @include radius($r_2 0 0 $r_2, none);
         @include linked-entry-outline($dir: rtl, $cld: last);
+
+        .background & {
+          @include radius($r 0 0 $r, none);
+        }
 
         @if $maj_ver == 4 {
           progress { @include radius($r 0 0 $r, none); }
@@ -509,12 +529,12 @@ entry {
       @include radius(0, none);
     }
     &:dir(ltr) {
-      &:first-child { @include radius($r-4 0 0 0, none); }
-      &:last-child { @include radius(0 $r-4 0 0, none); }
+      &:first-child { @include radius($r_4 0 0 0, none); }
+      &:last-child { @include radius(0 $r_4 0 0, none); }
     }
     &:dir(rtl) {
-      &:first-child { @include radius(0 $r-4 0 0, none); }
-      &:last-child { @include radius($r-4 0 0 0, none); }
+      &:first-child { @include radius(0 $r_4 0 0, none); }
+      &:last-child { @include radius($r_4 0 0 0, none); }
     }
   }
 
@@ -1792,8 +1812,20 @@ combobox {
 
 .linked.horizontal > entry.combo + button.combo { // fake combo entry+button
   &:last-child { // specificity bump
-    &:dir(ltr) { @include radius(0 $r $r 0); }
-    &:dir(rtl) { @include radius($r 0 0 $r); }
+    &:dir(ltr) {
+     @include radius(0 $r_2 $r_2 0);
+
+     .background & {
+       @include radius(0 $r $r 0);
+     }
+   }
+    &:dir(rtl) {
+      @include radius($r_2 0 0 $r_2);
+
+     .background & {
+        @include radius($r 0 0 $r);
+      }
+    }
   }
 
   toolitem & {
@@ -1807,8 +1839,20 @@ combobox {
 .linked.horizontal {
   > entry:not(.flat) + button { // non-combo entry + button
     &:not(.flat):last-child { // specificity bump
-      &:dir(ltr) { @include radius(0 $r $r 0); }
-      &:dir(rtl) { @include radius($r 0 0 $r); }
+      &:dir(ltr) {
+        @include radius(0 $r_2 $r_2 0);
+
+        .background & {
+          @include radius(0 $r $r 0);
+        }
+      }
+      &:dir(rtl) {
+        @include radius($r_2 0 0 $r_2);
+
+        .background & {
+          @include radius($r 0 0 $r);
+        }
+      }
     }
 
     + button:not(.flat):last-child { // search-entry + up/down buttons
