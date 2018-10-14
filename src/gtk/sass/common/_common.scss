@@ -2296,7 +2296,9 @@ headerbar {
 
   > box.vertical,
   > stack > box.vertical {
-    > .title { margin: 0; }
+    > .title {
+      margin: if($ref_weight < 1.0, rem(-$baseline * 2) 0, 0);
+    }
 
     > .subtitle { margin: rem(-$baseline * 2) 0; }
   }
