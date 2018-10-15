@@ -1,4 +1,4 @@
-<img src="https://gitlab.com/tista500/plata-theme-gitlab-resources/blob/master/images/logo_thumb_small.png" alt="Logo" align="left" /> Plata-theme
+<img src="data/logo_thumb_small.png" alt="Logo" align="left" /> Plata-theme
 ======
 
 A Gtk+ theme based on Material Design Refresh.
@@ -13,11 +13,10 @@ Plata strongly depends on Material Design resources, especially its **fonts**.
    - Multilingual support is not good.
    - Weight used in Plata: 300, 400, 500, 700
 
-| |Primary|Secondary|Fallback|
-|:-----:|:-----:|:-----:|:-----:|
-|Gnome-Shell >= 3.26|**Roboto**||Sans-serif|
-|Gnome-Shell =< 3.24|**Roboto**||Sans-serif|
-|Cinnamon           |**Roboto**||Sans-serif|
+| |Primary|Fallback|
+|:-----:|:-----:|:-----:|
+|Gnome-Shell|**Roboto**|Sans-serif|
+|Cinnamon   |**Roboto**|Sans-serif|
 
 Plata is designed with nominal **13px (or 14px)** Roboto Regular font.
 In Gnome, "window-scaling-factor = 1.0" means `-gtk-dpi = 96`, it also means:
