@@ -184,12 +184,14 @@
               if($variant == light,
               $sel_bg,
               mix($sel_bg, $sel_fg, percentage(1 - $a_trk_out)))};
+
 // focused window 'line'
-@define-color budgie_tasklist_indicator_color_active #{"" +
-              $sel_bg};
+@define-color budgie_tasklist_indicator_color_active #{"" + $sel_bg};
+
 // group-ed and unfocused window 'line(s)'
 @define-color budgie_tasklist_indicator_color_active_window #{"" +
               mix($sel_bg, $panel_bg, percentage($a_fg_3rd))};
+
 // attention 'dot'
 // FIXME: we can't fill whole widget backgrounds with our suggestion color
 //        because of lacking specific style-class on 'needs_attention' state,

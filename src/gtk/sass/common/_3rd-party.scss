@@ -259,10 +259,11 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
   }
 }
 
-@each $position, $_line in (top, 0 3px),
-                           (bottom, 0 -3px),
-                           (left, 3px 0),
-                           (right, -3px 0) {
+@each $position, $_line, $_bg_p, $_bg_s in
+(top, 0 3px, bottom, '100% calc(100% - 3px)'),
+(bottom, 0 -3px, top, '100% calc(100% - 3px)'),
+(left, 3px 0, right, 'calc(100% - 3px) 100%'),
+(right, -3px 0, left, 'calc(100% - 3px) 100%') {
   .#{$position} {
     box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
       &:not(:checked):hover {
@@ -272,8 +273,25 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
         @else {
           box-shadow: inset #{$_line} track($fg, $a_fg_bdp);
         }
-        &.running {
-          box-shadow: inset #{$_line} $sel_bg;
+
+        &.running { box-shadow: inset #{$_line} $sel_bg; }
+      }
+      &:checked {
+        // unset default backgrounds before starting -image property
+        &, &:hover { background-color: transparent; }
+
+        // FIXME: background-color is drawn 'above' its line-indicators,
+        // it means we need to avoid those regions when filling backgrounds.
+        image {
+          background-position: #{$_bg_p};
+          background-size: #{$_bg_s};
+          background-repeat: no-repeat;
+          @if $variant == mixed {
+            background-image: image(track($inv_fg, $a_trk_1));
+          }
+          @else {
+            background-image: image(track($fg, $a_trk_1));
+          }
         }
       }
     }
