@@ -198,11 +198,11 @@ Extra Browser Support
 ---------------------
 To try our color samples for FirefoxColor test pilot, check these URLs:
 
-  1. [**Plata**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKliFvd9NUAF6ENY3kBjKL2oHo45$
+  1. [**Plata**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKliFvd9NUAF6ENY3kBjKL2oHo45W2-O_o0hH8v9jyb1gPLS8xyg320t5BtQBRbshC37eqwUpEtrNzUXzzCCGCEnPVujOpTgJBqePqVNh4q1nxYUIdLIFaoaGFtpU8UGWTHdYK89VREGS2_uycyNkLyT_fUsp3rt8085FMcIrk2zP6zlQ8nXHifYExWUlXde95kD4F3H_cvgAAA)
 
-  2. [**Plata-Lumine**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKliFvd9NUAF6ENY3kBjKL$
+  2. [**Plata-Lumine**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKliFvd9NUAF6ENY3kBjKL2oHo45W2-O_o0hH8v9jyb1gPLS8xyg3NbO0xf8CWW1IQ-VFBeST-c2ya550Jq-AJT3qXk84PCZgv4Q1Ip6G8KMxah3hVdR8-Zr9ze0kGqgOtR7bn1Nps1cYGNzQQkA8ajSLlQnjaMNzy_Cgfm6TGsTtSGCZPEHAaGevqPSrPV7L_8f2AAA)
 
-  3. [**Plata-Noir**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKlhR4U3ii01izoNSwV8Ez$
+  3. [**Plata-Noir**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKlhR4U3ii01izoNSwV8EzxA9i34l-h9kNzmmbht5egIz1VwqGu4asy3bC0Iu-fSfcIJAVAwKwUYrdnMCFPHjDRh3WIEk3D10l1b0yhJ2JJ4iidXrDdOeHtPXECgT4mWPRinIv4rInTDn_LmydH4PXIv_OPeKQZiffADmQZvxlSWtpsLQfUznQX8sEtOtxfBaEVM7_-LnUAA)
 
  > **Note:**
  >
