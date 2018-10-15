@@ -4,6 +4,8 @@
 
 A Gtk+ theme based on Material Design Refresh.
 
+----------------------------------------------
+
 Typography
 ----------
 
