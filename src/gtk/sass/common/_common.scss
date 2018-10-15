@@ -192,7 +192,7 @@ separator {
   menu > &,
   menuitem & { // dark variant specific
     @if $variant == dark {
-      background-color:  track(white, $a_div_2);
+      background-color: track(white, $a_div_2);
     }
   }
 }

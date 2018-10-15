@@ -360,7 +360,7 @@ window.budgie-popover:not(.csd) {
 
     separator.horizontal {
       @if $variant == dark {
-        background-color:  track(white, $a_div_2);
+        background-color: track(white, $a_div_2);
       }
     }
   }
