@@ -14,7 +14,7 @@ Plata strongly depends on Material Design resources, especially its **fonts**.
    - Weight used in Plata: 300, 400, 500, 700
 
 | |Primary|Fallback|
-|:-----:|:-----:|:-----:|
+|:-----|:-----:|:-----:|
 |Gnome-Shell|**Roboto**|Sans-serif|
 |Cinnamon   |**Roboto**|Sans-serif|
 
