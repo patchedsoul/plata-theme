@@ -1,5 +1,6 @@
-<img src="data/logo_thumb_small.png" alt="Logo" align="left" /> Plata-theme
-======
+<img src="data/logo_thumb_small.png" alt="Logo" align="left" />
+
+### Plata-theme
 
 A Gtk+ theme based on Material Design Refresh.
 
