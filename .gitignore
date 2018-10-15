@@ -49,6 +49,9 @@ cinnamon-noir/assets
 metacity-1/*.svg
 xfwm4/*.png
 openbox-3/*.xbm
+ColorDeck-light.cdk
+ColorDeck-dark.cdk
+inkscape.log
 aclocal.m4
 autom4te.cache
 config.log
@@ -58,6 +61,3 @@ install-sh
 Makefile
 Makefile.in
 missing
-inkscape.log
-ColorDeck-adapta.cdk
-ColorDeck-adapta-nokto.cdk
