@@ -196,6 +196,29 @@ GtkSourceView/Gedit Color Scheme Support
 
 Extra Browser Support
 ---------------------
+To try our color samples for FirefoxColor test pilot, check these URLs:
+
+  1. [**Plata**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKliFvd9NUAF6ENY3kBjKL2oHo45$
+
+  2. [**Plata-Lumine**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKliFvd9NUAF6ENY3kBjKL$
+
+  3. [**Plata-Noir**](https://mozilla.github.io/FirefoxColor/?theme=XQAAAAL8AAAAAAAAAABBKYhm849SCia2CaaEGccwS-xNKlhR4U3ii01izoNSwV8Ez$
+
+ > **Note:**
+ >
+ >   * We no longer support "Normal" UI layout in Chrome(ium). Use "Refresh" instead.
+ >
+ >   * Vivaldi can make custom themes via settings like these:
+ >     ```
+ >     Background: #F8F8F8 (#1D1D1D)
+ >     Foreground: #111111 (#F5F5F5)
+ >     Highlight:  #3F51B5
+ >     Accent:     #E7E7E7 (#080808)
+ >     Accent Color from Active Page: [ ]
+ >     Apply Accent Color to Window:  [*]
+ >     Transparent Tabs:              [*]
+ >     Corner Rounding:               2px
+ >     ```
 
 Extra Dock Support
 ------------------
