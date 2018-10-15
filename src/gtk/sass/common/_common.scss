@@ -4580,19 +4580,24 @@ expander {
 
 calendar {
   margin: rem($menuitem_padding) 0;
-  padding: rem($baseline * 2, $sw: 1.0) rem($baseline, $sw: 1.0) 0;
+  padding: if($ref_weight < 1.0, 4px 2px 0, 5px 3px 0);
   border: 1px solid $div_fg;
   color: $fg;
   font-weight: 500;
   &:selected {
-    @include radius($r_4, none);
-    background-color: $sel_bg;
+    background-image: image($sel_bg);
+    background-size: if($ref_weight < 1.0,
+                        calc(100% - 2px * 2) calc(100% - 4px),
+                        calc(100% - 3px * 2) calc(100% - 5px));
+    background-position: center top;
+    background-repeat: no-repeat;
     color: $sel_fg;
   }
 
   &.header {
     border: 1px solid transparent;
-    border-bottom-color: $div_fg;
+    border-bottom-color: if($variant == dark, track(white, $a_div_2),
+                                              $div_fg);
   }
 
   &.button,
