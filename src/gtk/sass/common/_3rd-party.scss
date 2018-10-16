@@ -2239,23 +2239,26 @@ window.background:not(.csd) > box.vertical {
     @include entry(flat-normal, $tc: $inv_fg);
     caret-color: $inv_fg;
     font-family: monospace;
-    &:focus {
-      @include entry(flat-focus, $tc: $inv_fg);
-    }
-    &:disabled {
-      @include entry(flat-disabled, $tc: $inv_fg);
+    &:focus { @include entry(flat-focus, $tc: $inv_fg); }
+    &:disabled { @include entry(flat-disabled, $tc: $inv_fg); }
+    &:backdrop { // for alt-text keyboard layout?
+      color: $sel_bg;
     }
 
     selection {
       &, &:focus { @extend %selected_items; }
     }
-    &:backdrop { // for alt-text keyboard layout?
-      color: $sel_bg;
-    }
 
     image.left {
       margin-right: 8px;
       color: inherit;
+    }
+
+    @if $maj_ver == 4 {
+      progress > trougn > progress { @include radius(0, none); }
+    }
+    @else {
+      progress { @include radius(0, none); }
     }
   }
 
