@@ -1349,6 +1349,7 @@ style "location_button" {
     image {
       function = BOX
       state    = PRELIGHT
+      shadow   = OUT
       file     = "Buttons/location-button-hover-dark.png"
       border   = { 2, 2, 5, 5 }
       stretch  = TRUE
@@ -1356,6 +1357,14 @@ style "location_button" {
     image {
       function = BOX
       state    = ACTIVE
+      file     = "Buttons/location-button-active-dark.png"
+      border   = { 2, 2, 5, 5 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      shadow   = IN
       file     = "Buttons/location-button-active-dark.png"
       border   = { 2, 2, 5, 5 }
       stretch  = TRUE
