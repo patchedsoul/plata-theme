@@ -181,16 +181,21 @@
 
 // unfocused window 'dot(s)'
 @define-color budgie_tasklist_indicator_color #{"" +
-              if($variant == light,
-              $sel_bg,
-              mix($sel_bg, $sel_fg, percentage(1 - $a_trk_out)))};
+                if($variant == light,
+                   $sel_bg,
+                   saturate(lighten($sel_bg, percentage($a_trk_2)),
+                     percentage($a_trk_2)))};
 
 // focused window 'line'
 @define-color budgie_tasklist_indicator_color_active #{"" + $sel_bg};
 
 // group-ed and unfocused window 'line(s)'
 @define-color budgie_tasklist_indicator_color_active_window #{"" +
-              mix($sel_bg, $panel_bg, percentage($a_fg_3rd))};
+                if($variant == light,
+                   saturate(lighten($sel_bg, percentage($a_trk_2)),
+                     percentage($a_trk_2)),
+                   saturate(darken($sel_bg, percentage($a_trk_2)),
+                     percentage($a_trk_2)))};
 
 // attention 'dot'
 // FIXME: we can't fill whole widget backgrounds with our suggestion color
