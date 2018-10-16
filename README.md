@@ -63,6 +63,7 @@ Unsupported Gtk+ Based Desktop(s)
 -------------------------------
  * Pantheon
  * Unity7
+ * Gnome-Shell customed by Canonical ( = Ubuntu session)
 
  > **Note:**
  >
