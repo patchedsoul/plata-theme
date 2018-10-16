@@ -3851,7 +3851,6 @@ notebook.psppire-data-editor widget.view {
 
 // That app does not have any position specific style-classes,
 // so embed indicators at the bottom of tasklist buttons as default.
-// Then that app looks quite weird in vertical layout at all.
 window#ValaPanel.background { // solid-mode
   background-color: $panel_bg;
   color: if($variant == mixed, $inv_fg, $fg);
