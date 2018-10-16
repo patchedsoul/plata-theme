@@ -123,8 +123,8 @@ StScrollBar {
   padding: 0;
 
   StScrollView & {
-    min-width: if($ref_weight >= 1.0, 0.45em, 0.3em);
-    min-height: if($ref_weight >= 1.0, 0.45em, 0.3em);
+    min-width: if($ref_weight >= 1.0, 0.9em, 0.6em);
+    min-height: if($ref_weight >= 1.0, 0.9em, 0.6em);
   }
 
   StBin#trough {
