@@ -1,5 +1,4 @@
 **Reporter info**
------------------
 
  * Distribution -
  * Gtk+ 3.0 version -
@@ -9,16 +8,13 @@
    - [ ] Wayland
 
 **Summary**
------------
 
 
 
 **Steps to reproduce**
-----------------------
 
 
 
 **Relevant log(s) and/or screenshot(s)**
-----------------------------------------
 
 
