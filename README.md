@@ -69,6 +69,10 @@ Unsupported Gtk+ Based Desktop(s)
  >
  >   * Plata does NOT support elementaryOS.
 
+Installation from Package(s)
+----------------------------
+ * My Personal Package Archives (PPA): [**plata-theme**](https://launchpad.net/~tista/+archive/ubuntu/plata-theme)
+
 Installation from Git Source
 ----------------------------
 1. If previous versions were installed/existed, remove them first.
