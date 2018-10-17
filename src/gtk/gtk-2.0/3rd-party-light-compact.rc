@@ -61,6 +61,14 @@ style "panelbuttons" {
     }
     image {
       function = BOX
+      state    = PRELIGHT
+      shadow   = OUT
+      file     = "Others/panel-hover.png"
+      border   = { 2, 2, 2, 2 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
       state    = ACTIVE
       file     = "Others/panel-active.png"
       border   = { 2, 2, 2, 2 }
@@ -69,7 +77,8 @@ style "panelbuttons" {
     image {
       function = BOX
       state    = PRELIGHT
-      file     = "Others/panel-hover.png"
+      shadow   = IN
+      file     = "Others/panel-active.png"
       border   = { 2, 2, 2, 2 }
       stretch  = TRUE
     }
