@@ -1,4 +1,4 @@
-<img src="data/logo_thumb_small.png" alt="Logo" align="left" width="85" height="85"/>
+<img src=".gitlab/logo_thumb_small.png" alt="Logo" align="left" width="85" height="85"/>
 
 ### Plata-theme
 
