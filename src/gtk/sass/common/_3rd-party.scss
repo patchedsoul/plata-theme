@@ -2677,7 +2677,8 @@ window.background:not(.solid-csd) > box.vertical {
     }
   }
 
-  &:not(.close) {
+  &.minimize,
+  &.maximize {
     color: if($variant == mixed, $inv_sec_fg, $sec_fg);
     &:hover {
       @if $variant ==mixed {
