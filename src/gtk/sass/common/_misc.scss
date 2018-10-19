@@ -3002,3 +3002,18 @@ window.background > box.vertical > paned.horizontal {
     &:dir(rtl) { padding-left: $toolbar_padding * 2; }
   }
 }
+
+// /****************
+//  * Eye of Gnome *
+//  ****************/
+
+box#eog-thumb-nav { // image gallery
+  iconview.view {
+    @include radius(0, none);
+    &:selected {
+      background-color: $trk_bg;
+      color: $sel_label;
+      box-shadow: inset 0 4px $sel_bg;
+    }
+  }
+}
