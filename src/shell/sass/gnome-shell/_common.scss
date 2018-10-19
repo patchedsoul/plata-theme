@@ -1251,16 +1251,9 @@ $extra_spacing: 2.5px;
       // notification dot at the right-side of clock label
       &.clock-display {
         > StBoxLayout > StIcon {
-          // align top
-          padding-bottom: if($ref_weight >= 1.0, (30px - $icon_size) / 2,
-                                                 (25px - $icon_size) / 2);
+          padding-bottom: 1px; // keep the StLabel baseline
           icon-size: $icon_size;
-          color: $sggt_bg;
-        }
-
-        &:hover,
-        &:active {
-          > StBoxLayout > StIcon { color: $acc_bg; }
+          color: if($variant == light, $acc_fg, $acc_bg);
         }
       }
     }
