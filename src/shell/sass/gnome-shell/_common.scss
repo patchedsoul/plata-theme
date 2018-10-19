@@ -2142,12 +2142,10 @@ $cose_button_size: 32px;
 
 .window-caption { // hovered tooltips
   @if $ver > 3.25 {
+    @extend %tooltip_template;
     max-width: 75em; // set horizontal limit for damned looong web page titles
     padding: if($ref_weight >= 1.0, 0.6em 1.2em 0.7em, 0.4em 0.9em 0.5em);
     border-radius: $r;
-    color: $osd_fg;
-    background-color: $panel_bg;
-    box-shadow: $z-depth-3;
     // FIXME: Still label width computing is quite weird in Wayland session
     // (brings unwanted larger L/R padding than we set) though, at least
     // we should align StLabel in the center of finalized widget width
@@ -2484,16 +2482,20 @@ $provider_icon_size: 32px; // for < 3.25
 }
 
 .dash-label { // osd tooltip
+  @extend %tooltip_template;
   // non-scalable unit instead
   padding: if($ref_weight >= 1.0, 7px 8px 8px,
                                   6px 7px 7px);
   border-radius: $r_2;
+  text-align: center;
+  -x-offset: 8px;
+}
+
+%tooltip_template {
   color: $osd_fg;
   background-color: if($variant == mixed, opacity($inv_tooltip_bg, $a_osd),
                                           opacity($tooltip_bg, $a_osd));
   box-shadow: $empty_shadow;
-  text-align: center;
-  -x-offset: 8px;
 }
 
 // App Vault/Grid
