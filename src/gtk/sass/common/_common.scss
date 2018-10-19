@@ -540,8 +540,13 @@ entry {
 
   .linked.vertical &:not(.flat) {
     &:not(:first-child):not(:last-child) {
-      @include radius(0, none);
       @include linked-entry-outline($dir: vert, $cld: vert-center);
+
+      &, .background & {
+        @include radius(0, none);
+        border-left-width: 2px;
+        border-right-width: 2px;
+      }
 
       @if $maj_ver == 4 {
         progress { @include radius(0, none); }
@@ -551,8 +556,13 @@ entry {
       }
     }
     &:first-child {
-      @include radius($r_4 $r_4 0 0, none); 
       @include linked-entry-outline($dir: vert, $cld: first);
+
+      &, .background & {
+        @include radius($r_4 $r_4 0 0, none);
+        border-left-width: 2px;
+        border-right-width: 2px;
+      }
 
       @if $maj_ver == 4 {
         progress { @include radius($r_4 $r_4 0 0, none); }
@@ -564,8 +574,13 @@ entry {
       }
     }
     &:last-child {
-      @include radius(0 0 $r_4 $r_4, none);
       @include linked-entry-outline($dir: vert, $cld: last);
+
+      &, .background & {
+        @include radius(0 0 $r_4 $r_4, none);
+        border-left-width: 2px;
+        border-right-width: 2px;
+      }
 
       @if $maj_ver == 4 {
         progress { @include radius(0 0 $r_4 $r_4, none); }
