@@ -936,6 +936,7 @@ button {
     .linked > & { // 'rotate CW/CCW' linked-buttons
       &.image-button {
         &:not(:disabled) {
+          padding: rem($txt_button_lr_space / 2);
           @include radius($r-2);
           background-color: if($variant == light,
                                track($dark_bg, $a_osd),
