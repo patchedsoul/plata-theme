@@ -2837,7 +2837,8 @@ menu {
       padding: 0 0 rem($menu_padding);
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
       @include radius($r_4 $r_4 0 0, none);
-      border-bottom: 1px solid $div_fg;
+      border-bottom: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                    $div_fg);
     }
     &:last-child {
       margin-top: rem($menu_padding * 2);
@@ -2845,7 +2846,8 @@ menu {
       padding: rem($menu_padding) 0 0;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
       @include radius(0 0 $r_4 $r_4, none);
-      border-top: 1px solid $div_fg;
+      border-top: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                 $div_fg);
     }
   }
 
