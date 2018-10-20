@@ -650,6 +650,8 @@ dialog.background.csd > box.dialog-vbox.vertical {
       background-color: track(if($variant == mixed, $inv_fg, $fg), $a_trk_1);
     }
   }
+
+  .linked.path-bar label.dim-label { margin: 0 rem($baseline * 2, $sw: 1.0); }
 }
 
 .disk-space-display {
