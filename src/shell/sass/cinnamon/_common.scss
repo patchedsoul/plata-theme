@@ -600,8 +600,8 @@ StScrollBar {
   &#selected, // legacy
   &:focus {
     spacing: 25px;
-    color: $sel_fg;
-    background-color: $sel_bg;
+    color: $osd_fg;
+    background-color: $osd_semi_fill_bg;
     box-shadow: $empty_shadow;
   }
 }
