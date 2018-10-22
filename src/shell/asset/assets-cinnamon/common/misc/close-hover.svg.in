@@ -29,7 +29,7 @@
      id="namedview15"
      showgrid="true"
      inkscape:zoom="12.8125"
-     inkscape:cx="-9.5219515"
+     inkscape:cx="19.694309"
      inkscape:cy="15.765853"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -100,6 +100,12 @@
   <circle
      style="fill:#f44336;fill-opacity:1;stroke:none"
      id="path2994"
+     cx="18"
+     cy="18"
+     r="14" />
+  <circle
+     style="fill:#ffffff;fill-opacity:0.12;stroke:none"
+     id="path2994-3"
      cx="18"
      cy="18"
      r="14" />
