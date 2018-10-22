@@ -1326,6 +1326,8 @@ $ws_thumb_spacing: 32px;
       padding: 0 7px;
       border: 1px solid transparent;
       color: $dis_fg;
+
+      StIcon { opacity: $a_fg_3rd; }
     }
 
     &-label { // embed vertical padding directly
