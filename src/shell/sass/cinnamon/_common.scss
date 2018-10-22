@@ -581,18 +581,24 @@ StScrollBar {
 
 #overview { spacing: 12px; }
 
+.window-border {
+  border: 4px solid $ovv_semi_fill_bg;
+  border-radius: $r_2 $r_2 0 0;
+  box-shadow: inset 0 0 0 1px $ovv_semi_fill_bg;
+}
+
 .window-caption {
+  max-width: 20em;
   -cinnamon-caption-spacing: 12px;
   spacing: 25px;
-  padding: 7px 8px 8px;
+  padding: 0.3em 0.9em 0.4em;
   border-radius: $r_2;
   color: $osd_fg;
   background-color: opacity($osd_bg, $a_osd);
   box-shadow: $empty_shadow;
 
-  // FIXME: Cinnamon does not have 'window-clone-border'
-  // and the name 'selected' looks incorrect, should be 'focused' instead
-  &#selected {
+  &#selected, // legacy
+  &:focus {
     spacing: 25px;
     color: $sel_fg;
     background-color: $sel_bg;
