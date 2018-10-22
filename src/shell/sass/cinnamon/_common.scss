@@ -682,6 +682,11 @@ $ws_thumb_spacing: 32px;
   StLabel { padding-top: 6px; }
 }
 
+.overview-empty-placeholder {
+  @include fontscaling($ref_size * 2.0);
+  color: opacity($ovv_fg, $a_fg_3rd);
+}
+
 // /*****************
 //  * Looking Glass *
 //  *****************/
