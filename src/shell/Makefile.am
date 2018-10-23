@@ -345,7 +345,6 @@ cinnamon_asset_misc_file = \
 	$(cinnamondir)/assets/misc/add-workspace-active.svg \
 	$(cinnamondir)/assets/misc/add-workspace-hover.svg \
 	$(cinnamondir)/assets/misc/add-workspace.svg \
-	$(cinnamondir)/assets/misc/button-box.svg \
 	$(cinnamondir)/assets/misc/calendar-arrow-left.svg \
 	$(cinnamondir)/assets/misc/calendar-arrow-right.svg \
 	$(cinnamondir)/assets/misc/close-active.svg \
@@ -383,7 +382,6 @@ cinnamon_lumine_asset_misc_file = \
 	$(cinnamonluminedir)/assets/misc/add-workspace-active.svg \
 	$(cinnamonluminedir)/assets/misc/add-workspace-hover.svg \
 	$(cinnamonluminedir)/assets/misc/add-workspace.svg \
-	$(cinnamonluminedir)/assets/misc/button-box.svg \
 	$(cinnamonluminedir)/assets/misc/calendar-arrow-left.svg \
 	$(cinnamonluminedir)/assets/misc/calendar-arrow-right.svg \
 	$(cinnamonluminedir)/assets/misc/close-active.svg \
@@ -421,7 +419,6 @@ cinnamon_noir_asset_misc_file = \
 	$(cinnamonnoirdir)/assets/misc/add-workspace-active.svg \
 	$(cinnamonnoirdir)/assets/misc/add-workspace-hover.svg \
 	$(cinnamonnoirdir)/assets/misc/add-workspace.svg \
-	$(cinnamonnoirdir)/assets/misc/button-box.svg \
 	$(cinnamonnoirdir)/assets/misc/calendar-arrow-left.svg \
 	$(cinnamonnoirdir)/assets/misc/calendar-arrow-right.svg \
 	$(cinnamonnoirdir)/assets/misc/close-active.svg \

@@ -2,7 +2,6 @@ common/checkbox/checkbox-checked r1
 common/checkbox/radiobutton-checked r1
 common/menu/menu-separator
 common/misc/add-workspace-active r1
-common/misc/button-box
 common/misc/close-active r1
 common/misc/close-hover r3
 common/misc/close r3
