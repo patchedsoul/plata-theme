@@ -2414,7 +2414,8 @@ window:not(.maximized):not(.fullscreen):not(.tiled):not(.solid-csd) {
 
 @if $maj_ver == 4 {
   // Development versions of apps to use a differently styled headerbar
-  headerbar:last-child {
+  headerbar.titlebar:not(.selection-mode) {
+    // devel-mode does not work properly in selection-mode?
     window.devel & {
       @if $variant == light {
         background-image: linear-gradient(to bottom,
@@ -2445,29 +2446,6 @@ window:not(.maximized):not(.fullscreen):not(.tiled):not(.solid-csd) {
                                             track($inv_bg, 0.8),
                                             track($inv_bg, 0.8)),
                             -gtk-icontheme("system-run-symbolic");
-        }
-      }
-
-      &.selection-mode {
-        background-image: linear-gradient(to bottom,
-                                          track($dark_sel_bg, 0.8),
-                                          track($dark_sel_bg, 0.8)),
-                          -gtk-icontheme("system-run-symbolic");
-        &:backdrop {
-          @if $variant == mixed {
-            background-image:
-              linear-gradient(to bottom,
-                track(mix($dark_sel_bg, $inv_bg, percentage($a_fg_bdp)), 0.8),
-                track(mix($dark_sel_bg, $inv_bg, percentage($a_fg_bdp)), 0.8)),
-              -gtk-icontheme("system-run-symbolic");
-          }
-          @else {
-            background-image:
-              linear-gradient(to bottom,
-                track(mix($dark_sel_bg, $bg, percentage($a_fg_bdp)), 0.8),
-                track(mix($dark_sel_bg, $bg, percentage($a_fg_bdp)), 0.8)),
-              -gtk-icontheme("system-run-symbolic");
-          }
         }
       }
     }
