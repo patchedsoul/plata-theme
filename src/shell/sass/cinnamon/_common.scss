@@ -1890,55 +1890,58 @@ $ws_thumb_spacing: 32px;
 //  * Desklets (desklet.js) *
 //  *************************/
 
+%desklet {
+  padding: 6px;
+  border: 0 none transparent;
+  background-color: opacity($osd_bg, $a_fg_3rd);
+  color: $osd_fg;
+  box-shadow: $z-depth-2;
+}
+
+%desklet_highlight {
+  background-color: $hidden_fill_bg;
+  box-shadow: 0 0 0 2px $acc_bg;
+}
+
 .desklet {
   color: $osd_sec_fg;
 
-  &-with-borders {
-    padding: 12px;
-    padding-bottom: 16px;
-    border-image: url("assets/misc/osd.svg") 9 9 9 9;
-    color: $osd_fg;
+  &-with-borders,
+  &-with-borders-and-header,
+  &-header {
+    @extend %desklet;
   }
 
+  &-with-borders { border-radius: $r_8; }
+
   &-with-borders-and-header {
-    padding: 12px;
-    padding-bottom: 17px;
-    border-radius: 0;
-    border-radius-topleft: 0;
-    border-radius-topright: 0;
-    border-image: url("assets/misc/desklet.svg") 9 9 9 9;
-    color: $osd_fg;
+    border-radius-bottomleft: $r_8;
+    border-radius-bottomright: $r_8;
   }
 
   &-header {
     @include fontscaling($ref_size * 1.0);
-    padding: 12px;
-    padding-bottom: 6px;
-    border-image: url("assets/misc/desklet-header.svg") 9 9 9 9;
-    color: $osd_fg;
+    border-radius-topleft: $r_8;
+    border-radius-topright: $r_8;
   }
 
   &-drag-placeholder { 
-    border: 2px solid $acc_bg;
     background-color: opacity($acc_bg, $a_trk_out);
+    box-shadow: inset 0 0 0 2px $acc_bg;
   }
 
   // 3.2.x?
   &:highlight,
   &:highlight-with-borders,
   &:highlight-with-borders-and-header {
-    background-color: $acc_fill_bg;
+    @extend %desklet_highlight;
   }
 }
 
 .photoframe-box {
-  padding: 12px;
-  padding-bottom: 16px;
+  @extend %desklet;
   border-radius: $r_8;
-  background-color: opacity($osd_bg, $a_osd);
-  color: $osd_fg;
-  box-shadow: $z-depth-4;
-  &:highlight { background-color: $acc_fill_bg; }
+  &:highlight { @extend %desklet_highlight; }
 }
 
 // /*******************************************

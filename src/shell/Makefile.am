@@ -352,8 +352,6 @@ cinnamon_asset_misc_file = \
 	$(cinnamondir)/assets/misc/close-hover.svg \
 	$(cinnamondir)/assets/misc/close.svg \
 	$(cinnamondir)/assets/misc/corner-ripple.svg \
-	$(cinnamondir)/assets/misc/desklet-header.svg \
-	$(cinnamondir)/assets/misc/desklet.svg \
 	$(cinnamondir)/assets/misc/message.svg \
 	$(cinnamondir)/assets/misc/osd.svg \
 	$(cinnamondir)/assets/misc/overview-hover.svg \
@@ -392,8 +390,6 @@ cinnamon_lumine_asset_misc_file = \
 	$(cinnamonluminedir)/assets/misc/close-hover.svg \
 	$(cinnamonluminedir)/assets/misc/close.svg \
 	$(cinnamonluminedir)/assets/misc/corner-ripple.svg \
-	$(cinnamonluminedir)/assets/misc/desklet-header.svg \
-	$(cinnamonluminedir)/assets/misc/desklet.svg \
 	$(cinnamonluminedir)/assets/misc/message.svg \
 	$(cinnamonluminedir)/assets/misc/osd.svg \
 	$(cinnamonluminedir)/assets/misc/overview-hover.svg \
@@ -432,8 +428,6 @@ cinnamon_noir_asset_misc_file = \
 	$(cinnamonnoirdir)/assets/misc/close-hover.svg \
 	$(cinnamonnoirdir)/assets/misc/close.svg \
 	$(cinnamonnoirdir)/assets/misc/corner-ripple.svg \
-	$(cinnamonnoirdir)/assets/misc/desklet-header.svg \
-	$(cinnamonnoirdir)/assets/misc/desklet.svg \
 	$(cinnamonnoirdir)/assets/misc/message.svg \
 	$(cinnamonnoirdir)/assets/misc/osd.svg \
 	$(cinnamonnoirdir)/assets/misc/overview-hover.svg \
