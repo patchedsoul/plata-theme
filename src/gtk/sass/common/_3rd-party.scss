@@ -570,6 +570,7 @@ window.budgie-popover:not(.csd) {
     button.indicator-item {
       border: 1px solid transparent;
       @include button(normal);
+      font-weight: 500;
       transition-timing-function: $tr_t_std;
       transition-property: background-color;
       transition-duration: $tr_d_std;
