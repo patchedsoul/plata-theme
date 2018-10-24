@@ -3572,25 +3572,24 @@ window.background:not(.solid-csd) > box.vertical {
 //  ***************/
 
 %chromium_unfocused_tab {
-  @if $variant == mixed {
-    color: mix($inv_fg, $inv_dark_bg, percentage($a_fg_3rd));
-  }
-  @else {
-    color: mix($fg, $dark_bg, percentage($a_fg_3rd));
-  }
+  color: if($variant == mixed,
+            mix($inv_fg, $inv_dark_bg, percentage($a_fg_3rd)),
+            mix($fg, $dark_bg, percentage($a_fg_3rd)));
 }
 
 window.background.chromium {
-  // checked-tab & toolbar & button widgets
-  // background-color: $bg;
-  // color: $fg;
-
   menubar {
     @extend %chromium_unfocused_tab; // for SSDs
   }
 
   headerbar.titlebar {
     @extend %chromium_unfocused_tab; // for CSDs
+
+    separator.vertical.titlebutton { // for SSD/CSD unfocused tab separators
+      border-color: if($variant == mixed,
+                    mix($inv_fg, $inv_dark_bg, percentage($a_fg_3rd)),
+                    mix($fg, $dark_bg, percentage($a_fg_3rd)));
+    }
 
     button.toggle { // account-button (> 64.0.3282?)
       border: none;
