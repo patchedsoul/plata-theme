@@ -504,7 +504,11 @@ window.budgie-popover:not(.csd) {
 .user-menu {
   background-color: $dark_bg;
 
-  frame.container { padding: (6px + 2px) 6px 6px; }
+  frame.container {
+    padding: 6px;
+
+    separator { min-height: 0; } // hide separator
+  }
 
   list,
   row { // reset styling
@@ -560,62 +564,35 @@ window.budgie-popover:not(.csd) {
 
   // top-row (user-name and avatar)
   > frame.container > box.vertical row.activatable:first-child {
-    margin-bottom: 10px; // fix truncated drop-shadow
+    margin-bottom: 6px;
     outline-width: 0;
 
-    .indicator-item {
-      background-image: image(track(black, $a_trk_1));
-      background-repeat: no-repeat;
-      background-size: 38px auto; // non-scaling unit
-      background-color: $sggt_bg;
-      box-shadow: $z-depth-1;
+    button.indicator-item {
+      border: 1px solid transparent;
+      @include button(normal);
       transition-timing-function: $tr_t_std;
-      transition-property: box-shadow;
+      transition-property: background-color;
       transition-duration: $tr_d_std;
 
-      &:dir(ltr) { // mask avatar's background
-        padding-left: 7px; // non-scaling unit
-        background-position: left center;
-      }
-      &:dir(rtl) {
-        padding-right: 7px;
-        background-position: right center;
-      }
-
-      label {
-        color: $sec_sel_fg;
-
-        &:dir(ltr) { padding-left: rem($entry_lr_space); }
-        &:dir(rtl) { padding-right: rem($entry_lr_space); }
+      label,
+      image:first-child {
+        &:dir(ltr) { margin-left: -$icon_size / 4; } // align childs
+        &:dir(rtl) { margin-right: -$icon_size / 4; }
       }
 
       image {
-        color: $sec_sel_fg;
-
+        color: $sec_fg;
         &:first-child { // avatar image
-          min-width: 24px;
-          min-height: 20px;
-          padding-top: rem(6.7px);
-          opacity: $a_osd;
+          min-width: $icon_size * 1.5;
+          opacity: $a_fg_2nd;
         }
       }
 
       &:hover {
-        box-shadow: $z-depth-2;
-        transition-timing-function: $tr_t_std;
-        transition-property: box-shadow;
-        transition-duration: $tr_d_std;
+        @include button(hover);
 
-        label { color: $sel_fg; }
-
-        image {
-          color: $sel_fg;
-
-          &:first-child { opacity: 1.0; }
-        }
+        image:first-child { opacity: 1.0; }
       }
-
-      label { font-weight: 700; }
     }
   }
 }
