@@ -3453,21 +3453,7 @@ box#DockBox > paned#DockBoxPane {
 
 @each $_version in '', '24' {
   window#Emacs#{$_version} {
-    background-color: $bg;
-    transition: none;
-
-    > box#pane {
-      background-color: $bg;
-
-      > widget > toolbar#emacs-toolbar {
-        background-color: $bg;
-        transition: none;
-      }
-    }
-
     widget#emacs#{$_version} {
-      &, > widget { transition: none; }
-
       > widget {
         > scrollbar {
           background-color: $base;
@@ -3482,8 +3468,6 @@ box#DockBox > paned#DockBoxPane {
 
             slider { min-width: 16px - (1px * 2); }
           }
-
-          &, * { transition: none; }
         }
       }
     }
