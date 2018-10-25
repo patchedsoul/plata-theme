@@ -2247,23 +2247,12 @@ $provider_icon_size: 32px; // for < 3.25
   }
 
   &-separator {
-    height: 1px;
     @if $ver > 3.25 {
-      background-color: $ovv_out_fg;
-      &:ltr {
-        margin-left: if($ref_weight >= 1.0, $results_icon_size * 3
-                                            + $provider_details_width,
-                                            $results_icon_size * 2
-                                            + $provider_details_width);
-      }
-      &:rtl {
-        margin-right: if($ref_weight >= 1.0, $results_icon_size * 3
-                                             + $provider_details_width,
-                                             $results_icon_size * 2
-                                             + $provider_details_width);
-      }
+      height: 0;
+      background-color: transparent;
     }
     @else {
+      height: 1px;
       // FIXME: keep meaningless gradient properties
       // otherwise warnings are recorded
       -gradient-height: 1px;
@@ -2279,6 +2268,15 @@ $provider_icon_size: 32px; // for < 3.25
       }
     }
   }
+
+  &-content {
+    @if $ver > 3.25 {
+      padding: if($ref_weight >= 1.0, 8px, 6px);
+      border-radius: $r_8;
+      background-color: opacity($osd_bg, $a_osd);
+      box-shadow: $z-depth-2;
+    }
+  }
 }
 
 .search-statustext { // "no results"
@@ -2286,14 +2284,25 @@ $provider_icon_size: 32px; // for < 3.25
 }
 
 .list-search {
-  &-results { spacing: 3px; }
+  &-results {
+    @if $ver > 3.25 {
+      spacing: 0;
+      background-color: $hidden_fill_bg;
+      &:ltr {
+        // concern the inset fake border width
+        padding-left: if($ref_weight >= 1.0, 8px, 6px) + 1px;
+        box-shadow: inset 1px 0 opacity($osd_fg, $a_trk_out);
+      }
+      &:rtl {
+        padding-right: if($ref_weight >= 1.0, 8px, 6px) + 1px;
+        box-shadow: inset -1px 0 opacity($osd_fg, $a_trk_out);
+      }
+    }
+    @else { spacing: 3px; }
+  }
 
   &-result {
-    @if $ver > 3.25 {
-      &:ltr { margin-right: $results_icon_size / 2; }
-      &:rtl { margin-left: $results_icon_size / 2; }
-    }
-    @else {
+    @if $ver < 3.25 {
       &:ltr { margin-right: $provider_icon_size / 2; }
       &:rtl { margin-left: $provider_icon_size / 2; }
     }
@@ -2303,23 +2312,45 @@ $provider_icon_size: 32px; // for < 3.25
     &:focus,
     &:selected,
     &:hover {
-      background-color: $ovv_semi_fill_bg;
       transition-duration: $tr_d_non;
+      @if $ver > 3.25 {
+        background-color: $osd_semi_fill_bg;
 
-      .list-search-result {
-        &-title { color: $ovv_fg; }
+        .list-search-result {
+          &-title { color: $osd_fg; }
 
-        &-description { color: $ovv_sec_fg; }
+          &-description { color: $osd_sec_fg; }
+        }
+      }
+      @else {
+        background-color: $ovv_semi_fill_bg;
+
+        .list-search-result {
+          &-title { color: $ovv_fg; }
+
+          &-description { color: $ovv_sec_fg; }
+        }
       }
     }
     &:active {
-      background-color: $ovv_fill_bg;
       transition-duration: $tr_d_std;
+      @if $ver > 3.25 {
+        background-color: $osd_fill_bg;
 
-      .list-search-result {
-        &-title { color: $ovv_fg; }
+        .list-search-result {
+          &-title { color: $osd_fg; }
 
-        &-description { color: $ovv_sec_fg; }
+          &-description { color: $osd_sec_fg; }
+        }
+      }
+      @else {
+        background-color: $ovv_fill_bg;
+
+        .list-search-result {
+          &-title { color: $ovv_fg; }
+
+          &-description { color: $ovv_sec_fg; }
+        }
       }
     }
     &:checked {
@@ -2353,8 +2384,9 @@ $provider_icon_size: 32px; // for < 3.25
 
     &-title {
       @include fontscaling($ref_size * 1.1);
-      color: $ovv_fg;
       font-weight: 700;
+      @if $ver > 3.25 { color: $osd_sec_fg; }
+      @else { color: $ovv_fg; }
 
       @if $ver > 3.25 {
         StIcon,
@@ -2375,11 +2407,12 @@ $provider_icon_size: 32px; // for < 3.25
     &-description {
       @if $ver > 3.25 {
         padding: 0;
+        color: $osd_ter_fg;
       }
       @else {
         @include fontscaling($ref_size * 0.9);
+        color: $ovv_sec_fg;
       }
-      color: $ovv_sec_fg;
     }
   }
 
@@ -2395,11 +2428,15 @@ $provider_icon_size: 32px; // for < 3.25
       &-details { // labels at the right-side of -icon
         @include fontscaling($ref_size * 0.9);
         width: $provider_details_width;
-        color: $ovv_sec_fg;
+        @if $ver > 3.25 { color: $osd_ter_fg; }
+        @else { color: $ovv_sec_fg; }
 
         .search-provider-icon:hover &,
         .search-provider-icon:active &,
-        .search-provider-icon:checked & { color: $ovv_fg; }
+        .search-provider-icon:checked & {
+          @if $ver > 3.25 { color: $osd_fg; }
+          @else { color: $ovv_fg; }
+        }
       }
     }
   }
@@ -2412,27 +2449,31 @@ $provider_icon_size: 32px; // for < 3.25
     padding: if($ref_weight >= 1.0, 0 $results_icon_size / 4,
                                     0 $results_icon_size / 8);
     border-radius: $r_2;
+    color: $osd_ter_fg;
   }
   @else {
     margin: if($ref_weight >= 1.0, $provider_icon_size / 4 0, 0);
     padding: $provider_icon_size / 2;
     border-radius: $r;
+    color: $ovv_sec_fg;
   }
   border: none;
-  color: $ovv_sec_fg;
   transition-duration: $tr_d_non;
   &:focus,
   &:selected,
   &:hover {
-    background-color: $ovv_semi_fill_bg;
+    @if $ver > 3.25 { background-color: $osd_semi_fill_bg; }
+    @else { background-color: $ovv_semi_fill_bg; }
     transition-duration: $tr_d_non;
   }
   &:active {
-    background-color: $ovv_fill_bg;
+    @if $ver > 3.25 { background-color: $osd_fill_bg; }
+    @else { background-color: $ovv_fill_bg; }
     transition-duration: $tr_d_std;
   }
   &:checked {
     background-color: $sel_bg;
+    color: $sel_fg;
     transition-duration: $tr_d_std;
   }
 
