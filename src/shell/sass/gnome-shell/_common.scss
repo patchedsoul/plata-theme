@@ -2627,7 +2627,8 @@ $provider_icon_size: 32px; // for < 3.25
   }
 
   &:focus .overview-icon,
-  &:hover .overview-icon {
+  &:hover .overview-icon,
+  &:selected .overview-icon {
     border-image: none;
     background-color: $ovv_semi_fill_bg;
     background-image: none;
@@ -2643,7 +2644,6 @@ $provider_icon_size: 32px; // for < 3.25
     transition-duration: $tr_d_std;
   }
 
-  &:selected .overview-icon,
   &:checked .overview-icon {
     border-radius: $r_2;
     background-color: $sel_bg;
