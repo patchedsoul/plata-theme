@@ -1626,12 +1626,13 @@ window.background.budgie-settings-window.csd {
     min-width: $icon_size;
     min-height: $icon_size;
     padding: 0;
+    border: none;
     background: none;
     color: if($variant == mixed, $inv_fg, $fg);
     @include transition(reset);
 
     image {
-      border-radius: 100px;
+      border-radius: $r;
       background-size: $icon_size $icon_size;
       background-position: center center;
       background-repeat: no-repeat;
