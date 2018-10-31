@@ -2896,14 +2896,6 @@ widget {
   button.flat.graph-switcher { @extend %graph_switcher; }
 }
 
-rg-graph.big {
-  // FIXME: We need to re-define these properties to prevent weird
-  // 'non-repeated' imaging behind the main graph.
-  background-position: left top;
-  background-origin: border-box;
-  background-repeat: repeat;
-}
-
 box.speedometer {
   // FIXME: 'outter' meant 'outer'?
   // circular progress should be drawn with our $accent_color though,
