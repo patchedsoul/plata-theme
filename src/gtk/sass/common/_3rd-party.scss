@@ -854,15 +854,23 @@ window.sound-popover.background {
     padding-top: 0; // unset default padding
     padding-bottom: 0;
 
+    trough { // overdrive-mode trough styling
+      background-color: transparent; // unset default trough color
+      @each $_dir, $_opp_end in (ltr, right),
+                                (rtl, left) {
+        &:dir(#{$_dir}) {
+          background-image:
+            linear-gradient(to $_opp_end,
+                            track($sccs_bg, $a_trk_out) calc(66% - 1px),
+                            track($dest_bg, $a_trk_out) calc(66% - 1px),
+                            track($dest_bg, $a_trk_out) 100%);
+        }
+      }
+    }
+
     mark {
       // hide label for vertically centered troughs
       label { font-size: 0; }
-
-      indicator { // bold 100% gain mark with destructive color
-        min-width: 1px + 1px;
-        background-color: $dest_bg;
-        color: transparent; // draw actual color with background instead
-      }
     }
   }
 }
