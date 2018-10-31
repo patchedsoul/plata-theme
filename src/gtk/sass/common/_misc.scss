@@ -1276,11 +1276,8 @@ window.background {
   > grid.vertical > box.vertical widget,
   grid.math-buttons {
     button {
-      min-width: rem($ref_size);
-      min-height: rem($ref_size);
-      padding: rem(10.7px) rem($ref_size) rem(10.7px);
+      min-width: calc(#{rem($widget_size - $txt_button_lr_space)} - 1px * 2);
       @include radius($r_2);
-      font-weight: 700;
 
       &:not(.suggested-action) {
         @include button(flat-normal);
