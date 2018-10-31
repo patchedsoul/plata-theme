@@ -1273,11 +1273,6 @@ dialog.background > box.dialog-vbox.vertical > box.vertical {
 //  ********************/
 
 window.background {
-  > headerbar.titlebar { // mode-selector button
-    > button.flat.popup.toggle.text-button.title {
-    }
-  }
-
   > grid.vertical > box.vertical widget,
   grid.math-buttons {
     button {
@@ -1291,21 +1286,13 @@ window.background {
         @include button(flat-normal);
         &:hover { @include button(flat-hover); }
         &:active { @include button(flat-active); }
-        &:disabled { @include button(flat-insensitive); }
+        &:disabled { @include button(flat-disabled); }
         &:checked { @include button(flat-checked); }
-        &:checked:disabled { @include button(flat-checked-insensitive); }
+        &:checked:disabled { @include button(flat-checked-disabled); }
       }
 
       &.suggested-action {  // '=' button
         @include radius($r);
-        &:hover {
-          background-color: mix($sel_fg, $sggt_bg, percentage($a_trk_1));
-        }
-
-        &,
-        &:hover,
-        &:active,
-        &:checked { box-shadow: none; }
       }
     }
   }
