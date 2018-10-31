@@ -2428,7 +2428,17 @@ $provider_icon_size: 32px; // for < 3.25
       &-details { // labels at the right-side of -icon
         @include fontscaling($ref_size * 0.9);
         width: $provider_details_width;
-        @if $ver > 3.25 { color: $osd_ter_fg; }
+        @if $ver > 3.25 {
+          color: $osd_ter_fg;
+          &:ltr {
+            margin-left: if($ref_weight >= 1.0, $results_icon_size  / 3,
+                                                $results_icon_size  / 6);
+          }
+          &:rtl {
+            margin-right: if($ref_weight >= 1.0, $results_icon_size / 3,
+                                                 $results_icon_size / 6);
+          }
+        }
         @else { color: $ovv_sec_fg; }
 
         .search-provider-icon:hover &,
