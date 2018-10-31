@@ -1321,21 +1321,18 @@ $ws_thumb_spacing: 32px;
 
   &-category-button {
     padding: 0 7px;
-    border: 1px solid transparent;
     color: $sec_fg;
 
     &-hover,
     &-selected {
       padding: 0 7px;
       border-radius: $r_2;
-      border: 1px solid transparent;
       background-color: opacity($sel_bg, $a_trk_1);
       color: $sel_label;
     }
 
     &-greyed {
       padding: 0 7px;
-      border: 1px solid transparent;
       color: $dis_fg;
 
       StIcon { opacity: $a_fg_3rd; }
