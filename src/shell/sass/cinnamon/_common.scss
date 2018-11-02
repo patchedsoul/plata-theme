@@ -1250,13 +1250,17 @@ $ws_thumb_spacing: 32px;
 
   &-favorites-button {
     padding: 10px;
+    border-radius: $r_2;
     &:hover { @include button(flat-hover); }
   }
 
   &-places {
     &-box { padding: 7px; }
 
-    &-button { padding: 10px; }
+    &-button {
+      padding: 10px;
+      border-radius: $r_2;
+    }
   }
 
   &-categories-box {
@@ -1273,7 +1277,6 @@ $ws_thumb_spacing: 32px;
 
   &-application-button {
     padding: 0 7px;
-    border: 1px solid transparent;
     color: $sec_fg;
 
     // This style is used in menu application buttons
@@ -1283,7 +1286,7 @@ $ws_thumb_spacing: 32px;
     &-selected {
       @include button(flat-hover);
       padding: 0 7px;
-      border: 1px solid transparent;
+      border-radius: $r_2;
       &:highlighted { font-weight: 700; }
     }
 
@@ -1295,7 +1298,7 @@ $ws_thumb_spacing: 32px;
 
   StScrollView.menu-application-button { // extracted submenu container
     padding: 0;
-    border-radius: $r_2;
+    border-radius: $r_4;
     border: 1px solid $div_fg;
     background-color: $bg;
 
@@ -1304,6 +1307,9 @@ $ws_thumb_spacing: 32px;
       spacing: 0;
       &:ltr { padding-left: 7px; }
       &:rtl { padding-right: 7px; }
+
+      &:first-child { border-radius: $r_4 $r_4 0 0; }
+      &:last-child { border-radius: 0 0 $r_4 $r_4; }
 
       &:active {
         border-image: none; // image independent
@@ -1320,19 +1326,24 @@ $ws_thumb_spacing: 32px;
   }
 
   &-category-button {
-    padding: 0 7px;
+    &,
+    &-hover,
+    &-selected,
+    &-greyed {
+      padding: 0 7px;
+      border-radius: $r_2;
+      font-weight: 500;
+    }
+
     color: $sec_fg;
 
     &-hover,
     &-selected {
-      padding: 0 7px;
-      border-radius: $r_2;
       background-color: opacity($sel_bg, $a_trk_1);
       color: $sel_label;
     }
 
     &-greyed {
-      padding: 0 7px;
       color: $dis_fg;
 
       StIcon { opacity: $a_fg_3rd; }
