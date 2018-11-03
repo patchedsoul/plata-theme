@@ -321,6 +321,10 @@ $alpha_override: 0.54 - $hard_coded_alpha;
 @each $_position, $_line in (Top, 0 2px),
                             (Bottom, 0 -2px) {
   #panel.dashtopanelMainPanel.dashtopanel#{$_position} {
+    // FIXME: prevent weird double density
+    background-gradient-start: $panel_hidden_bg;
+    background-gradient-end: $panel_hidden_bg;
+
     #panelLeft,
     #panelCenter,
     .panel-corner,
@@ -340,15 +344,15 @@ $alpha_override: 0.54 - $hard_coded_alpha;
     .show-apps {
       .overview-icon { border-radius: 0; }
 
-      &:focus .overview-icon,
-      &:hover .overview-icon,
-      &:active .overview-icon {
-        border-radius: 0;
-        background-color: $hidden_fill_bg;
-        box-shadow: inset #{$_line} $osd_out_fg;
-      }
-      &:checked .overview-icon {
-        box-shadow: inset #{$_line} $sel_bg;
+      &:focus,
+      &:hover,
+      &:active,
+      &:checked {
+        .overview-icon { // unset styling
+          border-radius: 0;
+          background-color: $hidden_fill_bg;
+          box-shadow: $empty_shadow;
+        }
       }
     }
 
@@ -358,9 +362,12 @@ $alpha_override: 0.54 - $hard_coded_alpha;
       .app-well-app,
       .show-apps { // unset underlines
         &:focus .overview-icon,
-        &:hover .overview-icon,
-        &:active .overview-icon {
+        &:hover .overview-icon {
           background-color: $osd_semi_fill_bg;
+          box-shadow: $empty_shadow;
+        }
+        &:active .overview-icon {
+          background-color: $osd_fill_bg;
           box-shadow: $empty_shadow;
         }
         &:checked .overview-icon {
@@ -370,7 +377,23 @@ $alpha_override: 0.54 - $hard_coded_alpha;
       }
     }
 
-    .show-apps:checked .show-apps-icon, // override indicator color
-    .show-apps:checked:hover .show-apps-icon { color: $osd_fg; }
+    .show-apps#show-apps-btn {
+      &:focus,
+      &:hover {
+        background-color: $osd_semi_fill_bg;
+        box-shadow: $empty_shadow;
+      }
+      &:active {
+        background-color: $osd_fill_bg;
+        box-shadow: $empty_shadow;
+      }
+      &:checked {
+        box-shadow: inset #{$_line} $sel_bg;
+        &, &:hover {
+          background-color: $hidden_fill_bg;
+          color: $osd_fg;
+        }
+      }
+    }
   }
 }
