@@ -121,9 +121,16 @@
 
 $hard_coded_alpha: 0.2;
 $alpha_override: 0.54 - $hard_coded_alpha;
+$icon_padding: 9px;
 
 #dashtodockContainer {
   background: transparent;
+
+  .app-well-app-running-dot { // re-define sizing
+    width: $icon_size + ($icon_padding * 2);
+    height: 2px;
+    margin-bottom: 0;
+  }
 
   #dash,
   &:overview #dash,
@@ -188,7 +195,7 @@ $alpha_override: 0.54 - $hard_coded_alpha;
   .app-well-app,
   .show-apps {
     .overview-icon {
-      padding: 9px;
+      padding: $icon_padding;
       background-size: contain;
     }
   }
