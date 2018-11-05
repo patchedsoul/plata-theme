@@ -1477,12 +1477,15 @@ $large_item: 10px;
   }
 
   &-item-box {
-    border: 0 none transparent;
-    border-image: none;
-    background-image: none;
-    background-color: $hidden_fill_bg;
+    &, &:closed { // unset properties
+      border: 0 none transparent;
+      border-image: none;
+      background-image: none;
+      background-color: $hidden_fill_bg;
+      box-shadow: $empty_shadow;
+    }
+
     color: $osd_fg;
-    box-shadow: $empty_shadow;
     font-weight: 400;
     &:hover {
       background-color: $osd_semi_fill_bg;
@@ -1499,7 +1502,8 @@ $large_item: 10px;
     }
     &:active,
     &:checked,
-    &:focus {
+    &:focus,
+    &:running {
       &, &:hover {
         background-color: $osd_semi_fill_bg;
         color: if($variant != light, $sel_fg, black);
