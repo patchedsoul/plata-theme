@@ -1572,6 +1572,35 @@ $large_item: 10px;
   }
 }
 
+// /*************************************
+//  * Grouped Window list (appGroup.js) *
+//  *************************************/
+
+.grouped-window-list {
+  &-thumbnail {
+    &-label {
+      &:ltr { padding-left: (6px - 2px); }
+      &:rtl { padding-right: (6px - 2px); }
+    }
+
+    &-icon {
+    }
+
+    &-alert { background: $acc_fill_bg; }
+  }
+
+  &-number-label {
+    color: if($variant != light, $sel_fg, black);
+    text-shadow: none;
+    font-weight: 700;
+  }
+
+  &-button-label {
+    &:ltr { padding-left: (6px - 2px); }
+    &:rtl { padding-right: (6px - 2px); }
+  }
+}
+
 // /***********************************
 //  * Sound Applet (status/volume.js) *
 //  ***********************************/
