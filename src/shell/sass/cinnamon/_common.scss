@@ -1261,7 +1261,7 @@ $large_item: 10px;
     &:hover { @include button(flat-hover); }
   }
 
-  &-places {
+  &-places { // legacy
     &-box { padding: $menu_spacing; }
 
     &-button {
