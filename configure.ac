@@ -1,6 +1,6 @@
 m4_define([plata_maj_ver], [0])
 m4_define([plata_mnr_ver], [3])
-m4_define([plata_mcr_ver], [91])
+m4_define([plata_mcr_ver], [92])
 m4_define([plata_version], [plata_maj_ver.plata_mnr_ver.plata_mcr_ver])
 m4_define([plata_git_url], [https://gitlab.com/tista500/plata-theme])
 
