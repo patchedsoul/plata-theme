@@ -2553,10 +2553,12 @@ $provider_icon_size: 32px; // for < 3.25
   box-shadow: $empty_shadow;
 }
 
+$grid_size: 136px;
+
 .icon-grid {
   spacing: 30px;
-  -shell-grid-horizontal-item-size: 136px;
-  -shell-grid-vertical-item-size: 136px;
+  -shell-grid-horizontal-item-size: $grid_size;
+  -shell-grid-vertical-item-size: $grid_size;
 
   .overview-icon { icon-size: $icon_size * 6; }
 }
@@ -2636,7 +2638,11 @@ $provider_icon_size: 32px; // for < 3.25
     // FIXME: on some GPUs, text-shadow property strongly affects to rendering
     // performance while transitioning #overview <-> .all-apps, so do not set
     // label shadows.
-    StLabel { padding-top: 6px; } // for HiDPI
+
+    &.overview-icon-with-label {
+      padding: 9px;
+      spacing: 9px;
+    }
   }
 
   &:focus .overview-icon,
@@ -2675,18 +2681,35 @@ $provider_icon_size: 32px; // for < 3.25
 }
 
 .app-well-app-running-dot { // running apps indicator
-  width: 32px;
+  width: $icon_size * 6;
   height: 4px;
-  margin-bottom: 4px * 1.5;
+  border-radius: 0;
   background-color: $sel_bg;
+
+  #dash & {
+    width: 6px;
+    height: 6px;
+    margin-bottom: 2px;
+    border-radius: $r;
+  }
 }
 
 // Collections
+.app-folder-icon {
+  padding: 5px;
+  spacing-rows: 5px;
+  spacing-columns: 5px;
+}
+
 .app-well-app.app-folder {
+  width: $grid_size;
+  height: $grid_size;
+
   > .overview-icon {
     background-color: $ovv_semi_fill_bg;
     box-shadow: $empty_shadow;
   }
+
   &:hover,
   &:focus {
     > .overview-icon {
@@ -2747,12 +2770,6 @@ $provider_icon_size: 32px; // for < 3.25
   }
 }
 
-.app-folder-icon {
-  padding: 5px;
-  spacing-rows: 5px;
-  spacing-columns: 5px;
-}
-
 .page-indicator {
   padding: $icon_size $icon_size * 1.5;
 
@@ -2799,12 +2816,6 @@ $provider_icon_size: 32px; // for < 3.25
 }
 
 .no-frequent-applications-label { @extend %status_text; }
-
-.app-well-app > .overview-icon.overview-icon-with-label,
-.grid-search-result .overview-icon.overview-icon-with-label {
-  padding: 10px 8px 5px 8px;
-  spacing: 4px;
-}
 
 // /*******************
 //  * Workspace Pager *

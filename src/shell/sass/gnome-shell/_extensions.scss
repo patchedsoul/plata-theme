@@ -127,9 +127,10 @@ $icon_padding: 9px;
   background: transparent;
 
   .app-well-app-running-dot { // re-define sizing
-    width: $icon_size + ($icon_padding * 2);
-    height: 2px;
-    margin-bottom: 0;
+    width: 5px;
+    height: 5px;
+    margin-bottom: 2px;
+    border-radius: $r;
   }
 
   #dash,
