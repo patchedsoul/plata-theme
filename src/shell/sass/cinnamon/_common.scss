@@ -1599,6 +1599,13 @@ $large_item: 10px;
     &:active,
     &:checked,
     &:focus { @extend %item_box_active; }
+    &:closed { // needed really?
+      border: 0 none transparent;
+      border-image: none;
+      background-image: none;
+      background-color: $hidden_fill_bg;
+      box-shadow: $empty_shadow;
+    }
 
     .progress { @extend %item_box_progress; }
   }
