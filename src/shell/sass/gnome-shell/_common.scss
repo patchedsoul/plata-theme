@@ -3763,7 +3763,7 @@ $tool_icon_size: 24px;
 
 #LookingGlassDialog {
   spacing: 4px;
-  padding: 4px;
+  padding: 8px;
   border: none;
   border-radius: $r_8; // affects small OSD while inspecting
   background-color: opacity($osd_bg, $a_osd);
@@ -3829,7 +3829,7 @@ $tool_icon_size: 24px;
 
   StBoxLayout#EvalBox,
   StBoxLayout#ResultsArea {
-    padding: 4px;
+    padding: 8px;
     spacing: 4px;
   }
 }
@@ -3876,7 +3876,7 @@ $tool_icon_size: 24px;
   }
 }
 
-#lookingGlassExtensions { padding: 4px; }
+#lookingGlassExtensions { padding: 8px; }
 
 .lg-extensions-list {
   padding: 4px;
