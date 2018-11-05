@@ -1226,6 +1226,9 @@ $ws_thumb_spacing: 32px;
 //  * Menu (menu.js) *
 //  ******************/
 
+$menu_spacing: 7px;
+$large_item: 10px;
+
 .menu {
   // menu-background class allows the menu applet to be themed separately
   // from other applet menus
@@ -1233,7 +1236,7 @@ $ws_thumb_spacing: 32px;
   }
 
   &-favorites-box {
-    padding: 7px;
+    padding: $menu_spacing;
     border-radius: 0;
     border: 0 solid if($variant != dark,
                        $div_fg,
@@ -1245,26 +1248,26 @@ $ws_thumb_spacing: 32px;
     // FIXME: override generic menuitem padding with default theme's value.
     // And we have no way to override the min-width of global section here,
     // so do not add min-width into .menu > .popup-menu-item.
-    .popup-menu-item { padding: 10px; }
+    .popup-menu-item { padding: $large_item; }
   }
 
   &-favorites-button {
-    padding: 10px;
+    padding: $large_item;
     border-radius: $r_2;
     &:hover { @include button(flat-hover); }
   }
 
   &-places {
-    &-box { padding: 7px; }
+    &-box { padding: $menu_spacing; }
 
     &-button {
-      padding: 10px;
+      padding: $large_item;
       border-radius: $r_2;
     }
   }
 
   &-categories-box {
-    padding: 7px 7px 0 7px;
+    padding: $menu_spacing $menu_spacing 0 $menu_spacing;
     border: 0 solid if($variant != dark,
                        $div_fg,
                        mix(white, $dark_bg, percentage($a_div_2)));
@@ -1273,10 +1276,12 @@ $ws_thumb_spacing: 32px;
   }
 
   &-applications-inner-box,
-  &-applications-outer-box { padding: 7px 7px 0 7px; }
+  &-applications-outer-box {
+    padding: $menu_spacing $menu_spacing 0 $menu_spacing;
+  }
 
   &-application-button {
-    padding: 0 7px;
+    padding: 0 $menu_spacing;
     color: $sec_fg;
 
     // This style is used in menu application buttons
@@ -1285,14 +1290,14 @@ $ws_thumb_spacing: 32px;
 
     &-selected {
       @include button(flat-hover);
-      padding: 0 7px;
+      padding: 0 $menu_spacing;
       border-radius: $r_2;
       &:highlighted { font-weight: 700; }
     }
 
     &-label { // embed vertical padding directly
-      &:ltr { padding: 6px 0 7px 5px; }
-      &:rtl { padding: 6px 5px 7px 0; }
+      &:ltr { padding: ($menu_spacing - 1px) 0 $menu_spacing 5px; }
+      &:rtl { padding: ($menu_spacing - 1px) 5px $menu_spacing 0; }
     }
   }
 
@@ -1305,8 +1310,8 @@ $ws_thumb_spacing: 32px;
     .popup-menu-item {
       padding: 0;
       spacing: 0;
-      &:ltr { padding-left: 7px; }
-      &:rtl { padding-right: 7px; }
+      &:ltr { padding-left: $menu_spacing; }
+      &:rtl { padding-right: $menu_spacing; }
 
       &:first-child { border-radius: $r_4 $r_4 0 0; }
       &:last-child { border-radius: 0 0 $r_4 $r_4; }
@@ -1319,8 +1324,8 @@ $ws_thumb_spacing: 32px;
       StIcon { min-width: 22px; } // indentation
 
       StLabel {
-        &:ltr { padding: 6px 0 7px 5px; }
-        &:rtl { padding: 6px 5px 7px 0; }
+        &:ltr { padding: ($menu_spacing - 1px) 0 $menu_spacing 5px; }
+        &:rtl { padding: ($menu_spacing - 1px) 5px $menu_spacing 0; }
       }
     }
   }
@@ -1330,7 +1335,7 @@ $ws_thumb_spacing: 32px;
     &-hover,
     &-selected,
     &-greyed {
-      padding: 0 7px;
+      padding: 0 $menu_spacing;
       border-radius: $r_2;
       font-weight: 500;
     }
@@ -1350,8 +1355,8 @@ $ws_thumb_spacing: 32px;
     }
 
     &-label { // embed vertical padding directly
-      &:ltr { padding: 6px 0 7px 5px; }
-      &:rtl { padding: 6px 5px 7px 0; }
+      &:ltr { padding: 6px 0 $menu_spacing 5px; }
+      &:rtl { padding: 6px 5px $menu_spacing 0; }
     }
   }
 
@@ -1360,7 +1365,7 @@ $ws_thumb_spacing: 32px;
   &-selected-app {
     &-box {
       margin-bottom: 0.33em * 2 + 0.4em;
-      padding: 0 30px;
+      padding: 0 $large_item * 3;
       text-align: right;
     }
 
@@ -1378,10 +1383,25 @@ $ws_thumb_spacing: 32px;
     }
   }
 
+  &-top-box { spacing: $menu_spacing; }
+
+  &-systembuttons-box {
+  }
+
   &-search-box {
-    margin-bottom: 7px;
-    &:ltr { padding-left: 30px; }
-    &:rtl { padding-right: 30px; }
+    // FXIME: drop margin property if .menu-top-box class landed
+    margin-bottom: $menu_spacing;
+    &:ltr { padding-left: $large_item * 3; }
+    &:rtl { padding-right: $large_item * 3; }
+  }
+
+  &-search-entry-icon {
+    icon-size: $icon_size;
+    color: $fg;
+  }
+
+  // Context menu (at the moment only for favorites)
+  &-context-menu {
   }
 }
 
@@ -1390,15 +1410,6 @@ $ws_thumb_spacing: 32px;
   width: 24em;
   caret-color: $fg;
   font-weight: 500;
-}
-
-.menu-search-entry-icon {
-  icon-size: $icon_size;
-  color: $fg;
-}
-
-// Context menu (at the moment only for favorites)
-.menu-context-menu {
 }
 
 // /*******
