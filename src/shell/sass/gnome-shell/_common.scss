@@ -1987,6 +1987,9 @@ $cose_button_size: 32px;
   -st-background-image-shadow: $z-depth-1;
   @include image-loader($url: 'assets/window-close.svg');
   background-size: $cose_button_size;
+  // FIXME: image duration causes weird deformation of images
+  // while transitioning, keep non-duration here
+  transition-duration: $tr_d_non;
   &:hover {
     @include image-loader($url: 'assets/window-close-hover.svg');
     -st-background-image-shadow: $z-depth-2;
@@ -3905,9 +3908,4 @@ $tool_icon_size: 24px;
   background-color: $osd_bg;
   color: $osd_fg;
   box-shadow: $empty_shadow;
-
-  StButton.window-close {
-    // unset drop-shadows
-    &, &:hover { -st-background-image-shadow: $empty_shadow; }
-  }
 }
