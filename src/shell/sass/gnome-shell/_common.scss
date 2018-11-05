@@ -2503,15 +2503,13 @@ $provider_icon_size: 32px; // for < 3.25
 
 #dash {
   @include fontscaling($ref_size * 0.9);
-  padding: 1px 0;
+  padding: 0;
   border: none;
+  border-radius: 0;
   color: $ovv_fg;
-  background-color: $ovv_semi_fill_bg;
+  background-color: transparent;
   box-shadow: $empty_shadow;
   transition-duration: $tr_d_lng;
-
-  &:ltr { border-radius: 0 $r_2 $r_2 0; }
-  &:rtl { border-radius: $r_2 0 0 $r_2; }
 
   .placeholder {
     width: 24px;

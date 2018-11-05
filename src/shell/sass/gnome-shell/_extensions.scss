@@ -172,15 +172,15 @@ $icon_padding: 9px;
   }
 
   &:overview #dash { // overview-mode #1
-    background-color: $ovv_semi_fill_bg;
+    background-color: $panel_hidden_bg;
     box-shadow: $empty_shadow;
   }
 
   &.opaque:overview,
   &.transparent:overview { // overview-mode #2
     #dash {
-      background-color: $panel_hidden_bg;
-      box-shadow: inset 0 0 0 9999px $ovv_semi_fill_bg;
+      background-color: transparent !important;
+      box-shadow: none !important;
     }
   }
 
