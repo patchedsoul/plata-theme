@@ -905,23 +905,7 @@ $ws_thumb_spacing: 32px;
 //  * App Switcher *
 //  ****************/
 
-#altTabPopup {
-  padding: 8px;
-  spacing: 16px;
-}
-
-.switcher-list {
-  padding: 20px;
-  border: none;
-  border-radius: $r_8;
-  color: $osd_fg;
-  background-color: opacity($osd_bg, $a_osd);
-  box-shadow: $z-depth-4;
-
-  > StBoxLayout { padding: 4px; }
-
-  &-item-container { spacing: 8px; }
-
+%switcher_item_box_child {
   .item-box {
     padding: 8px;
     border-radius: $r_2;
@@ -948,6 +932,26 @@ $ws_thumb_spacing: 32px;
                    $div_fg,
                    mix(white, $dark_bg, percentage($a_div_2)));
   }
+}
+
+#altTabPopup {
+  padding: 8px;
+  spacing: 16px;
+}
+
+.switcher-list {
+  padding: 20px;
+  border: none;
+  border-radius: $r_8;
+  color: $osd_fg;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $z-depth-4;
+
+  > StBoxLayout { padding: 4px; }
+
+  &-item-container { spacing: 8px; }
+
+  @extend %switcher_item_box_child;
 }
 
 .switcher-arrow { // :highlighted pseudo-class does not exist?
@@ -1461,6 +1465,94 @@ $large_item: 10px;
 //  * Window list (windowList.js) *
 //  *******************************/
 
+%item_box {
+  border: 0 none transparent;
+  border-image: none;
+  background-image: none;
+  background-color: $hidden_fill_bg;
+  color: $osd_fg;
+  box-shadow: $empty_shadow;
+  font-weight: 400;
+
+  StIcon,
+  StBin {
+    .panel-top &,
+    .panel-bottom & { padding: 0 (6px - 2px); }
+  }
+
+  &.vertical StIcon,
+  &.vertical StBin { padding: 0; }
+
+  StLabel {
+    font-weight: 400;
+
+    .panel-top &,
+    .panel-bottom & {
+      &:ltr { padding: 0 (6px - 2px) 0 0; }
+      &:rtl { padding: 0 0 0 (6px - 2px); }
+    }
+  }
+}
+
+%item_box_hover {
+  background-color: $osd_semi_fill_bg;
+  color: if($variant != light, $sel_fg, black);
+
+  @each $position, $_indicator in (top, 0 2px),
+                                  (bottom, 0 -2px),
+                                  (left, 2px 0),
+                                  (right, -2px 0) {
+    .panel-#{$position} & {
+      box-shadow: inset #{$_indicator} $osd_out_fg;
+    }
+  }
+}
+
+%item_box_active {
+  &, &:hover {
+    background-color: $osd_semi_fill_bg;
+    color: if($variant != light, $sel_fg, black);
+
+    @each $position, $_indicator in (top, 0 2px),
+                                    (bottom, 0 -2px),
+                                    (left, 2px 0),
+                                    (right, -2px 0) {
+      .panel-#{$position} & {
+        box-shadow: inset #{$_indicator} $sel_bg;
+      }
+    }
+  }
+}
+
+%item_box_progress {
+  background-gradient-start: $acc_fill_bg;
+  background-gradient-end: $acc_fill_bg;
+}
+
+%item_box_attention {
+  @extend %item_box_progress;
+  color: if($variant != light, $sel_fg, black);
+
+  @each $position, $_indicator in (top, 0 2px),
+                                  (bottom, 0 -2px),
+                                  (left, 2px 0),
+                                  (right, -2px 0) {
+    .panel-#{$position} & {
+      box-shadow: inset #{$_indicator} $acc_bg;
+    }
+  }
+}
+
+%item_box_menu {
+  padding: 20px - 8px; // = .switcher-list - .item-box
+  spacing: 8px; // = .switcher-list-item-container
+  border: none;
+  border-radius: $r_8;
+  color: $osd_fg;
+  background-color: opacity($osd_bg, $a_osd);
+  box-shadow: $z-depth-4;
+}
+
 .window-list {
   &-box {
     spacing: 0;
@@ -1477,98 +1569,22 @@ $large_item: 10px;
   }
 
   &-item-box {
-    &, &:closed { // unset properties
-      border: 0 none transparent;
-      border-image: none;
-      background-image: none;
-      background-color: $hidden_fill_bg;
-      box-shadow: $empty_shadow;
-    }
-
-    color: $osd_fg;
-    font-weight: 400;
-    &:hover {
-      background-color: $osd_semi_fill_bg;
-      color: if($variant != light, $sel_fg, black);
-
-      @each $position, $_indicator in (top, 0 2px),
-                                      (bottom, 0 -2px),
-                                      (left, 2px 0),
-                                      (right, -2px 0) {
-        .panel-#{$position} & {
-          box-shadow: inset #{$_indicator} $osd_out_fg;
-        }
-      }
-    }
+    @extend %item_box;
+    &:hover { @extend %item_box_hover; }
     &:active,
     &:checked,
     &:focus,
-    &:running {
-      &, &:hover {
-        background-color: $osd_semi_fill_bg;
-        color: if($variant != light, $sel_fg, black);
-
-        @each $position, $_indicator in (top, 0 2px),
-                                        (bottom, 0 -2px),
-                                        (left, 2px 0),
-                                        (right, -2px 0) {
-          .panel-#{$position} & {
-            box-shadow: inset #{$_indicator} $sel_bg;
-          }
-        }
-      }
-    }
-
-    StIcon,
-    StBin {
-      .panel-top &,
-      .panel-bottom & { padding: 0 (6px - 2px); }
-    }
-
-    &.vertical StIcon,
-    &.vertical StBin { padding: 0; }
-
-    StLabel {
-      font-weight: 400;
-
-      .panel-top &,
-      .panel-bottom & {
-        &:ltr { padding: 0 (6px - 2px) 0 0; }
-        &:rtl { padding: 0 0 0 (6px - 2px); }
-      }
-    }
+    &:running { @extend %item_box_active; }
 
     &:progress,
-    .progress {
-      background-gradient-start: $acc_fill_bg;
-      background-gradient-end: $acc_fill_bg;
-    }
+    .progress { @extend %item_box_progress; }
   }
 
-  &-item-demands-attention {
-    background-gradient-start: $acc_fill_bg;
-    background-gradient-end: $acc_fill_bg;
-    color: if($variant != light, $sel_fg, black);
-
-    @each $position, $_indicator in (top, 0 2px),
-                                    (bottom, 0 -2px),
-                                    (left, 2px 0),
-                                    (right, -2px 0) {
-      .panel-#{$position} & {
-        box-shadow: inset #{$_indicator} $acc_bg;
-      }
-    }
-  }
+  &-item-demands-attention { @extend %item_box_attention; }
 
   // >= 3.6.7
   &-preview { // thumbnail popup windows = .switcher-list
-    padding: 20px - 8px; // = .switcher-list - .item-box
-    spacing: 8px; // = .switcher-list-item-container
-    border: none;
-    border-radius: $r_8;
-    color: $osd_fg;
-    background-color: opacity($osd_bg, $a_osd);
-    box-shadow: $z-depth-4;
+    @extend %item_box_menu;
   }
 }
 
@@ -1577,13 +1593,22 @@ $large_item: 10px;
 //  *************************************/
 
 .grouped-window-list {
+  &-item-box {
+    @extend %item_box;
+    &:hover { @extend %item_box_hover; }
+    &:active,
+    &:checked,
+    &:focus { @extend %item_box_active; }
+
+    .progress { @extend %item_box_progress; }
+  }
+
+  &-item-demands-attention { @extend %item_box_attention; }
+
   &-thumbnail {
     &-label {
       &:ltr { padding-left: (6px - 2px); }
       &:rtl { padding-right: (6px - 2px); }
-    }
-
-    &-icon {
     }
 
     &-alert { background: $acc_fill_bg; }
@@ -1598,6 +1623,13 @@ $large_item: 10px;
   &-button-label {
     &:ltr { padding-left: (6px - 2px); }
     &:rtl { padding-right: (6px - 2px); }
+  }
+
+  &-menu {
+    @extend %item_box_menu;
+    padding: 20px - 8px;
+
+    @extend %switcher_item_box_child;
   }
 }
 
