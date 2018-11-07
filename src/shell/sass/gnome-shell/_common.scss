@@ -1937,7 +1937,7 @@ $extra_spacing: 2.5px;
 }
 
 .system-menu-action {
-  padding: if($ref_weight >= 1.0, 16px, 10px);
+  padding: if($ref_weight >= 1.0, 10px, 8px);
   border-radius: $r;
   border: none;
   color: $sec_acc_fg;
@@ -1946,7 +1946,6 @@ $extra_spacing: 2.5px;
   }
   &:hover,
   &:focus {
-    padding: if($ref_weight >= 1.0, 16px, 10px);
     border: none;
     background-color: $acc_semi_fill_bg;
     color: $acc_fg;

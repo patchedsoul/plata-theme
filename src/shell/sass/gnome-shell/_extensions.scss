@@ -43,15 +43,6 @@
     &:rtl { padding-left: 4px; }
   }
 
-  // use tiny padding
-  .system-menu-action {
-    &,
-    &:focus,
-    &:hover,
-    &:active,
-    &:checked { padding: 10px; }
-  }
-
   StScrollView.apps-menu { // left-pane
     margin-bottom: if($ref_weight >= 1.0, 6px, 4px);
     padding: 0;
@@ -69,6 +60,12 @@
 //  *************************/
 
 .openweather {
+  &-button {
+    // generic text buttons are allocated with y-expand-ed
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &-button,
   &-menu-button-container,
   &-button-box,
