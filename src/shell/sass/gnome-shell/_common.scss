@@ -2673,11 +2673,11 @@ $grid_size: 136px;
   }
 }
 
-// set circle dock buttons on dash
-#dash {
-  .app-well-app,
-  .show-apps {
-    .overview-icon { border-radius: $r; }
+.app-well-app,
+.show-apps {
+  .overview-icon {
+    // set circle dock buttons on dash
+    #dash & { border-radius: $r; }
   }
 }
 
@@ -2687,7 +2687,7 @@ $grid_size: 136px;
   border-radius: 0;
   background-color: $sel_bg;
 
-  #dash & {
+  .dash-item-container & {
     width: 6px;
     height: 6px;
     margin-bottom: 2px;

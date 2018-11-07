@@ -126,13 +126,6 @@ $icon_padding: 9px;
 #dashtodockContainer {
   background: transparent;
 
-  .app-well-app-running-dot { // re-define sizing
-    width: 5px;
-    height: 5px;
-    margin-bottom: 2px;
-    border-radius: $r;
-  }
-
   #dash,
   &:overview #dash,
   &.extended #dash,
@@ -205,6 +198,19 @@ $icon_padding: 9px;
     background: transparent;
 
     > StWidget { background-size: contain; }
+
+    .app-well-app-running-dot { // set specific shape, color and sizes
+      width: 6px;
+      height: 3px;
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color: $ovv_sel_label;
+    }
+
+    > StWidget.focused .app-well-app-running-dot {
+      width: $icon_size + $icon_padding * 2;
+      background-color: $sel_bg;
+    }
   }
 
   .number-overlay,
