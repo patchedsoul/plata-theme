@@ -1913,6 +1913,11 @@ list.contacts-view {
   }
 }
 
+scrolledwindow.contacts-contact-form {
+  // override stock style.css
+  background-image: image($base);
+}
+
 // /**********
 //  * Evince *
 //  **********/
