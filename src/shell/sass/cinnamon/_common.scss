@@ -1599,13 +1599,6 @@ $large_item: 10px;
     &:active,
     &:checked,
     &:focus { @extend %item_box_active; }
-    &:closed { // needed really?
-      border: 0 none transparent;
-      border-image: none;
-      background-image: none;
-      background-color: $hidden_fill_bg;
-      box-shadow: $empty_shadow;
-    }
 
     .progress { @extend %item_box_progress; }
   }
@@ -1622,9 +1615,16 @@ $large_item: 10px;
   }
 
   &-number-label {
-    color: if($variant != light, $sel_fg, black);
-    text-shadow: none;
+    padding: 0;
+    color: $sel_fg;
+    font-size: 10px; // use abs unit
     font-weight: 700;
+    text-shadow: none;
+  }
+
+  &-badge { // backgrounds for num-labels
+    border-radius: $r;
+    background-color: $sggt_bg;
   }
 
   &-button-label {
