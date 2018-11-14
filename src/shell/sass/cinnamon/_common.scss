@@ -1612,6 +1612,11 @@ $large_item: 10px;
     }
 
     &-alert { background: $acc_fill_bg; }
+
+    &-menu {
+      @extend %item_box_menu;
+      @extend %switcher_item_box_child;
+    }
   }
 
   &-number-label {
@@ -1630,13 +1635,6 @@ $large_item: 10px;
   &-button-label {
     &:ltr { padding-left: (6px - 2px); }
     &:rtl { padding-right: (6px - 2px); }
-  }
-
-  &-menu {
-    @extend %item_box_menu;
-    padding: 20px - 8px;
-
-    @extend %switcher_item_box_child;
   }
 }
 
