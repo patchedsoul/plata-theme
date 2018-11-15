@@ -1613,10 +1613,7 @@ $large_item: 10px;
 
     &-alert { background: $acc_fill_bg; }
 
-    &-menu {
-      @extend %item_box_menu;
-      @extend %switcher_item_box_child;
-    }
+    &-menu { @extend %switcher_item_box_child; }
   }
 
   &-number-label {
