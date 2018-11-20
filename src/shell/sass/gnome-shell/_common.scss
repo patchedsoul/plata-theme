@@ -1923,8 +1923,8 @@ $extra_spacing: 2.5px;
 
   // LR padding and make more gap between label and spinner
   StLabel {
-    &:ltr { padding: if($ref_weight >= 1.0, 0 10px 0 3px, 0 6px 0 2px); }
-    &:rtl { padding: if($ref_weight >= 1.0, 0 3px 0 10px, 0 2px 0 6px); }
+    &:ltr { padding: if($ref_weight >= 1.0, 0 10px 1px 3px, 0 6px 1px 2px); }
+    &:rtl { padding: if($ref_weight >= 1.0, 0 3px 1px 10px, 0 2px 1px 6px); }
   }
 
   .label-shadow { color: transparent; }
