@@ -2417,36 +2417,20 @@ window:not(.maximized):not(.fullscreen):not(.tiled):not(.solid-csd) {
   headerbar.titlebar:not(.selection-mode) {
     // devel-mode does not work properly in selection-mode?
     window.devel & {
-      @if $variant == light {
-        background-image: linear-gradient(to bottom,
-                                          track($dark_bg, 0.8),
-                                          track($dark_bg, 0.8)),
-                          -gtk-icontheme("system-run-symbolic");
-      }
-      @else {
-        background-image: linear-gradient(to bottom,
-                                          track($inv_dark_bg, 0.8),
-                                          track($inv_dark_bg, 0.8)),
-                          -gtk-icontheme("system-run-symbolic");
-      }
-      background-position: 85% center;
-      background-size:
-        if($ref_weight < 1.0, $icon_size * 4 $icon_size * 4,
-                              $icon_size * 5 $icon_size * 5);
-      background-repeat: no-repeat;
-      &:backdrop {
+      &, &:backdrop {
         @if $variant == light {
-          background-image: linear-gradient(to bottom,
-                                            track($bg, 0.8),
-                                            track($bg, 0.8)),
-                            -gtk-icontheme("system-run-symbolic");
+          background-image: -gtk-scaled(
+                            url("assets/dev-mode.png"),
+                            url("assets/dev-mode@2.png"));
         }
         @else {
-          background-image: linear-gradient(to bottom,
-                                            track($inv_bg, 0.8),
-                                            track($inv_bg, 0.8)),
-                            -gtk-icontheme("system-run-symbolic");
+          background-image: -gtk-scaled(
+                            url("assets/dev-mode-dark.png"),
+                            url("assets/dev-mode-dark@2.png"));
         }
+        background-position: 75% top;
+        background-size: $dev_asset_size $dev_asset_size;
+        background-repeat: no-repeat;
       }
     }
   }
