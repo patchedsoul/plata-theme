@@ -33,6 +33,8 @@ checkbox-checked-active-selectionmode-dark
 checkbox-checked-insensitive-selectionmode-dark
 thumbnail
 thumbnail-dark
+dev-mode
+dev-mode-dark
 needs-attention
 radio-unchecked
 radio-unchecked-active
