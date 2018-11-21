@@ -402,11 +402,11 @@ window.budgie-popover:not(.csd) {
     background-color: transparent;
     color: if($variant == mixed, $inv_fg, $fg);
     font-weight: 700; // enforce bold weight
-    @if $variant == light {
-      @include ink-reaction(tab-normal, $fc: black, $bs: 10, $i: 3);
+    @if $variant == mixed {
+      @include ink-reaction(tab-normal, $fc: $inv_fg, $bs: 8, $i: 2);
     }
     @else {
-      @include ink-reaction(tab-normal, $fc: $sel_fg, $bs: 10, $i: 3);
+      @include ink-reaction(tab-normal, $fc: $fg, $bs: 8, $i: 2);
     }
     &:hover {
       background-color: transparent;
@@ -414,13 +414,13 @@ window.budgie-popover:not(.csd) {
     }
     &:checked {
       background-color: transparent;
-      @if $variant == light {
+      @if $variant == mixed {
         color: black;
-        @include ink-reaction(tab-active, $fc: black, $bs: 10);
+        @include ink-reaction(tab-active, $fc: $inv_fg, $bs: 8);
       }
       @else {
         color: $sel_fg;
-        @include ink-reaction(tab-active, $fc: $sel_fg, $bs: 10);
+        @include ink-reaction(tab-active, $fc: $fg, $bs: 8);
       }
     }
   }
