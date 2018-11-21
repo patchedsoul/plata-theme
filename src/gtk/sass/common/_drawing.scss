@@ -264,6 +264,7 @@ $z-depth-1-label: 0 0 1px rgba(0, 0, 0, 0.26),
     background-repeat: no-repeat;
     background-position: center center;
     @include transition(ink-normal-tab);
+    transition-delay: $tr_d_dly;
   }
   @else if $t == tab-active {
     border-color: $sel_bg;
@@ -273,6 +274,7 @@ $z-depth-1-label: 0 0 1px rgba(0, 0, 0, 0.26),
                       transparent 0%);
     background-size: percentage($bs) percentage($bs);
     @include transition(ink-active-tab);
+    transition-delay: $tr_d_dly;
   }
 }
 
