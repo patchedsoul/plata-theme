@@ -3382,6 +3382,12 @@ box#AuxToolbox {
   > button,
   > toolitem > button,
   > toolbutton > button {
+    // dim disabled icons
+    &:disabled {
+      image { opacity: $a_fg_dis; }
+
+      &:checked { background-color: track($fg, $a_trk_1); }
+    }
   }
 }
 
