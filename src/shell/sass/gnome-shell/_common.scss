@@ -856,17 +856,19 @@ $extra_spacing: 2.5px;
   -arrow-rise: 0;
   -arrow-box-shadow: $empty_shadow; // dreaming. bug #689995
   border-radius: $r_4;
-  border: 1px solid $div_sld_fg;
   box-shadow: $z-depth-3;
 }
 
 .popup-menu-boxpointer {
   -arrow-background-color: $dark_bg; // fake arrows
+  border: 1px solid $div_sld_fg;
   background-color: $dark_bg;
 }
 
 .candidate-popup-boxpointer {
   -arrow-background-color: opacity($osd_bg, $a_osd);
+  // candidate popups are rendered as OSDs, so no need to set edge borders
+  border: 0 none transparent;
   background: transparent; // needs to reset?
   background-color: opacity($osd_bg, $a_osd);
   color: $osd_sec_fg;
@@ -994,7 +996,8 @@ $extra_spacing: 2.5px;
       border: 2px solid $osd_out_fg;
     }
     &:selected {
-      background-color: $acc_fill_bg;
+      background-color: if($variant != light, opacity($inv_acc_fg, $a_trk_2),
+                                              opacity($acc_fg, $a_trk_2));
       color: if($variant != light, $inv_acc_fg, $acc_fg);
     }
   }
@@ -1082,7 +1085,7 @@ $extra_spacing: 2.5px;
   // so do not reduce to < 12px (StDrawingArea)
   padding: if($ref_weight >= 1.0, 16px, 12px);
   border-radius: $r_8;
-  border: none;
+  border: 0 none transparent;
   color: $osd_fg;
   background-color: opacity($osd_bg, $a_osd);
   box-shadow: $z-depth-4;
