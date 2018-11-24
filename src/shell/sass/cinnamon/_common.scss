@@ -914,7 +914,8 @@ $ws_thumb_spacing: 32px;
       border: 2px solid $osd_out_fg;
     }
     &:selected {
-      background-color: $acc_fill_bg;
+      background-color: if($variant != light, opacity($inv_acc_fg, $a_trk_2),
+                                              opacity($acc_fg, $a_trk_2));
       color: if($variant != light, $inv_acc_fg, $acc_fg);
     }
   }
