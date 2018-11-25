@@ -31,8 +31,6 @@ dark/toggle-off.svg .
 
 common/checkbox-hover.svg assets r1
 common/checkbox.svg assets r1
-common/corner-ripple-ltr.svg assets r2
-common/corner-ripple-rtl.svg assets r2
 common/dash-placeholder.svg assets r2
 common/go-down.svg assets r2
 common/go-up.svg assets r2

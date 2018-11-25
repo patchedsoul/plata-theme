@@ -1968,12 +1968,12 @@ $extra_spacing: 2.5px;
 .ripple-box {
   width: 52px;
   height: 52px;
-  @include image-loader($url: 'assets/corner-ripple-ltr.svg');
-  background-size: contain;
+  border-radius: 0 0 52px 0; // top-left corner
+  background-image: none; // need to unset the stock asset images
+  background-color: opacity($acc_bg, $a_trk_out);
+  box-shadow: $empty_shadow;
 
-  &:rtl {
-    @include image-loader($url: 'assets/corner-ripple-rtl.svg');
-  }
+  &:rtl { border-radius: 0 0 0 52px; } // top-right corner
 }
 
 // /*****************

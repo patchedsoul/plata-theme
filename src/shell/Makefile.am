@@ -46,8 +46,6 @@ shell_asset_file = \
 	$(shelldir)/assets/checkbox-off-hover.svg \
 	$(shelldir)/assets/checkbox-off.svg \
 	$(shelldir)/assets/checkbox.svg \
-	$(shelldir)/assets/corner-ripple-ltr.svg \
-	$(shelldir)/assets/corner-ripple-rtl.svg \
 	$(shelldir)/assets/dash-placeholder.svg \
 	$(shelldir)/assets/go-down.svg \
 	$(shelldir)/assets/go-up.svg \
@@ -117,8 +115,6 @@ shell_lumine_asset_file = \
 	$(shellluminedir)/assets/checkbox-off-hover.svg \
 	$(shellluminedir)/assets/checkbox-off.svg \
 	$(shellluminedir)/assets/checkbox.svg \
-	$(shellluminedir)/assets/corner-ripple-ltr.svg \
-	$(shellluminedir)/assets/corner-ripple-rtl.svg \
 	$(shellluminedir)/assets/dash-placeholder.svg \
 	$(shellluminedir)/assets/go-down.svg \
 	$(shellluminedir)/assets/go-up.svg \
@@ -167,8 +163,6 @@ shell_noir_asset_file = \
 	$(shellnoirdir)/assets/checkbox-off-hover.svg \
 	$(shellnoirdir)/assets/checkbox-off.svg \
 	$(shellnoirdir)/assets/checkbox.svg \
-	$(shellnoirdir)/assets/corner-ripple-ltr.svg \
-	$(shellnoirdir)/assets/corner-ripple-rtl.svg \
 	$(shellnoirdir)/assets/dash-placeholder.svg \
 	$(shellnoirdir)/assets/go-down.svg \
 	$(shellnoirdir)/assets/go-up.svg \
@@ -217,8 +211,6 @@ shell_compact_asset_file = \
 	$(shellcompactdir)/assets/checkbox-off-hover.svg \
 	$(shellcompactdir)/assets/checkbox-off.svg \
 	$(shellcompactdir)/assets/checkbox.svg \
-	$(shellcompactdir)/assets/corner-ripple-ltr.svg \
-	$(shellcompactdir)/assets/corner-ripple-rtl.svg \
 	$(shellcompactdir)/assets/dash-placeholder.svg \
 	$(shellcompactdir)/assets/go-down.svg \
 	$(shellcompactdir)/assets/go-up.svg \
@@ -267,8 +259,6 @@ shell_lumine_compact_asset_file = \
 	$(shellluminecompactdir)/assets/checkbox-off-hover.svg \
 	$(shellluminecompactdir)/assets/checkbox-off.svg \
 	$(shellluminecompactdir)/assets/checkbox.svg \
-	$(shellluminecompactdir)/assets/corner-ripple-ltr.svg \
-	$(shellluminecompactdir)/assets/corner-ripple-rtl.svg \
 	$(shellluminecompactdir)/assets/dash-placeholder.svg \
 	$(shellluminecompactdir)/assets/go-down.svg \
 	$(shellluminecompactdir)/assets/go-up.svg \
@@ -316,8 +306,6 @@ shell_noir_compact_asset_file = \
 	$(shellnoircompactdir)/assets/checkbox-off-hover.svg \
 	$(shellnoircompactdir)/assets/checkbox-off.svg \
 	$(shellnoircompactdir)/assets/checkbox.svg \
-	$(shellnoircompactdir)/assets/corner-ripple-ltr.svg \
-	$(shellnoircompactdir)/assets/corner-ripple-rtl.svg \
 	$(shellnoircompactdir)/assets/dash-placeholder.svg \
 	$(shellnoircompactdir)/assets/go-down.svg \
 	$(shellnoircompactdir)/assets/go-up.svg \
@@ -857,8 +845,6 @@ CLEANFILES += \
 	$(srcdir)/gnome-shell-dark-compact/extensions/workspaces-to-dock/assets/*.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/checkbox-hover.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/checkbox.svg \
-	$(srcdir)/asset/assets-gnome-shell/common/corner-ripple-ltr.svg \
-	$(srcdir)/asset/assets-gnome-shell/common/corner-ripple-rtl.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/dash-placeholder.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/go-down.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/go-up.svg \
