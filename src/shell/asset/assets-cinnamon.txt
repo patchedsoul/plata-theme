@@ -5,7 +5,6 @@ common/misc/add-workspace-active r1
 common/misc/close-active r1
 common/misc/close-hover r3
 common/misc/close r3
-common/misc/corner-ripple r2
 common/misc/message r2
 common/misc/overview-hover
 common/misc/overview

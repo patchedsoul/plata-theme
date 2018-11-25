@@ -986,11 +986,15 @@ $ws_thumb_spacing: 32px;
 //  **********************/
 
 .ripple-box {
-  width: 104px;
-  height: 104px;
-  background-image: url("assets/misc/corner-ripple.svg");
-  background-size: contain;
-  &:rtl { background-image: url("assets/misc/corner-ripple.svg"); }
+  &:ltr,
+  &:rtl {
+    width: 52px * 2;
+    height: 52px * 2;
+    border-radius: 52px * 2;
+    background-image: none;
+    background-color: opacity($acc_bg, $a_trk_out);
+    box-shadow: $empty_shadow;
+  }
 }
 
 // /*****************
