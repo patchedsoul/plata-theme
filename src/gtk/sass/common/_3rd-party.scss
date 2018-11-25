@@ -2519,8 +2519,16 @@ window.background > paned.titlebar > headerbar.titlebar {
 // left-paned headerbar
 paned.headerbar_pane.titlebar > headerbar.header_right.titlebar {
   > box.linked.raised > button.toggle { // should be .text-button
-    // back to square buttons
-    @include radius($r_2);
+    &:dir(ltr) {
+      @include radius(0);
+      &:first-child { @include radius($r_2 0 0 $r_2); }
+      &:last-child { @include radius(0 $r_2 $r_2 0); }
+    }
+    &:dir(rtl) {
+      @include radius(0);
+      &:first-child { @include radius(0 $r_2 $r_2 0); }
+      &:last-child { @include radius($r_2 0 0 $r_2); }
+    }
   }
 }
 
