@@ -1295,6 +1295,15 @@ window.background {
   }
 }
 
+scrolledwindow {
+  &.history-view.frame {
+    border-bottom-color: if($variant == dark, track(white, $a_div_2),
+                                              $div_fg);
+
+    row.history-entry widget > label { color: $ter_fg; }
+  }
+}
+
 // /*********
 //  * Gedit *
 //  *********/
