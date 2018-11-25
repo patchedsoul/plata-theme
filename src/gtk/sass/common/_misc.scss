@@ -1159,14 +1159,9 @@ window.solid-csd > box.vertical > box.vertical {
 }
 
 window.background > box.vertical > box.vertical > toolbar.horizontal {
-  toolitem {
-    .linked.horizontal > button,
-    button.image-button.toggle,
-    botton.toggle {
-    }
-
-    .linked.horizontal > button {
-    }
+  // prev/play/next buttons in alternate-mode bottom toolbar
+  toolitem .linked.horizontal > button:not(.image-button):not(.text-button) {
+    padding: 0 rem($toolitem_size / 4, $sw: 1.0); // revive L/R padding
   }
 }
 
