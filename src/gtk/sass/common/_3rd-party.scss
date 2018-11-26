@@ -3584,26 +3584,6 @@ window.background.chromium {
   headerbar.titlebar {
     @extend %chromium_unfocused_tab; // for CSDs
 
-    separator.vertical.titlebutton { // for SSD/CSD unfocused tab separators
-      border-color: if($variant == mixed,
-                    mix($inv_fg, $inv_dark_bg, percentage($a_fg_3rd)),
-                    mix($fg, $dark_bg, percentage($a_fg_3rd)));
-    }
-
-    button.toggle { // account-button (> 64.0.3282?)
-      border: none;
-      @include radius($r_2); // back to text-button radius
-      background-color: transparent;
-      &:hover { // flat styles
-        @if $variant == mixed { background-color: track($inv_fg, $a_trk_1); }
-        @else { background-color: track($fg, $a_trk_1); }
-      }
-      &:active { // use chromium-style toggled backgrounds
-        @if $variant == mixed { background-color: track($inv_fg, $a_trk_2); }
-        @else { background-color: track($fg, $a_trk_2); }
-      }
-    }
-
     // from nav_button_provider_gtk3.cc (> 62.0.3202?)
     button.titlebutton { // title-buttons
       @extend %browser_csd_titlebutton;
