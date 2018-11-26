@@ -2753,9 +2753,6 @@ window.background > box.vertical > overlay > stack > box.horizontal {
         }
         &:active,
         &:selected {
-          &:dir(ltr) { @include radius(0 $r $r 0); }
-          &:dir(rtl) { @include radius($r 0 0 $r); }
-
           &, &:hover {
             background-color: $trk_bg;
 
