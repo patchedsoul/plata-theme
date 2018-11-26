@@ -4086,6 +4086,9 @@ box.vertical > stack > box > revealer > stack > scrolledwindow {
 
     > row.activatable {
       &:selected {
+        &:dir(ltr) { @include radius(0 $r $r 0); }
+        &:dir(rtl) { @include radius($r 0 0 $r); }
+
         &, &:hover {
           background-color: $trk_bg;
 

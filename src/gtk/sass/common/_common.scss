@@ -4809,8 +4809,8 @@ filechooserbutton:drop(active) {
 %selected_sidebar_row {
   color: $sel_label;
   background-color: $trk_bg;
-  // &:dir(ltr) { @include radius(0 $r $r 0); }
-  // &:dir(rtl) { @include radius($r 0 0 $r); }
+  &:dir(ltr) { @include radius(0 $r $r 0); }
+  &:dir(rtl) { @include radius($r 0 0 $r); }
 
   label { color: $sel_label; }
 
