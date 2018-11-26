@@ -1235,7 +1235,14 @@ window.budgie-popover.workspace-popover {
         @include ink-reaction(active-dec, $fc: $inv_fg, $tr: ink-active-dec);
       }
     }
-    &:checked { @include button(flat-checked, $tc: $sel_bg); }
+    &:checked {
+      @if $variant == mixed {
+        @include button(flat-checked, $tc: $inv_sel_label);
+      }
+      @else {
+        @include button(flat-checked, $tc: $sel_label);
+      }
+    }
   }
 }
 
