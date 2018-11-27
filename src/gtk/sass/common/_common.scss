@@ -5785,9 +5785,9 @@ cursor-handle {
 //  *************/
 
 @if $maj_ver == 4 {
-  // These classes are strongly depend on user's icon-theme. Currently I don't
-  // think we should hightlighten those icon edges because in most cases, those
-  // icons are not the very part of important clickable widgets...
+  // These classes strongly depend on user's icon-theme. Currently I don't
+  // think we should hightlighten those icon edges because those icons are
+  // not the very part of important clickable widgets in most cases...
   .lowres-icon { icon-shadow: none; }
 
   // mainly for 'About' box
