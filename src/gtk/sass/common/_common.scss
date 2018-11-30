@@ -5788,10 +5788,10 @@ cursor-handle {
   // These classes strongly depend on user's icon-theme. Currently I don't
   // think we should hightlighten those icon edges because those icons are
   // not the very part of important clickable widgets in most cases...
-  .lowres-icon { icon-shadow: none; }
+  .lowres-icon { -gtk-icon-shadow: none; }
 
   // mainly for 'About' box
-  .icon-dropshadow { icon-shadow: none; }
+  .icon-dropshadow { -gtk-icon-shadow: none; }
 }
 
 // /****************
