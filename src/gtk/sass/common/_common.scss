@@ -2417,20 +2417,32 @@ window:not(.maximized):not(.fullscreen):not(.tiled):not(.solid-csd) {
   headerbar.titlebar:not(.selection-mode) {
     // devel-mode does not work properly in selection-mode?
     window.devel & {
-      &, &:backdrop {
+      @if $variant == light {
+        background-image: -gtk-scaled(
+                          url("assets/dev-mode.png"),
+                          url("assets/dev-mode@2.png"));
+      }
+      @else {
+        background-image: -gtk-scaled(
+                          url("assets/dev-mode-dark.png"),
+                          url("assets/dev-mode-dark@2.png"));
+      }
+      background-position: 75% top;
+      background-size: $dev_asset_size $dev_asset_size;
+      background-repeat: no-repeat;
+      &:backdrop {
         @if $variant == light {
-          background-image: -gtk-scaled(
+          background-image: image(track($bg, $a_fg_bdp)),
+                            -gtk-scaled(
                             url("assets/dev-mode.png"),
                             url("assets/dev-mode@2.png"));
         }
         @else {
-          background-image: -gtk-scaled(
+          background-image: image(track($inv_bg, $a_fg_bdp)),
+                            -gtk-scaled(
                             url("assets/dev-mode-dark.png"),
-                            url("assets/dev-mode-dark@2.png"));
+                            url("assets/dev-mode-dark@2.png")),
         }
-        background-position: 75% top;
-        background-size: $dev_asset_size $dev_asset_size;
-        background-repeat: no-repeat;
       }
     }
   }
