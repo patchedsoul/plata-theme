@@ -2011,17 +2011,37 @@ $cose_button_size: 32px;
   height: $cose_button_size;
   -shell-close-overlap: $cose_button_size * 0.75;
   -st-background-image-shadow: $z-depth-1;
-  @include image-loader($url: 'assets/window-close.svg');
-  background-size: $cose_button_size;
+  @if $ver < 3.31 {
+    @include image-loader($url: 'assets/window-close.svg');
+    background-size: $cose_button_size;
+  }
+  @else {
+    border-radius: $r;
+    border: 0 none transparent;
+    background-color: $dest_bg;
+    color: $sel_fg;
+  }
   // FIXME: image duration causes weird deformation of images
   // while transitioning, keep non-duration here
   transition-duration: $tr_d_non;
   &:hover {
-    @include image-loader($url: 'assets/window-close-hover.svg');
+    @if $ver < 3.31 {
+      @include image-loader($url: 'assets/window-close-hover.svg');
+    }
+    @else {
+      background-color: mix($dest_bg, $sel_fg, percentage($a_trk_1));
+      color: $sel_fg;
+    }
     -st-background-image-shadow: $z-depth-2;
   }
   &:active {
-    @include image-loader($url: 'assets/window-close-active.svg');
+    @if $ver < 3.31 {
+      @include image-loader($url: 'assets/window-close-active.svg');
+    }
+    @else {
+      background-color: $sel_bg;
+      color: $sel_fg;
+    }
   }
 }
 
