@@ -33,7 +33,7 @@ shell_classic_readme_file = \
 shell_wtd_file = \
 	$(shelldir)/extensions/workspaces-to-dock/workspaces-to-dock.css
 if ENABLE_GNOME
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 shell_gdm3_file = $(shelldir)/gdm3-Plata.css
 endif
 endif
@@ -102,7 +102,7 @@ shell_lumine_classic_file = \
 shell_lumine_wtd_file = \
 	$(shellluminedir)/extensions/workspaces-to-dock/workspaces-to-dock.css
 if ENABLE_GNOME
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 shell_lumine_gdm3_file  = $(shellluminedir)/gdm3-Plata-Lumine.css
 endif
 endif
@@ -150,7 +150,7 @@ shell_noir_classic_file = \
 shell_noir_wtd_file = \
 	$(shellnoirdir)/extensions/workspaces-to-dock/workspaces-to-dock.css
 if ENABLE_GNOME
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 shell_noir_gdm3_file = $(shellnoirdir)/gdm3-Plata-Noir.css
 endif
 endif
@@ -198,7 +198,7 @@ shell_compact_classic_file = \
 shell_compact_wtd_file = \
 	$(shellcompactdir)/extensions/workspaces-to-dock/workspaces-to-dock.css
 if ENABLE_GNOME
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 shell_compact_gdm3_file = $(shellcompactdir)/gdm3-Plata-Compact.css
 endif
 endif
@@ -246,7 +246,7 @@ shell_lumine_compact_classic_file = \
 shell_lumine_compact_wtd_file = \
 	$(shellluminecompactdir)/extensions/workspaces-to-dock/workspaces-to-dock.css
 if ENABLE_GNOME
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 shell_lumine_compact_gdm3_file = $(shellluminecompactdir)/gdm3-Plata-Lumine-Compact.css
 endif
 endif
@@ -293,7 +293,7 @@ shell_noir_compact_classic_file = \
 shell_noir_compact_wtd_file = \
 	$(shellnoircompactdir)/extensions/workspaces-to-dock/workspaces-to-dock.css
 if ENABLE_GNOME
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 shell_noir_compact_gdm3_file = $(shellnoircompactdir)/gdm3-Plata-Noir-Compact.css
 endif
 endif
@@ -464,7 +464,7 @@ if ENABLE_GNOME
 		gnome-shell/$(GNOME_SCSS_VERSION)/gnome-shell-light-compact.scss ../gnome-shell-light-compact/gnome-shell.css && \
 		$(SASSC) $(sassc_option) \
 		gnome-shell/$(GNOME_SCSS_VERSION)/gnome-shell-dark-compact.scss ../gnome-shell-dark-compact/gnome-shell.css
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cd $(srcdir)/sass && \
 		$(SASSC) $(sassc_option) \
 		gnome-shell/$(GNOME_SCSS_VERSION)/gdm3.scss ../gnome-shell/gdm3-Plata.css && \
@@ -531,24 +531,66 @@ endif
 
 	cd $(srcdir)/asset && ./clone-assets-gnome-shell.sh
 
+if GNOME_IS_320_TO_324
 	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shelldir) \
 				--target=$(shelldir)/gnome-shell-theme.gresource \
-				$(srcdir)/sass/gnome-shell/gnome-shell-theme.gresource.xml
+				$(srcdir)/sass/gnome-shell/3.24/gnome-shell-theme.gresource.xml
 	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellluminedir) \
 				--target=$(shellluminedir)/gnome-shell-theme.gresource \
-				$(srcdir)/sass/gnome-shell/gnome-shell-theme.gresource.xml
+				$(srcdir)/sass/gnome-shell/3.24/gnome-shell-theme.gresource.xml
 	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellnoirdir) \
 				--target=$(shellnoirdir)/gnome-shell-theme.gresource \
-				$(srcdir)/sass/gnome-shell/gnome-shell-theme.gresource.xml
+				$(srcdir)/sass/gnome-shell/3.24/gnome-shell-theme.gresource.xml
 	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellcompactdir) \
 				--target=$(shellcompactdir)/gnome-shell-theme.gresource \
-				$(srcdir)/sass/gnome-shell/gnome-shell-theme.gresource.xml
+				$(srcdir)/sass/gnome-shell/3.24/gnome-shell-theme.gresource.xml
 	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellluminecompactdir) \
 				--target=$(shellluminecompactdir)/gnome-shell-theme.gresource \
-				$(srcdir)/sass/gnome-shell/gnome-shell-theme.gresource.xml
+				$(srcdir)/sass/gnome-shell/3.24/gnome-shell-theme.gresource.xml
 	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellnoircompactdir) \
 				--target=$(shellnoircompactdir)/gnome-shell-theme.gresource \
-				$(srcdir)/sass/gnome-shell/gnome-shell-theme.gresource.xml
+				$(srcdir)/sass/gnome-shell/3.24/gnome-shell-theme.gresource.xml
+endif
+if GNOME_IS_326_TO_330
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shelldir) \
+				--target=$(shelldir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.26/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellluminedir) \
+				--target=$(shellluminedir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.26/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellnoirdir) \
+				--target=$(shellnoirdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.26/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellcompactdir) \
+				--target=$(shellcompactdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.26/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellluminecompactdir) \
+				--target=$(shellluminecompactdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.26/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellnoircompactdir) \
+				--target=$(shellnoircompactdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.26/gnome-shell-theme.gresource.xml
+endif
+if GNOME_IS_332_OR_NEWER
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shelldir) \
+				--target=$(shelldir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.32/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellluminedir) \
+				--target=$(shellluminedir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.32/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellnoirdir) \
+				--target=$(shellnoirdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.32/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellcompactdir) \
+				--target=$(shellcompactdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.32/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellluminecompactdir) \
+				--target=$(shellluminecompactdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.32/gnome-shell-theme.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) --sourcedir=$(shellnoircompactdir) \
+				--target=$(shellnoircompactdir)/gnome-shell-theme.gresource \
+				$(srcdir)/sass/gnome-shell/3.32/gnome-shell-theme.gresource.xml
+endif
 endif
 
 if ENABLE_CINNAMON
@@ -603,7 +645,7 @@ if ENABLE_GNOME
 	cp -Rv $(shell_asset_file) $(platadir)/gnome-shell/assets
 	cp -Rv $(shell_extension_workspace_asset_file) \
 		$(platadir)/gnome-shell/extensions/workspaces-to-dock/assets
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cp -Rv $(shell_gdm3_file) $(platadir)/gnome-shell
 endif
 
@@ -619,7 +661,7 @@ endif
 	cp -Rv $(shell_lumine_asset_file) $(luminedir)/gnome-shell/assets
 	cp -Rv $(shell_extension_workspace_asset_file) \
 		$(luminedir)/gnome-shell/extensions/workspaces-to-dock/assets
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cp -Rv $(shell_lumine_gdm3_file) $(luminedir)/gnome-shell
 endif
 
@@ -635,7 +677,7 @@ endif
 	cp -Rv $(shell_noir_asset_file) $(noirdir)/gnome-shell/assets
 	cp -Rv $(shell_extension_workspace_asset_file) \
 		$(noirdir)/gnome-shell/extensions/workspaces-to-dock/assets
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cp -Rv $(shell_noir_gdm3_file) $(noirdir)/gnome-shell
 endif
 
@@ -651,7 +693,7 @@ endif
 	cp -Rv $(shell_compact_asset_file) $(platacompactdir)/gnome-shell/assets
 	cp -Rv $(shell_extension_workspace_asset_file) \
 		$(platacompactdir)/gnome-shell/extensions/workspaces-to-dock/assets
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cp -Rv $(shell_compact_gdm3_file) $(platacompactdir)/gnome-shell
 endif
 
@@ -667,7 +709,7 @@ endif
 	cp -Rv $(shell_lumine_compact_asset_file) $(luminecompactdir)/gnome-shell/assets
 	cp -Rv $(shell_extension_workspace_asset_file) \
 		$(luminecompactdir)/gnome-shell/extensions/workspaces-to-dock/assets
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cp -Rv $(shell_lumine_compact_gdm3_file) $(luminecompactdir)/gnome-shell
 endif
 
@@ -683,7 +725,7 @@ endif
 	cp -Rv $(shell_noir_compact_asset_file) $(noircompactdir)/gnome-shell/assets
 	cp -Rv $(shell_extension_workspace_asset_file) \
 		$(noircompactdir)/gnome-shell/extensions/workspaces-to-dock/assets
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 	cp -Rv $(shell_noir_compact_gdm3_file) $(noircompactdir)/gnome-shell
 endif
 endif
@@ -856,7 +898,7 @@ CLEANFILES += \
 	$(srcdir)/asset/assets-gnome-shell/common/window-close-active.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/window-close-hover.svg \
 	$(srcdir)/asset/assets-gnome-shell/workspaces-to-dock/*.svg
-if GNOME_IS_326_OR_NEWER
+if GNOME_IS_326_TO_330
 CLEANFILES += \
 	$(srcdir)/gnome-shell/gdm3-Plata.css \
 	$(srcdir)/gnome-shell-light/gdm3-Plata-Lumine.css \
