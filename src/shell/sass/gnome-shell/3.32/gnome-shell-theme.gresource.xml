@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/shell/theme">
+    <file>assets/checkbox.svg</file>
+    <file>assets/checkbox-hover.svg</file>
+    <file>assets/checkbox-off.svg</file>
+    <file>assets/checkbox-off-hover.svg</file>
+    <file>assets/dash-placeholder.svg</file>
+    <file>gnome-shell.css</file>
+    <file>assets/go-down.svg</file>
+    <file>assets/go-up.svg</file>
+    <file>key-enter.svg</file>
+    <file>key-enter-active.svg</file>
+    <file>key-hide.svg</file>
+    <file>key-layout.svg</file>
+    <file>key-shift.svg</file>
+    <file>key-shift-latched-uppercase.svg</file>
+    <file>key-shift-uppercase.svg</file>
+    <file>assets/media-control-active.svg</file>
+    <file>assets/media-control-hover.svg</file>
+    <file alias="icons/message-indicator-symbolic.svg">message-indicator-symbolic.svg</file>
+    <file>assets/more-results.svg</file>
+    <file>no-events.svg</file>
+    <file>noise-texture.png</file>
+    <file>no-notifications.svg</file>
+    <file>pad-osd.css</file>
+    <file>process-working.svg</file>
+    <file>toggle-off.svg</file>
+    <file>toggle-on.svg</file>
+  </gresource>
+</gresources>
