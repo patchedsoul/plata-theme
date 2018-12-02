@@ -2021,6 +2021,8 @@ $cose_button_size: 32px;
     background-color: $dest_bg;
     color: $sel_fg;
     box-shadow: $z-depth-1;
+
+    StIcon { icon-size: $icon_size; } // for safety
   }
   // FIXME: image duration causes weird deformation of images
   // while transitioning, keep non-duration here
