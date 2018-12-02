@@ -1465,34 +1465,58 @@ $extra_spacing: 2.5px;
 
 .calendar-change-month {
   &-back { // arrow back
-    @include image-loader($url: 'assets/calendar-arrow-left.svg');
+    @if $ver < 3.31 {
+      @include image-loader($url: 'assets/calendar-arrow-left.svg');
+    }
+    @else {
+      color: $sec_fg;
+
+      StIcon { icon-size: $icon_size; }
+    }
     &:hover,
     &:focus {
-      @include image-loader($url: 'assets/calendar-arrow-left-hover.svg');
+      @if $ver < 3.31 {
+        @include image-loader($url: 'assets/calendar-arrow-left-hover.svg');
+      }
+      @else { color: $fg; }
     }
 
-    &:rtl {
-      @include image-loader($url: 'assets/calendar-arrow-right.svg');
-    }
-    &:rtl:hover,
-    &:rtl:focus {
-      @include image-loader($url: 'assets/calendar-arrow-right-hover.svg');
+    @if $ver < 3.31 {
+      &:rtl {
+        @include image-loader($url: 'assets/calendar-arrow-right.svg');
+      }
+      &:rtl:hover,
+      &:rtl:focus {
+        @include image-loader($url: 'assets/calendar-arrow-right-hover.svg');
+      }
     }
   }
 
   &-forward { // arrow forward
-    @include image-loader($url: 'assets/calendar-arrow-right.svg');
+    @if $ver < 3.31 {
+      @include image-loader($url: 'assets/calendar-arrow-right.svg');
+    }
+    @else {
+      color: $sec_fg;
+
+      StIcon { icon-size: $icon_size; }
+    }
     &:hover,
     &:focus {
-      @include image-loader($url: 'assets/calendar-arrow-right-hover.svg');
+      @if $ver < 3.31 {
+        @include image-loader($url: 'assets/calendar-arrow-right-hover.svg');
+      }
+      @else { color: $fg; }
     }
 
-    &:rtl {
-      @include image-loader($url: 'assets/calendar-arrow-left.svg');
-    }
-    &:rtl:hover,
-    &:rtl:focus {
-      @include image-loader($url: 'assets/calendar-arrow-left-hover.svg');
+    @if $ver < 3.31 {
+      &:rtl {
+        @include image-loader($url: 'assets/calendar-arrow-left.svg');
+      }
+      &:rtl:hover,
+      &:rtl:focus {
+        @include image-loader($url: 'assets/calendar-arrow-left-hover.svg');
+      }
     }
   }
 }
