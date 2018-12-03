@@ -413,11 +413,7 @@ entry {
   }
 
   headerbar & {
-    @if $variant == mixed {
-      @extend %inv_entry;
-
-      selection { @extend %selected_items; }
-    }
+    @if $variant == mixed { @extend %inv_entry; }
   }
 
   @if $variant == mixed {
@@ -678,14 +674,18 @@ entry {
   &:focus {
     @include entry(focus, $c: $inv_base,
                           $tc: $inv_fg);
-  caret-color: $inv_fg;
+    caret-color: $inv_fg;
   }
   &:disabled {
     @include entry(disabled, $c: $inv_base,
                              $tc: $inv_fg);
   }
 
-  selection { @extend %selected_items; }
+  selection {
+    &, &:focus { // specificity bump
+      @extend %selected_items;
+    }
+  }
 }
 
 // /***********
