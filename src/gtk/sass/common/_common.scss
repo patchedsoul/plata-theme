@@ -4097,7 +4097,7 @@ scale { // scales for color
     &.vertical {
       &:dir(ltr) {
         margin: (-$thin_side) (-$thin_side) (-$thin_side) $thin_side;
-        padding: $thin_side 0;
+        padding: $thin_side $thin_side $thin_side 0;
 
         slider {
           &,
@@ -4109,7 +4109,7 @@ scale { // scales for color
 
       &:dir(rtl) {
         margin: (-$thin_side) $thin_side (-$thin_side) (-$thin_side);
-        padding: $thin_side 0;
+        padding: $thin_side 0 $thin_side $thin_side;
 
         slider {
           &,
