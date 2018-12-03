@@ -45,19 +45,19 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
     box-shadow: inset 0 -2px opacity($tc, $a_trk_out);
   }
   @else if $t == focus {
-    background-color: track($tc, $a_trk_1);
+    background-color: opacity($tc, $a_trk_1);
     color: $tc;
     caret-color: $tc;
     box-shadow: inset 0 -2px $fc;
   }
   @else if $t == hover {
-    background-color: track($tc, $a_trk_1);
+    background-color: opacity($tc, $a_trk_1);
     color: $tc;
     box-shadow: inset 0 -2px opacity($tc, $a_trk_out);
   }
   @else if $t == disabled {
-    background-color: track($tc, $a_trk_1 / 2 * $a_fg_dis);
-    color: track($tc, $a_fg_dis);
+    background-color: opacity($tc, $a_trk_1 / 2 * $a_fg_dis);
+    color: opacity($tc, $a_fg_dis);
     box-shadow: $empty_shadow;
   }
 }
@@ -80,7 +80,7 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
   @if $t == normal {
     border: 1px solid mix($tc, $c, percentage($a_div_1));
     background-color: $c;
-    color: track($tc, $a_fg_2nd);
+    color: opacity($tc, $a_fg_2nd);
   }
   @else if $t == focus {
     border: 1px solid mix($tc, $c, percentage($a_div_1));
