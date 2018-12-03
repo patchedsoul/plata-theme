@@ -60,51 +60,53 @@
 //  *************************/
 
 .openweather {
-  &-button {
-    // generic text buttons are allocated with y-expand-ed
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
   &-button,
   &-menu-button-container,
-  &-button-box,
+  &-button-box {
+  }
+
   &-provider {
-    color: $sec_fg;
-    &:hover {
-      color: $fg;
-      background-color: $semi_fill_bg;
-
-      > StIcon { color: $fg; }
-    }
-    &:active,
-    &:focus {
-      color: $fg;
-      background-color: $fill_bg;
-
-      > StIcon { color: $fg; }
-    }
-
-    > StIcon,
-    > StLabel { color: $sec_fg; }
+    // generic text buttons are allocated with y-expand-ed
+    padding: if($ref_weight >= 1.0, 0 16px, 0 12px);
+    font-weight: 500;
+    @include button(flat-normal);
+    &:hover { @include button(flat-hover); }
+    &:focus { @include button(flat-focus); }
+    &:active { @include button(flat-active); }
+    &:insensitive { @include button(flat-disabled); }
   }
 
   &-current {
     &-icon,
     &-summary,
-    &-summarybox { color: $fg; }
+    &-summarybox {
+      background: none;
+      color: $fg;
+    }
 
-    &-databox-values { color: $ter_fg; }
+    &-databox-values {
+      background: none;
+      color: $ter_fg;
+    }
 
-    &-databox-captions { color: $ter_fg; }
+    &-databox-captions {
+      background: none;
+      color: $ter_fg;
+    }
   }
 
   &-forecast {
     &-icon,
-    &-summary { color: $sec_fg; }
+    &-summary {
+      background: none;
+      color: $sec_fg;
+    }
 
     &-day,
-    &-temperature { color: $ter_fg; }
+    &-temperature {
+      background: none;
+      color: $ter_fg;
+    }
   }
 
   &-sunrise-icon,
