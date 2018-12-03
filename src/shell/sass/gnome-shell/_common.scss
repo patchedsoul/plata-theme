@@ -1966,20 +1966,15 @@ $extra_spacing: 2.5px;
 .system-menu-action {
   padding: if($ref_weight >= 1.0, 10px, 8px);
   border-radius: $r;
-  border: none;
-  color: $sec_acc_fg;
+  @include button(normal);
   @if $ver > 3.25 {
     -st-icon-style: symbolic; // >= 3.29.90
   }
-  &:hover,
-  &:focus {
-    border: none;
-    background-color: $acc_semi_fill_bg;
-    color: $acc_fg;
-  }
-  &:active {
-    color: $acc_fg;
-    background-color: $acc_fill_bg;
+  &:hover { @include button(hover); }
+  &:focus { @include button(focus); }
+  &:active,
+  &:checked {
+    &, &:focus { @include button(active); }
   }
 
   > StIcon { icon-size: $icon_size; }
