@@ -1972,9 +1972,11 @@ $extra_spacing: 2.5px;
   }
   &:hover { @include button(hover); }
   &:focus { @include button(focus); }
-  &:active,
-  &:checked {
+  &:active {
     &, &:focus { @include button(active); }
+  }
+  &:checked { // this might not be needed
+    &, &:focus { @include button(checked); }
   }
 
   > StIcon { icon-size: $icon_size; }

@@ -95,6 +95,11 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
     color: $tc;
   }
   @else if $t == active {
+    border-color: mix($tc, $c, percentage($a_trk_2));
+    background-color: mix($tc, $c, percentage($a_trk_2));
+    color: $tc;
+  }
+  @else if $t == checked {
     border-color: $sel_bg;
     background-color: $sel_bg;
     color: $sel_fg;
