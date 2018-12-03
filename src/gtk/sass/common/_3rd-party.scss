@@ -856,6 +856,13 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
       @if $variant == mixed { @extend %inv-action-area-button; }
       @else { @extend %action-area-button; }
     }
+
+    > box.vertical > box.horizontal > image { // header icons
+      padding: rem(5.3px / 2) 0;
+      color: if($variant == mixed, $inv_ter_fg, $ter_fg); // tone down
+      &:dir(ltr) { margin: 0 (4px + 1px) 0 -4px; }
+      &:dir(rtl) { margin: 0 -4px 0 (4px + 1px); }
+    }
   }
 }
 
