@@ -3908,22 +3908,22 @@ $tool_icon_size: 24px;
 
   &-button {
     height: $cose_button_size - 1px; // subtract bottom-padding
-    padding: 0 16px 1px;
+    padding: if($ref_weight >= 1.0, 0 16px 1px, 0 12px 1px);
     border-radius: $r_2;
     font-weight: 500;
     @if $variant == mixed {
-      @include button(flat-normal, $tc: $inv_acc_fg);
-      &:hover { @include button(flat-hover, $tc: $inv_acc_fg); }
-      &:focus { @include button(flat-focus, $tc: $inv_acc_fg); }
-      &:active { @include button(flat-active, $tc: $inv_acc_fg); }
+      @include button(normal, $c: $osd_base, $tc: $osd_fg);
+      &:hover { @include button(hover, $c: $osd_base, $tc: $osd_fg); }
+      &:focus { @include button(focus, $c: $osd_base, $tc: $osd_fg); }
+      &:active { @include button(active, $c: $osd_base, $tc: $osd_fg); }
       &:insensitive { @include button(flat-disabled, $tc: $osd_fg); }
     }
     @else {
-      @include button(flat-normal, $tc: $acc_fg);
-      &:hover { @include button(flat-hover, $tc: $acc_fg); }
-      &:focus { @include button(flat-focus, $tc: $acc_fg); }
-      &:active { @include button(flat-active, $tc: $acc_fg); }
-      &:insensitive { @include button(flat-disabled, $tc: $osd_fg); }
+      @include button(normal);
+      &:hover { @include button(hover); }
+      &:focus { @include button(focus); }
+      &:active { @include button(active); }
+      &:insensitive { @include button(flat-disabled); }
     }
   }
 }

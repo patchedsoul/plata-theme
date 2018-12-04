@@ -76,10 +76,14 @@ $dis_out_fg: opacity($out_fg, $a_fg_dis);
 //
 
 $osd_bg: if($variant == light,
-             mix(color($grey, 200), color($grey, 300)),
-             mix(color($grey, 900), black, 25%));
+            mix(color($grey, 200), color($grey, 300)),
+            mix(color($grey, 900), black, 25%));
 $osd_semi_fill_bg: opacity($osd_fg, $a_trk_1);
 $osd_fill_bg: opacity($osd_fg, $a_trk_2);
+
+$osd_base: if($variant == light,
+              white,
+              mix(color($grey, 900), black));
 
 $osd_out_fg: opacity($osd_fg, $a_trk_out);
 $dis_osd_out_fg: opacity($osd_out_fg, $a_fg_dis);
