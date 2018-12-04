@@ -1078,7 +1078,7 @@ $ws_thumb_spacing: 32px;
     @extend %osd_entry;
     width: 28em;
     padding: 7px;
-    border-radius: 0;
+    border-radius: $r_4 $r_4 0 0;
     caret-color: $osd_fg;
     selected-color: $sel_fg;
     selection-background-color: $sel_bg;
