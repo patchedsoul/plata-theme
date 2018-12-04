@@ -1263,6 +1263,7 @@ $large_item: 10px;
   &-favorites-button {
     padding: $large_item;
     border-radius: $r_2;
+    border: 0 none transparent;
     &:hover { @include button(flat-hover); }
   }
 
@@ -1272,6 +1273,7 @@ $large_item: 10px;
     &-button {
       padding: $large_item;
       border-radius: $r_2;
+      border: 0 none transparent;
     }
   }
 
@@ -1291,6 +1293,7 @@ $large_item: 10px;
 
   &-application-button {
     padding: 0 $menu_spacing;
+    border: 0 none transparent;
     color: $sec_fg;
 
     // This style is used in menu application buttons
@@ -1346,6 +1349,7 @@ $large_item: 10px;
     &-greyed {
       padding: 0 $menu_spacing;
       border-radius: $r_2;
+      border: 0 none transparent;
       font-weight: 500;
     }
 
@@ -1398,8 +1402,6 @@ $large_item: 10px;
   }
 
   &-search-box {
-    // FXIME: drop margin property if .menu-top-box class landed
-    margin-bottom: $menu_spacing;
     &:ltr { padding-left: $large_item * 3; }
     &:rtl { padding-right: $large_item * 3; }
   }
@@ -1418,7 +1420,7 @@ $large_item: 10px;
   @extend %entry;
   width: 24em;
   caret-color: $fg;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 // /*******
