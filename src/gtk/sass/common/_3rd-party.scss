@@ -1468,6 +1468,8 @@ $entry_margin: 15px;
     }
     font-size: 110%;
 
+    selection { @extend %selected_items; }
+
     image {
       @if $variant == mixed {
         &:not(:hover):not(:active) { color: $inv_sec_fg; }
