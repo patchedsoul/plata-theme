@@ -681,11 +681,7 @@ entry {
                              $tc: $inv_fg);
   }
 
-  selection {
-    &, &:focus { // specificity bump
-      @extend %selected_items;
-    }
-  }
+  selection { @extend %selected_items; }
 }
 
 // /***********
@@ -5643,11 +5639,13 @@ headerbar.titlebar.default-decoration {
 //  *************/
 
 %selected_items {
-  background-color: $sel_bg;
-  color: $sel_fg;
-  &:disabled {
-    background-color: track($sel_bg, $a_fg_dis);
-    color: $dis_sel_fg;
+  &, &:focus {
+    background-color: $sel_bg;
+    color: $sel_fg;
+    &:disabled {
+      background-color: track($sel_bg, $a_fg_dis);
+      color: $dis_sel_fg;
+    }
   }
 }
 
