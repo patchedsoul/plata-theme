@@ -1553,6 +1553,8 @@ $entry_margin: 15px;
       &:disabled {
         @include entry(flat-disabled, $tc: $inv_fg);
       }
+
+      selection { @extend %selected_items; }
     }
     @else {
       @include entry(flat-normal, $tc: $fg);
@@ -1799,6 +1801,8 @@ window.background.budgie-settings-window.csd {
     &:disabled {
       @include entry(flat-disabled, $tc: $inv_fg);
     }
+
+    selection { @extend %selected_items; }
   }
   @else {
     @include entry(flat-normal, $tc: $fg);
@@ -2275,9 +2279,7 @@ window.background:not(.csd) > box.vertical {
       color: $sel_bg;
     }
 
-    selection {
-      &, &:focus { @extend %selected_items; }
-    }
+    selection { @extend %selected_items; }
 
     image.left {
       margin-right: 8px;
