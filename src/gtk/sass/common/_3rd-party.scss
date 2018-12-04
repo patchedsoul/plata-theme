@@ -1399,6 +1399,8 @@ window.budgie-switcher-window {
 }
 
 // run-dialog styling
+$entry_margin: 15px;
+
 .background.csd.budgie-run-dialog {
   border: none;
   @if $variant == mixed {
@@ -1411,9 +1413,13 @@ window.budgie-switcher-window {
   // specific 8px rounded corners need decoration
   // radii as well.
   &,
-  decoration { @include radius($r_8 $r_8 0 0, none); }
+  decoration { @include radius($r_8, none); }
 
   scrolledwindow {
+    margin: 0 $entry_margin $entry_margin;
+    @include radius(0 0 $r_4 $r_4, none);
+    border: 1px solid if($variant == light, $div_fg,
+                                            track(white, $a_div_2));
     background-color: transparent;
 
     list {
@@ -1446,7 +1452,8 @@ window.budgie-switcher-window {
   entry.search {
     min-width: $icon_size * 25;
     min-height: rem($widget_size * 1.2);
-    @include radius($r_8 $r_8 0 0, none);
+    margin: $entry_margin;
+    @include radius($r_4 $r_4 0 0, none);
     @if $variant == mixed {
       @include entry(flat-normal, $tc: $inv_fg);
       caret-color: $inv_fg;
