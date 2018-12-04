@@ -1459,6 +1459,8 @@ $entry_margin: 15px;
       caret-color: $inv_fg;
       &:focus { @include entry(flat-focus, $tc: $inv_fg); }
       &:disabled { @include entry(flat-disabled, $tc: $inv_fg); }
+
+      selection { @extend %selected_items; }
     }
     @else {
       @include entry(flat-normal, $tc: $fg);
@@ -1467,8 +1469,6 @@ $entry_margin: 15px;
       &:disabled { @include entry(flat-disabled, $tc: $fg); }
     }
     font-size: 110%;
-
-    selection { @extend %selected_items; }
 
     image {
       @if $variant == mixed {
