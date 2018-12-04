@@ -609,7 +609,9 @@ dialog.background.csd > box.dialog-vbox.vertical {
     }
 
     &:selected {
-      background-color: transparent; // unset selection color
+      &, &:focus {
+        background-color: transparent; // unset selection color
+      }
 
       box.icon {
         &-item-background label {
@@ -1595,8 +1597,7 @@ docktabstrip docktab { @extend  %tabstrip_tab; }
       > devhelppanel treeview.view {
         background-color: $bg;
         font-weight: 500;
-        &:selected, // use standard selection styling
-        &:selected:focus { @extend %selected_items; }
+        &:selected { @extend %selected_items; }
       }
     }
   }
