@@ -229,13 +229,6 @@ headerbar.titlebar.tweak-titlebar {
   }
 }
 
-list.tweak-group {
-  // for shell-extensions group
-  row.activatable:not(.tweak) {
-    &:hover { background-color: transparent; }
-  }
-}
-
 // basic row node container in right-pane
 row.tweak {
   &:dir(ltr) { margin-left: rem($ref_size, $sw: 1.0); }
