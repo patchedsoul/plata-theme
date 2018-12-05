@@ -1348,6 +1348,7 @@ window.budgie-switcher-window {
   // draw actual backgrounds and shadows
   .drop-shadow {
     margin: $shadow_margin_4; // reserve area for shadows
+    padding: $budgie_osd_margin $budgie_osd_margin 0;
     border-radius: $r_8;
     @if $variant == mixed { background-color: track($inv_dark_bg, $a_osd); }
     @else { background-color: track($dark_bg, $a_osd); }
@@ -1358,8 +1359,6 @@ window.budgie-switcher-window {
       min-height: 13.3px * 2; // use non-scaling unit
       color: if($variant == mixed, $inv_fg, $fg);
       font-weight: 500;
-      &:dir(ltr) { padding: 0 0 0 ($child_margin * 2); }
-      &:dir(rtl) { padding: 0 ($child_margin * 2) 0 0; }
     }
   }
 
@@ -1399,8 +1398,6 @@ window.budgie-switcher-window {
 }
 
 // run-dialog styling
-$entry_margin: 15px;
-
 .background.csd.budgie-run-dialog {
   border: none;
   @if $variant == mixed {
@@ -1416,7 +1413,7 @@ $entry_margin: 15px;
   decoration { @include radius($r_8, none); }
 
   scrolledwindow {
-    margin: 0 $entry_margin $entry_margin;
+    margin: 0 $budgie_osd_margin $budgie_osd_margin;
     border: 1px solid if($variant == light, $div_fg,
                                             track(white, $a_div_2));
     background-color: transparent;
@@ -1451,7 +1448,7 @@ $entry_margin: 15px;
   entry.search {
     min-width: $icon_size * 25;
     min-height: rem($widget_size * 1.2);
-    margin: $entry_margin;
+    margin: $budgie_osd_margin;
     @include radius($r_4 $r_4 0 0, none);
     @if $variant == mixed {
       @include entry(flat-normal, $tc: $inv_fg);

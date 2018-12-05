@@ -144,3 +144,4 @@ $deco_margin: 10px;
 $shadow_margin_2: 0  8px 14px;
 $shadow_margin_3: 6px 10px 16px;
 $shadow_margin_4: 16px 24px 32px;
+$budgie_osd_margin: if($ref_weight < 1.0, 12px, 16px);
