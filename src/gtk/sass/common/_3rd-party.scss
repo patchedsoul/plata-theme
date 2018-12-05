@@ -1417,7 +1417,6 @@ $entry_margin: 15px;
 
   scrolledwindow {
     margin: 0 $entry_margin $entry_margin;
-    @include radius(0 0 $r_4 $r_4, none);
     border: 1px solid if($variant == light, $div_fg,
                                             track(white, $a_div_2));
     background-color: transparent;
