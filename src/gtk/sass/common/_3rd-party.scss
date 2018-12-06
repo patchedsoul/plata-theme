@@ -1348,7 +1348,7 @@ window.budgie-switcher-window {
   // draw actual backgrounds and shadows
   .drop-shadow {
     margin: $shadow_margin_4; // reserve area for shadows
-    padding: $budgie_osd_margin $budgie_osd_margin 0;
+    padding: $budgie_osd_margin $budgie_osd_margin ($budgie_osd_margin / 4);
     border-radius: $r_8;
     @if $variant == mixed { background-color: track($inv_dark_bg, $a_osd); }
     @else { background-color: track($dark_bg, $a_osd); }
