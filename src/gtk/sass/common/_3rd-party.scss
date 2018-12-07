@@ -3145,6 +3145,11 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
     border-top: 1px solid $div_fg; // top only
 
     .frame { border-width: 0 0 1px; } // bottom only
+
+    treeview.view:not(:focus):selected {
+      // protect selection backgrounds in 'extra pane' mode
+      background-image: image($sel_bg);
+    }
   }
 
   statusbar {
