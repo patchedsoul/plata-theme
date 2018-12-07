@@ -1917,6 +1917,17 @@ toolbar {
     combobox {
       button.combo,
       .linked > button.combo { @extend %toolitem_size; }
+
+      .background & .linked > entry.combo:not(.flat) { // revert to non-flat
+        border: 2px solid transparent;
+        @include entry(normal);
+        box-shadow: none;
+        &:focus { @include entry(focus); }
+        &:disabled { @include entry(disabled); }
+
+        &:dir(ltr) { border-right-width: 1px; }
+        &:dir(rtl) { border-left-width: 1px; }
+      }
     }
 
     entry {
