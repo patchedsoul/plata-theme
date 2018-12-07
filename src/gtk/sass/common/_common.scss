@@ -1917,6 +1917,16 @@ toolbar {
     combobox {
       button.combo,
       .linked > button.combo { @extend %toolitem_size; }
+
+      .background & .linked > entry.combo:not(.flat) { // optimize radius
+        &:dir(ltr) { @include radius($r_4 0 0 0, none); }
+        &:dir(rtl) { @include radius(0 $r_4 0 0, none); }
+
+        + button.combo {
+          &:dir(ltr) { @include radius(0 $r_4 $r_4 0, none); }
+          &:dir(rtl) { @include radius($r_4 0 0 $r_4, none); }
+        }
+      }
     }
 
     entry {
