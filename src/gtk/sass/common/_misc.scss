@@ -21,10 +21,12 @@
 }
 
 %gnome_panel_menubar {
-  border: unset;
   color: if($variant == mixed, $inv_fg, $fg);
   background-color: transparent;
   font-weight: 700;
+
+  &,
+  .background & { border: unset; }
 }
 
 %gnome_panel_menuitem {
