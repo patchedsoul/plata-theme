@@ -391,6 +391,48 @@ window.budgie-popover:not(.csd) {
   }
 }
 
+// icon-tasklist popover styling
+$requested_height: 32px; // hard-coded
+
+window.budgie-popover:not(.csd).background > frame.container {
+  > stack {
+    padding: 6px;
+
+    separator.horizontal { margin: rem($menu_padding) 0; }
+
+    box.horizontal > button.flat {
+      min-height: $requested_height;
+      min-width: $requested_height;
+
+      &:first-child:not(:only-child) {
+        font-weight: 500; // text-buttons
+      }
+      &:not(:first-child):not(:only-child) {
+        &:not(:last-child) { // 'close' buttons
+          @include button(flat-normal, $tc: $dest_bg);
+          @include ink-reaction(normal, $fc: $dest_bg);
+          &:hover { @include button(flat-hover, $tc: $dest_bg); }
+          &:active {
+            @include button(flat-active, $tc: $dest_bg);
+            @include ink-reaction(active-dec, $fc: $dest_bg);
+          }
+          &:disabled { @include button(flat-disabled, $tc: $dest_bg); }
+          &:checked { @include button(flat-checked, $tc: $dest_bg); }
+        }
+      }
+    }
+
+    grid.horizontal { // bottom button container
+      margin-top: 6px;
+
+      > button.flat.image-button {
+        @extend %action-area-button;
+        min-height: $requested_height;
+      }
+    }
+  }
+}
+
 // main menu styling
 .budgie-panel {
   button.flat.budgie-menu-launcher {
