@@ -1241,23 +1241,12 @@ window.budgie-popover.workspace-popover {
   $max_children_per_line: 4;
   $requested_width: 150px;
 
+  > frame.container { padding: 6px; }
+
   box.workspace-popover-button-box {
     > button.flat { // 'Rename' and 'Remove'
       min-width: $requested_width;
-      padding: rem(5.3px) rem(8px + 5.3px) rem(6.7px);
-      @include radius(0);
       font-weight: 500;
-
-      &:first-child { // draw an arrow
-        &:dir(ltr) {
-          border-image:-gtk-icontheme("pan-end-symbolic")
-                                      0 13.3 0 0 / 0 13.3px 0 0;
-        }
-        &:dir(rtl) {
-          border-image:-gtk-icontheme("pan-end-symbolic-rtl")
-                                      0 0 0 13.3 / 0 0 0 13.3px;
-        }
-      }
     }
 
     // hide unneeded separators
