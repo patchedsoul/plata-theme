@@ -429,8 +429,6 @@ window.budgie-popover:not(.csd).background > frame.container {
     }
 
     grid.horizontal { // bottom button container
-      margin-top: 6px;
-
       > button.flat.image-button {
         @extend %action-area-button;
         min-height: $requested_height;
