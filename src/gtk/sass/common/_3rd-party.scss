@@ -401,7 +401,10 @@ window.budgie-popover:not(.csd).background > frame.container {
 
       // exclude ClockApplet's popover which has similar stack > box node,
       // otherwise unwanted double padding happens there...
-      &:not(:only-child) { padding: 0; }
+      &:not(:only-child) {
+        padding: 0;
+        &:not(:first-child) { padding: 6px; }
+      }
     }
 
     separator.horizontal { margin: rem($menu_padding) 0; }
