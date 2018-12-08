@@ -396,7 +396,13 @@ $requested_height: 32px; // hard-coded
 
 window.budgie-popover:not(.csd).background > frame.container {
   > stack {
-    padding: 6px;
+    > box.vertical {
+      padding: 6px;
+
+      // exclude ClockApplet's popover which has similar stack > box node,
+      // otherwise unwanted double padding happens there...
+      &:not(:only-child) { padding: 0; }
+    }
 
     separator.horizontal { margin: rem($menu_padding) 0; }
 
