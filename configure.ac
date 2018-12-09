@@ -46,6 +46,11 @@ if test x"$GLIB_COMPILE_RESOURCES" = x; then
 	AC_MSG_ERROR(['glib-compile-resources' not found.])
 fi
 
+AC_PATH_TOOL([XMLLINT], [xmllint])
+if test x"$XMLLINT" = x; then
+	AC_MSG_ERROR(['xmllint' not found.])
+fi
+
 AC_PATH_TOOL([INKSCAPE], [inkscape])
 if test x"$INKSCAPE" = x; then
 	AC_MSG_ERROR(['inkscape' not found.])
@@ -94,6 +99,7 @@ AC_MSG_RESULT([
                                  ${datarootdir}/themes/Plata-Noir-Compact
 
          glib-compile-resources: $GLIB_COMPILE_RESOURCES
+         xmllint:                $XMLLINT
          inkscape:               $INKSCAPE
          sassc:                  $SASSC
 
