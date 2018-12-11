@@ -363,6 +363,8 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
 }
 
 // budgie specific popover widgets
+$budgie_popover_padding: 6px;
+
 window.budgie-popover:not(.csd) {
   &.background {
     @extend %popover;
@@ -380,13 +382,37 @@ window.budgie-popover:not(.csd) {
     }
   }
 
-  > frame.container {
-    margin: 0 -1px -1px; // remove gap
-
+  > frame.container { // generic popover spacing
     &,
     > border {
       border-style: none; // hide container borders
       background-color: transparent;
+    }
+
+    > stack > box.vertical { // icon-tasklist/clock popover
+      padding: $budgie_popover_padding;
+
+      // exclude ClockApplet's popover which has similar stack > box node,
+      // otherwise unwanted double padding happens there...
+      &:not(:only-child) {
+        padding: 0;
+        &:not(:first-child) { padding: $budgie_popover_padding; }
+      }
+    }
+  }
+
+  &.budgie-menu,
+  &.user-menu,
+  &.workspace-popover {
+    > frame.container { padding: $budgie_popover_padding; }
+  }
+
+  &.night-light-indicator,
+  &.places-menu {
+    > frame.container {
+      padding: ($budgie_popover_padding + 2px)
+               $budgie_popover_padding
+               $budgie_popover_padding;
     }
   }
 }
@@ -396,17 +422,6 @@ $requested_height: 32px; // hard-coded
 
 window.budgie-popover:not(.csd).background > frame.container {
   > stack {
-    > box.vertical {
-      padding: 6px;
-
-      // exclude ClockApplet's popover which has similar stack > box node,
-      // otherwise unwanted double padding happens there...
-      &:not(:only-child) {
-        padding: 0;
-        &:not(:first-child) { padding: 6px; }
-      }
-    }
-
     separator.horizontal { margin: rem($menu_padding) 0; }
 
     box.horizontal > button.flat {
@@ -475,14 +490,6 @@ window.budgie-popover:not(.csd).background > frame.container {
 }
 
 .budgie-menu {
-  background-color: $dark_bg;
-
-  &.background {
-    border-radius: $r_4;
-
-    .container { padding: 0 0 4px; }
-  }
-
   scrolledwindow,
   list,
   row,
@@ -564,11 +571,7 @@ window.budgie-popover:not(.csd).background > frame.container {
 
 // user-indicator styling
 .user-menu {
-  background-color: $dark_bg;
-
   frame.container {
-    padding: 6px;
-
     separator { min-height: 0; } // hide separator
   }
 
@@ -1035,8 +1038,6 @@ window.sound-popover.background box.horizontal {
 
 // night-light-indicator styling
 .night-light-indicator {
-  frame.container { padding: (6px + 2px) 6px 6px; }
-
   .view-header {
     label {
       @extend %dim_label;
@@ -1052,10 +1053,6 @@ window.sound-popover.background box.horizontal {
 
 // places-indicator styling
 .places-menu {
-  &.background {
-    .container { padding: (6px + 2px) 6px 6px; }
-  }
-
   box.places-section-header {
     padding: 0;
 
@@ -1248,8 +1245,6 @@ widget > box.workspace-switcher {
 window.budgie-popover.workspace-popover {
   $max_children_per_line: 4;
   $requested_width: 150px;
-
-  > frame.container { padding: 6px; }
 
   box.workspace-popover-button-box {
     > button.flat { // 'Rename' and 'Remove'
