@@ -782,6 +782,25 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
         font-size: 90%;
       }
 
+      list { // apps/devices list
+        margin: 0 1px; // stop touching the parent L/R edges
+
+        row.activatable { // devices list
+          &:selected {
+            background-color: track($sel_bg, $a_trk_2);
+            &:dir(ltr) { box-shadow: inset 4px 0 $sel_bg; }
+            &:dir(rtl) { box-shadow: inset -4px 0 $sel_bg; }
+
+            &, label { color: $fg; }
+          }
+
+          > box > label {
+            &:dir(ltr) { margin-left: 4px; }
+            &:dir(rtl) { margin-right: 4px; }
+          }
+        }
+      }
+
       stackswitcher.linked {
         padding: 0 $raven_box_spacing; // limit child spacing
 
