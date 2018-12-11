@@ -531,21 +531,24 @@ window.budgie-popover:not(.csd).background > frame.container {
     }
 
     button.flat {
-      @include radius(0); // remove roundness
       &, &:hover { transition-duration: $tr_d_non; }
     }
   }
 
   .categories { // left-paned elements of GtkPopover
-    border-top: 1px solid $div_fg;
-    border-bottom: 1px solid $div_fg;
-    background-color: $bg;
-    &:dir(ltr) { border-right: 1px solid $div_fg; }
-    &:dir(rtl) { border-left: 1px solid $div_fg; }
-
+    &:dir(ltr) {
+      margin-right: $budgie_popover_padding;
+      border-right: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                   $div_fg);
+    }
+    &:dir(rtl) {
+      margin-left: $budgie_popover_padding;
+      border-left: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                  $div_fg);
+    }
 
     button.flat.radio.category-button {
-      @include radius(0); // remove roundness
+      @include radius(0);
       &:not(:active) { transition-duration: $tr_d_sht; } // use list-transition
       &:checked {
         &, &:hover {
@@ -558,10 +561,12 @@ window.budgie-popover:not(.csd).background > frame.container {
 
           label { color: inherit; }
         }
+
+        &:dir(ltr) { @include radius(0 $r $r 0); }
+        &:dir(rtl) { @include radius($r 0 0 $r); }
       }
 
       > box > label { // tweak vertical spacing and font weight
-        margin-bottom: rem($baseline, $sw: 1.0);
         padding: 0 rem($menuitem_padding, $sw: 1.0);
         font-weight: 500;
       }
