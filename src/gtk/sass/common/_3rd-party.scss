@@ -389,15 +389,12 @@ window.budgie-popover:not(.csd) {
       background-color: transparent;
     }
 
-    > stack > box.vertical { // icon-tasklist/clock popover
-      padding: $budgie_popover_padding;
+    stack { // icon-tasklist/clock popover stack
+      separator.horizontal { margin: rem($menu_padding) 0; }
 
-      // exclude ClockApplet's popover which has similar stack > box node,
-      // otherwise unwanted double padding happens there...
-      &:not(:only-child) {
-        padding: 0;
-        &:not(:first-child) { padding: $budgie_popover_padding; }
-      }
+      &.clock-applet-stack { padding: 0; }
+
+      &.icon-popover-stack { padding: $budgie_popover_padding; }
     }
   }
 
@@ -420,37 +417,33 @@ window.budgie-popover:not(.csd) {
 // icon-tasklist popover styling
 $requested_height: 32px; // hard-coded
 
-window.budgie-popover:not(.csd).background > frame.container {
-  > stack {
-    separator.horizontal { margin: rem($menu_padding) 0; }
+stack.icon-popover-stack {
+  box.horizontal > button.flat {
+    min-height: $requested_height;
+    min-width: $requested_height;
 
-    box.horizontal > button.flat {
-      min-height: $requested_height;
-      min-width: $requested_height;
-
-      &:first-child:not(:only-child) {
-        font-weight: 500; // text-buttons
-      }
-      &:not(:first-child):not(:only-child) {
-        &:not(:last-child) { // 'close' buttons
-          @include button(flat-normal, $tc: $dest_bg);
-          @include ink-reaction(normal, $fc: $dest_bg);
-          &:hover { @include button(flat-hover, $tc: $dest_bg); }
-          &:active {
-            @include button(flat-active, $tc: $dest_bg);
-            @include ink-reaction(active-dec, $fc: $dest_bg);
-          }
-          &:disabled { @include button(flat-disabled, $tc: $dest_bg); }
-          &:checked { @include button(flat-checked, $tc: $dest_bg); }
+    &:first-child:not(:only-child) {
+      font-weight: 500; // text-buttons
+    }
+    &:not(:first-child):not(:only-child) {
+      &:not(:last-child) { // 'close' buttons
+        @include button(flat-normal, $tc: $dest_bg);
+        @include ink-reaction(normal, $fc: $dest_bg);
+        &:hover { @include button(flat-hover, $tc: $dest_bg); }
+        &:active {
+          @include button(flat-active, $tc: $dest_bg);
+          @include ink-reaction(active-dec, $fc: $dest_bg);
         }
+        &:disabled { @include button(flat-disabled, $tc: $dest_bg); }
+        &:checked { @include button(flat-checked, $tc: $dest_bg); }
       }
     }
+  }
 
-    grid.horizontal { // bottom button container
-      > button.flat.image-button {
-        @extend %action-area-button;
-        min-height: $requested_height;
-      }
+  grid.horizontal { // bottom button container
+    > button.flat.image-button {
+      @extend %action-area-button;
+      min-height: $requested_height;
     }
   }
 }
