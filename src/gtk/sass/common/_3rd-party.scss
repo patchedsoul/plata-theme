@@ -776,9 +776,12 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
       }
 
       list { // apps/devices list
-        margin: 0 1px; // stop touching the parent L/R edges
+        &.apps-list,
+        &.sound-devices {
+          margin: 0 1px; // stop touching the parent L/R edges
+        }
 
-        row.activatable { // devices list
+        &.sound-devices row.activatable { // devices list rows
           &:selected {
             background-color: track($sel_bg, $a_trk_2);
             &:dir(ltr) { box-shadow: inset 4px 0 $sel_bg; }
