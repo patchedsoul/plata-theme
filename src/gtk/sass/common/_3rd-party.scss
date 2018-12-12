@@ -2527,7 +2527,7 @@ XfdesktopIconView.view {
     text-shadow: none;
   }
 
-  .rubberband { @extend rubberband; }
+  .rubberband { @extend %rubberband; }
 }
 
 window#whiskermenu-window {

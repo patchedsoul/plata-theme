@@ -150,10 +150,20 @@ textview border { background-color: $bg; }
 
 iconview { @extend %view; }
 
-.rubberband,
-rubberband {
+%rubberband {
   border: 1px solid $sel_bg;
   background-color: track($sel_bg, $a_trk_out);
+}
+
+rubberband {
+  &,
+  flowbox &,
+  treeview & { @extend %rubberband; }
+}
+
+.rubberband { // content-view class needs this style-class, too
+  &,
+  .content-view & { @extend %rubberband; }
 }
 
 label {
@@ -208,8 +218,6 @@ arrow {
 //  **************/
 
 flowbox {
-  rubberband { @extend rubberband; }
-
   flowboxchild {
     padding: rem($menu_padding, $sw: 1.0);
     @include radius(0, $r_2);
@@ -2540,8 +2548,6 @@ treeview.view {
   border-top-color: $div_fg;
 
   border-radius: 0; // rest border radius in lists
-
-  rubberband { @extend rubberband; }
 
   // clear backgrounds
   background-color: transparent;
@@ -5343,8 +5349,6 @@ colorchooser .popover.osd {
   @if $maj_ver == 4 {
     &:hover { -gtk-icon-filter: brightness(1.2); }
   }
-
-  rubberband { @extend rubberband; }
 }
 
 // Decouple the font of context menus from their entry/textview
