@@ -1183,7 +1183,7 @@ $ws_thumb_spacing: 32px;
     min-height: $ref_size * 2px;
     min-width: $ref_size * 2px;
     border-radius: $r_2;
-    border: none;
+    border: 1px solid mix($osd_sec_fg, $osd_bg, percentage($a_div_1));
     background-color: $osd_bg;
     color: $osd_sec_fg;
     box-shadow: $empty_shadow;
@@ -1196,17 +1196,21 @@ $ws_thumb_spacing: 32px;
     &:hover,
     &:checked {
       color: $osd_fg;
-      background-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_1));
+      border-color: mix($osd_bg, $osd_fg, percentage($a_fg_2nd));
+      background-color: mix($osd_bg, $osd_fg, percentage($a_fg_2nd));
       transition-timing-function: $tr_t_dec;
     }
     &:active {
-      color: $osd_fg;
+      border-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_2));
       background-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_2));
+      color: $osd_fg;
       transition-timing-function: $tr_t_dec;
     }
     &:grayed { // FIXME
-      color: $osd_ter_fg;
+      border-color: mix($osd_sec_fg, $osd_bg,
+                        percentage($a_div_1 * $a_fg_dis));
       background-color: $panel_bg;
+      color: $osd_ter_fg;
       transition-timing-function: $tr_t_dec;
     }
   }
