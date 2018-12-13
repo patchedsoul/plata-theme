@@ -3043,12 +3043,32 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
 
 .brisk-menu {
   border: 1px solid $div_sld_fg;
+  background-color: $dark_bg;
 
-  entry { margin: rem(4px); } // search-entry
+  entry { // search-entry
+    margin: rem(4px);
+    @extend %flat_entry_sizing;
+    @include radius($r_4 $r_4 0 0, none);
+    @include entry(flat-normal);
+    &:focus { @include entry(flat-focus); }
+    &:disabled { @include entry(flat-disabled); }
+  }
 
   box.horizontal scrolledwindow { // right-pane
     &:dir(ltr) { margin: rem(4px) rem(4px) rem(4px) 0; }
     &:dir(rtl) { margin: rem(4px) 0 rem(4px) rem(4px); }
+
+    &.frame {
+      border: unset;
+      &:dir(ltr) {
+        border-left: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                    $div_fg);
+      }
+      &:dir(rtl) {
+        border-right: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                     $div_fg);
+      }
+    }
   }
 
   .categories-list { // left-pane
@@ -3056,16 +3076,22 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
     &:dir(rtl) { margin: rem(4px) rem(4px) rem(4px) 0; }
 
     button.flat {
-      @include radius(0); // remove roundness
       font-weight: 500;
       transition-duration: $tr_d_sht; // shorter duration
       // almost covers :hover pseudo-class
       &:checked {
         background-color: $trk_bg;
         color: $sel_label;
+        &:dir(ltr) { @include radius($r_2 $r $r $r_2); }
+        &:dir(rtl) { @include radius($r $r_2 $r_2 $r); }
       }
 
       image { padding: rem(8px) 0; }
+    }
+
+    separator.horizontal {
+      background-color: if($variant == dark, track(white, $a_div_2),
+                                             $div_fg);
     }
   }
 
@@ -3075,9 +3101,13 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
     background-color: transparent;
   }
 
+  button.flat.image-button.session-button { // enlarge L/R padding
+    padding: 0 rem($txt_button_lr_space);
+  }
+
   @at-root %brisk_right_pane,
   list.content-view.view { // right-pane
-    background-color: $base;
+    background-color: $dark_bg;
 
     row.activatable {
       padding: 0;
@@ -3085,7 +3115,6 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
       transition-duration: $tr_d_non;
 
       > button.flat {
-        @include radius(0); // remove roundness
         font-weight: 400;
         transition-duration: $tr_d_non; // needs quicker response
 
