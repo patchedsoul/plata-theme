@@ -3208,7 +3208,7 @@ $grid_size: 136px;
     min-width: $ref_size * 2;
     padding: 0;
     border-radius: $r_2;
-    border: none;
+    border: 1px solid mix($osd_sec_fg, $osd_bg, percentage($a_div_1));
     background-color: $osd_bg;
     color: $osd_sec_fg;
     box-shadow: $empty_shadow;
@@ -3220,16 +3220,20 @@ $grid_size: 136px;
     &:focus,
     &:hover,
     &:checked {
+      border-color: mix($osd_bg, $osd_fg, percentage($a_fg_2nd));
       background-color: mix($osd_bg, $osd_fg, percentage($a_fg_2nd));
       color: $osd_fg;
       transition-timing-function: $tr_t_std;
     }
     &:active {
+      border-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_2));
       background-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_2));
       color: $osd_fg;
       transition-timing-function: $tr_t_dec;
     }
     &:grayed { // FIXME
+      border-color: mix($osd_sec_fg, $osd_bg,
+                        percentage($a_div_1 * $a_fg_dis));
       background-color: $panel_bg;
       color: $osd_ter_fg;
       transition-timing-function: $tr_t_std;
@@ -3243,6 +3247,9 @@ $grid_size: 136px;
         &:focus,
         &:hover,
         &:checked {
+          border-color:
+            mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
+                $osd_fg, percentage($a_fg_2nd));
           background-color:
             mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
                 $osd_fg, percentage($a_fg_2nd));
@@ -3250,6 +3257,9 @@ $grid_size: 136px;
           transition-timing-function: $tr_t_std;
         }
         &:active {
+          border-color:
+            mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
+                $osd_fg, percentage(1 - $a_trk_2));
           background-color:
             mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
                 $osd_fg, percentage(1 - $a_trk_2));
@@ -3259,16 +3269,19 @@ $grid_size: 136px;
       }
 
       &.enter-key {
+        border-color: $sggt_bg;
         background-color: $sggt_bg;
         @include image-loader($url: 'key-enter.svg');
         &:focus,
         &:hover,
         &:checked {
           @include image-loader($url: 'key-enter-active.svg');
+          border-color: mix($sggt_bg, $sel_fg, percentage($a_fg_2nd));
           background-color: mix($sggt_bg, $sel_fg, percentage($a_fg_2nd));
         }
         &:active {
           @include image-loader($url: 'key-enter-active.svg');
+          border-color: $sel_bg;
           background-color: $sel_bg;
         }
       }
@@ -3283,23 +3296,35 @@ $grid_size: 136px;
           &:focus,
           &:hover,
           &:checked {
+            border-color:
+              mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
+                  $sel_bg, percentage($a_fg_2nd));
             background-color:
               mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
                   $sel_bg, percentage($a_fg_2nd));
           }
           &:active {
+            border-color:
+              mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
+                  $sel_bg, percentage(1 - $a_trk_2));
             background-color:
               mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
                   $sel_bg, percentage(1 - $a_trk_2));
           }
           &:latched {
             @include image-loader($url: 'key-shift-latched-uppercase.svg');
+            border-color:
+              mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
+                  $sel_bg, percentage($a_fg_2nd));
             background-color:
               mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
                   $sel_bg, percentage($a_fg_2nd));
             transition-timing-function: $tr_t_std;
             &:focus,
             &:hover {
+              border-color:
+                mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
+                    $sel_bg, percentage(1 - $a_trk_2));
               background-color:
                 mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
                     $sel_bg, percentage(1 - $a_trk_2));
