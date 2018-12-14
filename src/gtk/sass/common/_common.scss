@@ -2720,7 +2720,9 @@ menubar {
   &:backdrop { background-color: if($variant == light, $bg, $inv_bg); }
 
   .background & {
-    border-bottom: 1px solid $div_sld_fg;
+    border-bottom: 1px solid if($variant == mixed,
+                                mix(black, $inv_dark_bg, percentage($a_div_0)),
+                                $div_sld_fg);
     @extend %fade_effect; // add fade_effect
   }
 
