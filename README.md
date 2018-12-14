@@ -71,6 +71,7 @@ Unsupported Gtk+ Based Desktop(s)
 
 Installation from Package(s)
 ----------------------------
+ * Arch (AUR): [**plata-theme**](https://aur.archlinux.org/packages/plata-theme)
  * My Personal Package Archives (PPA): [**plata-theme**](https://launchpad.net/~tista/+archive/ubuntu/plata-theme)
 
 Installation from Git Source
