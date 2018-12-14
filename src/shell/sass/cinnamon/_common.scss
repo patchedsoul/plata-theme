@@ -1361,7 +1361,7 @@ $large_item: 10px;
 
     &-hover,
     &-selected {
-      background-color: opacity($sel_bg, $a_trk_2);
+      background-color: opacity($sel_bg, $a_trk_1);
       color: $sel_label;
       &:ltr { border-radius: $r_2 $r $r $r_2; }
       &:rtl { border-radius: $r $r_2 $r_2 $r; }
