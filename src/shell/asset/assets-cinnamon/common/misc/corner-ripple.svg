@@ -9,47 +9,50 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32"
-   height="32"
-   viewBox="0 0 8.4666659 8.4666659"
+   width="104"
+   height="104"
+   id="svg2"
    version="1.1"
-   id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="key-enter-active.svg">
+   inkscape:version="0.92+devel (unknown)"
+   sodipodi:docname="corner-ripple.svg">
   <defs
-     id="defs2" />
+     id="defs4" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#808080"
+     pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.4"
-     inkscape:cx="10.088191"
-     inkscape:cy="15.000487"
+     inkscape:zoom="7.5"
+     inkscape:cx="48.533333"
+     inkscape:cy="54.4"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     units="px"
      inkscape:window-width="1920"
      inkscape:window-height="1022"
      inkscape:window-x="0"
      inkscape:window-y="32"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     inkscape:document-rotation="0">
     <inkscape:grid
        type="xygrid"
-       id="grid4576" />
+       id="grid2985"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
   <metadata
-     id="metadata5">
+     id="metadata7">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
       </cc:Work>
@@ -74,23 +77,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-288.53334)">
-    <g
-       id="g827"
-       transform="matrix(0.99926954,0,0,1,5.7979883e-4,0.26458281)"
-       style="opacity:1">
-      <path
-         sodipodi:nodetypes="cccc"
-         inkscape:connector-curvature="0"
-         id="path814"
-         d="m 0.79374993,293.03126 1.85343707,-1.5875 v 3.175 z"
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.52916664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <path
-         sodipodi:nodetypes="cscc"
-         inkscape:connector-curvature="0"
-         id="path820"
-         d="m 2.647187,293.03126 h 4.2364275 c 0.2643898,0 0.2647767,-0.26459 0.2647767,-0.26459 v -1.85208"
-         style="fill:none;stroke:#ffffff;stroke-width:1.05871999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    </g>
+     transform="translate(0,-948.3622)">
+    <circle
+       style="opacity:0.25;fill:#7986cb;fill-opacity:1;stroke:none"
+       id="corner-ripple"
+       inkscape:label="#path2987"
+       cx="52"
+       cy="1000.3622"
+       r="48" />
   </g>
 </svg>
