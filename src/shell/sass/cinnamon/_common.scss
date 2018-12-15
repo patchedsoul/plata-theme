@@ -405,8 +405,12 @@ StScrollBar {
 
 #panel {
   @include fontscaling($ref_size * 1.0);
-  height: 28px;
-  width: 32px; // setting under 32px causes blurred window-list icons
+  // setting under 32px width causes blurred window-list icons
+  // in vertical panels
+  min-width: 32px; // = 2.4em
+  min-height: 28px; // = 2.1em
+  width: 2.25em; // for font-scaling > 1.0
+  height: 1.95em; // for font-scaling > 1.0
   color: $osd_fg;
   background-color: $panel_bg;
   font-weight: 700;
