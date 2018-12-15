@@ -18,7 +18,7 @@
 
   // transparent-mode
   &.transparent {
-    // keep translucent background in light variant (!dock-mode)
+    // keep translucent background in light variant
     background-color: if($variant == light, track($panel_bg, $a_fg_3rd),
                                             transparent);
     color: if($variant == mixed, $inv_fg, $fg);
@@ -32,19 +32,6 @@
 
       label { text-shadow: $z-depth-1; }
     }
-
-    // clear all backgrounds for dock-mode
-    // &.dock-mode {
-    //   background-color: transparent;
-
-    //   @each $_pos, $_line in (top, 0 3px),
-    //                          (bottom, 0 -3px),
-    //                          (left, 3px 0),
-    //                          (right, -3px 0) {
-    //     // fill indicator region with panel backgrounds
-    //     .#{$_pos} & { box-shadow: inset #{$_line} $panel_bg; }
-    //   }
-    // }
   }
 }
 
@@ -348,18 +335,6 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
   > image { // 'Notification' and 'User Indicator'
     min-width: $icon_size + 4px;
   }
-
-  // > widget > box { // NaTray box container
-  //   'mobile_helper_get_status_pixbuf' calls 22px * 22px * 8bit/ch
-  //   pixbuf area for icons.
-  //   FIXME: introduces these allocations
-  //    * 22 x 18 @ > 36px hrz
-  //    * 22 x 16 @ < 37px hrz
-  //    * 18 x 24 @ > 36px vrt
-  //    * 16 x 24 @ < 37px vrt
-  //   &.horizontal { margin: -(22px - $icon_size) / 2 -1px; }
-  //   &.vertical { margin: 0 -(22px - $icon_size) / 2; }
-  // }
 }
 
 // budgie specific popover widgets
