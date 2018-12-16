@@ -2157,6 +2157,20 @@ $cose_button_size: 32px;
       &:active { background-color: $ovv_fg; }
     }
   }
+
+  @if $variant == light { // for .app-folder-popup
+    StScrollView.all-apps StScrollBar {
+      StBin#trough { background-color: opacity($base, $a_fg_3rd); }
+
+      StButton#vhandle,
+      StButton#hhandle {
+        background-color: opacity($fg, $a_fg_3rd * $a_fg_3rd);
+        &:hover { background-color: opacity($fg, $a_fg_2nd * $a_fg_3rd); }
+        &:active { background-color: $fg; }
+      }
+    }
+  }
+
 }
 
 .window-picker { // container around window thumbnails
