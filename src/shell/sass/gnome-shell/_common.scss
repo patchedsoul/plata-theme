@@ -625,9 +625,7 @@ StScrollBar {
 //  * Access Dialog *
 //  *****************/
 
-.access-dialog {
-  spacing: if($ref_weight >= 1.0, 30px, 24px);
-}
+.access-dialog { spacing: if($ref_weight >= 1.0, 30px, 24px); }
 
 @if $ver < 3.25 {
   .access-dialog {
@@ -660,9 +658,7 @@ StScrollBar {
 //  * Geolocation Dialog *
 //  **********************/
 
-.geolocation-dialog {
-  spacing: if($ref_weight >= 1.0, 30px, 24px);
-}
+.geolocation-dialog { spacing: if($ref_weight >= 1.0, 30px, 24px); }
 
 @if $ver < 3.25 {
   .geolocation-dialog {
@@ -702,9 +698,7 @@ StScrollBar {
   //  * Inhibit-Shortcuts Dialog *
   //  ****************************/
 
-  .inhibit-shortcuts-dialog {
-    spacing: if($ref_weight >= 1.0, 30px, 24px);
-  }
+  .inhibit-shortcuts-dialog { spacing: if($ref_weight >= 1.0, 30px, 24px); }
 }
 
 // /************************
@@ -797,9 +791,6 @@ $extra_spacing: 2.5px;
   .popup-inactive-menu-item { // all icons and other graphical elements
     color: $sec_fg;
     &:insensitive { color: $dis_fg; }
-  }
-
-  .popup-status-menu-item {
   }
 
   &.panel-menu {
@@ -975,9 +966,7 @@ $extra_spacing: 2.5px;
 
 .osd-window,
 .resize-popup,
-.switcher-list {
-  @extend %osd-panel;
-}
+.switcher-list { @extend %osd-panel; }
 
 .switcher-list {
   > StLabel { // for app titles in AlternativeTabExtension
@@ -1138,20 +1127,14 @@ $extra_spacing: 2.5px;
   &.lock-screen {
     background-color: if($variant == light, opacity($panel_bg, $a_fg_3rd),
                                             $panel_hidden_bg);
-    @if $ver > 3.25 {
-      box-shadow: $empty_shadow;
-    }
-    @else {
-      box-shadow: inset 0 2px $panel_bg;
-    }
+    @if $ver > 3.25 { box-shadow: $empty_shadow; }
+    @else { box-shadow: inset 0 2px $panel_bg; }
     transition-timing-function: $tr_t_dec;
     transition-duration: $tr_d_lng;
   }
 
-  #panelLeft,
-  #panelCenter { // spacing between activities<>app menu and such
-    spacing: 0;
-  }
+  #panelLeft, // spacing between activities<>app menu and such
+  #panelCenter { spacing: 0; }
 
   .panel-corner { // unset all properties
     -panel-corner-radius: 0;
@@ -1313,19 +1296,14 @@ $extra_spacing: 2.5px;
 //  * Calendar Popover *
 //  ********************/
 
-#calendarArea {
-  padding: if($ref_weight >= 1.0, 0.75em 1.0em,
-                                  0.5em 0.7em);
-}
+#calendarArea { padding: if($ref_weight >= 1.0, 0.75em 1.0em, 0.5em 0.7em); }
 
 .calendar { margin-bottom: if($ref_weight >= 1.0, 1em, 0.7em); }
 
 .calendar,
 .datemenu-today-button,
 .datemenu-displays-box,
-.message-list-sections {
-  margin: if($ref_weight >= 1.0, 0 1.5em, 0 1em);
-}
+.message-list-sections { margin: if($ref_weight >= 1.0, 0 1.5em, 0 1em); }
 
 .datemenu { // optimize spacing
   &-calendar-column { spacing: 0.5em; }
@@ -1448,8 +1426,6 @@ $extra_spacing: 2.5px;
   padding: 4px 0;
   color: $fg;
   font-weight: 700;
-  &:focus {
-  }
 }
 
 .pager-button {
@@ -1715,12 +1691,8 @@ $extra_spacing: 2.5px;
   // 'no-values' can keep its height automatically even
   // if switched to scrolled-view mode.
   // So only padding property seems enough to control the spacing.
-  @if $ver > 3.25 {
-    padding: if($ref_weight >= 1.0, 0.9em, 0.6em);
-  }
-  @else {
-    padding: 6px;
-  }
+  @if $ver > 3.25 { padding: if($ref_weight >= 1.0, 0.9em, 0.6em); }
+  @else { padding: 6px; }
   border-radius: 0;
   background-color: transparent;
   color: $osd_fg;
@@ -1967,9 +1939,7 @@ $extra_spacing: 2.5px;
   padding: if($ref_weight >= 1.0, 10px, 8px);
   border-radius: $r;
   @include button(normal);
-  @if $ver > 3.25 {
-    -st-icon-style: symbolic; // >= 3.29.90
-  }
+  @if $ver > 3.25 { -st-icon-style: symbolic; } // >= 3.29.90
   &:hover { @include button(hover); }
   &:focus { @include button(focus); }
   &:active {
@@ -2170,7 +2140,6 @@ $cose_button_size: 32px;
       }
     }
   }
-
 }
 
 .window-picker { // container around window thumbnails
@@ -2188,12 +2157,8 @@ $cose_button_size: 32px;
   }
 
   &.external-monitor {
-    @if $ver > 3.25 {
-      padding: if($ref_weight >= 1.0, 16px, 12px);
-    }
-    @else {
-      padding: if($ref_weight >= 1.0, 32px, 26px);
-    }
+    @if $ver > 3.25 { padding: if($ref_weight >= 1.0, 16px, 12px); }
+    @else { padding: if($ref_weight >= 1.0, 32px, 26px); }
   }
 }
 
@@ -2627,8 +2592,6 @@ $grid_size: 136px;
   .overview-icon { icon-size: $icon_size * 6; }
 }
 
-// .app-display { spacing: 20px; }
-
 @if $ver > 3.25 {
   .system-action-icon { // system-action icons in search results
     icon-size: $icon_size * 3;
@@ -2835,7 +2798,7 @@ $grid_size: 136px;
 }
 
 .page-indicator {
-  padding: $icon_size $icon_size * 1.5;
+  padding: $icon_size ($icon_size * 1.5);
 
   .page-indicator-icon {
     width: $icon_size - 2px;
@@ -2847,6 +2810,7 @@ $grid_size: 136px;
     background-color: $hidden_fill_bg;
     box-shadow: inset 0 0 0 2px $ovv_ter_fg;
   }
+
   &:hover .page-indicator-icon {
     margin: 0;
     padding: 2px;
@@ -2854,6 +2818,7 @@ $grid_size: 136px;
     background-color: $hidden_fill_bg;
     box-shadow: inset 0 0 0 2px $ovv_fg;
   }
+
   &:active .page-indicator-icon {
     margin: 2px;
     padding: 0;
@@ -2861,6 +2826,7 @@ $grid_size: 136px;
     background-color: opacity($sel_bg, $a_fg_2nd);
     box-shadow: $empty_shadow;
   }
+
   &:checked .page-indicator-icon {
     margin: 0;
     padding: 2px;
@@ -2868,6 +2834,7 @@ $grid_size: 136px;
     background-color: $sel_bg;
     box-shadow: $empty_shadow;
   }
+
   &:checked:hover .page-indicator-icon {
     margin: 0;
     padding: 2px;
@@ -2940,12 +2907,10 @@ $grid_size: 136px;
 //  * Some hacks I don't even *
 //  ***************************/
 
+// horizontal padding to make sure scrollbars or dash don't overlap content
 .search-display > StBoxLayout,
 .all-apps,
-.frequent-apps > StBoxLayout {
-  // horizontal padding to make sure scrollbars or dash don't overlap content
-  padding: 0 88px 10px 88px;
-}
+.frequent-apps > StBoxLayout { padding: 0 88px 10px 88px; }
 
 %status_text {
   @include fontscaling($ref_size * 2.0);
@@ -3188,6 +3153,7 @@ $grid_size: 136px;
 
 .magnifier-zoom-region {
   border: 2px solid $sel_bg;
+
   &.full-screen { border-width: 0; }
 }
 
@@ -3347,13 +3313,9 @@ $grid_size: 136px;
         }
       }
 
-      &.hide-key {
-        @include image-loader($url: 'key-hide.svg');
-      }
+      &.hide-key { @include image-loader($url: 'key-hide.svg'); }
 
-      &.layout-key {
-        @include image-loader($url: 'key-layout.svg');
-      }
+      &.layout-key { @include image-loader($url: 'key-layout.svg'); }
     }
   }
 
@@ -3580,10 +3542,12 @@ $grid_size: 136px;
       background-color: $hidden_fill_bg;
       box-shadow: inset 0 0 0 2px $acc_fill_bg;
     }
+
     .login-dialog-not-listed-button:hover & {
       color: $ovv_acc_fg;
       background-color: $acc_semi_fill_bg;
     }
+
     .login-dialog-not-listed-button:active & {
       color: $ovv_acc_fg;
       background-color: $acc_fill_bg;
