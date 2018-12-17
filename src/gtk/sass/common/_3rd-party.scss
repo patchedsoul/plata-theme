@@ -4144,31 +4144,9 @@ window#live_installer {
   }
 
   widget#progress_eventbox.menubar { // bottom container
-    color: if($variant == mixed, $inv_fg, $fg);
-
-    expander {
-      title {
-        label,
-        arrow {
-          color: if($variant == mixed, $inv_sec_fg, $sec_fg);
-          &:hover,
-          &:active {
-            color: if($variant == mixed, $inv_fg, $fg);
-          }
-          &:disabled {
-            color: if($variant == mixed, $dis_inv_fg, $dis_fg);
-          }
-        }
-      }
-
-      textview.view { // scrolled text-views
-        &, > text {
-          background-color: $base;
-          color: $fg;
-          caret-color: $fg;
-        }
-      }
-    }
+    border-top: 1px solid $div_fg;
+    background-color: $base;
+    color: $fg;
 
     // 4px from <data>
     progressbar trough { border-radius: 4px; }
