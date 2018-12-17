@@ -3711,17 +3711,6 @@ window.background.chromium {
     background-color: $bg;
   }
 
-  entry.chromium {
-    &, &:focus { // overrides standard borders
-      border: 1px solid $div_fg;
-    }
-  }
-
-  // internal region of toolbar's entry widget
-  > textview.view {
-    background-color: $base;
-  }
-
   @if $variant == mixed { // do not mix with foregrounds
     > spinner { color: $acc_bg; }
   }
