@@ -470,8 +470,7 @@ stack.icon-popover-stack {
   }
 
   entry { // use flat entry
-    min-height: rem($widget_size * 1.2);
-    margin: -1px 0 4px;
+    margin-bottom: $budgie_popover_padding;
     @include radius($r_4 $r_4 0 0, none);
     @include entry(flat-normal, $tc: $fg);
     caret-color: $fg;
