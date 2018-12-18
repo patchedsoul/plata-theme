@@ -4586,13 +4586,16 @@ expander {
 
 calendar {
   margin: rem($menuitem_padding) 0;
-  padding: if($ref_weight < 1.0, 0 2px 1px, 0 3px 1px);
+  padding: if($ref_weight < 1.0, 2px 2px, 4px 3px);
   border: 1px solid $div_fg;
   color: $fg;
   font-weight: 500;
   &:selected {
-    border-radius: $r;
-    background-color: $sel_bg;
+    background-image: image($sel_bg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: if($ref_weight < 1.0, 100% calc(100% - (2px * 2)),
+                                           100% calc(100% - (4px * 2)));
     color: $sel_fg;
   }
 
@@ -4618,7 +4621,11 @@ calendar {
 
   &:indeterminate { color: track($fg, $a_fg_3rd * $a_fg_3rd); }
 
-  &.highlight { color: $ter_fg; }
+  &.highlight { // padding for week-number column
+    padding-top: 0;
+    padding-bottom: if($ref_weight < 1.0, 2px * 2, 4px * 2);
+    color: $ter_fg;
+  }
 }
 
 // /***********
