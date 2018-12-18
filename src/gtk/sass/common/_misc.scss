@@ -2910,14 +2910,13 @@ widget {
 }
 
 box.speedometer {
-  // FIXME: 'outter' meant 'outer'?
-  // circular progress should be drawn with our $accent_color though,
-  // damned adwaita.css picks @theme_selected_bg_color up.
-  &-outter { opacity: 1 - $a_trk_out; } // reduce alpha for our troughs
+  // circular progress should be drawn with our $acc_bg
+  // (progress bit still looks a bit brighter than we expected though)
+  &-outter { background-image: image($acc_bg); }
 
-  &-content-area { // cover up meter troughs with selection color
-    box-shadow: 0 0 0 5px track($sel_bg, $a_trk_out);
-  }
+  &-inner { box-shadow: inset 0 0 0 5px track($acc_bg, $a_trk_out); }
+
+  &-content-area label { color: $acc_fg; }
 }
 
 // /*********
