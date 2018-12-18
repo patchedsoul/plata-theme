@@ -4097,6 +4097,10 @@ dialog.background:not(.csd) {
   }
 }
 
+widget.-vala-panel-appmenu-core { // appmenu applets
+  menubar > menuitem { font-weight: 400; }
+}
+
 // /************
 //  * Ubiquity *
 //  ************/
