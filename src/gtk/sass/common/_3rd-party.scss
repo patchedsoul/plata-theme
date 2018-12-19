@@ -1104,7 +1104,7 @@ window.sound-popover.background box.horizontal {
       &:hover,
       &:active {
         color: $fg;
-        background-image: none;
+        background: none;
 
         button.text-button.name-button { // = 'toolbutton > button'
         }
