@@ -272,7 +272,12 @@ assistant { // sidebar styling
                rem(($menuitem_padding + $baseline), $sw: 1.0);
       color: $sec_fg;
       font-weight: 500;
-      &.highlight { color: $sel_bg; }
+      &.highlight {
+        color: $sel_label;
+        background-color: $trk_bg;
+        &:dir(ltr) { @include radius(0 $r $r 0); }
+        &:dir(rtl) { @include radius($r 0 0 $r); }
+      }
     }
   }
 
