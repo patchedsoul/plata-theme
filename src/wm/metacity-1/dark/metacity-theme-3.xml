@@ -10,13 +10,13 @@
 
 <!-- meaningfull constants -->
 
-<constant name="C_title_focused" value="gtk:custom(theme_inverted_fg_color,gtk:fg[NORMAL])" />
-<constant name="C_title_unfocused" value="gtk:custom(theme_unfocused_inverted_fg_color,gtk:fg[NORMAL])" />
+<constant name="C_title_focused" value="#f5f5f5" />
+<constant name="C_title_unfocused" value="blend/#080808/#f5f5f5/0.4" />
 <constant name="D_icons_unfocused_offset" value="0" /> <!-- offset of the unfocused icons -->
 
 <!-- geometries -->
 
-<frame_geometry name="normal" title_scale="medium" rounded_top_left="1" rounded_top_right="1">
+<frame_geometry name="normal" title_scale="medium" rounded_top_left="2" rounded_top_right="2">
 	<distance name="left_width" value="0" />
 	<distance name="right_width" value="0" />
 	<distance name="bottom_height" value="0" />
@@ -66,7 +66,7 @@
 	<distance name="title_vertical_pad" value="12"/>
 </frame_geometry>
 
-<frame_geometry name="attached" title_scale="medium" hide_buttons="true" rounded_top_left="1" rounded_top_right="1" rounded_bottom_left="1" rounded_bottom_right="1" parent="normal">
+<frame_geometry name="attached" title_scale="medium" hide_buttons="true" rounded_top_left="2" rounded_top_right="2" rounded_bottom_left="2" rounded_bottom_right="2" parent="normal">
 	<distance name="title_vertical_pad" value="3"/>
 </frame_geometry>
 
@@ -102,12 +102,12 @@
 
 <!-- normal state -->
 <draw_ops name="entire_background_focused">
-	<rectangle color="gtk:custom(wm_bg_a,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
-	<line color="gtk:custom(wm_bg_b,gtk:bg[NORMAL])" x1="1" y1="0" x2="width-2" y2="0" />
+	<rectangle color="#080808" x="0" y="0" width="width" height="height" filled="true" />
+	<line color="#1b1b1b" x1="1" y1="0" x2="width-2" y2="0" />
 </draw_ops>
 
 <draw_ops name="entire_background_unfocused">
-	<rectangle color="gtk:custom(wm_bg_d,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="#1d1d1d" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_focused">
@@ -140,11 +140,11 @@
 
 <!-- maximized state -->
 <draw_ops name="max_entire_background_focused">
-	<rectangle color="gtk:custom(wm_bg_a,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="#080808" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="max_entire_background_unfocused">
-	<rectangle color="gtk:custom(wm_bg_d,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="#1d1d1d" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="max_titlebar_fill_focused">
@@ -165,13 +165,13 @@
 
 <!-- tiled state -->
 <draw_ops name="tiled_left_entire_background_focused">
-	<rectangle color="gtk:custom(wm_bg_a,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
-	<line color="gtk:custom(wm_bg_c,gtk:bg[NORMAL])" x1="width-1" y1="0" x2="width-1" y2="height" />
+	<rectangle color="#080808" x="0" y="0" width="width" height="height" filled="true" />
+	<line color="#000000" x1="width-1" y1="0" x2="width-1" y2="height" />
 </draw_ops>
 
 <draw_ops name="tiled_left_entire_background_unfocused">
-	<rectangle color="gtk:custom(wm_bg_d,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
-	<line color="gtk:custom(wm_bg_c,gtk:bg[NORMAL])" x1="width-1" y1="0" x2="width-1" y2="height" />
+	<rectangle color="#1d1d1d" x="0" y="0" width="width" height="height" filled="true" />
+	<line color="#000000" x1="width-1" y1="0" x2="width-1" y2="height" />
 </draw_ops>
 
 <draw_ops name="tiled_left_titlebar_fill_focused">
@@ -183,13 +183,13 @@
 </draw_ops>
 
 <draw_ops name="tiled_right_entire_background_focused">
-	<rectangle color="gtk:custom(wm_bg_a,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
-	<line color="gtk:custom(wm_bg_c,gtk:bg[NORMAL])" x1="0" y1="0" x2="0" y2="height" />
+	<rectangle color="#080808" x="0" y="0" width="width" height="height" filled="true" />
+	<line color="#000000" x1="0" y1="0" x2="0" y2="height" />
 </draw_ops>
 
 <draw_ops name="tiled_right_entire_background_unfocused">
-	<rectangle color="gtk:custom(wm_bg_d,gtk:bg[NORMAL])" x="0" y="0" width="width" height="height" filled="true" />
-	<line color="gtk:custom(wm_bg_c,gtk:bg[NORMAL])" x1="0" y1="0" x2="0" y2="height" />
+	<rectangle color="#1d1d1d" x="0" y="0" width="width" height="height" filled="true" />
+	<line color="#000000" x1="0" y1="0" x2="0" y2="height" />
 </draw_ops>
 
 <draw_ops name="tiled_right_titlebar_fill_focused">
