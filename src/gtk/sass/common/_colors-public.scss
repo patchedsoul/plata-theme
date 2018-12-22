@@ -20,14 +20,6 @@
 @define-color theme_fg_color #{"" + $fg};
 
 //
-// Widget inverted text/foreground color
-// * used in wm/metacity-1/metacity-theme-3.xml
-//
-
-@define-color theme_inverted_fg_color #{"" + if($variant == light, $fg,
-                                                                   $inv_fg)};
-
-//
 // Text color for entries, views and content in general
 //
 
@@ -82,24 +74,10 @@
 @define-color theme_unfocused_fg_color #{"" + $dis_fg};
 
 //
-// Widget inverted text/foreground color on backdrop windows
-// * used in wm/metacity-1/metacity-theme-3.xml
-//
-
-@define-color theme_unfocused_inverted_fg_color #{"" + $unf_title_fg};
-
-//
 // Text color for entries, views and content in general on backdrop windows
 //
 
 @define-color theme_unfocused_text_color #{"" + track($fg, $a_fg_bdp)};
-
-//
-// Text inverted color for entries, views and content in general on backdrop
-// windows used in wm/metacity-1/metacity-theme-3.xml
-//
-
-@define-color theme_unfocused_inverted_text_color #{"" + $unf_title_fg};
 
 //
 // Widget base background color on backdrop windows
@@ -157,17 +135,6 @@
 @define-color error_color #{"" + $err};
 @define-color success_color #{"" + $sccs_bg};
 @define-color link_color #{"" + $link_fg};
-
-//
-// Revert wm_bg_a/b/c for gnome-flashback (metacity)
-//
-
-@define-color wm_bg_a #{"" + if($variant == light, $dark_bg,
-                                                   $inv_dark_bg)};
-@define-color wm_bg_b #{"" + $div_top_fg};
-@define-color wm_bg_c #{"" + $div_sld_dark_fg};
-@define-color wm_bg_d #{"" + if($variant == light, $bg,
-                                                   $inv_bg)};
 
 //
 // FIXME: this is really an API
