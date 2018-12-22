@@ -1738,9 +1738,15 @@ window.background.budgie-settings-window.csd {
     }
 
     &.close {
-      &:hover image { background-image: image($dest_bg); }
+      &:hover image {
+        background-image: image($dest_bg);
+        color: $sel_fg;
+      }
 
-      &:active image { background-image: image($sel_bg); }
+      &:active image {
+        background-image: image($sel_bg);
+        color: $sel_fg;
+      }
     }
 
     &:not(.close) {
