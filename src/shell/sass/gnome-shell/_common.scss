@@ -2470,6 +2470,7 @@ $provider_icon_size: 32px; // for < 3.25
         @else { color: $ovv_sec_fg; }
 
         .search-provider-icon:hover &,
+        .search-provider-icon:focus &,
         .search-provider-icon:active &,
         .search-provider-icon:checked & {
           @if $ver > 3.25 { color: $osd_fg; }
@@ -2486,8 +2487,9 @@ $provider_icon_size: 32px; // for < 3.25
                                        $results_icon_size * 2.42);
     padding: if($ref_weight >= 1.0, 0 $results_icon_size / 4,
                                     0 $results_icon_size / 8);
-    border-radius: $r_2;
     color: $osd_ter_fg;
+    &:ltr { border-radius: $r_2 $r $r $r_2; }
+    &:rtl { border-radius: $r $r_2 $r_2 $r; }
   }
   @else {
     margin: if($ref_weight >= 1.0, $provider_icon_size / 4 0, 0);
