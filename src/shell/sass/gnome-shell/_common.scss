@@ -1045,21 +1045,18 @@ $extra_spacing: 2.5px;
 }
 
 .ws-switcher {
-  &-active-up {
-    height: if($ref_weight >= 1.0, 50px, 36px);
-    background-color: $acc_fill_bg;
-    @include image-loader($url: 'assets/go-up.svg');
-    background-size: 24px;
-    border-radius: 2px;
-  }
-
+  &-active-up,
   &-active-down {
     height: if($ref_weight >= 1.0, 50px, 36px);
-    background-color: $acc_fill_bg;
-    @include image-loader($url: 'assets/go-down.svg');
+    background-color: if($variant != light, opacity($inv_acc_fg, $a_trk_2),
+                                            opacity($acc_fg, $a_trk_2));
     background-size: 24px;
-    border-radius: 2px;
+    border-radius: $r_2;
   }
+
+  &-active-up { @include image-loader($url: 'assets/go-up.svg'); }
+
+  &-active-down { @include image-loader($url: 'assets/go-down.svg'); }
 
   &-box {
     height: if($ref_weight >= 1.0, 50px, 36px);
