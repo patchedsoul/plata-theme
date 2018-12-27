@@ -5896,6 +5896,10 @@ popover.emoji-picker button.emoji-section.flat {
   @else {
     @include radius($r);
   }
+  &:checked {
+    background-color: $trk_bg;
+    color: $sel_label;
+  }
 
   label {
     padding: 0; // unset padding
