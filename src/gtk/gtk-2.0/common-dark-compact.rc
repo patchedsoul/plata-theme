@@ -1407,12 +1407,47 @@ style "button_separator" {
 style "combobox_button" {
   xthickness = 4
   ythickness = 4
+
+  GtkButton::inner-border = { 0, 0, 0, 0 }
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state    = NORMAL
+      file     = "Buttons/flat-button-hover-dark.png"
+      border   = { 4, 4, 4, 4 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = PRELIGHT
+      file     = "Buttons/flat-button-semi-active-dark.png"
+      border   = { 4, 4, 4, 4 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = ACTIVE
+      file     = "Buttons/flat-button-active-dark.png"
+      border   = { 4, 4, 4, 4 }
+      stretch  = TRUE
+    }
+    image {
+      function = BOX
+      state    = INSENSITIVE
+      file     = "Buttons/button-insensitive-dark.png"
+      border   = { 4, 4, 4, 4 }
+      stretch  = TRUE
+    }
+  }
 }
 
 style "combobox_entry" {
   xthickness = 4
   ythickness = 4
 
+  GtkButton::inner-border = { 0, 1, 0, 0 } # for arrow bottom spacing
+
   base[ACTIVE] = @base_color
 
   engine "pixmap" {
@@ -1421,7 +1456,6 @@ style "combobox_entry" {
       function  = SHADOW
       detail    = "entry"
       state     = NORMAL
-      shadow    = IN
       file      = "Entry/ltr-entry-dark.png"
       border    = { 4, 0, 4, 4 }
       stretch   = TRUE
@@ -1431,7 +1465,6 @@ style "combobox_entry" {
       function  = SHADOW
       detail    = "entry"
       state     = ACTIVE
-      shadow    = IN
       file      = "Entry/ltr-entry-active-dark.png"
       border    = { 4, 0, 4, 4 }
       stretch   = TRUE
@@ -1441,7 +1474,6 @@ style "combobox_entry" {
       function  = SHADOW
       detail    = "entry"
       state     = INSENSITIVE
-      shadow    = IN
       file      = "Entry/ltr-entry-insensitive-dark.png"
       border    = { 4, 0, 4, 4 }
       stretch   = TRUE
@@ -1453,7 +1485,6 @@ style "combobox_entry" {
       function  = SHADOW
       detail    = "entry"
       state     = NORMAL
-      shadow    = IN
       file      = "Entry/rtl-entry-dark.png"
       border    = { 0, 4, 4, 4 }
       stretch   = TRUE
@@ -1463,7 +1494,6 @@ style "combobox_entry" {
       function  = SHADOW
       detail    = "entry"
       state     = ACTIVE
-      shadow    = IN
       file      = "Entry/rtl-entry-active-dark.png"
       border    = { 0, 4, 4, 4 }
       stretch   = TRUE
@@ -1473,96 +1503,17 @@ style "combobox_entry" {
       function  = SHADOW
       detail    = "entry"
       state     = INSENSITIVE
-      shadow    = IN
       file      = "Entry/rtl-entry-insensitive-dark.png"
       border    = { 0, 4, 4, 4 }
       stretch   = TRUE
       direction = RTL
     }
-  }
-}
 
-style "notebook_combobox_entry" {
-  base[ACTIVE] = @base_color
-
-  engine "pixmap" {
-    # LTR version
-    image {
-      function  = SHADOW
-      detail    = "entry"
-      state     = NORMAL
-      shadow    = IN
-      file      = "Entry/ltr-entry-dark.png"
-      border    = { 4, 0, 4, 4 }
-      stretch   = TRUE
-      direction = LTR
-    }
-    image {
-      function  = SHADOW
-      detail    = "entry"
-      state     = ACTIVE
-      shadow    = IN
-      file      = "Entry/ltr-entry-active-dark.png"
-      border    = { 4, 0, 4, 4 }
-      stretch   = TRUE
-      direction = LTR
-    }
-    image {
-      function  = SHADOW
-      detail    = "entry"
-      state     = INSENSITIVE
-      shadow    = IN
-      file      = "Entry/ltr-entry-insensitive-dark.png"
-      border    = { 4, 0, 4, 4 }
-      stretch   = TRUE
-      direction = LTR
-    }
-
-    # RTL version
-    image {
-      function  = SHADOW
-      detail    = "entry"
-      state     = NORMAL
-      shadow    = IN
-      file      = "Entry/rtl-entry-dark.png"
-      border    = { 0, 4, 4, 4 }
-      stretch   = TRUE
-      direction = RTL
-    }
-    image {
-      function  = SHADOW
-      detail    = "entry"
-      state     = ACTIVE
-      shadow    = IN
-      file      = "Entry/rtl-entry-active-dark.png"
-      border    = { 0, 4, 4, 4 }
-      stretch   = TRUE
-      direction = RTL
-    }
-    image {
-      function  = SHADOW
-      detail    = "entry"
-      state     = INSENSITIVE
-      shadow    = IN
-      file      = "Entry/rtl-entry-insensitive-dark.png"
-      border    = { 0, 4, 4, 4 }
-      stretch   = TRUE
-      direction = RTL
-    }
-  }
-}
-
-style "combobox_entry_button" {
-  xthickness = 4
-  ythickness = 4
-
-  fg[ACTIVE] = @text_color
-
-  engine "pixmap" {
-    # LTR version
+    # LTR button
     image {
       function  = BOX
       state     = NORMAL
+      detail    = "button"
       file      = "Buttons/ltr-button-dark.png"
       border    = { 1, 4, 4, 4 }
       stretch   = TRUE
@@ -1571,6 +1522,7 @@ style "combobox_entry_button" {
     image {
       function  = BOX
       state     = PRELIGHT
+      detail    = "button"
       file      = "Buttons/ltr-button-hover-dark.png"
       border    = { 1, 4, 4, 4 }
       stretch   = TRUE
@@ -1579,6 +1531,7 @@ style "combobox_entry_button" {
     image {
       function  = BOX
       state     = ACTIVE
+      detail    = "button"
       file      = "Buttons/ltr-button-active-dark.png"
       border    = { 1, 4, 4, 4 }
       stretch   = TRUE
@@ -1587,16 +1540,18 @@ style "combobox_entry_button" {
     image {
       function  = BOX
       state     = INSENSITIVE
+      detail    = "button"
       file      = "Buttons/ltr-button-insensitive-dark.png"
       border    = { 1, 4, 4, 4 }
       stretch   = TRUE
       direction = LTR
     }
 
-    # RTL version
+    # RTL button
     image {
       function  = BOX
       state     = NORMAL
+      detail    = "button"
       file      = "Buttons/rtl-button-dark.png"
       border    = { 4, 1, 4, 4 }
       stretch   = TRUE
@@ -1605,6 +1560,7 @@ style "combobox_entry_button" {
     image {
       function  = BOX
       state     = PRELIGHT
+      detail    = "button"
       file      = "Buttons/rtl-button-hover-dark.png"
       border    = { 4, 1, 4, 4 }
       stretch   = TRUE
@@ -1613,6 +1569,7 @@ style "combobox_entry_button" {
     image {
       function  = BOX
       state     = ACTIVE
+      detail    = "button"
       file      = "Buttons/rtl-button-active-dark.png"
       border    = { 4, 1, 4, 4 }
       stretch   = TRUE
@@ -1621,6 +1578,7 @@ style "combobox_entry_button" {
     image {
       function  = BOX
       state     = INSENSITIVE
+      detail    = "button"
       file      = "Buttons/rtl-button-insensitive-dark.png"
       border    = { 4, 1, 4, 4 }
       stretch   = TRUE
@@ -2561,12 +2519,11 @@ class "GtkCalendar"          style "calendar"
 widget_class "*<GtkLabel>"    style "text"
 widget_class "*<GtkCellView>" style "text"
 
-widget_class "*<GtkButton>*<GtkLabel>"               style "button_label"
-widget_class "*<GtkComboBox>*<GtkButton>*<GtkLabel>" style "misc_button_label"
-widget_class "*<GtkCombo>*<GtkButton>*<GtkLabel>"    style "misc_button_label"
-widget_class "*<GtkFontButton>*<GtkLabel>"           style "misc_button_label"
-widget_class "*<GtkSpinButton>*<GtkLabel>"           style "misc_button_label"
-widget_class "*<GtkCheckButton>*<GtkLabel>"          style "misc_button_label"
+widget_class "*<GtkButton>*<GtkLabel>"      style "button_label"
+widget_class "*<GtkComboBox>*<GtkCellView>" style "button_label"
+widget_class "*<GtkFontButton>*<GtkLabel>"  style "misc_button_label"
+widget_class "*<GtkSpinButton>*<GtkLabel>"  style "misc_button_label"
+widget_class "*<GtkCheckButton>*<GtkLabel>" style "misc_button_label"
 
 widget_class "*<GtkMenuBar>*"                         style "menubar"
 widget_class "*<GtkMenu>"                             style "menu_frame"
@@ -2577,11 +2534,9 @@ widget_class "*<GtkMenuBar>.<GtkMenuItem>*"           style "menubar_item"
 widget_class "*<GtkMenuBar>.<GtkMenuItem>*<GtkLabel>" style "menubar_item_label"
 widget_class "*<GtkMenu>*<GtkSeparatorMenuItem>"      style "separator_menu_item"
 
-widget_class "*<GtkComboBox>*<GtkButton>"      style "combobox_button"
-widget_class "*<GtkComboBoxEntry>*<GtkEntry>"  style "combobox_entry"
-widget_class "*<GtkComboBoxEntry>*<GtkButton>" style "combobox_entry_button"
-widget_class "*<GtkCombo>*<GtkEntry>"          style "combobox_entry"
-widget_class "*<GtkCombo>*<GtkButton>"         style "combobox_entry_button"
+widget_class "*<GtkComboBox>.<GtkButton>" style "combobox_button"
+widget_class "*<GtkComboBoxEntry>*"       style "combobox_entry"
+widget_class "*<GtkCombo>*"               style "combobox_entry"
 
 # A hack for inline-progress widget inside the GtkTreeView
 widget_class "*<GtkTreeView>"                                   style "inline_progress"
@@ -2623,8 +2578,10 @@ widget_class "*<GtkPathBar>*<GtkButton>*<GtkLabel>" style "location_button_label
 widget_class "*<GtkNotebook>*<GtkEntry>"               style "notebook_entry"
 widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkEntry>" style "entry"
 
-widget_class "*<GtkNotebook>*<GtkComboBoxEntry>*<GtkEntry>"               style "notebook_combobox_entry"
-widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkComboBoxEntry>*<GtkEntry>" style "combobox_entry"
+widget_class "*<GtkNotebook>*<GtkComboBoxEntry>*"               style "combobox_entry"
+widget_class "*<GtkNotebook>*<GtkCombo>*"                       style "combobox_entry"
+widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkComboBoxEntry>*" style "combobox_entry"
+widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkCombo>*"         style "combobox_entry"
 
 # We use this weird selector to target an offscreen entry as created
 # by Chrome/Chromium to derive the style for its toolbar

@@ -47,8 +47,10 @@ Buttons/button-hover-dark
 Buttons/button-active-dark
 Buttons/button-insensitive-dark
 Buttons/flat-button-hover
+Buttons/flat-button-semi-active
 Buttons/flat-button-active
 Buttons/flat-button-hover-dark
+Buttons/flat-button-semi-active-dark
 Buttons/flat-button-active-dark
 Buttons/buttonbox-flat-button-hover
 Buttons/buttonbox-flat-button-active
