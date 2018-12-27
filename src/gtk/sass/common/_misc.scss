@@ -2761,17 +2761,19 @@ window.background > box.vertical > overlay > stack > box.horizontal {
       &:dir(rtl) { border-left: 1px solid $div_fg; }
 
       > row.activatable {
-        background-color: transparent;
+        margin: -1px 0; // kill stock CSS's border settings
+        padding: 0;
         color: $sec_fg;
 
         > label.sidebar {
           color: $sec_fg;
           font-weight: 500;
+          // FIXME: outset 1px solid shadows for covering ugly hard-coded
+          // separators
+          box-shadow: 0 -1px $bg;
         }
 
         &:hover {
-          background-color: $trk_bg;
-
           &, > label.sidebar { color: $fg; }
         }
         &:active,
@@ -2838,14 +2840,20 @@ overlay.recipe > image + box {
   &:dir(ltr) {
     margin-right: 12px;
 
-    box.name.recipe { border-top-right-radius: $r_4; }
+    box,
+    label { // labels also have solid background
+      &.name.recipe { border-top-right-radius: $r_4; }
+    }
 
     label.author.recipe { border-bottom-right-radius: $r_4; }
   }
   &:dir(rtl) {
     margin-left: 12px;
 
-    box.name.recipe { border-top-left-radius: $r_4; }
+    box,
+    label {
+      &.name.recipe { border-top-left-radius: $r_4; }
+    }
 
     label.author.recipe { border-bottom-left-radius: $r_4; }
   }
