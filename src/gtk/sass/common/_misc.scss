@@ -2461,6 +2461,8 @@ dialog.background.csd {
 
   > grid.vertical { // grid node for headers
     background-color: $bg;
+
+    label.header-label { min-height: rem($widget_size); } // increase title height
   }
 }
 
