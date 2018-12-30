@@ -3186,8 +3186,10 @@ combobox > window.popup { // combobox specific context-menu popup
       background-color: transparent;
       &:hover {
         border-color: $div_fg;
+        border-#{$_tab}-color: $trk_out_fg;
         border-#{$_border}-color: transparent;
         background-color: mix($base, $bg);
+        box-shadow: inset #{$_line} $trk_out_fg;
       }
       &:checked {
         border-color: $div_fg;
