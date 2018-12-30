@@ -4848,21 +4848,17 @@ filechooserbutton:drop(active) {
 }
 
 %selected_sidebar_row {
-  color: $sel_label;
-  background-color: $trk_bg;
   &:dir(ltr) { @include radius(0 $r $r 0); }
   &:dir(rtl) { @include radius($r 0 0 $r); }
 
-  label { color: $sel_label; }
-
-  &:hover {
+  &, &:hover {
     background-color: $trk_bg;
     color: $sel_label;
 
     label { color: $sel_label; }
   }
 
-  button.flat {
+  button {
     color: track($sel_label, $a_fg_2nd);
     &:hover,
     &:active,
@@ -4933,15 +4929,6 @@ placessidebar {
     // Needs overriding of the GtkListBoxRow padding
     // Actual padding is embedded into child elements
     @extend %sidebar_row_template;
-    &:selected {
-      button.image-button {
-        color: track($sel_label, $a_fg_2nd);
-        &:hover, // use opaque and brighter color
-        &:active {
-          color: $sel_label;
-        }
-      }
-    }
 
     // Using margins/padding directly in the row
     // will make the animation of the new bookmark row jump
