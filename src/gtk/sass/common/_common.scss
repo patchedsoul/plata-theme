@@ -2706,6 +2706,7 @@ treeview.view {
 
 %column_header_button {
   min-height: $menuitem_height;
+  margin: unset; // stop conflicting with 'notebook header button' nodes
   padding: 0 rem($menuitem_padding);
   border-style: none solid solid none;
   border-width: 1px;
