@@ -1959,6 +1959,20 @@ window.background {
   }
 }
 
+window.background.csd > box.vertical + headerbar.titlebar {
+  > box.vertical { // 'Open...' button
+    + button:not(.suggested-action):not(.destructive-action) {
+      &:not(.titlebutton):not(.selection-menu) {
+        &:not(.text-button):not(.lock):not(.color):not(.image-button) {
+          padding: 0 rem($txt_button_lr_space);
+          @include radius($r_2, none);
+        }
+      }
+    }
+  }
+}
+
+
 // plugin mode in Ephy
 window.background > widget > window.background > box.vertical {
   > toolbar.horizontal {
