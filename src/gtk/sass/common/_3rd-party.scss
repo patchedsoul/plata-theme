@@ -379,9 +379,7 @@ window.budgie-popover:not(.csd) {
 
   &.night-light-indicator,
   &.places-menu {
-    > frame.container {
-      padding: ($popover_padding + 2px) $popover_padding $popover_padding;
-    }
+    > frame.container { padding: $popover_padding; }
   }
 }
 

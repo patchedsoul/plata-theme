@@ -3023,10 +3023,7 @@ combobox > window.popup { // combobox specific context-menu popup
     &.menu {
       @extend %popover_menu;
       // compensate outer margins
-      // subtract top-edge border width
-      > stack {
-        margin: -($popover_padding - 2px) -$popover_padding -$popover_padding;
-      }
+      > stack { margin: -$popover_padding; }
     }
 
     @extend %popover_misc;

@@ -1773,9 +1773,9 @@ dzl {
 
   &menubuttonsection { // child elements in their GtkPopovers
     // kill ugly upstream CSS's parent margins
-    &:only-child { margin: -6px; }
-    &:first-child { margin: -6px -6px 0; }
-    &:last-child { margin: 0 -6px -6px; }
+    &:only-child { margin: -$popover_padding; }
+    &:first-child { margin: (-$popover_padding) (-$popover_padding) 0; }
+    &:last-child { margin: 0 (-$popover_padding) (-$popover_padding); }
   }
 
   &preferencesview {
@@ -1800,7 +1800,8 @@ popover.messagepopover {
   box.popover-content-area {
     button { @extend %action-area-button; }
 
-    list { margin: 0 6px 6px; } // list node at the bottom?
+    // list node at the bottom?
+    list { margin: 0 $popover_padding $popover_padding; }
   }
 }
 
