@@ -133,6 +133,7 @@ $combo_button_padding_6:
 $toolbar_padding: rem(5.3px);
 $pathbar_min_size: $entry_lr_space / 2;
 $menuitem_padding: 6px;
+$popover_padding: 6px;
 $menuitem_height: calc(#{rem($menuitem_padding * 2)} + #{$icon_size});
 $menuitem_width: calc((#{rem($menuitem_padding * 2)} + #{$icon_size}) * 2);
 $menu_padding: 4px;

@@ -3024,7 +3024,9 @@ combobox > window.popup { // combobox specific context-menu popup
       @extend %popover_menu;
       // compensate outer margins
       // subtract top-edge border width
-      > stack { margin: -(6px - 2px) -6px -6px; }
+      > stack {
+        margin: -($popover_padding - 2px) -$popover_padding -$popover_padding;
+      }
     }
 
     @extend %popover_misc;
@@ -5829,6 +5831,8 @@ cursor-handle {
 
 popover.emoji {
   &-picker {
+    padding: $popover_padding;
+
     entry {
       @extend %flat_entry_sizing;
       @include entry(flat-normal);
@@ -5837,9 +5841,8 @@ popover.emoji {
     }
 
     scrolledwindow.view {
-      margin-top: 2px;
-      border: 1px solid $div_fg;
-      background-image: none;
+      margin: $popover_padding 0;
+      background-color: $dark_bg;
     }
   }
 
@@ -5873,26 +5876,20 @@ flowboxchild.emoji { // emoji tiled view
 popover.emoji-picker button.emoji-section.flat {
   min-height: rem($widget_size - 4px, $sw: 1.0);
   min-width: rem($widget_size - 4px, $sw: 1.0);
-  margin: 2px 0 0;
   padding: 0;
   @if $maj_ver == 3 {
-    @if $mnr_ver == 24 {
-      @include radius($r);
-    }
-    @else {
-      @include radius($r_2);
-    }
+    @if $mnr_ver > 23 { @include radius($r); }
+    @else { @include radius($r_2); }
   }
-  @else {
-    @include radius($r);
-  }
+  @else { @include radius($r); }
   &:checked {
     background-color: $trk_bg;
     color: $sel_label;
   }
 
   label {
-    padding: 0; // unset padding
+    margin: 0;
+    padding: 0;
     font-size: $icon_size * 1.5; // use fixed label size
   }
 }
