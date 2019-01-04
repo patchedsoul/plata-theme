@@ -338,8 +338,6 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
 }
 
 // budgie specific popover widgets
-$budgie_popover_padding: 6px;
-
 window.budgie-popover:not(.csd) {
   &.background {
     @extend %popover;
@@ -369,22 +367,20 @@ window.budgie-popover:not(.csd) {
 
       &.clock-applet-stack { padding: 0; }
 
-      &.icon-popover-stack { padding: $budgie_popover_padding; }
+      &.icon-popover-stack { padding: $popover_padding; }
     }
   }
 
   &.budgie-menu,
   &.user-menu,
   &.workspace-popover {
-    > frame.container { padding: $budgie_popover_padding; }
+    > frame.container { padding: $popover_padding; }
   }
 
   &.night-light-indicator,
   &.places-menu {
     > frame.container {
-      padding: ($budgie_popover_padding + 2px)
-               $budgie_popover_padding
-               $budgie_popover_padding;
+      padding: ($popover_padding + 2px) $popover_padding $popover_padding;
     }
   }
 }
@@ -470,7 +466,7 @@ stack.icon-popover-stack {
   }
 
   entry { // use flat entry
-    margin-bottom: $budgie_popover_padding;
+    margin-bottom: $popover_padding;
     @include radius($r_4 $r_4 0 0, none);
     @include entry(flat-normal, $tc: $fg);
     caret-color: $fg;
@@ -504,12 +500,12 @@ stack.icon-popover-stack {
 
   .categories { // left-paned elements of GtkPopover
     &:dir(ltr) {
-      margin-right: $budgie_popover_padding;
+      margin-right: $popover_padding;
       border-right: 1px solid if($variant == dark, track(white, $a_div_2),
                                                    $div_fg);
     }
     &:dir(rtl) {
-      margin-left: $budgie_popover_padding;
+      margin-left: $popover_padding;
       border-left: 1px solid if($variant == dark, track(white, $a_div_2),
                                                   $div_fg);
     }
@@ -601,7 +597,7 @@ stack.icon-popover-stack {
 
   // top-row (user-name and avatar)
   > frame.container > box.vertical row.activatable:first-child {
-    margin-bottom: 6px;
+    margin-bottom: $popover_padding;
     outline-width: 0;
 
     button.indicator-item {
