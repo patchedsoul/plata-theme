@@ -360,15 +360,15 @@ entry {
   }
 
   @if $maj_ver == 4 {
-    progress > trougn > progress { @extend %entry_progress; }
+    progress > trough > progress { @extend %entry_progress; }
   }
   @else {
     progress { @extend %entry_progress; }
   }
 
   @if $maj_ver == 4 {
-    toolbar *:not(.linked) & progress > trougn > progress,
-    &.flat progress > trougn > progress { @include radius(0, none); }
+    toolbar *:not(.linked) & progress > trough > progress,
+    &.flat progress > trough > progress { @include radius(0, none); }
   }
   @else {
     toolbar *:not(.linked) & progress,
@@ -416,7 +416,7 @@ entry {
         @include transition(reset);
 
         @if $maj_ver == 4 {
-          progress > trougn > progress { @include radius(0, none); }
+          progress > trough > progress { @include radius(0, none); }
         }
         @else {
           progress {  @include radius(0, none); }
@@ -1578,7 +1578,7 @@ spinbutton {
       }
 
       @if $maj_ver == 4 {
-        progress > trougn > progress { @include radius($r-4, none); }
+        progress > trough > progress { @include radius($r-4, none); }
       }
       @else {
         progress {  @include radius($r-4, none); }

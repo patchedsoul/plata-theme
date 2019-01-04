@@ -2334,7 +2334,7 @@ window.background:not(.csd) > box.vertical {
     }
 
     @if $maj_ver == 4 {
-      progress > trougn > progress { @include radius(0, none); }
+      progress > trough > progress { @include radius(0, none); }
     }
     @else {
       progress { @include radius(0, none); }
