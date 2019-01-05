@@ -1673,8 +1673,9 @@ $extra_spacing: 2.5px;
         padding: 0;
         border: 1px solid if($variant == dark, $hidden_fill_bg,
                                                opacity(white, 0.01));
-        border-radius: $r_2;
-        background-color: $div_fg; // for internal separators
+        // set a half of div_fg for internal separators
+        background-color: if($variant == dark, opacity(black, $a_div_1),
+                                               opacity(black, $a_div_2));
       }
     }
   }
