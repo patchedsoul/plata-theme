@@ -1669,12 +1669,13 @@ $extra_spacing: 2.5px;
 
       &-list {
         spacing: 1px; // for internal separators
-        margin-bottom: if($ref_weight >= 1.0, 0.6em, 0.4em);
+        margin-top: if($ref_weight >= 1.0, 0.6em / 2, 0.45em / 2);
+        margin-bottom: if($ref_weight >= 1.0, 0.6em * 1.5, 0.45em * 1.5);
         padding: 0;
         border: 1px solid if($variant == dark, $hidden_fill_bg,
                                                opacity(white, 0.01));
         // set a half of div_fg for internal separators
-        background-color: if($variant == dark, opacity(black, $a_div_1),
+        background-color: if($variant == dark, opacity(white, $a_div_2),
                                                opacity(black, $a_div_2));
       }
     }
