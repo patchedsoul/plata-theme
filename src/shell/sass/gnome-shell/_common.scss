@@ -3074,7 +3074,7 @@ $grid_size: 136px;
 
   &-resident-mount {
     spacing: 8px;
-    border-radius: 2px;
+    border-radius: $r_2;
     &:hover { background-color: $osd_semi_fill_bg; }
     &:active { background-color: $osd_fill_bg; }
 
@@ -3093,7 +3093,7 @@ $grid_size: 136px;
 
   &-resident-eject-button {
     padding: 7px;
-    border-radius: 2px;
+    border-radius: $r_2;
     color: $osd_fg;
   }
 }
@@ -3531,7 +3531,7 @@ $grid_size: 136px;
   &-not-listed-label {
     @include fontscaling($ref_size * 0.9);
     padding: 4px 8px 5px;
-    border-radius: 2px;
+    border-radius: $r_2;
     color: $ovv_acc_fg;
     font-weight: 500;
     text-align: center;
