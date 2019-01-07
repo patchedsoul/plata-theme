@@ -2108,23 +2108,27 @@ terminal-window {
   // background.
   &.csd.background { background-color: transparent; }
 
-  &.background:not(.csd),
-  vte-terminal { // set the same background with decorations
-    background-color: if($variant == mixed, $inv_base,
-                                            $base);
-    color: if($variant == mixed, $inv_fg, $fg);
-  }
+  @if $maj_ver == 3 {
+    @if $mnr_ver < 23 {
+      &.background:not(.csd),
+      vte-terminal {
+        background-color: if($variant == mixed, $inv_base,
+                                                $base);
+        color: if($variant == mixed, $inv_fg, $fg);
+      }
 
-  @if $variant == mixed {
-    scrollbar {
-      background-color: track($inv_base, $a_fg_3rd);
+      @if $variant == mixed {
+        scrollbar {
+          background-color: track($inv_base, $a_fg_3rd);
 
-      slider {
-        background-color: track($inv_fg, $a_fg_3rd * $a_fg_3rd);
-        &:hover {
-          background-color: track($inv_fg, $a_fg_2nd * $a_fg_3rd);
+          slider {
+            background-color: track($inv_fg, $a_fg_3rd * $a_fg_3rd);
+            &:hover {
+              background-color: track($inv_fg, $a_fg_2nd * $a_fg_3rd);
+            }
+            &:active { background-color: $inv_fg; }
+          }
         }
-        &:active { background-color: $inv_fg; }
       }
     }
   }
