@@ -3704,28 +3704,6 @@ window.background.chromium {
 //  *********/
 
 headerbar > box.horizontal.linked {
-  > button.toggle.session-sidebar-button { // left-most revealer button
-    > box { // reduce the gap between label and image
-      > label {
-        &:dir(ltr) {
-          padding: 0 rem(1.3px) 0 rem($txt_button_lr_space / 2);
-        }
-        &:dir(rtl) {
-          padding: 0 rem($txt_button_lr_space / 2) 0 rem(1.3px);
-        }
-      }
-
-      > image { // down-arrow
-        &:dir(ltr) {
-          padding: 0 rem($txt_button_lr_space / 2) 0 rem(1.3px);
-        }
-        &:dir(rtl) {
-          padding: 0 rem(1.3px) 0 rem($txt_button_lr_space / 2);
-        }
-      }
-    }
-  }
-
   > button.image-button.session-new-button { // down-arrow button
     // hard-coded 2px L/R padding
     min-width: calc(#{rem($widget_size)} - (1px + 2px) * 2);
@@ -3758,8 +3736,6 @@ list.tilix-session-sidebar {
 
 // in-line titlebars
 widget > box.terminal-titlebar {
-  background-color: $base;
-
   > button.flat.popup.toggle {
     min-height: $menuitem_height;
     @include radius(0);
@@ -3836,8 +3812,6 @@ widget > box.terminal-titlebar {
 
 // tab 'close' button when 'use tabs instead of sidebars'
 notebook.tilix-background tab.reorderable-page {
-
-
   button.tilix-small-button { // hard-coded 2px padding
     @extend %tab_close_button;
     min-width: calc(#{$icon_size} - 3px + #{rem($menuitem_padding)});
