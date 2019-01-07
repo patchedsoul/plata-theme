@@ -2409,12 +2409,8 @@ window.background:not(.csd) > box.vertical {
       }
     }
     &:active {
-      @if $variant != light {
-        @include button(flat-hover, $tc: $sel_fg);
-      }
-      @else {
-        @include button(flat-hover, $tc: black);
-      }
+      @if $variant != light { @include button(flat-hover, $tc: $sel_fg); }
+      @else { @include button(flat-hover, $tc: black); }
       box-shadow: inset 0 -2px $sel_bg;
     }
 
@@ -2433,9 +2429,7 @@ window.background:not(.csd) > box.vertical {
       }
     }
 
-    &#xfce4-notification-plugin {
-      padding: 0 1px; // for 4.12.2
-    }
+    &#xfce4-notification-plugin { padding: 0 1px; } // for 4.12.2
   }
 
   menu {
@@ -2448,20 +2442,12 @@ window.background:not(.csd) > box.vertical {
   widget.tasklist > button.toggle {
     font-weight: 400;
     &:hover {
-      @if $variant != light {
-        @include button(flat-hover, $tc: $sel_fg);
-      }
-      @else {
-        @include button(flat-hover, $tc: black);
-      }
+      @if $variant != light { @include button(flat-hover, $tc: $sel_fg); }
+      @else { @include button(flat-hover, $tc: black); }
     }
     &:checked {
-      @if $variant != light {
-        background-color: track($sel_fg, $a_trk_1);
-      }
-      @else {
-        background-color: track(black, $a_trk_1);
-      }
+      @if $variant != light { background-color: track($sel_fg, $a_trk_1); }
+      @else { background-color: track(black, $a_trk_1); }
     }
   }
 }
@@ -2491,11 +2477,9 @@ window#whiskermenu-window {
   // why wasn't .popup class implemented in this window node? :/
   > decoration { box-shadow: $z-depth-3; }
 
-  stack > box > box.horizontal {
+  stack > box > box.horizontal { // ugly resize-grip
     &:first-child widget,
-    &:last-child > widget:last-child { // ugly resize-grip
-      color: $trk_out_fg;
-    }
+    &:last-child > widget:last-child { color: $trk_out_fg; }
   }
 
   scrolledwindow {
@@ -2513,11 +2497,9 @@ window#whiskermenu-window {
       }
     }
 
-    treeview.view {
-      &:selected:hover {
-        background-color: mix($fg, $base, percentage($a_trk_1));
-        color: $fg;
-      }
+    treeview.view:selected:hover {
+      background-color: mix($fg, $base, percentage($a_trk_1));
+      color: $fg;
     }
   }
 }
@@ -2531,9 +2513,7 @@ window.thunar {
     border-bottom: 1px solid $div_fg;
 
     // why didn't devs use .text/.image button class?
-    .linked.path-bar > button.path-bar-button {
-      @extend %pathbar_button;
-    }
+    .linked.path-bar > button.path-bar-button { @extend %pathbar_button; }
 
     entry:not(.flat) {
       min-height: rem($toolitem_size, $sw: 1.0);
@@ -2550,13 +2530,6 @@ window.thunar {
 // /**************
 //  * FeedReader *
 //  **************/
-
-window.background > paned.titlebar > headerbar.titlebar {
-  button.flat {
-    &:not(.titlebutton):not(.image-button):not(.text-button):not(.toggle) {
-    }
-  }
-}
 
 // left-paned headerbar
 paned.headerbar_pane.titlebar > headerbar.header_right.titlebar {
