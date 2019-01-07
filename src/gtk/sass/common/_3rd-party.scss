@@ -1807,9 +1807,7 @@ window.background.budgie-settings-window.csd {
     box-shadow: inset 0 2px $sel_bg;
 
     label,
-    image {
-      color: if($variant != light, $sel_fg, black);
-    }
+    image { color: if($variant != light, $sel_fg, black); }
   }
 }
 
@@ -1827,8 +1825,10 @@ window.background.budgie-settings-window.csd {
   text-shadow: none;
 
   &, label { color: $sec_fg; }
+
   &:hover,
   &:hover label { color: $fg; }
+
   &:disabled,
   &:disabled label { color: $dis_fg; }
 }
@@ -1840,24 +1840,16 @@ window.background.budgie-settings-window.csd {
   @if $variant == mixed {
     @include entry(flat-normal, $tc: $inv_fg);
     caret-color: $inv_fg;
-    &:focus {
-      @include entry(flat-focus, $tc: $inv_fg);
-    }
-    &:disabled {
-      @include entry(flat-disabled, $tc: $inv_fg);
-    }
+    &:focus { @include entry(flat-focus, $tc: $inv_fg); }
+    &:disabled { @include entry(flat-disabled, $tc: $inv_fg); }
 
     selection { @extend %selected_items; }
   }
   @else {
     @include entry(flat-normal, $tc: $fg);
     caret-color: $fg;
-    &:focus {
-      @include entry(flat-focus, $tc: $fg);
-    }
-    &:disabled {
-      @include entry(flat-disabled, $tc: $fg);
-    }
+    &:focus { @include entry(flat-focus, $tc: $fg); }
+    &:disabled { @include entry(flat-disabled, $tc: $fg); }
   }
 }
 
@@ -1918,32 +1910,20 @@ window.background.budgie-settings-window.csd {
   ('#login_window', '#login_button', $sggt_bg),
   ('#restart_dialog', '#restart_button', $dest_bg),
   ('#shutdown_dialog', '#shutdown_button', $dest_bg) {
-
     #{$node_id_1} button#{$node_id_2} {
-      @include button(raised-normal, $c: $_color,
-                                     $tc: $sec_sel_fg);
-      @include ink-reaction(normal, $fc: $sel_fg,
-                            $tr: ink-normal-dec);
-      &:hover {
-        @include button(raised-hover, $c: $_color,
-                                      $tc: $sel_fg);
-      }
+      @include button(raised-normal, $c: $_color, $tc: $sec_sel_fg);
+      @include ink-reaction(normal, $fc: $sel_fg, $tr: ink-normal-dec);
+      &:hover { @include button(raised-hover, $c: $_color, $tc: $sel_fg); }
       &:active {
-        @include button(raised-active, $c: $sel_bg,
-                                       $tc: $sel_fg);
-        @include ink-reaction(active-dec, $fc: $sel_fg,
-                              $tr: ink-active-dec);
+        @include button(raised-active, $c: $sel_bg, $tc: $sel_fg);
+        @include ink-reaction(active-dec, $fc: $sel_fg, $tr: ink-active-dec);
       }
-      &:checked {
-        @include button(raised-checked);
-      }
+      &:checked { @include button(raised-checked); }
       &:disabled {
         @if $variant == mixed {
           @include button(raised-disabled, $tc: $inv_fg);
         }
-        @else {
-          @include button(raised-disabled, $tc: $fg);
-        }
+        @else { @include button(raised-disabled, $tc: $fg); }
       }
     }
   }
@@ -2073,12 +2053,8 @@ window.background.lightdm {
     @if $variant != dark {
       @include entry(flat-normal, $tc: $inv_fg);
       caret-color: $inv_fg;
-      &:focus {
-        @include entry(flat-focus, $tc: $inv_fg);
-      }
-      &:disabled {
-        @include entry(flat-disabled, $tc: $inv_fg);
-      }
+      &:focus { @include entry(flat-focus, $tc: $inv_fg); }
+      &:disabled { @include entry(flat-disabled, $tc: $inv_fg); }
     }
 
     selection { @extend %selected_items; }
