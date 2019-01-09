@@ -5409,22 +5409,18 @@ button.flat.scale { // standalone Speaker/Mic buttons
   @include radius($r);
 }
 
-%fb_child_spacing {
-  min-height: rem($icon_size * 1.75);
-  min-width: rem($icon_size * 1.75);
-  margin: 0;
-  padding: 0;
-}
-
-.floating-bar {
-  @extend %osd;
-  padding: 0;
+%floating_bar {
   border: 1px solid transparent;
-  border-radius: 0;
   color: if($variant == mixed, $inv_fg, $fg);
   background-color: if($variant == mixed, $inv_tooltip_bg,
                                           $tooltip_bg);
   font-size: 90%;
+  opacity: $a_osd;
+}
+
+.floating-bar {
+  @extend %floating_bar;
+  padding: 0;
 
   label { min-height: rem($icon_size * 1.75); }
 
@@ -5438,17 +5434,26 @@ button.flat.scale { // standalone Speaker/Mic buttons
     }
   }
 
-  // axes left border and border radius
-  &.bottom.left {
-    border-width: 1px 1px 0 0;
-    @include radius(0 $r_4 0 0, none);
-  }
+  &.bottom.left { @extend %floating_bar_left; }
 
-  // axes right border and border radius
-  &.bottom.right {
-    border-width: 1px 0 0 1px;
-    @include radius($r_4 0 0 0, none);
-  }
+  &.bottom.right { @extend %floating_bar_right; }
+}
+
+%fb_child_spacing {
+  min-height: rem($icon_size * 1.75);
+  min-width: rem($icon_size * 1.75);
+  margin: 0;
+  padding: 0;
+}
+
+%floating_bar_left {
+  @include radius(0 $r_4 0 0, none);
+  border-width: 1px 1px 0 0;
+}
+
+%floating_bar_right {
+  @include radius($r_4 0 0 0, none);
+  border-width: 1px 0 0 1px;
 }
 
 // /**********************

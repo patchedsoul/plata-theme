@@ -278,9 +278,7 @@ row.tweak {
 }
 
 // container and tweaks in a group
-list.tweak-group-startup {
-  background-color: $bg;
-}
+list.tweak-group-startup { background-color: $bg; }
 
 %startup_list_row {
   padding: rem($entry_lr_space);
@@ -294,9 +292,7 @@ list.tweak-group-startup {
       transition: background-image $tr_d_std $tr_t_dec;
     }
   }
-  &:active { // disable ripples
-    @include transition(reset);
-  }
+  &:active { @include transition(reset); } // disable ripples
 
   > grid { // actual container
     @include radius($r_2);
@@ -304,19 +300,12 @@ list.tweak-group-startup {
     transition: background-image $tr_d_std $tr_t_dec;
 
     > button { // 'remove' buttons
-      @include button(raised-normal, $c: $dest_bg,
-                                     $tc: $sec_sel_fg);
-      @include ink-reaction(normal, $fc: $sel_fg,
-                            $tr: ink-normal-dec);
-      &:hover {
-        @include button(raised-hover, $c: $dest_bg,
-                                      $tc: $sel_fg);
-      }
+      @include button(raised-normal, $c: $dest_bg, $tc: $sec_sel_fg);
+      @include ink-reaction(normal, $fc: $sel_fg, $tr: ink-normal-dec);
+      &:hover { @include button(raised-hover, $c: $dest_bg, $tc: $sel_fg); }
       &:active {
-        @include button(raised-active, $c: $sel_bg,
-                                       $tc: $sel_fg);
-        @include ink-reaction(active-dec, $fc: $sel_fg,
-                              $tr: ink-active-dec);
+        @include button(raised-active, $c: $sel_bg, $tc: $sel_fg);
+        @include ink-reaction(active-dec, $fc: $sel_fg, $tr: ink-active-dec);
       }
       &:checked {
         @include button(raised-checked);
@@ -326,15 +315,9 @@ list.tweak-group-startup {
           color: $dis_sel_fg;
         }
       }
-      &:disabled {
-        @include button(raised-disabled, $c: $base, $tc: $fg);
-      }
+      &:disabled { @include button(raised-disabled, $c: $base, $tc: $fg); }
     }
   }
-
-  // raised 'plus' button
-  // prevent truncated drop-shadow
-  > button { margin: 0 rem($entry_lr_space) $entry_lr_space; }
 }
 
 @if $maj_ver == 3 {
@@ -836,38 +819,22 @@ window.background > box.vertical > paned.horizontal > frame {
       }
     }
 
-    > label.bottom { // mimic floating-bar styling
-      padding: $toolbar_padding;
-      border-style: solid;
-      border-color: $div_fg;
-      color: $fg;
-      font-size: 90%;
-      transition: none;
-      opacity: $a_osd;
+    @if $maj_ver == 3 {
+      @if $mnr_ver < 23 {
+        > label.bottom { // mimic floating-bar styling
+          @extend %floating_bar;
+          padding: $toolbar_padding;
 
-      &.left {
-        border-radius: 0 $r_2 0 0;
-        border-width: 1px 1px 0 0;
-      }
-      &.right {
-        border-radius: $r_2 0 0 0;
-        border-width: 1px 0 0 1px;
+          &.left { @extend %floating_bar_left; }
+
+          &.right { @extend %floating_bar_right; }
+        }
       }
     }
   }
 }
 
-@if $maj_ver == 3 {
-  @if $mnr_ver < 23 {
-    // right-pane styling (legacy)
-    paned.vertical > overlay > scrolledwindow > overlay {
-      > widget > widget > box > widget > headerbar { // in-line headerbars
-      }
-    }
-  }
-}
-
-// right-pane styling (current)
+// right-pane styling
 stack#conversation_viewer {
   scrolledwindow.geary-conversation-scroller > viewport.frame {
     border: none; // unset borders
