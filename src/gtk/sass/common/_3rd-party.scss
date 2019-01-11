@@ -372,13 +372,11 @@ window.budgie-popover:not(.csd) {
   }
 
   &.budgie-menu,
+  &.caffeine-popover,
+  &.night-light-indicator,
+  &.places-menu,
   &.user-menu,
   &.workspace-popover {
-    > frame.container { padding: $popover_padding; }
-  }
-
-  &.night-light-indicator,
-  &.places-menu {
     > frame.container { padding: $popover_padding; }
   }
 }
