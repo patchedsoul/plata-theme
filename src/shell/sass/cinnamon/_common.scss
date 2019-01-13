@@ -642,7 +642,10 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
     }
   }
 
-  &-overview-background-shade { background-color: opacity(black, $a_fg_3rd); }
+  &-overview-background-shade {
+    background-color: if($variant != light, opacity(black, $a_fg_3rd),
+                                            opacity(white, $a_fg_dis));
+  }
 }
 
 .workspace-close-button,
