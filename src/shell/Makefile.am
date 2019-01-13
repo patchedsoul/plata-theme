@@ -958,7 +958,6 @@ CLEANFILES += \
 	$(srcdir)/cinnamon-light/assets/*/*.svg \
 	$(srcdir)/cinnamon-dark/assets/*/*.svg \
 	$(srcdir)/asset/assets-cinnamon/common/checkbox/*.svg \
-	$(srcdir)/asset/assets-cinnamon/common/misc/add-workspace-active.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close-active.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close-hover.svg \
