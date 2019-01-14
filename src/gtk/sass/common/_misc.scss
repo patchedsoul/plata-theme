@@ -1487,11 +1487,6 @@ layout {
   -PnlDockBin-handle-size: 1;
 }
 
-// multi-columned editor-views
-layoutgrid > paned.horizontal separator:not(.vertical),
-layoutgrid > paned.horizontal > paned.horizontal separator:not(.vertical) {
-}
-
 eggsearchbar box.search-bar { background-color: $dark_bg; }
 
 %omnibar_entry {
@@ -1625,12 +1620,6 @@ popover {
 }
 
 greeter > box.vertical > stack {
-  > box.vertical > stack > box.vertical > scrolledwindow,
-  createprojectwidget > scrolledwindow,
-  gitclonewidget > overlay > box.vertical,
-  flatpakclonewidget > overlay > box.vertical {
-  }
-
   gitclonewidget > overlay > box.vertical,
   flatpakclonewidget > overlay > box.vertical {
     margin: -36px; // kill hard-coded margins
@@ -1649,10 +1638,6 @@ greeter > box.vertical > stack {
 }
 
 preferences > box.horizontal {
-  > box.vertical,
-  > scrolledwindow {
-  }
-
   > box.vertical { // side-pane
     @extend %sidebar_template;
 
@@ -1699,9 +1684,6 @@ ide {
     background-image: image($bg);
   }
 
-  &layoutgridcolumn { /// main container of editor-pane
-  }
-
   // editor-pane headers?
   &layoutstackheader { // damned upstream CSS
     border-bottom: 1px solid $div_fg;
@@ -1733,9 +1715,6 @@ dzl {
     @else {
       buildpanel notebook > box > header.top { background-color: transparent; }
     }
-  }
-
-  &dockpaned > box.vertical { // main container of left-pane
   }
 
   &menubuttonsection { // child elements in their GtkPopovers

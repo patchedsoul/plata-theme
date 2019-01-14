@@ -7,7 +7,6 @@
 
 .budgie-panel {
   // solid-mode
-  // always use dark-color of dark variant
   background-color: $panel_bg;
   color: if($variant == mixed, $inv_fg, $fg);
   font-weight: 700;
@@ -207,7 +206,7 @@ box.pinned { // drop-target
           if($variant == light,
              image($sel_bg),
              image(saturate(lighten($sel_bg, percentage($a_trk_2)),
-                     percentage($a_trk_2))));
+                   percentage($a_trk_2))));
         background-size: #{$_dot};
         background-position: #{$position} center;
       }
@@ -345,8 +344,7 @@ window.budgie-popover:not(.csd) {
     border: 1px solid $div_sld_fg;
     background-clip: border-box;
     background-color: $dark_bg;
-    // FIXME: we can't expose depth-3
-    box-shadow: $z-depth-2;
+    box-shadow: $z-depth-2; // FIXME: we can't expose depth-3
 
     separator.horizontal {
       @if $variant == dark {
@@ -1063,9 +1061,7 @@ window.sound-popover.background box.horizontal {
       }
     }
 
-    button.image-button {
-      margin: rem(2.7px) rem(5.3px) rem(4px);
-    }
+    button.image-button { margin: rem(2.7px) rem(5.3px) rem(4px); }
   }
 
   .alternative-label { // 'always expanded' option
@@ -1097,20 +1093,6 @@ window.sound-popover.background box.horizontal {
       &:active {
         color: $fg;
         background: none;
-
-        button.text-button.name-button { // = 'toolbutton > button'
-        }
-      }
-
-      button.image-button { // revive button transitions
-      }
-
-      button.text-button.name-button {
-        > box.horizontal { // adjust spacing
-        }
-      }
-
-      button.image-button.unmount-button {
       }
     }
 
@@ -1432,10 +1414,6 @@ window.budgie-switcher-window {
       }
     }
   }
-}
-
-// an internal of the parent switcher-window
-.budgie-switcher {
 }
 
 // run-dialog styling
@@ -1824,11 +1802,12 @@ window.background.budgie-settings-window.csd {
 
   &, label { color: $sec_fg; }
 
-  &:hover,
-  &:hover label { color: $fg; }
-
-  &:disabled,
-  &:disabled label { color: $dis_fg; }
+  &:hover {
+    &, label { color: $fg; }
+  }
+  &:disabled {
+    &, label { color: $dis_fg; }
+  }
 }
 
 %greeter_entry {
@@ -2629,13 +2608,6 @@ window.background:not(.solid-csd) > box.vertical {
     border-color: transparent transparent $div_sld_fg;
   }
 
-  scrolledwindow widget > widget > entry,
-  scrolledwindow widget > widget > combobox entry {
-    // min-height is hard-coded
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
   widget > frame > widget > widget > scrolledwindow > textview {
     // override hard-coded crazy rgb(0,0,0)
     text { background-image: image($base); }
@@ -3400,10 +3372,6 @@ window.background:not(.solid-csd) {
 //  * Inkscape *
 //  ************/
 
-// 1st-row toolbar
-#CommandsToolbar {
-}
-
 // 2nd-row toolbars
 box#AuxToolbox {
   border-top: 1px solid $div_fg;
@@ -3441,12 +3409,6 @@ box#AuxToolbox {
 }
 
 // misc
-box#DesktopStatusBar {
-}
-
-widget > box#DesktopMainTable {
-}
-
 #DesktopMainTable spinbutton > entry {
   &:dir(ltr) { margin-right: rem(8px); } // gap between entry and buttons
   &:dir(rtl) { margin-left: rem(8px); }
