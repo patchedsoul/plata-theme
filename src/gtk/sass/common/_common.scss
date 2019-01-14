@@ -2120,12 +2120,6 @@ headerbar {
     }
   }
 
-  // buttons
-
-  // entries
-
-  // comboboxes
-
   // menu
   menu menuitem { // reset text color
     color: $sec_fg;
@@ -3854,13 +3848,6 @@ scale {
     }
   }
 
-  &.fine-tune {
-    highlight,
-    fill,
-    trough {
-    }
-  }
-
   slider,
   &.fine-tune slider {
     background-repeat: no-repeat;
@@ -3898,10 +3885,6 @@ scale {
                                         url('#{$_url}@2.png'));
         }
       }
-    }
-
-    // OSD sliders
-    .osd & {
     }
   }
 
@@ -3970,10 +3953,6 @@ scale {
   separator {
     color: transparent;
     background-color: $trk_bg;
-  }
-
-  // scales on selected list rows
-  row:selected & {
   }
 }
 
@@ -5274,10 +5253,6 @@ colorswatch {
   box-shadow: $z-depth-1;
   @include transition(std);
 
-  // we need to re-set the shadow here since it get axed by the previous bit
-  &:selected {
-  }
-
   // do not use roundness
   &, &.overlay { @include radius(0, none); }
 
@@ -5294,11 +5269,6 @@ colorswatch {
   &.color-dark { color: track(white, $a_fg_2nd); }
 
   &.color-light { color: track(black, $a_fg_2nd); }
-
-  // border color
-  &.overlay,
-  &.overlay:selected {
-  }
 
   // make the add color button looks like, well, a button
   &#add-color-button {
@@ -5367,9 +5337,6 @@ colorchooser .popover.osd {
 .scale-popup {
   .osd & { @extend %osd; }
 
-  .osd & button.flat { // FIXME: quick hack, redo properly
-  }
-
   .osd & .vertical button.flat,
   .vertical button.flat { // +/- buttons on GtkVolumeButton popup
     &:first-child { // '+' button
@@ -5391,13 +5358,7 @@ colorchooser .popover.osd {
   }
 
   .osd & button,
-  button {
-    @include radius($r);
-    &:first-child { // '-' button
-    }
-    &:last-child { // '+' button
-    }
-  }
+  button { @include radius($r); }
 }
 
 button.flat.scale { // standalone Speaker/Mic buttons
@@ -5586,10 +5547,6 @@ decoration {
         @include ink-reaction(
                    active-close-dec, $fc: $sel_bg, $tr: ink-active-dec);
       }
-    }
-
-    &.icon,
-    &.appmenu { // appmenu buttons
     }
   }
 }
