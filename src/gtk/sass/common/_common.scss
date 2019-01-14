@@ -80,10 +80,6 @@
   image.drag-icons { -gtk-icon-size: $icon_size * 2; }
 }
 
-// These wildcard seems unavoidable, need to investigate.
-// Wildcards are bad and troublesome, use them with care,
-// or better, just don't.
-// Everytime a wildcard is used a kitten dies, painfully.
 *:disabled {
   @if $maj_ver == 4 { -gtk-icon-filter: opacity($a_fg_3rd); }
   @else { -gtk-icon-effect: dim; }
@@ -233,16 +229,6 @@ frame.content-view flowbox > flowboxchild.tile {
   color: $sec_fg;
   box-shadow: $z-depth-1;
   @include transition(dec);
-  &:hover { // not implemented yet
-    // background-color: $trk_bg;
-    // color: $fg;
-    // box-shadow: $z-depth-2;
-  }
-  &:active { // not implemented yet
-    // background-color: $trk_bg;
-    // color: $fg;
-    // box-shadow: $z-depth-2;
-  }
   &:selected {
     background-color: track($sel_bg, $a_trk_out);
     color: $fg;
@@ -2133,13 +2119,7 @@ headerbar {
     separator { color: $div_fg; }
   }
 
-  // popover
-
   // check and radio
-  radio,
-  check {
-  }
-
   checkbutton.text-button,
   radiobutton.text-button {
     @if $variant == mixed {
@@ -2152,10 +2132,6 @@ headerbar {
       &:disabled:indeterminate { color: $dis_inv_fg; }
     }
   }
-
-  // switches
-
-  // spinbuttons
 }
 
 .titlebar {
@@ -5084,13 +5060,15 @@ paned {
 //  * GtkVideo *
 //  ************/
 
-video {
-  background: black; // use pitch-black
+@if $maj_ver == 4 {
+  video {
+    background: black; // use pitch-black
 
-  image.osd { // NEEDS_REVIEW
-    min-width: $icon_size * 4;
-    min-height: $icon_size * 4;
-    border-radius: $icon_size * 2;
+    image.osd { // NEEDS_REVIEW
+      min-width: $icon_size * 4;
+      min-height: $icon_size * 4;
+      border-radius: $icon_size * 2;
+    }
   }
 }
 
