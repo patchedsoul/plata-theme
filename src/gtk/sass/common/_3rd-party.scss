@@ -246,20 +246,6 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher {
   }
 }
 
-.icon-tasklist > box:not(.unpinned):not(.pinned) {
-  // FIXME: At the bottom/right panel's icon-tasklists, they look strange with
-  // mysterious 1px shifted indicator positions. So let's put the
-  // ugly 1px padding to the opposite side of indicators as a compemsator.
-  @each $position, $_margin, $_gap in (bottom, top, 1px),
-                                      (right, left, 1px) {
-    .#{$position} & {
-      padding-#{$_margin}: #{$_gap};
-
-      > revealer { margin-#{$_margin}: -#{$_gap}; }
-    }
-  }
-}
-
 @each $position, $_line, $_bg_p, $_bg_s in
 (top, 0 3px, bottom, '100% calc(100% - 3px)'),
 (bottom, 0 -3px, top, '100% calc(100% - 3px)'),
