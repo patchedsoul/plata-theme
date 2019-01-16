@@ -618,10 +618,11 @@ dialog.background.csd > box.dialog-vbox.vertical {
 
 %slashed_pathbar {
   // enforce switching to flat-style
-  // 3.30.4 or higher, there's no .liked class anymore
   .path-bar {
     &, &.linked {
       button {
+        margin-left: rem($baseline * 2, $sw: 1.0);
+        margin-right: rem($baseline * 2, $sw: 1.0);
         @include radius($r_2); // for >= 3.30.4
         border-color: transparent;
         background-color: transparent;
