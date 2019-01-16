@@ -626,6 +626,13 @@ dialog.background.csd > box.dialog-vbox.vertical {
         border-color: transparent;
         background-color: transparent;
       }
+
+      // FIXME: these compensators can reserve enough wide 'tail' margins
+      // at the last button node for preventing ugly button node truncations.
+      box:not(:only-child):last-child button {
+        &:dir(ltr) { margin-right: $icon_size * 1.5; }
+        &:dir(rtl) { margin-left: $icon_size * 1.5; }
+      }
     }
   }
 
