@@ -619,15 +619,19 @@ dialog.background.csd > box.dialog-vbox.vertical {
 %slashed_pathbar {
   // enforce switching to flat-style
   // 3.30.4 or higher, there's no .liked class anymore
-  .path-bar button:not(:checked) {
-    @include radius($r_2); // for >= 3.30.4
-    &:not(:hover):not(:active) {
-      border-color: transparent;
-      background-color: transparent;
+  .path-bar {
+    &, &.linked {
+      button {
+        @include radius($r_2); // for >= 3.30.4
+        border-color: transparent;
+        background-color: transparent;
+      }
     }
+  }
+
+  .path-bar button:not(:checked) {
     &:hover,
     &:active {
-      border-color: transparent;
       background-color: track(if($variant == mixed, $inv_fg, $fg), $a_trk_1);
     }
   }
@@ -637,7 +641,6 @@ dialog.background.csd > box.dialog-vbox.vertical {
       &, &.linked { // specificity bump
         button:checked {
           &, &.flat {
-            @include radius($r_2); // for >= 3.30.4
             @include button(checked);
             &:hover { @include button(checked-hover); }
           }
@@ -646,14 +649,11 @@ dialog.background.csd > box.dialog-vbox.vertical {
     }
     @else {
       button:checked {
-        @include radius($r_2);
         @include button(checked);
         &:hover { @include button(checked-hover); }
       }
     }
   }
-
-  .path-bar label.dim-label { margin: 0 rem($baseline * 2, $sw: 1.0); }
 }
 
 .disk-space-display {
