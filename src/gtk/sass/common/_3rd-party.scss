@@ -3593,6 +3593,10 @@ window.background.chromium {
     background-color: $bg;
   }
 
+  > button.suggested-action:selected { // for 'focused' prominent button
+    background-color: mix($sel_fg, $sggt_bg, percentage($a_trk_1));
+  }
+
   @if $variant == mixed { // do not mix with foregrounds
     > spinner { color: $acc_bg; }
   }
