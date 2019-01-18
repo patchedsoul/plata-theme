@@ -2709,17 +2709,20 @@ window.background:not(.solid-csd) > box.vertical {
 }
 
 #MozillaGtkWidget.background {
-  headerbar.titlebar { // >= nightly 60.0a1(2018-02-02)
-    // FIXME: no backdrop state, no maximized state, bullshit...
-    padding: 0 if($ref_weight < 1.0, (28px - $icon_size * 1.25) / 2,
-                                     (28px - $icon_size * 1.5) / 2);
+  @if $maj_ver == 3 {
+    @if $mnr_ver < 23 {
+      headerbar.titlebar { // legacy
+        padding: 0 if($ref_weight < 1.0, (28px - $icon_size * 1.25) / 2,
+                                         (28px - $icon_size * 1.5) / 2);
 
-    &.default-decoration button.titlebutton {
-      @extend %browser_csd_titlebutton;
-      min-width: if($ref_weight < 1.0, $icon_size * 1.25,
-                                       $icon_size * 1.5);
-      min-height: if($ref_weight < 1.0, $icon_size * 1.25,
-                                       $icon_size * 1.5);
+        &.default-decoration button.titlebutton {
+          @extend %browser_csd_titlebutton;
+          min-width: if($ref_weight < 1.0, $icon_size * 1.25,
+                                           $icon_size * 1.5);
+          min-height: if($ref_weight < 1.0, $icon_size * 1.25,
+                                            $icon_size * 1.5);
+        }
+      }
     }
   }
 
