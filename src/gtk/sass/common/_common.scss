@@ -4226,51 +4226,31 @@ progressbar {
 //  *************/
 
 levelbar {
-  box-shadow: $z-depth-1; // needs to be set here to avoid clipping
+  &.horizontal {
+    block {
+      @if $maj_ver == 3 {
+        min-width: $progress_size * 9;
+        min-height: $progress_size;
+      }
+      @else { min-height: $progress_size; }
+    }
 
-  block {
-    @if $maj_ver == 3 {
-      min-width: $progress_size * 9;
-      min-height: $progress_size;
-    }
-    @else {
-      min-height: $progress_size;
-    }
+    trough { padding: ($progress_size / 2) 1px; }
+
+    &.discrete block { margin: 0 1px; }
   }
-  &.vertical block {
-    @if $maj_ver == 3 {
-      min-width: $progress_size;
-      min-height: $progress_size * 9;
+  &.vertical {
+    block {
+      @if $maj_ver == 3 {
+        min-width: $progress_size;
+        min-height: $progress_size * 9;
+      }
+      @else { min-width: $progress_size; }
     }
-    @else {
-      min-width: $progress_size;
-    }
-  }
 
-  trough {
-    padding: $progress_size / 2;
-    @include radius($r_2, none);
-    box-shadow: $z-depth-1;
-    &:disabled { box-shadow: none; }
+    trough { padding: 1px ($progress_size / 2); }
 
-    &.horizontal {
-      padding-left: 1px;
-      padding-right: 1px;
-    }
-    &.vertical {
-      padding-top: 1px;
-      padding-bottom: 1px;
-    }
-  }
-
-  &.horizontal.discrete block {
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-
-  &.vertical.discrete block {
-    margin-top: 1px;
-    margin-bottom: 1px;
+    &.discrete block { margin: 1px 0; }
   }
 
   block {

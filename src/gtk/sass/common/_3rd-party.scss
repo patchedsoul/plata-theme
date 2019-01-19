@@ -1314,10 +1314,6 @@ window.budgie-popover.workspace-popover {
   progressbar { // mimic level-bar
     min-height: 4px;
     padding: 2px;
-    border-radius: $r_2;
-    @if $variant == mixed { background-color: $inv_dark_bg; }
-    @else { background-color: $dark_bg; }
-    box-shadow: $z-depth-1;
 
     trough {
       background-color: $trk_out_fg;
