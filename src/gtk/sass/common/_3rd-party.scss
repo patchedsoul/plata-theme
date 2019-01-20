@@ -813,8 +813,8 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
           margin-bottom: if($ref_weight < 1.0,
                             calc((32px - 16px - (0.42rem - 0.1rem) * 2) / 2),
                             calc((32px - 16px - (0.6rem - 0.1rem) * 2) / 2));
-          &:dir(ltr) { margin-right: rem(2.7px + 4px); }
-          &:dir(rtl) { margin-left: rem(2.7px + 4px); }
+          &:dir(ltr) { margin-right: rem(($baseline * 2) + 4px); }
+          &:dir(rtl) { margin-left: rem(($baseline * 2) + 4px); }
         }
 
         // sub-list rows grouping
@@ -825,8 +825,8 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
           > row.activatable {
             border-bottom: 1px solid $div_fg;
             &:last-child { border-bottom: none; }
-            &:dir(ltr) { padding: 2px rem(2.7px) 2px 8px; }
-            &:dir(rtl) { padding: 2px 8px 2px rem(2.7px); }
+            &:dir(ltr) { padding: 2px rem($baseline * 2) 2px 8px; }
+            &:dir(rtl) { padding: 2px 8px 2px rem($baseline * 2); }
 
             &:selected {
               background-color: track($sel_bg, $a_trk_2);
@@ -999,7 +999,7 @@ window.sound-popover.background box.horizontal {
       }
     }
 
-    button.image-button { margin: rem(2.7px) rem(5.3px) rem(4px); }
+    button.image-button { margin: rem($baseline * 2) rem(5.3px) rem(4px); }
   }
 
   .alternative-label { // 'always expanded' option
@@ -1054,14 +1054,14 @@ window.sound-popover.background box.horizontal {
   widget.keyboard-indicator >  widget > box.horizontal {
     > widget > image {
       margin-top: rem(-0.7px, $sw: 1.0);
-      &:dir(ltr) { padding: 1.3px 0 0 3px; }
-      &:dir(rtl) { padding: 1.3px 3px 0 0; }
+      &:dir(ltr) { padding: $baseline 0 0 3px; }
+      &:dir(rtl) { padding: $baseline 3px 0 0; }
     }
 
     > stack > widget.keyboard-label > label {
       margin-top: rem(-0.7px, $sw: 1.0);
-      &:dir(ltr) { padding: 1.3px 3px rem(1.3px, $sw: 1.0) 0; }
-      &:dir(rtl) { padding: 1.3px 0 rem(1.3px, $sw: 1.0) 3px; }
+      &:dir(ltr) { padding: $baseline 3px rem($baseline, $sw: 1.0) 0; }
+      &:dir(rtl) { padding: $baseline 0 rem($baseline, $sw: 1.0) 3px; }
     }
   }
 }
@@ -2504,8 +2504,8 @@ window > box.vertical > box.horizontal {
       label,
       entry {
         min-height: rem(13.3px);
-        padding-top: rem(1.3px);
-        padding-bottom: rem(1.3px);
+        padding-top: rem($baseline);
+        padding-bottom: rem($baseline);
         font-size: 90%;
       }
 
@@ -3316,7 +3316,7 @@ box#AuxToolbox {
   toolbar { border: none; }
 
   box#StyleSwatch { // keep the similar height vs GtkToolBar
-    margin: rem(-2.7px) 0;
+    margin: rem(-$baseline * 2) 0;
 
     label { font-size: if($ref_weight < 1.0, 90%, 100%); }
   }
@@ -3461,7 +3461,7 @@ box#DockBox > paned#DockBoxPane {
 window.background:not(.solid-csd) > box.vertical > grid.horizontal {
   // add spacing for 'Ratio' label
   > label {
-    padding: 0 rem(5.3px, $sw: 1.0) rem(1.3px, $sw: 1.0);
+    padding: 0 rem(5.3px, $sw: 1.0) rem($baseline, $sw: 1.0);
   }
 }
 
@@ -3649,7 +3649,9 @@ widget > box.terminal-titlebar {
       }
 
       label.tilix-terminal-title {
-        padding: rem(1.3px, $sw: 1.0) rem(2.7px) rem(2.7px, $sw: 1.0);
+        padding: rem($baseline, $sw: 1.0)
+                 rem($baseline * 2)
+                 rem($baseline * 2, $sw: 1.0);
       }
     }
 
@@ -3658,7 +3660,7 @@ widget > box.terminal-titlebar {
         min-width: $icon_size;
         min-height: $icon_size;
         margin: 0;
-        padding: rem(2.7px, $sw: 1.0);
+        padding: rem($baseline * 2, $sw: 1.0);
       }
     }
   }

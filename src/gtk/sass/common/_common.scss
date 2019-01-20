@@ -606,7 +606,7 @@ entry {
 
   &.entry-tag { // for libgd apps
     min-height: $icon_size;
-    margin: rem(2.7px);
+    margin: rem($baseline * 2);
     padding: 0 rem($entry_lr_space);
     @include radius($r, none);
     border: 0 none transparent;
@@ -3708,7 +3708,7 @@ radiobutton.text-button {
     padding: 0 rem($menuitem_padding, $sw: 1.0);
     @include transition(std);
 
-    label { padding-bottom: rem(1.3px, $sw: 1.0); }
+    label { padding-bottom: rem($baseline, $sw: 1.0); }
   }
 
   color: $sec_fg;
@@ -4883,7 +4883,7 @@ placessidebar {
     }
 
     label.sidebar-label {
-      padding-bottom: rem(1.3px, $sw: 1.0);
+      padding-bottom: rem($baseline, $sw: 1.0);
       &:dir(ltr) { padding-right: rem($pathbar_min_size * 1.5, $sw: 1.0); }
       &:dir(rtl) { padding-left: rem($pathbar_min_size * 1.5, $sw: 1.0); }
     }

@@ -445,9 +445,9 @@ dialog.background.csd > box.dialog-vbox.vertical {
     @include transition(reset);
 
     label {
-      padding: rem(2.7px)
+      padding: rem($baseline * 2)
                rem($entry_lr_space)
-               rem(2.7px + $baseline);
+               rem($baseline * 3);
       font-size: 110%;
     }
 
@@ -1448,7 +1448,7 @@ overlay > box.vertical > paned.horizontal > box.vertical {
       label { padding: rem($menu_padding); }
 
       separator.vertical {
-        margin: 0 rem(2.7px); // expand vertically
+        margin: 0 rem($baseline * 2); // expand vertically
         background-color: $div_fg;
       }
 
@@ -1962,7 +1962,6 @@ window.background > box.vertical box.horizontal {
 
     row.activatable.category { // use side-bar styling
       // paddings in row were hard-coded with crazy large values...
-      // padding: rem(2.7px) rem(8px) rem(4px);
       @extend %sidebar_row_template;
 
       > label {
