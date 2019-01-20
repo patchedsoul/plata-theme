@@ -5709,6 +5709,7 @@ cursor-handle {
   tooltip.background & {
     background-color: $sggt_bg;
     color: $sel_fg;
+    box-shadow: none;
   }
 }
 
