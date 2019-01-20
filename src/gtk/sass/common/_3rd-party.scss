@@ -3313,13 +3313,14 @@ window.background:not(.solid-csd) {
 box#AuxToolbox {
   border-top: 1px solid $div_fg;
 
-  toolbar { border: none; }
-
-  box#StyleSwatch { // keep the similar height vs GtkToolBar
-    margin: rem(-$baseline * 2) 0;
-
-    label { font-size: if($ref_weight < 1.0, 90%, 100%); }
+  toolbar {
+    @if $ref_weight < 1.0 {
+      min-height: rem($toolitem_size, $sw: 1.0) + $toolbar_padding * 2;
+    }
+    border: none;
   }
+
+  box#StyleSwatch label { font-size: 90%; } // shrink labels
 }
 
 // left/right-side, vertical toolbars
