@@ -625,11 +625,9 @@ dialog.background.csd > box.dialog-vbox.vertical {
         margin-right: rem($baseline * 2, $sw: 1.0);
         border-color: transparent;
         background-color: transparent;
-        &:first-child, &:last-child { // enforce symmetrical radius
-          &:dir(ltr), &:dir(rtl) {
-            @include radius($r_2, none);
-            border-width: 1px;
-          }
+        &:dir(ltr), &:dir(rtl) { // enforce symmetrical radius
+          @include radius($r_2, none);
+          border-width: 1px;
         }
       }
 
