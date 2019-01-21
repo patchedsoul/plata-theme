@@ -623,9 +623,14 @@ dialog.background.csd > box.dialog-vbox.vertical {
       button {
         margin-left: rem($baseline * 2, $sw: 1.0);
         margin-right: rem($baseline * 2, $sw: 1.0);
-        @include radius($r_2); // for >= 3.30.4
         border-color: transparent;
         background-color: transparent;
+        &:first-child, &:last-child { // enforce symmetrical radius
+          &:dir(ltr), &:dir(rtl) {
+            @include radius($r_2, none);
+            border-width: 1px;
+          }
+        }
       }
 
       // FIXME: these compensators can reserve enough wide 'tail' margins
