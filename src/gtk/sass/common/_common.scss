@@ -1428,10 +1428,13 @@ buttonbox {
     @include button(disabled, $c: $inv_base,
                               $tc: $inv_fg);
   }
-  &:checked { @include button(checked, $tc: $sel_fg); }
-  &:checked:disabled {
-    @include button(checked-disabled, $c: $inv_base,
-                                      $tc: $inv_fg);
+  &:checked {
+    @include button(checked);
+    &:hover { @include button(checked-hover); }
+    &:disabled {
+      @include button(checked-disabled, $c: $inv_base,
+                                        $tc: $inv_fg);
+    }
   }
 }
 
@@ -2531,14 +2534,6 @@ dialog.background.csd > headerbar.titlebar {
         &:active {
           background-color: track(if($variant == mixed, $inv_fg, $fg),
                                   $a_trk_1);
-        }
-      }
-
-      @if $variant == mixed {
-        &, &.flat {
-          &:checked {
-            &:hover { @include button(checked-hover); }
-          }
         }
       }
     }
