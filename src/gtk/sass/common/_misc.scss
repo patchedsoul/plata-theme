@@ -940,38 +940,6 @@ stack#conversation_viewer {
       }
     }
   }
-  @else {
-    headerbar.titlebar.incognito-mode { // tone up headerbar node bg
-      @extend %incognito_headerbar_bg;
-    }
-  }
-}
-@else {
-  headerbar.titlebar.incognito-mode {
-    @extend %incognito_headerbar_bg;
-  }
-}
-
-%incognito_headerbar_bg {
-  border-top-color: if($variant == mixed,
-                       mix(white, $inv_tooltip_bg, percentage($a_div_1)),
-                       mix(white, $tooltip_bg, percentage($a_div_2)));
-  background-color: if($variant == mixed, $inv_tooltip_bg, $tooltip_bg);
-  &:backdrop {
-    border-top-color: if($variant == mixed, $inv_bg, $bg);
-    background-color: if($variant == mixed, $inv_bg, $bg);
-  }
-
-  .tiled &,
-  .tiled-top &,
-  .tiled-bottom &,
-  .tiled-left &,
-  .tiled-right &,
-  .maximized &,
-  .fullscreen & {
-    border-top-color: if($variant == mixed, $inv_tooltip_bg, $tooltip_bg);
-    &:backdrop { border-top-color: if($variant == mixed, $inv_bg, $bg); }
-  }
 }
 
 headerbar.titlebar.incognito-mode {
