@@ -607,66 +607,6 @@ dialog.background.csd > box.dialog-vbox.vertical {
   }
 }
 
-@if $maj_ver == 3 {
-  @if $mnr_ver > 23 {
-    headerbar box.path-bar-box { @extend %slashed_pathbar; }
-  }
-}
-@else {
-  headerbar box.path-bar-box { @extend %slashed_pathbar; }
-}
-
-%slashed_pathbar {
-  // enforce switching to flat-style
-  .path-bar {
-    &, &.linked {
-      button {
-        margin-left: rem($baseline * 2, $sw: 1.0);
-        margin-right: rem($baseline * 2, $sw: 1.0);
-        border-color: transparent;
-        background-color: transparent;
-        &:dir(ltr), &:dir(rtl) { // enforce symmetrical radius
-          @include radius($r_2, none);
-          border-width: 1px;
-        }
-      }
-
-      // FIXME: these compensators can reserve enough wide 'tail' margins
-      // at the last button node for preventing ugly button node truncations.
-      box:not(:only-child):last-child button {
-        &:dir(ltr) { margin-right: $icon_size * 1.5; }
-        &:dir(rtl) { margin-left: $icon_size * 1.5; }
-      }
-    }
-  }
-
-  .path-bar button:not(:checked) {
-    &:hover,
-    &:active {
-      background-color: track(if($variant == mixed, $inv_fg, $fg), $a_trk_1);
-    }
-  }
-
-  .path-bar { // enforce checked state styling
-    @if $variant == mixed {
-      &, &.linked { // specificity bump
-        button:checked {
-          &, &.flat {
-            @include button(checked);
-            &:hover { @include button(checked-hover); }
-          }
-        }
-      }
-    }
-    @else {
-      button:checked {
-        @include button(checked);
-        &:hover { @include button(checked-hover); }
-      }
-    }
-  }
-}
-
 .disk-space-display {
   border: 0 none transparent;
 

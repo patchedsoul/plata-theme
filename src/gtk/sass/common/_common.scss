@@ -2497,25 +2497,72 @@ dialog.background.csd > headerbar.titlebar {
 //  * Pathbars *
 //  ************/
 
+%pathbar_button_shape {
+  @include radius(0); // optimize radius and widths
+  &:dir(ltr) { border-right-width: 0; }
+  &:dir(rtl) { border-left-width: 0; }
+  &:first-child {
+    &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
+    &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+  }
+  &:last-child {
+    &:dir(ltr) {
+      @include radius(0 $r-2 $r-2 0);
+      border-right-width: 1px;
+    }
+    &:dir(rtl) {
+      @include radius($r-2 0 0 $r-2);
+      border-left-width: 1px;
+    }
+  }
+}
+
+%slashed_nautilus_pathbar {
+  .linked.path-bar,
+  .path-bar {
+    button {
+      margin-left: rem($baseline * 2, $sw: 1.0);
+      margin-right: rem($baseline * 2, $sw: 1.0);
+      // enforce switching to flat-style
+      &:not(:checked) {
+        border-color: transparent;
+        background-color: transparent;
+        &:hover,
+        &:active {
+          background-color: track(if($variant == mixed, $inv_fg, $fg),
+                                  $a_trk_1);
+        }
+      }
+
+      @if $variant == mixed {
+        &, &.flat {
+          &:checked {
+            &:hover { @include button(checked-hover); }
+          }
+        }
+      }
+    }
+
+    // FIXME: these compensators can reserve enough wide 'tail' margins
+    // at the last button node for preventing ugly button node truncations.
+    box:not(:only-child):last-child button {
+      &:dir(ltr) { margin-right: $icon_size * 1.5; }
+      &:dir(rtl) { margin-left: $icon_size * 1.5; }
+    }
+  }
+}
+
 .linked.path-bar,
 .path-bar {
   button {
-    @include radius(0); // optimize radius and widths
-    &:dir(ltr) { border-right-width: 0; }
-    &:dir(rtl) { border-left-width: 0; }
-    &:first-child {
-      &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
-      &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+    @if $maj_ver == 3 {
+      @if $mnr_ver < 23 { @extend %pathbar_button_shape; }
+      @else { // exclude Nautilus's specific pathbar box
+        *:not(.path-bar-box) & { @extend %pathbar_button_shape; }
+      }
     }
-    &:last-child {
-      &:dir(ltr) {
-        @include radius(0 $r-2 $r-2 0);
-        border-right-width: 1px;
-      }
-      &:dir(rtl) {
-        @include radius($r-2 0 0 $r-2);
-        border-left-width: 1px;
-      }
+    @else {
+      *:not(.path-bar-box) & { @extend %pathbar_button_shape; }
     }
 
     @at-root %pathbar_button,
@@ -2541,6 +2588,15 @@ dialog.background.csd > headerbar.titlebar {
       image { margin: 0 rem($pathbar_min_size); }
     }
   }
+}
+
+@if $maj_ver == 3 { // Nautilus >= 3.30
+  @if $mnr_ver > 23 {
+    headerbar box.path-bar-box { @extend %slashed_nautilus_pathbar; }
+  }
+}
+@else {
+  headerbar box.path-bar-box { @extend %slashed_nautilus_pathbar; }
 }
 
 // /**************
