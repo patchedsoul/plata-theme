@@ -4449,7 +4449,15 @@ list {
   background-color: $base;
 }
 
-row { padding: 2px rem($menuitem_padding); }
+row {
+  @if $maj_ver == 3 { padding: 2px rem($menuitem_padding); }
+  @else { // exclude expander class
+    &:not(.expander) { padding: 2px rem($menuitem_padding); }
+
+    // move root padding to its childs
+    &.expander .row-header { padding: 2px rem($menuitem_padding); }
+  }
+}
 
 %activatable_row,
 row.activatable {
