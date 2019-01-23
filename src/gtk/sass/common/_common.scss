@@ -2978,12 +2978,19 @@ combobox > window.popup { // combobox specific context-menu popup
   }
 
   @if $maj_ver == 3 {
-    @if $mnr_ver == 24 {
+    @if $mnr_ver > 23 {
       &Emojier {
         &WhiteLabel,
         &GoldLabel,
         &SelectedLabel { padding: $toolbar_padding; }
       }
+    }
+  }
+  @else {
+    &Emojier {
+      &WhiteLabel,
+      &GoldLabel,
+      &SelectedLabel { padding: $toolbar_padding; }
     }
   }
 }
