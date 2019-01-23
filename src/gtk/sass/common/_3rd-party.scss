@@ -2095,8 +2095,11 @@ grid.popover-rating-loved-grid {
 image.toolbar-cover-frame { // mask L/R edge borders
   border-image: if($variant == mixed, image($inv_dark_bg) 0 1 / 0 1px stretch,
                                       image($dark_bg) 0 1 / 0 1px stretch);
-  background-image: if($variant == mixed, image($inv_dark_bg),
-                                          image($dark_bg));
+
+  &:backdrop {
+    border-image: if($variant == mixed, image($inv_bg) 0 1 / 0 1px stretch,
+                                        image($bg) 0 1 / 0 1px stretch);
+  }
 }
 
 // /***************************
