@@ -2091,6 +2091,14 @@ grid.popover-rating-loved-grid {
                                        calc(12px + 0.5rem));
 }
 
+// Cover-art in headerbar
+image.toolbar-cover-frame { // mask L/R edge borders
+  border-image: if($variant == mixed, image($inv_dark_bg) 0 1 / 0 1px stretch,
+                                      image($dark_bg) 0 1 / 0 1px stretch);
+  background-image: if($variant == mixed, image($inv_dark_bg),
+                                          image($dark_bg));
+}
+
 // /***************************
 //  * Cinnamon-Control-Center *
 //  ***************************/
