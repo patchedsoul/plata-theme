@@ -2676,6 +2676,10 @@ window.background:not(.solid-csd) > box.vertical {
 
         &.default-decoration button.titlebutton {
           @extend %browser_csd_titlebutton;
+          min-width: if($ref_weight < 1.0, $icon_size * 1.25,
+                                           $icon_size * 1.5);
+          min-height: if($ref_weight < 1.0, $icon_size * 1.25,
+                                            $icon_size * 1.5);
         }
       }
     }

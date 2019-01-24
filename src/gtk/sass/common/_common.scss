@@ -5616,9 +5616,9 @@ decoration {
 
 // specific button styling for Mutter's SSDs, Metacity's CSDs and XWayland
 %ssd_button {
-  min-width: if($ref_weight < 1.0, $icon_size * 1.25, $icon_size * 1.5);
-  min-height: if($ref_weight < 1.0, $icon_size * 1.25, $icon_size * 1.5);
-  margin: 0; // dummy zero margins
+  min-width: $titlebutton_small;
+  min-height: $titlebutton_small;
+  margin: 2px 0 3px;
   padding: 0;
   @include radius($r, none);
   @if $variant == light { @extend %flat_button; }
@@ -5673,17 +5673,6 @@ headerbar.titlebar.default-decoration {
         }
       }
     }
-  }
-}
-
-// FIXIME: damned FF can't deal with margin property when computing the
-// desired width/height of titlebutton widgets, it causes weird 'y-offset'
-// of its child icon widgets because outer margin values are included
-// into button widget height, maybe...
-.background:not(#MozillaGtkWidget) .titlebar.default-decoration .titlebutton {
-    min-width: $titlebutton_small;
-    min-height: $titlebutton_small;
-    margin: 2px 0 3px;
   }
 }
 
