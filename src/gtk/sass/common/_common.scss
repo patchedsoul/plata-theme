@@ -5616,8 +5616,8 @@ decoration {
 
 // specific button styling for Mutter's SSDs, Metacity's CSDs and XWayland
 %ssd_button {
-  min-height: $titlebutton_small;
-  min-width: $titlebutton_small;
+  min-width: if($ref_weight < 1.0, $icon_size * 1.25, $icon_size * 1.5);
+  min-height: if($ref_weight < 1.0, $icon_size * 1.25, $icon_size * 1.5);
   margin: 0; // dummy zero margins
   padding: 0;
   @include radius($r, none);
@@ -5681,7 +5681,11 @@ headerbar.titlebar.default-decoration {
 // of its child icon widgets because outer margin values are included
 // into button widget height, maybe...
 .background:not(#MozillaGtkWidget) .titlebar.defallt-decoration {
-  .titlebutton { margin: 2px 0 3px; }
+  .titlebutton {
+    min-width: $titlebutton_small;
+    min-height: $titlebutton_small;
+    margin: 2px 0 3px;
+  }
 }
 
 // /*************
