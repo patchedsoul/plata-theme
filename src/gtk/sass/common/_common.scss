@@ -2147,8 +2147,8 @@ headerbar {
 
 .titlebar {
   &.default-decoration {
-    min-height: (2px + 3px) + $titlebutton_small;
-    padding: 0 3px;
+    min-height: $titlebutton_small;
+    padding: 2px 3px 3px;
     border-radius: $r_2 $r_2 0 0;
     border-width: 1px 0 0;
     border-top-color: $div_top_fg;
@@ -5618,7 +5618,7 @@ decoration {
 %ssd_button {
   min-width: $titlebutton_small;
   min-height: $titlebutton_small;
-  margin: 2px 0 3px;
+  margin: 0; // reset outer margins
   padding: 0;
   @include radius($r, none);
   @if $variant == light { @extend %flat_button; }
