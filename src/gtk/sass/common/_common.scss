@@ -5680,8 +5680,7 @@ headerbar.titlebar.default-decoration {
 // desired width/height of titlebutton widgets, it causes weird 'y-offset'
 // of its child icon widgets because outer margin values are included
 // into button widget height, maybe...
-.background:not(#MozillaGtkWidget) .titlebar.defallt-decoration {
-  .titlebutton {
+.background:not(#MozillaGtkWidget) .titlebar.default-decoration .titlebutton {
     min-width: $titlebutton_small;
     min-height: $titlebutton_small;
     margin: 2px 0 3px;
