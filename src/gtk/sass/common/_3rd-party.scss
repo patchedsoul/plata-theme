@@ -3987,6 +3987,8 @@ box.vertical > stack > box > revealer > stack > scrolledwindow {
         &:dir(ltr) { @include radius(0 $r $r 0); }
         &:dir(rtl) { @include radius($r 0 0 $r); }
 
+        &, &:focus { outline-width: 0; } // unset focus outlines
+
         &, &:hover {
           background-color: $trk_bg;
 
