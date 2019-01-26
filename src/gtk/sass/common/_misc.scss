@@ -2681,7 +2681,6 @@ window.background > box.vertical > overlay > stack > box.horizontal {
         margin: -1px 0; // kill stock CSS's border settings
         padding: 0;
         color: $sec_fg;
-        &, &:focus { outline-width: 0; } // unset outlines
 
         > label.sidebar {
           color: $sec_fg;
