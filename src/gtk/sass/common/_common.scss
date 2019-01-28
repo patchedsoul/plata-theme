@@ -2540,7 +2540,10 @@ dialog.background.csd > headerbar.titlebar {
       &.flat { // >= 3.30.5
         &:dir(ltr),
         &:dir(rtl) { @include radius($r_2, none); } // specificity bump
-        &:checked:hover { @include button(checked-hover); }
+        &:checked {
+          @if $variant == mixed { @include button(checked); }
+          &:hover { @include button(checked-hover); }
+        }
       }
     }
 
