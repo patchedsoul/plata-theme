@@ -2536,6 +2536,12 @@ dialog.background.csd > headerbar.titlebar {
                                   $a_trk_1);
         }
       }
+
+      &.flat { // >= 3.30.5
+        &:dir(ltr),
+        &:dir(rtl) { @include radius($r_2, none); } // specificity bump
+        &:checked:hover { @include button(checked-hover); }
+      }
     }
 
     // FIXME: these compensators can reserve enough wide 'tail' margins
