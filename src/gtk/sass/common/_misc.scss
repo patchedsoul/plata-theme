@@ -818,6 +818,14 @@ stack#conversation_viewer {
       }
     }
   }
+
+  // FIXME: entry + 2 meaningless buttons are contained with .linked,
+  // so enforce stand-alone entry border-radius and width
+  searchbar grid.horizontal.linked > entry.search {
+    @include radius($r, none);
+    &:dir(ltr),
+    &:dir(rtl) { border-width: 2px; }
+  }
 }
 
 // /************
