@@ -396,6 +396,10 @@ entry {
 
   &:drop(active) {
     &, &:focus { box-shadow: inset 0 0 0 2px $drp_fg; }
+
+    @if $variant == mixed {
+      headerbar & { box-shadow: inset 0 0 0 2px $inv_drp_fg; }
+    }
   }
 
   treeview & { // reset styling inside tree-view
@@ -901,6 +905,10 @@ button {
   &:drop(active) {
     color: $drp_fg;
     background-color: $drp_bg;
+
+    @if $variant == mixed {
+      headerbar & { color: $inv_drp_fg; }
+    }
   }
 
   separator { // remove vertical separator
@@ -5745,6 +5753,14 @@ headerbar.titlebar.default-decoration {
     border-color: $drp_fg;
     box-shadow: inset 0 0 0 1px $drp_fg;
     caret-color: $drp_fg;
+
+    @if $variant == mixed {
+      headerbar & {
+        border-color: $inv_drp_fg;
+        box-shadow: inset 0 0 0 1px $inv_drp_fg;
+        caret-color: $inv_drp_fg;
+      }
+    }
   }
 }
 
