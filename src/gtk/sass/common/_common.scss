@@ -790,10 +790,27 @@ button {
 
     &.flat {
       &:not(.suggested-action):not(.destructive-action) {
-        @if $variant == mixed { @extend %inv_flat_button; }
-        &:checked {
-          background-color: $sel_bg;
-          color: $sel_fg;
+        @if $variant == mixed {
+          @include button(flat-normal, $tc: $inv_fg);
+          @include ink-reaction(normal, $fc: $inv_fg,
+                                        $tr: ink-normal-dec);
+          &:hover { @include button(flat-hover, $tc: $inv_fg); }
+          &:active {
+            @include button(flat-active, $tc: $inv_fg);
+            @include ink-reaction(active-dec, $fc: $inv_fg,
+                                              $tr: ink-active-dec);
+          }
+          &:disabled { @include button(flat-disabled, $tc: $inv_fg); }
+        }
+        &:checked { // enforce outlined-checked styling
+          @include button(checked);
+          &:hover { @include button(checked-hover); }
+          &:disabled {
+            @if $variant == mixed {
+              @include button(checked-disabled, $tc: $inv_fg);
+            }
+            @else { @include button(checked-disabled); }
+          }
         }
       }
     }
@@ -2585,11 +2602,6 @@ dialog.background.csd > headerbar.titlebar {
           background-color: track(if($variant == mixed, $inv_fg, $fg),
                                   $a_trk_1);
         }
-      }
-
-      &.flat:checked { // switch to outlined buttons
-        @if $variant == mixed { @include button(checked); }
-        &:hover { @include button(checked-hover); }
       }
     }
   }
