@@ -3027,20 +3027,31 @@ PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
   .caja-pathbar {
     button {
       &:first-child { // remove meaningless gaps
-        &:dir(ltr) { margin-right: -2px; }
-        &:dir(rtl) { margin-left: -2px; }
+        &:dir(ltr) {
+          margin-right: -2px;
+          @include radius($r_2 0 0 $r_2);
+        }
+        &:dir(rtl) {
+          margin-left: -2px;
+          @include radius(0 $r_2 $r_2 0);
+        }
       }
       &:not(:first-child):not(:last-child) {
         margin: 0 -2px;
+        @include radius(0);
       }
       &:last-child {
-        &:dir(ltr) { margin-left: -2px; }
-        &:dir(rtl) { margin-right: -2px; }
+        &:dir(ltr) {
+          margin-left: -2px;
+          @include radius(0 $r_2 $r_2 0);
+        }
+        &:dir(rtl) {
+          margin-right: -2px;
+          @include radius($r_2 0 0 $r_2);
+        }
       }
 
-      &, &.slider-button { // use linked-array button styling
-        @extend %toolitem_size;
-      }
+      &, &.slider-button { @extend %toolitem_size; }
     }
   }
 

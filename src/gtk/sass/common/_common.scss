@@ -2520,44 +2520,7 @@ dialog.background.csd > headerbar.titlebar {
   }
 }
 
-%slashed_nautilus_pathbar {
-  .linked.path-bar,
-  .path-bar {
-    button {
-      margin-left: rem($baseline * 2, $sw: 1.0);
-      margin-right: rem($baseline * 2, $sw: 1.0);
-      // enforce switching to flat-style
-      &:not(:checked) {
-        border-color: transparent;
-        background-color: transparent;
-        &:hover,
-        &:active {
-          background-color: track(if($variant == mixed, $inv_fg, $fg),
-                                  $a_trk_1);
-        }
-      }
-
-      &.flat { // >= 3.30.5
-        &:dir(ltr),
-        &:dir(rtl) { @include radius($r_2, none); } // specificity bump
-        &:checked {
-          @if $variant == mixed { @include button(checked); }
-          &:hover { @include button(checked-hover); }
-        }
-      }
-    }
-
-    // FIXME: these compensators can reserve enough wide 'tail' margins
-    // at the last button node for preventing ugly button node truncations.
-    box:not(:only-child):last-child button {
-      &:dir(ltr) { margin-right: $icon_size * 1.5; }
-      &:dir(rtl) { margin-left: $icon_size * 1.5; }
-    }
-  }
-}
-
-.linked.path-bar,
-.path-bar {
+.linked.path-bar {
   button {
     @if $maj_ver == 3 {
       @if $mnr_ver < 23 { @extend %pathbar_button_shape; }
@@ -2568,7 +2531,11 @@ dialog.background.csd > headerbar.titlebar {
     @else {
       *:not(.path-bar-box) & { @extend %pathbar_button_shape; }
     }
+  }
+}
 
+.path-bar {
+  button {
     @at-root %pathbar_button,
     &,
     &.text-button,
@@ -2596,11 +2563,47 @@ dialog.background.csd > headerbar.titlebar {
 
 @if $maj_ver == 3 { // Nautilus >= 3.30
   @if $mnr_ver > 23 {
-    headerbar box.path-bar-box { @extend %slashed_nautilus_pathbar; }
+    headerbar .path-bar-box { @extend %slashed_nautilus_pathbar; }
   }
 }
 @else {
-  headerbar box.path-bar-box { @extend %slashed_nautilus_pathbar; }
+  headerbar .path-bar-box { @extend %slashed_nautilus_pathbar; }
+}
+
+%slashed_nautilus_pathbar {
+  .path-bar,
+  .nautilus-path-bar { // > 3.30.5
+    button {
+      margin-left: rem($baseline * 2, $sw: 1.0);
+      margin-right: rem($baseline * 2, $sw: 1.0);
+      // enforce switching to flat-style
+      &:not(:checked) {
+        border-color: transparent;
+        background-color: transparent;
+        &:hover,
+        &:active {
+          background-color: track(if($variant == mixed, $inv_fg, $fg),
+                                  $a_trk_1);
+        }
+      }
+
+      &.flat:checked { // switch to outlined buttons
+        @if $variant == mixed { @include button(checked); }
+        &:hover { @include button(checked-hover); }
+      }
+    }
+  }
+
+  .nautilus-path-bar button { // > 3.30.5
+    @extend %pathbar_button;
+  }
+
+  // FIXME: these compensators can reserve enough wide 'tail' margins
+  // at the last button node for preventing ugly button node truncations.
+  box:not(:only-child):last-child button {
+    &:dir(ltr) { margin-right: $icon_size * 1.5; }
+    &:dir(rtl) { margin-left: $icon_size * 1.5; }
+  }
 }
 
 // /**************
