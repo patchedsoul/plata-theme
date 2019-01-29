@@ -4482,8 +4482,8 @@ list {
 
 row {
   @if $maj_ver == 3 { padding: 2px rem($menuitem_padding); }
-  @else { // exclude expander class
-    &:not(.expander) { padding: 2px rem($menuitem_padding); }
+  @else {
+    &.expander { padding: 0; } // unset padding
 
     // move root padding to its childs
     &.expander .row-header { padding: 2px rem($menuitem_padding); }
