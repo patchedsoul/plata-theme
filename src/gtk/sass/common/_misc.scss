@@ -2398,13 +2398,11 @@ dialog.background.csd {
 window.background > grid.horizontal.titlebar {
   // search-bar revealer
   @if $maj_ver == 3 {
-    searchbar {
-      background-color: if($variant == mixed, $inv_dark_bg, $dark_bg);
-    }
+    box.vertical > headerbar + searchbar { background-color: $dark_bg; }
   }
   @else {
-    searchbar > revealer > box {
-      background-color: if($variant == mixed, $inv_dark_bg, $dark_bg);
+    box.vertical > headerbar + searchbar > revealer > box {
+      background-color: $dark_bg;
     }
   }
 }
