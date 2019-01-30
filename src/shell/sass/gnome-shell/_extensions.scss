@@ -315,7 +315,7 @@ $icon_padding: 9px;
       }
     }
 
-    .show-apps#show-apps-btn {
+    StButton.show-apps {
       &:focus,
       &:hover {
         background-color: $osd_semi_fill_bg;
@@ -323,14 +323,13 @@ $icon_padding: 9px;
       }
       &:active {
         background-color: $osd_fill_bg;
-        box-shadow: $empty_shadow;
+        box-shadow: inset #{$_line} $sel_bg;
       }
       &:checked {
+        background-color: $panel_hidden_bg;
+        color: $osd_fg;
         box-shadow: inset #{$_line} $sel_bg;
-        &, &:hover {
-          background-color: $hidden_fill_bg;
-          color: $osd_fg;
-        }
+        &:hover { background-color: $osd_semi_fill_bg; }
       }
     }
   }
