@@ -715,8 +715,8 @@ StScrollBar {
 //  * Popovers/Menus *
 //  ******************/
 
-$default_spacing: if($ref_weight >= 1.0, 8px, 6px);
-$extra_spacing: 2.5px;
+$extra_spacing: 3px;
+$avatar_width: $icon_size * 1.5;
 
 .popup-menu {
   min-width: 15em;
@@ -725,37 +725,24 @@ $extra_spacing: 2.5px;
     border-bottom: 1px solid $div_fg;
     background-color: $bg;
     box-shadow: inset 0 2px 2px opacity(black, $a_trk_1);
-
-    // sub-menu 'label-only' item indentations
-    .popup-menu-item > StLabel:first-child {
-      // .popup-menu-icon width + child spacing
-      // + avatar icon's extra spacing
-      &:ltr {
-        margin-left: 16px;
-        padding-left: $default_spacing * 2 + $extra_spacing;
-      }
-      &:rtl {
-        margin-right: 16px;
-        padding-right: $default_spacing * 2 + $extra_spacing;
-      }
-    }
   }
 
   .popup-menu-content { padding: if($ref_weight >= 1.0, 0.3em 0, 0.21em 0); }
 
   .popup-menu-item {
-    spacing: $default_spacing;
+    spacing: if($ref_weight >= 1.0, $avatar_width / 2 - $extra_spacing,
+                                    $avatar_width / 2);
     color: $sec_fg;
     font-weight: 400;
     transition-duration: $tr_d_non;
 
     &:ltr {
-      padding: if($ref_weight >= 1.0, 0.45em 1.75em 0.45em 0,
-                                      0.3em 1.2em 0.3em 0);
+      padding: if($ref_weight >= 1.0, 0.45em $avatar_width 0.45em 0,
+                                      0.3em $avatar_width 0.3em 0);
     }
     &:rtl {
-      padding: if($ref_weight >= 1.0, 0.45em 0 0.45em 1.75em,
-                                      0.3em 0 0.3em 1.2em);
+      padding: if($ref_weight >= 1.0, 0.45em 0 0.45em $avatar_width,
+                                      0.3em 0 0.3em $avatar_width);
     }
 
     &:checked {
@@ -827,12 +814,11 @@ $extra_spacing: 2.5px;
   &-icon { icon-size: $icon_size; }
 
   &-ornament {
-    @include fontscaling($ref_size * 1.1);
-    width: 1.1em; // protect the region
+    width: 1em; // protect the region
     height: 0; // trick for minimum separator-menu-item height
-    padding-top: $baseline; // not need to scale
     color: $sel_label;
     text-align: right;
+    font-size: $icon_size; // fixed size
     font-family: $font-family-for-ornament;
     font-weight: 700;
   }
@@ -887,12 +873,17 @@ $extra_spacing: 2.5px;
 .system-switch-user-submenu-icon {
   &.user-icon {
     icon-size: $icon_size + 4px;
-    padding: 0 ($default_spacing + $extra_spacing - 4px) / 2;
+    padding: 0 if($ref_weight >= 1.0,
+                  ($avatar_width - ($icon_size + 4px) + $extra_spacing) / 2,
+                  ($avatar_width - ($icon_size + 4px)) / 2);
   }
 
   &.default-icon {
+    width: $avatar_width;
     icon-size: $icon_size;
-    padding: 0 ($default_spacing + $extra_spacing) / 2;
+    padding: 0 if($ref_weight >= 1.0,
+                  ($avatar_width - $icon_size + $extra_spacing) / 2,
+                  ($avatar_width - $icon_size) / 2);
   }
 }
 
