@@ -3168,16 +3168,18 @@ $grid_size: 136px;
 }
 
 .keyboard {
-  &-layout { // legacy
-    spacing: $ref_size * 0.3px;
-    padding: $ref_size * 0.3px;
+  @if $ver < 3.25 {
+    &-layout { // legacy
+      spacing: $ref_size * 0.3px;
+      padding: $ref_size * 0.3px;
+    }
+
+    &-row { spacing: $ref_size * 0.3px; } // legacy
   }
 
-  &-row { spacing: $ref_size * 0.3px; } // legacy
-
   &-key {
-    min-height: $ref_size * 2;
-    min-width: $ref_size * 2;
+    min-height: $ref_size * 2px;
+    min-width: $ref_size * 2px;
     padding: 0;
     border-radius: $r_2;
     border: 1px solid mix($osd_sec_fg, $osd_bg, percentage($a_div_1));
