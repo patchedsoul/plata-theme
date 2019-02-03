@@ -3168,14 +3168,12 @@ $grid_size: 136px;
 }
 
 .keyboard {
-  @if $ver < 3.25 {
-    &-layout { // legacy
-      spacing: $ref_size * 0.3px;
-      padding: $ref_size * 0.3px;
-    }
-
-    &-row { spacing: $ref_size * 0.3px; } // legacy
+  &-layout { // legacy
+    spacing: $ref_size * 0.3px;
+    padding: $ref_size * 0.3px;
   }
+
+  &-row { spacing: $ref_size * 0.3px; } // legacy
 
   &-key {
     min-height: $ref_size * 2px;
