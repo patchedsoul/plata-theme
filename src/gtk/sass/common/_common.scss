@@ -4820,38 +4820,28 @@ messagedialog {
 
   &.background,
   &.csd.background {
-    .dialog-action-area {
-      button,
-      .linked > button {
-        @include radius(0);
-        @if $variant == mixed {
-          @extend %inv-action-area-button;
-        }
-        @else {
-          @extend %action-area-button;
-        }
-      }
+    .dialog-action-area button {
+      @include radius(0);
+      @if $variant == mixed { @extend %inv-action-area-button; }
+      @else { @extend %action-area-button; }
     }
   }
 
   &.csd.background {
-    .dialog-action-area {
-      button,
-      .linked > button {
+    .dialog-action-area.linked button {
+      margin: 2px;
+      @include radius(0);
+      &:first-child {
+        margin-right: 0;
+        @include radius(0 0 0 $r_8);
+      }
+      &:last-child {
+        margin-left: 0;
+        @include radius(0 0 $r_8 0);
+      }
+      &:only-child {
         margin: 2px;
-        @include radius(0);
-        &:first-child {
-          margin-right: 0;
-          @include radius(0 0 0 $r_8);
-        }
-        &:last-child {
-          margin-left: 0;
-          @include radius(0 0 $r_8 0);
-        }
-        &:only-child {
-          margin: 2px;
-          @include radius(0 0 $r_8 $r_8);
-        }
+        @include radius(0 0 $r_8 $r_8);
       }
     }
   }
