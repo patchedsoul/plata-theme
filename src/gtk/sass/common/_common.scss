@@ -4841,12 +4841,16 @@ messagedialog {
         margin: 2px;
         @include radius(0);
         &:first-child {
-          @include radius(0 0 0 $r_8);
           margin-right: 0;
+          @include radius(0 0 0 $r_8);
         }
         &:last-child {
-          @include radius(0 0 $r_8 0);
           margin-left: 0;
+          @include radius(0 0 $r_8 0);
+        }
+        &:only-child {
+          margin: 2px;
+          @include radius(0 0 $r_8 $r_8);
         }
       }
     }
