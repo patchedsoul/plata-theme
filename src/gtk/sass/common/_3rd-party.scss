@@ -1282,8 +1282,7 @@ window.budgie-popover.workspace-popover {
 .budgie-session-dialog,
 .budgie-polkit-dialog,
 .drop-shadow {
-  button,
-  .linked > button { // OSD-style buttons
+  button { // OSD-style buttons
     @if $variant == mixed { @extend %inv-action-area-button; }
     @else { @extend %action-area-button; }
 
@@ -1477,7 +1476,6 @@ window.budgie-switcher-window {
   buttonbox.linked > button:not(.flat) {
     border: 2px solid transparent;
     @include radius(0);
-
     &:first-child {
       @include radius(0 0 0 $r_8);
       border-right-width: 0;
