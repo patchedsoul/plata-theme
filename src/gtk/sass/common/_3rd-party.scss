@@ -400,35 +400,37 @@ stack.icon-popover-stack {
 }
 
 // main menu styling
-.budgie-panel {
-  button.flat.budgie-menu-launcher {
-    min-width: $icon_size;
-    min-height: $icon_size;
-    padding: 0;
-    border: 0 none transparent;
-    border-radius: 0;
+%budgie_trigger_button {
+  min-width: $icon_size;
+  min-height: $icon_size;
+  padding: 0;
+  @include radius(0, none);
+  background-color: transparent;
+  color: if($variant == mixed, $inv_fg, $fg);
+  font-weight: 700; // enforce bold weight
+  &:hover,
+  &:active {
     background-color: transparent;
-    color: if($variant == mixed, $inv_fg, $fg);
-    font-weight: 700; // enforce bold weight
+    color: if($variant == light, black, $sel_fg);
+  }
+}
+
+button.flat.budgie-menu-launcher {
+  @extend %budgie_trigger_button;
+  @if $variant == mixed {
+    @include ink-reaction(tab-normal, $fc: $inv_fg, $bs: 8, $i: 2);
+  }
+  @else {
+    @include ink-reaction(tab-normal, $fc: $fg, $bs: 8, $i: 2);
+  }
+  &:checked {
     @if $variant == mixed {
-      @include ink-reaction(tab-normal, $fc: $inv_fg, $bs: 8, $i: 2);
+      background-color: transparent;
+      @include ink-reaction(tab-active, $fc: $inv_fg, $bs: 8);
     }
     @else {
-      @include ink-reaction(tab-normal, $fc: $fg, $bs: 8, $i: 2);
-    }
-    &:hover,
-    &:active,
-    &:checked {
       background-color: transparent;
-      color: if($variant == light, black, $sel_fg);
-    }
-    &:checked {
-      @if $variant == mixed {
-        @include ink-reaction(tab-active, $fc: $inv_fg, $bs: 8);
-      }
-      @else {
-        @include ink-reaction(tab-active, $fc: $fg, $bs: 8);
-      }
+      @include ink-reaction(tab-active, $fc: $fg, $bs: 8);
     }
   }
 }
@@ -1187,17 +1189,12 @@ window.budgie-popover.workspace-popover {
 }
 
 // show-desktop applet
-.budgie-panel > box > widget > button.flat {
+.budgie-panel {
   // specificity bump to prevent conflicts
-  &:not(.raven-trigger):not(.budgie-menu-launcher) {
-    min-width: $icon_size;
-    min-height: $icon_size;
-    padding: 0 rem($txt_button_lr_space);
-    @include radius(0);
+  > box > widget > button.flat:not(.raven-trigger):not(.budgie-menu-launcher) {
+    @extend %budgie_trigger_button;
     @if $variant == mixed {
-      @include button(flat-normal, $tc: $inv_fg);
       @include ink-reaction(normal, $fc: $sel_bg, $tr: ink-normal-dec);
-      &:hover { @include button(flat-hover, $tc: $inv_fg); }
       &:active {
         @include button(flat-active, $tc: $inv_fg);
         @include ink-reaction(active-dec, $fc: $inv_fg, $tr: ink-active-dec);
@@ -1211,6 +1208,12 @@ window.budgie-popover.workspace-popover {
         @include button(flat-checked, $tc: $sel_label);
       }
     }
+
+    .top &,
+    .bottom & { padding: 0 4px; }
+
+    .left &,
+    .right & { padding: 2px 0; }
   }
 }
 
@@ -1527,29 +1530,18 @@ window.budgie-switcher-window {
 
 // raven-controller applet
 button.flat.raven-trigger {
-  min-width: $icon_size;
-  min-height: $icon_size;
-  padding: 0;
-  @include radius(0, none);
+  @extend %budgie_trigger_button;
   @if $variant != light {
-    @include button(flat-normal, $tc: $inv_fg);
     @include ink-reaction(normal, $fc: $sel_fg, $tr: ink-normal-dec);
-    &:hover { @include button(flat-normal, $tc: $sel_fg); }
     &:active {
-      @include button(flat-active, $tc: $sel_fg);
       @include ink-reaction(active-dec, $fc: $sel_fg, $tr: ink-active-dec);
     }
-    &:checked { @include button(flat-checked, $tc: $sel_fg); }
   }
   @else {
-    @include button(flat-normal, $tc: $fg);
     @include ink-reaction(normal, $fc: black, $tr: ink-normal-dec);
-    &:hover { @include button(flat-normal, $tc: black); }
     &:active {
-      @include button(flat-active, $tc: black);
       @include ink-reaction(active-dec, $fc: black, $tr: ink-active-dec);
     }
-    &:checked { @include button(flat-checked, $tc: black); }
   }
 
   image { margin: 0 3px; } // add internal spacing
