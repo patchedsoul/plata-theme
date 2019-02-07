@@ -2038,12 +2038,42 @@ terminal-window {
   }
 }
 
-window.background:not(.csd) { // preferences window (>= 3.28)
-  box.horizontal > frame > scrolledwindow > viewport.frame > list {
-    @if $maj_ver == 3 {
-      @if $mnr_ver > 21 { @extend %term_pref_window;  }
+@if $maj_ver == 3 {
+  @if $mnr_ver == 22 {
+    window.background:not(.csd) { // preferences window (3.27 < ver < 3.31)
+      box.horizontal > frame > scrolledwindow > viewport.frame > list {
+        @extend %sidebar_template;
+        @extend %term_pref_window;
+
+        row.activatable button.flat.popup.toggle {
+          @extend %pref_down_arrow;
+        }
+      }
     }
-    @else { @extend %term_pref_window; }
+  }
+  @if $mnr_ver > 23 {
+    window.background.csd { // preferences window (>= 3.31)
+      box.horizontal > frame > scrolledwindow > viewport.frame > list {
+        @extend %sidebar_template;
+        @extend %term_pref_window;
+
+        row.activatable button.flat.popup.toggle {
+          @extend %pref_down_arrow;
+        }
+      }
+    }
+  }
+}
+@else {
+  window.background.csd { // preferences window (>= 3.31)
+    box.horizontal > frame > scrolledwindow > viewport.frame > list {
+      @extend %sidebar_template;
+      @extend %term_pref_window;
+
+      row.activatable button.flat.popup.toggle {
+        @extend %pref_down_arrow;
+      }
+    }
   }
 }
 
@@ -2062,6 +2092,7 @@ window.background:not(.csd) { // preferences window (>= 3.28)
       padding: 0;
       @include radius($r);
     }
+    &:selected { @extend %selected_sidebar_row; }
   }
 
   > box.horizontal {
@@ -2073,6 +2104,13 @@ window.background:not(.csd) { // preferences window (>= 3.28)
       padding: 0;
     }
   }
+}
+
+%pref_down_arrow {
+  @include button(flat-normal, $tc: $sel_label);
+  &:hover { @include button(flat-hover, $tc: $sel_label); }
+  &:active { @include button(flat-active, $tc: $sel_label); }
+  &:checked { @include button(flat-checked, $tc: $sel_label); }
 }
 
 // /*****************
