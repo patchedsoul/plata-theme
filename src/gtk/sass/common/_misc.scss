@@ -2042,12 +2042,7 @@ terminal-window {
   @if $mnr_ver == 22 {
     window.background:not(.csd) { // preferences window (3.27 < ver < 3.31)
       box.horizontal > frame > scrolledwindow > viewport.frame > list {
-        @extend %sidebar_template;
         @extend %term_pref_window;
-
-        row.activatable button.flat.popup.toggle {
-          @extend %pref_down_arrow;
-        }
       }
     }
   }
