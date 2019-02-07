@@ -1851,6 +1851,35 @@ scrolledwindow.contacts-contact-form {
   background-image: image($base);
 }
 
+@if $maj_ver == 3 {
+  @if $mnr_ver > 23 { // >= 3.31.90
+    hdyleaflet { @extend %hdyleaflet; }
+  }
+}
+@else {
+  hdyleaflet { @extend %hdyleaflet; }
+}
+
+%hdyleaflet {
+  > headerbar + separator.horizontal.sidebar {
+    background-color: $div_sld_dark_fg
+  }
+
+  > stack + separator.horizontal.sidebar { background-color: $div_fg; }
+
+  > overlay > stack { background-color: $base; }
+
+  headerbar.titlebar.selection-mode > & {
+    // clear unneeded child bg and border
+    > headerbar {
+      border-color: transparent;
+      background-color: transparent;
+
+      + separator.horizontal.sidebar { background-color: transparent; }
+    }
+  }
+}
+
 // /**********
 //  * Evince *
 //  **********/
