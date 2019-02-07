@@ -1961,6 +1961,12 @@ $avatar_width: $icon_size * 1.5;
   .label-shadow { color: transparent; }
 }
 
+
+@if $ver > 3.30 { // limit maximum width
+  .app-menu,
+  .app-well-menu { max-width: 28em; }
+}
+
 .aggregate-menu {
   min-width: 24em;
 
