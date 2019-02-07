@@ -1405,9 +1405,52 @@ $avatar_width: $icon_size * 1.5;
   }
 }
 
-.world-clocks-grid { spacing-rows: 0.4em; }
+@if $ver < 3.31 {
+  .world-clocks-grid { spacing-rows: 0.4em; }
+}
+@else { // World Clock and Weather (>= 3.31)
+  .world-clocks-grid,
+  .weather-grid {
+    spacing-rows: 0.4em;
+    spacing-columns: 0.8em;
+  }
 
-.weather-box { spacing: 0.4em; }
+  .world-clocks {
+    &-city {
+      @include fontscaling($ref_size * 0.9);
+      font-weight: 700;
+    }
+
+    &-time {
+      @include fontscaling($ref_size * 1.1);
+      color: $sec_fg;
+    }
+
+    &-timezone {
+      @include fontscaling($ref_size * 0.9);
+      color: $ter_fg;
+    }
+  }
+
+  .weather {
+    &-box { spacing: 0.4em; }
+
+    &-header.location {
+      @include fontscaling($ref_size * 0.9);
+      color: $sec_fg;
+      font-weight: 400;
+    }
+
+    &-forecast {
+      &-icon { icon-size: $icon_size * 1.75; }
+
+      &-time {
+        @include fontscaling($ref_size * 0.8);
+        color: $ter_fg;
+      }
+    }
+  }
+}
 
 .calendar-month-label {
   padding: 4px 0;
