@@ -2543,6 +2543,9 @@ dialog.background.csd > headerbar.titlebar {
       border-left-width: 1px;
     }
   }
+  &:only-child {
+    &:dir(ltr), &:dir(rtl) { @include radius($r-2); }
+  }
 }
 
 .linked.path-bar {
@@ -2588,42 +2591,62 @@ dialog.background.csd > headerbar.titlebar {
 
 @if $maj_ver == 3 { // Nautilus >= 3.30
   @if $mnr_ver > 23 {
-    headerbar .path-bar-box { @extend %slashed_nautilus_pathbar; }
-  }
-}
-@else {
-  headerbar .path-bar-box { @extend %slashed_nautilus_pathbar; }
-}
+    headerbar .path-bar-box {
+      .path-bar {
+        @extend %slashed_nautilus_pathbar;
 
-%slashed_nautilus_pathbar {
-  .path-bar,
-  .nautilus-path-bar { // > 3.30.5
-    button {
-      margin-left: rem($baseline * 2, $sw: 1.0);
-      margin-right: rem($baseline * 2, $sw: 1.0);
-      // enforce switching to flat-style
-      &:not(:checked) {
-        border-color: transparent;
-        background-color: transparent;
-        &:hover,
-        &:active {
-          background-color: track(if($variant == mixed, $inv_fg, $fg),
-                                  $a_trk_1);
+        box:not(:only-child):last-child button {
+          @extend %pathbar_button_tail;
         }
+      }
+
+      .linked.nautilus-path-bar { // >= 3.31.90
+        @extend %non_slashed_nautilus_pathbar;
+
+        button:not(:only-child):last-child { @extend %pathbar_button_tail; }
       }
     }
   }
+}
+@else {
+  headerbar .path-bar-box {
+    .linked.nautilus-path-bar {
+      @extend %non_slashed_nautilus_pathbar;
 
-  .nautilus-path-bar button { // > 3.30.5
-    @extend %pathbar_button;
+      button:not(:only-child):last-child { @extend %pathbar_button_tail; }
+    }
   }
+}
 
+%slashed_nautilus_pathbar {
+  button {
+    margin-left: rem($baseline * 2, $sw: 1.0);
+    margin-right: rem($baseline * 2, $sw: 1.0);
+    // enforce switching to flat-style
+    &:not(:checked) {
+      border-color: transparent;
+      background-color: transparent;
+      &:hover,
+      &:active {
+        background-color: track(if($variant == mixed, $inv_fg, $fg),
+                                $a_trk_1);
+      }
+    }
+  }
+}
+
+%non_slashed_nautilus_pathbar {
+  button {
+    @extend %pathbar_button;
+    @extend %pathbar_button_shape;
+  }
+}
+
+%pathbar_button_tail {
   // FIXME: these compensators can reserve enough wide 'tail' margins
   // at the last button node for preventing ugly button node truncations.
-  box:not(:only-child):last-child button {
-    &:dir(ltr) { margin-right: $icon_size * 1.5; }
-    &:dir(rtl) { margin-left: $icon_size * 1.5; }
-  }
+  &:dir(ltr) { margin-right: $icon_size * 1.5; }
+  &:dir(rtl) { margin-left: $icon_size * 1.5; }
 }
 
 // /**************
