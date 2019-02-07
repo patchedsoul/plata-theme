@@ -3273,7 +3273,7 @@ $grid_size: 136px;
     @if $ver > 3.25 {
       &.default-key {
         background-color: mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2));
-        background-size: $ref_size * 2px;
+        background-size: ($ref_size - 0.33) * 2px;
         color: $osd_sec_fg;
         &:focus,
         &:hover,
