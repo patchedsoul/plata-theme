@@ -1962,7 +1962,7 @@ $avatar_width: $icon_size * 1.5;
 }
 
 
-@if $ver > 3.30 { // limit maximum width
+@if $ver > 3.31 { // limit maximum width
   .app-menu,
   .app-well-menu { max-width: 28em; }
 }
@@ -3206,7 +3206,7 @@ $grid_size: 136px;
   background-color: if($variant != light, opacity(black, $a_fg_3rd),
                                           opacity(white, $a_fg_dis));
 
-  @if $ver > 3.30 {
+  @if $ver > 3.31 {
     .page-indicator {
       padding: $ref_size * 0.3px;
 
@@ -3396,7 +3396,7 @@ $grid_size: 136px;
   }
 }
 
-@if $ver > 3.30 { // Emoji keyboard
+@if $ver > 3.31 { // Emoji keyboard
   .emoji {
     &-page {
       .keyboard-key { // use flat-style
