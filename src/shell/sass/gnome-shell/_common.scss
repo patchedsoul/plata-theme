@@ -879,7 +879,6 @@ $avatar_width: $icon_size * 1.5;
   }
 
   &.default-icon {
-    width: $avatar_width;
     icon-size: $icon_size;
     padding: 0 if($ref_weight >= 1.0,
                   ($avatar_width - $icon_size + $extra_spacing) / 2,
