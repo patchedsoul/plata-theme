@@ -1092,7 +1092,7 @@ $avatar_width: $icon_size * 1.5;
   // special height for upscaled via font-scaling-factor
   // this should be always smaller than min-height if f-s-f < 1.0
   height: if($ref_weight >= 1.0, 2.1em, 1.8em);
-  @if $ver > 3.25 {
+  @if ($ver > 3.25) and ($ver < 3.31) {
     background-color: opacity($panel_bg, $a_fg_3rd);
     box-shadow: $empty_shadow;
   }
@@ -1246,33 +1246,35 @@ $avatar_width: $icon_size * 1.5;
   @if $ver > 3.25 {
     .remote-access-indicator { color: $warn; } // > 3.29.4
 
-    &.solid { // solid-mode of TopBar
-      background-color: $panel_bg; // fill whole area
-      // FIXME: override ugly ubuntu.css
-      background-gradient-start: $panel_bg;
-      background-gradient-end: $panel_bg;
-      transition-timing-function: $tr_t_dec;
-      transition-duration: $tr_d_lng; // transparent -> solid
+    @if $ver < 3.31 {
+      &.solid { // solid-mode of TopBar
+        background-color: $panel_bg; // fill whole area
+        // FIXME: override ugly ubuntu.css
+        background-gradient-start: $panel_bg;
+        background-gradient-end: $panel_bg;
+        transition-timing-function: $tr_t_dec;
+        transition-duration: $tr_d_lng; // transparent -> solid
 
-      .panel-corner { -panel-corner-background-color: $panel_bg; }
+        .panel-corner { -panel-corner-background-color: $panel_bg; }
 
-      .panel-button {
-        color: $osd_fg;
-        &:hover,
-        &:active,
-        &:focus,
-        &:checked { color: if($variant != light, $sel_fg, black); }
+        .panel-button {
+          color: $osd_fg;
+          &:hover,
+          &:active,
+          &:focus,
+          &:checked { color: if($variant != light, $sel_fg, black); }
 
-        &,
-        &:hover,
-        &:active,
-        &:focus,
-        &:checked,
-        &:overview,
-        &.unlock-screen,
-        &.login-screen,
-        &.lock-screen {
-          > .system-status-icon { icon-shadow: none; }
+          &,
+          &:hover,
+          &:active,
+          &:focus,
+          &:checked,
+          &:overview,
+          &.unlock-screen,
+          &.login-screen,
+          &.lock-screen {
+            > .system-status-icon { icon-shadow: none; }
+          }
         }
       }
     }
