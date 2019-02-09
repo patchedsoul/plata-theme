@@ -4532,15 +4532,14 @@ row.activatable {
   }
   &:active {
     // use shallower ink
-    @include ink-reaction(
-               active-dec, $fc: $ter_fg, $tr: ink-active-row, $bs: 7);
+    @include ink-reaction(active-dec, $fc: $ter_fg, $tr: ink-active-row);
   }
   &:selected {
     @include transition(ink-normal-row);
     &:hover {
       background-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
     }
-    &:active { animation: none; }
+    &:active { background-size: percentage(7) percentage(7); }
   }
 }
 
