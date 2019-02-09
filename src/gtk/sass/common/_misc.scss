@@ -2391,8 +2391,8 @@ dialog.background.csd {
 //  * Dconf-Editor *
 //  ****************/
 
-.dconf-editor > headerbar.titlebar {
-  > box.pathbar {
+.dconf-editor {
+  > headerbar.titlebar > box.pathbar { // legacy
     min-height: $icon_size;
     margin: $toolbar_padding 0;
     padding: 0 rem($menuitem_padding);
@@ -2449,31 +2449,109 @@ dialog.background.csd {
       }
     }
   }
+
+  list.properties-list > row.activatable {
+    &:hover,
+    &:active { // unset hover/active effects
+      background-image: none;
+      animation: none;
+    }
+  }
+
+  list.keys-list { // >= 3.27.91
+    > grid.horizontal > separator,
+    > grid.vertical > label.header-label + separator { // hide separators
+      all: unset;
+    }
+
+    > row.key-row:not(:first-child) { // move separator lines into child rows
+      border-top: 1px solid $div_fg;
+    }
+
+    > grid.vertical { // grid node for headers
+      background-color: $bg;
+
+      // increase title height
+      label.header-label { min-height: rem($widget_size); }
+    }
+  }
+
+  @if $maj_ver == 3 { // >= 3.31.90
+    @if $mnr_ver > 23 {
+      headerbar box.centerwidget { @extend %dconf_pathbar_box; }
+
+      &.maximized box.centerwidget box.pathbar {
+        @extend %dconf_maxd_pathbar_box;
+      }
+    }
+  }
+  @else {
+    headerbar box.centerwidget { @extend %dconf_pathbar_box; }
+
+    &.maximized box.centerwidget box.pathbar {
+      @extend %dconf_maxd_pathbar_box;
+    }
+  }
+
 }
 
-.dconf-editor list.properties-list > row.activatable {
-  &:hover,
-  &:active { // unset hover/active effects
-    background-image: none;
-    animation: none;
+%dconf_pathbar_box {
+  box.pathbar button { // stock CSS has 6px T/B margins!?
+    &:not(.flat):not(.suggested-action):not(.destructive-action) {
+      &:not(.titlebutton):not(.selection-menu):not(.text-button) {
+        &:not(.lock):not(.color):not(.image-button) {
+          min-height: rem($ref_size, $sw: 1.0); // shrink height
+        }
+      }
+    }
+
+    label.item {
+      margin: -6px 0; // compensate unneeded parent T/B margns
+      // mask stock 3px border indicators
+      border-image: if($variant == mixed, image($inv_dark_bg),
+                                          image($dark_bg))
+                      0 0 1 / 0 0 1px stretch;
+
+      &:backdrop {
+        border-image: if($variant == mixed, image($inv_bg), image($bg))
+                        0 0 1 / 0 0 1px stretch;
+      }
+    }
+
+    &:hover:not(.active) label.item {
+      color: if($variant == mixed, $inv_fg, $fg);
+      box-shadow: inset 0 -2px if($variant == mixed,
+                                 track($inv_fg, $a_trk_out),
+                                 track($fg, $a_trk_out));
+    }
+
+    &.active label.item { // redraw underline indicators
+      color: if($variant == mixed, $inv_fg, $fg);
+      box-shadow: inset 0 -2px $sel_bg;
+    }
   }
 }
 
-.dconf-editor list.keys-list { // >= 3.27.91
-  > grid.horizontal > separator,
-  > grid.vertical > label.header-label + separator { // hide separators
-    all: unset;
+%dconf_maxd_pathbar_box {
+  // this isn't perfect, but covering 99% unneeded borders at least...
+  border-image: if($variant == mixed, image($inv_dark_bg), image($dark_bg))
+                  0 0 2 / 0 0 2px stretch;
+  background-image: if($variant == mixed, image($inv_dark_bg),
+                                          image($dark_bg));
+  &:backdrop {
+    border-image: if($variant == mixed, image($inv_bg), image($bg))
+                    0 0 2 / 0 0 2px stretch;
+    background-image: if($variant == mixed, image($inv_bg),
+                                            image($bg));
   }
 
-  > row.key-row:not(:first-child) { // move separator lines into child rows
-    border-top: 1px solid $div_fg;
-  }
+  label,
+  image { color: if($variant == mixed, $inv_sec_fg, $sec_fg); }
 
-  > grid.vertical { // grid node for headers
-    background-color: $bg;
+  button:hover label.item,
+  button.active label.item { color: if($variant == mixed, $inv_fg, $fg); }
 
-    label.header-label { min-height: rem($widget_size); } // increase title height
-  }
+  > label { color: if($variant == mixed, $inv_ter_fg, $ter_fg); }
 }
 
 // /*******************
