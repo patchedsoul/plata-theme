@@ -449,7 +449,7 @@ entry {
       @include radius(0, none);
       @include linked-entry-outline($cld: center);
 
-      @if $maj_ver == 4 {
+      @if $maj_ver == 3 {
         progress { @include radius(0, none); }
       }
       @else {
@@ -465,7 +465,7 @@ entry {
           @include radius($r 0 0 $r, none);
         }
 
-        @if $maj_ver == 4 {
+        @if $maj_ver == 3 {
           progress { @include radius($r 0 0 $r, none); }
         }
         @else {
@@ -482,7 +482,7 @@ entry {
           @include radius(0 $r $r 0, none);
         }
 
-        @if $maj_ver == 4 {
+        @if $maj_ver == 3 {
           progress { @include radius(0 $r $r 0, none); }
         }
         @else {
@@ -501,7 +501,7 @@ entry {
           @include radius(0 $r $r 0, none);
         }
 
-        @if $maj_ver == 4 {
+        @if $maj_ver == 3 {
           progress { @include radius(0 $r $r 0, none); }
         }
         @else {
@@ -518,7 +518,7 @@ entry {
           @include radius($r 0 0 $r, none);
         }
 
-        @if $maj_ver == 4 {
+        @if $maj_ver == 3 {
           progress { @include radius($r 0 0 $r, none); }
         }
         @else {
@@ -555,7 +555,7 @@ entry {
         border-right-width: 2px;
       }
 
-      @if $maj_ver == 4 {
+      @if $maj_ver == 3 {
         progress { @include radius(0, none); }
       }
       @else {
@@ -571,7 +571,7 @@ entry {
         border-right-width: 2px;
       }
 
-      @if $maj_ver == 4 {
+      @if $maj_ver == 3 {
         progress { @include radius($r_4 $r_4 0 0, none); }
       }
       @else {
@@ -589,7 +589,7 @@ entry {
         border-right-width: 2px;
       }
 
-      @if $maj_ver == 4 {
+      @if $maj_ver == 3 {
         progress { @include radius(0 0 $r_4 $r_4, none); }
       }
       @else {

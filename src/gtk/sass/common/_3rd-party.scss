@@ -2219,11 +2219,11 @@ window.background:not(.csd) > box.vertical {
       color: inherit;
     }
 
-    @if $maj_ver == 4 {
-      progress > trough > progress { @include radius(0, none); }
+    @if $maj_ver == 3 {
+      progress { @include radius(0, none); }
     }
     @else {
-      progress { @include radius(0, none); }
+      progress > trough > progress { @include radius(0, none); }
     }
   }
 
