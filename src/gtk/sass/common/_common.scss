@@ -349,20 +349,20 @@ entry {
     placeholder { @extend %dim_label; }
   }
 
-  @if $maj_ver == 4 {
-    progress > trough > progress { @extend %entry_progress; }
-  }
-  @else {
+  @if $maj_ver == 3 {
     progress { @extend %entry_progress; }
   }
-
-  @if $maj_ver == 4 {
-    toolbar *:not(.linked) & progress > trough > progress,
-    &.flat progress > trough > progress { @include radius(0, none); }
-  }
   @else {
+    progress > trough > progress { @extend %entry_progress; }
+  }
+
+  @if $maj_ver == 3 {
     toolbar *:not(.linked) & progress,
     &.flat progress { @include radius(0, none); }
+  }
+  @else {
+    toolbar *:not(.linked) & progress > trough > progress,
+    &.flat progress > trough > progress { @include radius(0, none); }
   }
 
   // entry error, warning and missing style
