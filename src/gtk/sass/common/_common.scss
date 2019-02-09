@@ -4569,25 +4569,7 @@ row {
   }
 }
 
-row:selected { // buttons inside the selected-row
-  @extend %selected_items;
-
-  button {
-    color: $sec_fg;
-    &:hover,
-    &:active,
-    &:checked { color: $fg; }
-    &:disabled { color: $dis_sel_fg; }
-
-    &.flat {
-      color: $sec_sel_fg;
-      &:hover,
-      &:active,
-      &:checked { color: $sel_fg; }
-      &:disabled { color: $dis_sel_fg; }
-    }
-  }
-}
+row:selected { @extend %selected_items; }
 
 // /*********************
 //  * App Notifications *
