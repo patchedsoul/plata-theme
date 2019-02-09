@@ -4045,3 +4045,66 @@ window#GeanyMainWindow {
   // stock CSS gets in our way
   button#geany-close-tab-button { @include radius($r_2, none); }
 }
+
+// /**********
+//  * Lutris *
+//  **********/
+
+// FIXME: I really want to purge this crap! :/
+
+window.background > stack > box.horizontal {
+  > revealer { // left/right stack
+    &:first-child {
+      > scrolledwindow > viewport.frame > list.sidebar {
+        &:dir(ltr) { border-right: 1px solid $div_fg; }
+        &:dir(rtl) { border-left: 1px solid $div_fg; }
+
+        > row.activatable {
+          min-height: calc(#{rem($small_widget)} + 4px);
+          &:hover:not(:selected) { // damned lutris.css gets in our way
+            box-shadow: inset 0 0 0 999px mix($fg, $bg, percentage($a_trk_1));
+          }
+          &:selected {
+            @include radius(0);
+            color: $fg;
+            &:dir(ltr) {
+              box-shadow: inset 0 0 0 999px
+                          mix($sel_label, $bg, percentage($a_trk_1)),
+                          inset 4px 0 $sel_bg;
+            }
+            &:dir(rtl) {
+              box-shadow: inset 0 0 0 999px
+                          mix($sel_label, $bg, percentage($a_trk_1)),
+                          inset -4px 0 $sel_bg;
+            }
+
+            button.flat {
+              color: $sec_fg;
+              &:hover,
+              &:active,
+              &:checked { color: $fg; }
+            }
+          }
+
+          button.flat { // should use .image-button.small-button class!
+            min-width: rem($small_widget);
+            min-height: rem($small_widget);
+            @include radius($r);
+          }
+        }
+      }
+    }
+
+    > scrolledwindow.game-scrolled {
+      &:dir(ltr) { border-left: 1px solid $div_fg; }
+      &:dir(rtl) { border-right: 1px solid $div_fg; }
+
+      // alignment is locked by "Play" button 146px width placed above,
+      // means we can't use font-sensitive scaling at all
+      widget.game-panel > button.image-button {
+        min-width: $icon_size * 2;
+        min-height: $icon_size * 2;
+      }
+    }
+  }
+}
