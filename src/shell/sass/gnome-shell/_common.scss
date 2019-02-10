@@ -871,14 +871,22 @@ $avatar_width: $icon_size * 1.5;
 
 // an avatar icon in menus
 .system-switch-user-submenu-icon {
-  &.user-icon {
-    icon-size: $icon_size + 4px;
-    padding: 0 if($ref_weight >= 1.0,
-                  ($avatar_width - ($icon_size + 4px) + $extra_spacing) / 2,
-                  ($avatar_width - ($icon_size + 4px)) / 2);
-  }
+  @if $ver < 3.31 {
+    &.user-icon {
+      icon-size: $icon_size + 4px;
+      padding: 0 if($ref_weight >= 1.0,
+                    ($avatar_width - ($icon_size + 4px) + $extra_spacing) / 2,
+                    ($avatar_width - ($icon_size + 4px)) / 2);
+    }
 
-  &.default-icon {
+    &.default-icon {
+      icon-size: $icon_size;
+      padding: 0 if($ref_weight >= 1.0,
+                    ($avatar_width - $icon_size + $extra_spacing) / 2,
+                    ($avatar_width - $icon_size) / 2);
+    }
+  }
+  @else {
     icon-size: $icon_size;
     padding: 0 if($ref_weight >= 1.0,
                   ($avatar_width - $icon_size + $extra_spacing) / 2,
