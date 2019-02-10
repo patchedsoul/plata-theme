@@ -2648,6 +2648,11 @@ dialog.background.csd > headerbar.titlebar {
   button {
     @extend %pathbar_button;
     @extend %pathbar_button_shape;
+
+    &:last-child:not(:disabled) { // down-arrow buttons
+      @include button(checked);
+      &:hover { @include button(checked-hover); }
+    }
   }
 }
 
