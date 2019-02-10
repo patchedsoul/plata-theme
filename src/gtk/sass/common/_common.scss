@@ -1279,6 +1279,9 @@ button {
       padding: 0 rem($entry_lr_space);
       @include radius($r_2);
     }
+
+    &.suggested-action,
+    &.destructive-action { border: none; }
   }
 
   .inline-toolbar .linked > &,
