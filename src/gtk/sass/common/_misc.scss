@@ -245,9 +245,10 @@ row.tweak {
     }
   }
 
+  &.title { color: $ter_fg; }
+
   &.title,
   &#AutostartTitle {
-    color: $ter_fg;
     font-weight: 700;
     // unset indentation
     &:dir(ltr) { margin-left: 0; }
