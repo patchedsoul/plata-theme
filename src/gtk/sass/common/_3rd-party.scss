@@ -1992,6 +1992,11 @@ window.background.lightdm {
 }
 
 .nemo-window {
+  // tone down unfocused splitted-pane
+  box.nemo-inactive-pane > notebook > stack > box.vertical {
+    opacity: $a_fg_3rd;
+  }
+
   // workaround for invisible text in rename entry (Eeleditable.entry)
   .nemo-window-pane scrolledwindow widget > widget.entry {
     &, &:focus {
