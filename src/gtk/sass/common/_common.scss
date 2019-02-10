@@ -2992,6 +2992,11 @@ window.popup {
 
   &.csd { // round corners for CSD menus
     border-radius: $r_4; // same with the combobox
+
+    @if $maj_ver == 4 {
+      // clear root background to draw child menu node radius correctly
+      &.background { background-color: transparent; }
+    }
   }
 }
 
