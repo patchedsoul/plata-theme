@@ -434,7 +434,7 @@ button.flat.budgie-menu-launcher {
     }
   }
 
-  box > label {
+  box.horizontal > label {
     &:dir(ltr) { margin-left: -$icon_size / 2; }
     &:dir(rtl) { margin-right: -$icon_size / 2; }
   }
