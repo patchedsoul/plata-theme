@@ -433,6 +433,11 @@ button.flat.budgie-menu-launcher {
       @include ink-reaction(tab-active, $fc: $fg, $bs: 8);
     }
   }
+
+  box > label {
+    &:dir(ltr) { margin-left: -$icon_size / 2; }
+    &:dir(rtl) { margin-right: -$icon_size / 2; }
+  }
 }
 
 .budgie-menu {
