@@ -1913,8 +1913,14 @@ combobox {
 
   > button:not(.flat) + entry:not(.flat) + button:not(.flat) { // a rare case
     &:last-child {
-      &:dir(ltr) { @include radius(0 $r_2 $r_2 0); }
-      &:dir(rtl) { @include radius($r_2 0 0 $r_2); }
+      &:dir(ltr) {
+        @include radius(0 $r_2 $r_2 0);
+        border-left-width: 0;
+      }
+      &:dir(rtl) {
+        @include radius($r_2 0 0 $r_2);
+        border-right-width: 0;
+      }
     }
   }
 }

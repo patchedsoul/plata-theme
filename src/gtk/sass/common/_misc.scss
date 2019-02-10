@@ -1449,11 +1449,6 @@ layout {
 eggsearchbar box.search-bar { background-color: $dark_bg; }
 
 %omnibar_entry {
-  > entry:not(.flat):not(:first-child):not(last-child) { // specificity bump
-    &:dir(ltr) { border-width: 1px 0 1px 1px; }
-    &:dir(rtl) { border-width: 1px 1px 1px 0; }
-  }
-
   // enforce inverted label color
   &:not(:hover):not(:active) > entry {
     @if $variant == mixed {
