@@ -284,7 +284,7 @@ StScrollBar {
 // with cinnamon version under 3.2. Use .menu in version 3.2 and above
 
 .menu {
-  padding: 0;
+  padding: 0.3em 0;
   background-color: $dark_bg;
   color: $sec_fg;
 }
@@ -292,7 +292,7 @@ StScrollBar {
 .popup-menu,
 .menu {
   min-width: 0;
-  padding: 0;
+  padding: 0.3em 0;
   border-image: url("assets/menu/menu.svg") 9 9 9 9;
   color: $sec_fg;
 
