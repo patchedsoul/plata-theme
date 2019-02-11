@@ -2002,6 +2002,12 @@ window.background.lightdm {
     }
   }
 
+  treeview.places-treeview { // use opaque colors
+    -NemoPlacesTreeView-disk-full-bg-color:
+      mix($fg, $bg, percentage($a_trk_out));
+    -NemoPlacesTreeView-disk-full-fg-color: $acc_bg;
+  }
+
   // workaround for invisible text in rename entry (Eeleditable.entry)
   .nemo-window-pane scrolledwindow widget > widget.entry {
     &, &:focus {
