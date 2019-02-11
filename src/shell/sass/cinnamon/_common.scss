@@ -723,16 +723,16 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
   }
 
   &-month-label {
-    @include fontscaling($ref_size * 0.8);
-    margin: 0 2px;
-    padding-top: (1.5em + 0.5em) / 8; // label centering
+    @include fontscaling($ref_size * 0.9);
+    margin: 0 0.2em;
+    padding-top: (0.45em - 0.1em); // label centering
     color: $fg;
     font-weight: 400;
   }
 
   &-change-month-back,
   &-change-month-forward {
-    @include fontscaling($ref_size * 0.8);
+    @include fontscaling($ref_size * 0.9);
     width: 1.5em + 0.5em; // embed padding of -month-label
     height: 1.5em + 0.5em;
     margin: 0;
@@ -761,8 +761,7 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
 }
 
 .datemenu-date-label {
-  @include fontscaling($ref_size * 0.8);
-  padding: 0.4em 1.75em;
+  padding: 0.4em 0;
   border-radius: $r_2;
   color: $fg;
   font-weight: 700;
@@ -774,24 +773,24 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
   color: $fg;
 
   &-base {
-    @include fontscaling($ref_size * 0.8);
-    width: 25px;
-    height: 25px;
+    @include fontscaling($ref_size * 0.9);
+    width: 2.4em;
+    height: 2.4em;
     padding: 0;
-    margin: 2px;
-    border-radius: 25px;
+    margin: 0.2em;
+    border-radius: $r;
     text-align: center;
   }
 
   &-heading {
-    @include fontscaling($ref_size * 0.7);
-    width: 25px;
-    height: 20px;
-    margin-top: 2px;
-    padding: 5px 0 0;
+    @include fontscaling($ref_size * 0.9);
+    width: 2.4em;
+    height: 1.9em;
+    margin-top: 0.2em;
+    padding: 0.5em 0 0;
     background-color: transparent;
     color: $ter_fg;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
   }
 
@@ -808,13 +807,13 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
 }
 
 .calendar-week-number {
-  width: 25px;
-  height: 20px;
-  margin: 2px;
-  padding: 5px 0 0;
+  width: 2.4em;
+  height: 1.9em;
+  margin: 0.2em;
+  padding: 0.5em 0 0;
   background-color: transparent;
   color: $ter_fg;
-  font-weight: 700;
+  font-weight: 500;
   font-size: inherit;
   text-align: center;
 }
