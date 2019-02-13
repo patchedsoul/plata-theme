@@ -4426,7 +4426,8 @@ levelbar {
     &:not(.empty),
     &.high { background-color: $acc_bg; }
 
-    &.full { background-color: $sccs_bg; }
+    &.full,
+    &.filled { background-color: $sccs_bg; }
 
     &.empty { background-color: $trk_out_fg; }
   }
@@ -4958,7 +4959,8 @@ filechooserbutton:drop(active) {
 }
 
 // FIXME: exclude treeview node for lollypop's sidebar
-.sidebar:not(treeview) {
+// FIXME2: exclude separator node for HdyLeafLet
+.sidebar:not(treeview):not(separator) {
   border: none;
   color: $sec_fg;
 
@@ -5972,5 +5974,38 @@ popover.emoji-picker button.emoji-section.flat {
     margin: 0;
     padding: 0;
     font-size: $icon_size * 1.5; // use fixed label size
+  }
+}
+
+// /**************
+//  * HdyLeafLet *
+//  **************/
+
+@if $maj_ver == 3 {
+  @if $mnr_ver > 23 { // >= 3.31.90
+    hdyleaflet { @extend %hdyleaflet; }
+  }
+}
+@else {
+  hdyleaflet { @extend %hdyleaflet; }
+}
+
+%hdyleaflet {
+  // this selarator is share with some other leaflet widgets like
+  // contacts, g-c-c, etc...
+  > headerbar + separator.sidebar {
+    background-color: $div_sld_dark_fg
+  }
+
+  > overlay > stack { background-color: $base; }
+
+  headerbar.titlebar.selection-mode > & {
+    // clear unneeded child bg and border
+    > headerbar {
+      border-color: transparent;
+      background-color: transparent;
+
+      + separator.sidebar { background-color: transparent; }
+    }
   }
 }
