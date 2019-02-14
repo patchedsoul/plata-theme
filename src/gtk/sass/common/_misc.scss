@@ -1848,6 +1848,15 @@ scrolledwindow.contacts-contact-form {
   background-image: image($base);
 }
 
+@if $maj_ver == 3 {
+  @if $mnr_ver > 23 { // >= 3.31.90
+    hdyleaflet > overlay > stack { background-color: $base; }
+  }
+}
+@else {
+  hdyleaflet > overlay > stack { background-color: $base; }
+}
+
 // /**********
 //  * Evince *
 //  **********/

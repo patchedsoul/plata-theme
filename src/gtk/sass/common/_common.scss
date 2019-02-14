@@ -2422,6 +2422,17 @@ headerbar {
       }
     }
   }
+
+  headerbar:not(.titlebar):not(:only-child) {
+    &:first-child {
+      &:dir(ltr) { border-top-right-radius: 0; }
+      &:dir(rtl) { border-top-left-radius: 0; }
+    }
+    &:last-child {
+      &:dir(ltr) { border-top-left-radius: 0; }
+      &:dir(rtl) { border-top-right-radius: 0; }
+    }
+  }
 }
 
 // force using rounded corners in case of paned titlebars
@@ -2528,6 +2539,41 @@ dialog.background.csd > headerbar.titlebar {
       }
     }
   }
+}
+
+@if $maj_ver == 3 { // for hdyleaflet >= 3.31.90
+  @if $mnr_ver > 23 {
+    headerbar.titlebar { @extend %hdyleaflet; }
+  }
+}
+@else {
+  headerbar.titlebar { @extend %hdyleaflet; }
+}
+
+%hdyleaflet {
+  headerbar:not(.titlebar):not(:only-child) {
+    background-color: transparent;
+
+    + separator { background-color: $div_sld_dark_fg }
+  }
+
+  &.selection-mode headerbar:not(.titlebar):not(:only-child) {
+    border-top-color: $div_top_sel_fg;
+    &:backdrop { // override default border-top color
+      @if $variant == mixed {
+        border-top-color: mix($dark_sel_bg,
+                              $inv_bg, percentage($a_fg_bdp));
+      }
+      @else {
+        border-top-color: mix($dark_sel_bg,
+                              $bg, percentage($a_fg_bdp));
+      }
+    }
+
+    + separator { background-color: transparent; }
+  }
+
+  &:backdrop hdyleaflet { opacity: 1.0; } // prevent double fade_effect
 }
 
 // /************
@@ -5974,35 +6020,5 @@ popover.emoji-picker button.emoji-section.flat {
     margin: 0;
     padding: 0;
     font-size: $icon_size * 1.5; // use fixed label size
-  }
-}
-
-// /**************
-//  * HdyLeafLet *
-//  **************/
-
-@if $maj_ver == 3 {
-  @if $mnr_ver > 23 { // >= 3.31.90
-    hdyleaflet { @extend %hdyleaflet; }
-  }
-}
-@else {
-  hdyleaflet { @extend %hdyleaflet; }
-}
-
-%hdyleaflet { // commonly used in contacts, g-c-c, etc...
-  > headerbar + separator.sidebar {
-    background-color: $div_sld_dark_fg
-  }
-
-  > overlay > stack { background-color: $base; } // for contacts
-
-  headerbar.titlebar.selection-mode > & {
-    > headerbar { // clear unneeded child bg and border
-      border-color: transparent;
-      background-color: transparent;
-
-      + separator.sidebar { background-color: transparent; }
-    }
   }
 }
