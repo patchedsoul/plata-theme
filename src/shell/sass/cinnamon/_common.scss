@@ -2354,7 +2354,7 @@ StBin.menu {
   // .switcher-list should be with StBin
   // at the root metaWindow
   StBoxLayout.switcher-list {
-    margin: 10px - 6px;
+    margin: 0 0.3em;
     border-radius: $r_4;
     background-color: $osd_bg; // use opaque
 
