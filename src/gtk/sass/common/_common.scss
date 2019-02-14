@@ -2422,15 +2422,21 @@ headerbar {
       }
     }
   }
+}
 
-  headerbar:not(.titlebar):not(:only-child) {
-    &:first-child {
-      &:dir(ltr) { border-top-right-radius: 0; }
-      &:dir(rtl) { border-top-left-radius: 0; }
-    }
-    &:last-child {
-      &:dir(ltr) { border-top-left-radius: 0; }
-      &:dir(rtl) { border-top-right-radius: 0; }
+.background:not(.maximized):not(.fullscreen):not(.tiled):not(.solid-csd) {
+  &:not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) {
+    headerbar.titlebar {
+      headerbar:not(.titlebar):not(:only-child) { // for hdyleaflet
+        &:first-child {
+          &:dir(ltr) { border-top-right-radius: 0; }
+          &:dir(rtl) { border-top-left-radius: 0; }
+        }
+        &:last-child {
+          &:dir(ltr) { border-top-left-radius: 0; }
+          &:dir(rtl) { border-top-right-radius: 0; }
+        }
+      }
     }
   }
 }
