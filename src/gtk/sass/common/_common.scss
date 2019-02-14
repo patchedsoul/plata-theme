@@ -5990,18 +5990,15 @@ popover.emoji-picker button.emoji-section.flat {
   hdyleaflet { @extend %hdyleaflet; }
 }
 
-%hdyleaflet {
-  // this selarator is share with some other leaflet widgets like
-  // contacts, g-c-c, etc...
+%hdyleaflet { // commonly used in contacts, g-c-c, etc...
   > headerbar + separator.sidebar {
     background-color: $div_sld_dark_fg
   }
 
-  > overlay > stack { background-color: $base; }
+  > overlay > stack { background-color: $base; } // for contacts
 
   headerbar.titlebar.selection-mode > & {
-    // clear unneeded child bg and border
-    > headerbar {
+    > headerbar { // clear unneeded child bg and border
       border-color: transparent;
       background-color: transparent;
 
