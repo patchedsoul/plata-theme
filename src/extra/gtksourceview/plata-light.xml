@@ -357,4 +357,7 @@
   <style name="meld:unknown-text" foreground="plata4" />
   <style name="meld:dimmed" foreground="plata3" />
 
+  <!-- Gedit/Builder -->
+  <style name="map-overlay" background="#rgba(17, 17, 17, 0.1)" />
+
 </style-scheme>
