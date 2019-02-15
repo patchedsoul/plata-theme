@@ -1601,9 +1601,6 @@ popover {
       }
     }
   }
-
-  // use action-area style buttons
-  box.popover-action-area button { @extend %action-area-button; }
 }
 
 greeter > box.vertical > stack {
@@ -1742,8 +1739,6 @@ headerbar button.dzlmenubutton.popup.toggle {
 
 popover.messagepopover {
   box.popover-content-area {
-    button { @extend %action-area-button; }
-
     // list node at the bottom?
     list { margin: 0 $popover_padding $popover_padding; }
   }
