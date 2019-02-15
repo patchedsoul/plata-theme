@@ -1315,6 +1315,11 @@ overlay > box.vertical > paned.horizontal > box.vertical {
   row { @extend %sidebar_row_template; }
 }
 
+frame.gedit-map-frame > border {
+  &:dir(ltr) { border-width: 0 0 0 1px; }
+  &:dir(rtl) { border-width: 0 1px 0 0; }
+}
+
 // /*****************
 //  * Gnome-Builder *
 //  *****************/
