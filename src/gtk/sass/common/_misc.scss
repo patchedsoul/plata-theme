@@ -1508,6 +1508,32 @@ omnibar.linked {
   .titlebar & { @extend %omnibar_entry; } // window-ed mode
 }
 
+@if $maj_ver == 3 {
+  @if $mnr_ver > 23 { // >= 3.31.90
+    entry > overlay { @extend %entry_overlay; }
+  }
+}
+@else {
+  entry > overlay { @extend %entry_overlay; }
+}
+
+%entry_overlay {
+  // Gtk+-2-ed like arrow up/down 12px buttons!?
+  box.pan.vertical { margin: -3px 0; }
+
+  progressbar.bottom { // expand progressbar
+    trough, progress {
+      min-height: calc(#{rem($widget_size)} - 2px * 2);
+      &:dir(ltr) { @include radius($r 0 0 $r, none); }
+      &:dir(rtl) { @include radius(0 $r $r 0, none); }
+    }
+
+    trough { background-color: transparent; }
+
+    progress { background-color: track($acc_bg, $a_trk_out); }
+  }
+}
+
 %tabstrip {
   min-height: rem($small_widget);
   padding: $toolbar_padding rem($ref_size);
@@ -1698,6 +1724,17 @@ dzl {
       row.activatable {
         min-height: rem($widget_size);
         padding: 0 rem(13.3px);
+      }
+    }
+  }
+}
+
+headerbar button.dzlmenubutton.popup.toggle {
+  &:not(.flat):not(.suggested-action):not(.destructive-action) {
+    &:not(.titlebutton):not(.selection-menu):not(.text-button):not(.lock) {
+      &:not(.color):not(.image-button) {
+        @include radius($r_2, none);
+        padding: 0 rem($txt_button_lr_space / 2);
       }
     }
   }
