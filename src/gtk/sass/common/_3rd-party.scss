@@ -814,14 +814,8 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
 
         > box.vertical > box.horizontal > button.image-button { // 'dismiss'
           // left-most image size = 32px?
-          margin-top: if($ref_weight < 1.0,
-                         calc((32px - 16px - (0.42rem - 0.1rem) * 2) / 2),
-                         calc((32px - 16px - (0.6rem - 0.1rem) * 2) / 2));
-          margin-bottom: if($ref_weight < 1.0,
-                            calc((32px - 16px - (0.42rem - 0.1rem) * 2) / 2),
-                            calc((32px - 16px - (0.6rem - 0.1rem) * 2) / 2));
-          &:dir(ltr) { margin-right: rem(($baseline * 2) + 4px); }
-          &:dir(rtl) { margin-left: rem(($baseline * 2) + 4px); }
+          min-width: $icon_size * 2;
+          min-height: $icon_size * 2;
         }
 
         // sub-list rows grouping
