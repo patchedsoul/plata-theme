@@ -814,8 +814,9 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
 
         > box.vertical > box.horizontal > button.image-button { // 'dismiss'
           // left-most image size = 32px?
-          min-width: $icon_size * 2;
-          min-height: $icon_size * 2;
+          min-width: if($ref_weight < 1.0, $icon_size * 1.5, $icon_size * 2);
+          min-height: if($ref_weight < 1.0, $icon_size * 1.5, $icon_size * 2);
+          margin: if($ref_weight < 1.0, $icon_size * 0.5 0, 0);
         }
 
         // sub-list rows grouping
