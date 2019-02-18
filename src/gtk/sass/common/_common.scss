@@ -1435,6 +1435,12 @@ buttonbox {
   dialog.background & {
     &.dialog-action-area.linked button { @extend %action-area-button; }
   }
+
+  dialog.background:not(.csd) > box.dialog-vbox > box.dialog-action-box > & {
+    &.dialog-action-area:not(.linked) button { // switch to fixed height
+      min-height: $widget_size - 10.3px;
+    }
+  }
 }
 
 %inv_button {
