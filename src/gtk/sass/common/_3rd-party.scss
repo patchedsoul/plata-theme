@@ -392,9 +392,15 @@ stack.icon-popover-stack {
   }
 
   grid.horizontal { // bottom button container
-    > button.flat.image-button {
-      @extend %action-area-button;
+    > button.flat.image-button { // switch to outlined button array
       min-height: $requested_height;
+      margin: 4px 3px;
+      @include radius($r_2);
+      border: 1px solid transparent;
+      @include button(normal);
+      &:hover { @include button(hover); }
+      &:active { @include button(active); }
+      &:disabled { @include button(disabled); }
     }
   }
 }
