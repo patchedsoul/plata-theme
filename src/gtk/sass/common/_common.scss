@@ -328,7 +328,7 @@ entry {
     min-height: rem($widget_size);
     min-width: rem($widget_size);
     border-width: 0;
-    @include radius($r-4 $r-4 0 0, none);
+    @include radius($r_4 $r_4 0 0, none);
   }
 
   toolbar *:not(.linked) &,
@@ -771,7 +771,7 @@ button {
   &.text-button,
   &.text-button.image-button,
   &.lock {
-    @include radius($r-2);
+    @include radius($r_2);
     padding: 0 rem($txt_button_lr_space / 2);
 
     label,
@@ -980,7 +980,7 @@ button {
       &.image-button {
         &:not(:disabled) {
           padding: rem($txt_button_lr_space / 2);
-          @include radius($r-2);
+          @include radius($r_2);
           background-color: if($variant == light,
                                track($dark_bg, $a_osd),
                                track($inv_dark_bg, $a_osd));
@@ -994,12 +994,12 @@ button {
           }
         }
         &:first-child {
-          &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
-          &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+          &:dir(ltr) { @include radius($r_2 0 0 $r_2); }
+          &:dir(rtl) { @include radius(0 $r_2 $r_2 0); }
         }
         &:last-child {
-          &:dir(ltr) { @include radius(0 $r-2 $r-2 0); }
-          &:dir(rtl) { @include radius($r-2 0 0 $r-2); }
+          &:dir(ltr) { @include radius(0 $r_2 $r_2 0); }
+          &:dir(rtl) { @include radius($r_2 0 0 $r_2); }
         }
       }
     }
@@ -1054,16 +1054,16 @@ button {
       &:dir(ltr) { border-right-width: 0; }
       &:dir(rtl) { border-left-width: 0; }
       &:first-child {
-        &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
-        &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+        &:dir(ltr) { @include radius($r_2 0 0 $r_2); }
+        &:dir(rtl) { @include radius(0 $r_2 $r_2 0); }
       }
       &:last-child {
         &:dir(ltr) {
-          @include radius(0 $r-2 $r-2 0);
+          @include radius(0 $r_2 $r_2 0);
           border-right-width: 1px;
         }
         &:dir(rtl) {
-          @include radius($r-2 0 0 $r-2);
+          @include radius($r_2 0 0 $r_2);
           border-left-width: 1px;
         }
       }
@@ -1169,16 +1169,16 @@ button {
     &:dir(ltr) { border-right-width: 0; }
     &:dir(rtl) { border-left-width: 0; }
     &:first-child {
-      &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
-      &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+      &:dir(ltr) { @include radius($r_2 0 0 $r_2); }
+      &:dir(rtl) { @include radius(0 $r_2 $r_2 0); }
     }
     &:last-child {
       &:dir(ltr) {
-        @include radius(0 $r-2 $r-2 0);
+        @include radius(0 $r_2 $r_2 0);
         border-right-width: 1px;
       }
       &:dir(rtl) {
-        @include radius($r-2 0 0 $r-2);
+        @include radius($r_2 0 0 $r_2);
         border-left-width: 1px;
       }
     }
@@ -1186,16 +1186,16 @@ button {
     &.flat {
       border: none;
       &:first-child {
-        &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
-        &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+        &:dir(ltr) { @include radius($r_2 0 0 $r_2); }
+        &:dir(rtl) { @include radius(0 $r_2 $r_2 0); }
       }
       &:last-child {
         &:dir(ltr) {
-          @include radius(0 $r-2 $r-2 0);
+          @include radius(0 $r_2 $r_2 0);
           border-right-width: 0;
         }
         &:dir(rtl) {
-          @include radius($r-2 0 0 $r-2);
+          @include radius($r_2 0 0 $r_2);
           border-left-width: 0;
         }
       }
@@ -1206,20 +1206,20 @@ button {
   .linked.vertical > & {
     @include radius(0); // optimize radius and widths
     border-bottom-width: 0;
-    &:first-child { @include radius($r-2 $r-2 0 0); }
+    &:first-child { @include radius($r_2 $r_2 0 0); }
     &:last-child {
-      @include radius(0 0 $r-2 $r-2);
+      @include radius(0 0 $r_2 $r_2);
       border-bottom-width: 1px;
     }
 
     &.flat {
       border: none;
-      &:first-child { @include radius($r-2 $r-2 0 0); }
+      &:first-child { @include radius($r_2 $r_2 0 0); }
       &:last-child {
-        @include radius(0 0 $r-2 $r-2);
+        @include radius(0 0 $r_2 $r_2);
         border-bottom-width: 0;
       }
-      &:only-child { @include radius($r-2); }
+      &:only-child { @include radius($r_2); }
     }
   }
 
@@ -1609,10 +1609,10 @@ spinbutton {
       }
 
       @if $maj_ver == 4 {
-        progress > trough > progress { @include radius($r-4, none); }
+        progress > trough > progress { @include radius($r_4, none); }
       }
       @else {
-        progress {  @include radius($r-4, none); }
+        progress {  @include radius($r_4, none); }
       }
     }
 
@@ -1837,13 +1837,13 @@ combobox {
     &:first-child {
       &:dir(ltr),
       &:dir(rtl) { 
-        button.combo { @include radius($r-4 0 0 $r-4); }
+        button.combo { @include radius($r_4 0 0 $r_4); }
       }
     }
     &:last-child {
       &:dir(ltr),
       &:dir(rtl) {
-        button.combo { @include radius(0 $r-4 $r-4 0); }
+        button.combo { @include radius(0 $r_4 $r_4 0); }
       }
     }
     &:only-child {
@@ -2597,21 +2597,21 @@ dialog.background.csd > headerbar.titlebar {
   &:dir(ltr) { border-right-width: 0; }
   &:dir(rtl) { border-left-width: 0; }
   &:first-child {
-    &:dir(ltr) { @include radius($r-2 0 0 $r-2); }
-    &:dir(rtl) { @include radius(0 $r-2 $r-2 0); }
+    &:dir(ltr) { @include radius($r_2 0 0 $r_2); }
+    &:dir(rtl) { @include radius(0 $r_2 $r_2 0); }
   }
   &:last-child {
     &:dir(ltr) {
-      @include radius(0 $r-2 $r-2 0);
+      @include radius(0 $r_2 $r_2 0);
       border-right-width: 1px;
     }
     &:dir(rtl) {
-      @include radius($r-2 0 0 $r-2);
+      @include radius($r_2 0 0 $r_2);
       border-left-width: 1px;
     }
   }
   &:only-child {
-    &:dir(ltr), &:dir(rtl) { @include radius($r-2); }
+    &:dir(ltr), &:dir(rtl) { @include radius($r_2); }
   }
 }
 
