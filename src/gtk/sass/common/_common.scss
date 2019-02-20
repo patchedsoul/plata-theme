@@ -1598,22 +1598,25 @@ spinbutton {
     // color
     &:disabled { color: $dis_fg; }
 
-    entry {
-      &, // unset all of fallback mode
-      &:focus,
-      &:disabled {
-        margin: 0;
-        background: none;
-        border: none;
-        box-shadow: none;
-      }
+    @if $maj_ver == 3 {
+      entry {
+        &, // unset all of fallback mode
+        &:focus,
+        &:disabled {
+          margin: 0;
+          background: none;
+          border: none;
+          box-shadow: none;
+        }
 
-      @if $maj_ver == 4 {
-        progress > trough > progress { @include radius($r_4, none); }
-      }
-      @else {
         progress {  @include radius($r_4, none); }
       }
+    }
+    @else { // NEEDS_REVIEW
+      text {
+      }
+
+      progress > trough > progress { @include radius($r_4, none); }
     }
 
     button {
@@ -1657,14 +1660,27 @@ spinbutton {
           caret-color: $inv_fg;
         }
 
-        entry {
-          &, &:focus {
-            color: $inv_fg;
-            caret-color: $inv_fg;
+        @if $maj_ver == 3 {
+          entry {
+            &, &:focus {
+              color: $inv_fg;
+              caret-color: $inv_fg;
 
-            selection { @extend %selected_items; }
+              selection { @extend %selected_items; }
+            }
+            &:disabled { color: $dis_inv_fg; }
           }
-          &:disabled { color: $dis_inv_fg; }
+        }
+        @else { // NEEDS_REVIEW
+          text {
+            &, &:focus {
+              color: $inv_fg;
+              caret-color: $inv_fg;
+
+              selection { @extend %selected_items; }
+            }
+            &:disabled { color: $dis_inv_fg; }
+          }
         }
 
         button {
@@ -1696,15 +1712,21 @@ spinbutton {
     &:focus { @include entry(focus); }
     &:disabled { @include entry(disabled); }
 
-    entry {
-      &, // unset all of fallback mode
-      &:focus,
-      &:disabled {
-        margin: 0;
-        padding: 0;
-        background: none;
-        border: none;
-        box-shadow: none;
+    @if $maj_ver == 3 {
+      entry {
+        &, // unset all of fallback mode
+        &:focus,
+        &:disabled {
+          margin: 0;
+          padding: 0;
+          background: none;
+          border: none;
+          box-shadow: none;
+        }
+      }
+    }
+    @else { // NEEDS_REVIEW
+      text {
       }
     }
 
