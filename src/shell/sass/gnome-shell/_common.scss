@@ -722,6 +722,7 @@ $avatar_width: $icon_size * 1.5;
   min-width: 15em;
 
   .popup-sub-menu {
+    padding-bottom: 1px; // reserve bottom-border height
     border-bottom: 1px solid $div_fg;
     background-color: $bg;
     box-shadow: inset 0 2px 2px opacity(black, $a_trk_1);
