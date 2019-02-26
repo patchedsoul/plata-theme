@@ -4629,17 +4629,16 @@ row.activatable {
                     // generated a popover
   &:hover {         // see https://bugzilla.gnome.org/show_bug.cgi?id=754411
     background-color: $trk_bg;
+    @include transition(ink-normal-row);
   }
   &:active {
     // use shallower ink
     @include ink-reaction(active-dec, $fc: $ter_fg, $tr: ink-active-row);
   }
   &:selected {
-    @include transition(ink-normal-row);
     &:hover {
       background-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
     }
-    &:active { background-size: percentage(7) percentage(7); }
   }
 }
 
