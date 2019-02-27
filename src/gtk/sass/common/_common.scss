@@ -2312,14 +2312,39 @@ headerbar {
       }
     }
   }
+}
 
-  @if $maj_ver == 3 { // for Epiphany
-    @if $mnr_ver > 23 {
-      &.incognito-mode { @extend %incognito_headerbar_bg; }
+
+@if $maj_ver == 3 { // for Epiphany
+  @if $mnr_ver > 23 {
+    window.incognito-mode {
+      headerbar { @extend %incognito_headerbar_bg; }
+
+      &.tiled,
+      &.tiled-top,
+      &.tiled-bottom,
+      &.tiled-left,
+      &.tiled-right,
+      &.maximized,
+      &.fullscreen {
+        headerbar { @extend %maxd_incognito_headerbar_bg; }
+      }
     }
   }
-  @else {
-    &.incognito-mode { @extend %incognito_headerbar_bg; }
+}
+@else {
+  window.incognito-mode {
+    headerbar { @extend %incognito_headerbar_bg; }
+
+    &.tiled,
+    &.tiled-top,
+    &.tiled-bottom,
+    &.tiled-left,
+    &.tiled-right,
+    &.maximized,
+    &.fullscreen {
+      headerbar { @extend %maxd_incognito_headerbar_bg; }
+    }
   }
 }
 
@@ -2332,17 +2357,11 @@ headerbar {
     border-top-color: if($variant == mixed, $inv_bg, $bg);
     background-color: if($variant == mixed, $inv_bg, $bg);
   }
+}
 
-  .tiled &,
-  .tiled-top &,
-  .tiled-bottom &,
-  .tiled-left &,
-  .tiled-right &,
-  .maximized &,
-  .fullscreen & {
-    border-top-color: if($variant == mixed, $inv_tooltip_bg, $tooltip_bg);
-    &:backdrop { border-top-color: if($variant == mixed, $inv_bg, $bg); }
-  }
+%maxd_incognito_headerbar_bg {
+  border-top-color: if($variant == mixed, $inv_tooltip_bg, $tooltip_bg);
+  &:backdrop { border-top-color: if($variant == mixed, $inv_bg, $bg); }
 }
 
 headerbar {
