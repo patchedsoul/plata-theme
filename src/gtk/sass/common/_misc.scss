@@ -736,10 +736,6 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
         > border { @extend %folder_frame_border; }
 
         > scrolledwindow { @extend %folder_frame; }
-
-        + statusbar {
-          &, > frame { background-color: $bg; }
-        }
       }
     }
   }
@@ -753,10 +749,6 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
     > border { @extend  %folder_frame_border; }
 
     > scrolledwindow { @extend %folder_frame; }
-
-    + statusbar {
-      &, > frame { background-color: $bg; }
-    }
   }
 }
 
@@ -1284,21 +1276,19 @@ paned.titlebar.horizontal {
   }
 }
 
-overlay > box.vertical > paned.horizontal > box.vertical {
-  statusbar { // inline-toolbar styling
-    padding: $toolbar_padding;
-    border-style: solid;
-    border-width: 1px 0 0;
-    border-color: $div_fg;
-    background-color: $dark_bg;
+paned.gedit-bottom-panel-paned + statusbar { // inline-toolbar styling
+  padding: $toolbar_padding;
+  border-style: solid;
+  border-width: 1px 0 0;
+  border-color: $div_fg;
+  background-color: $dark_bg;
 
-    button.flat { // padding is overridden by (1px 8px 2px 4px)
-      min-height: rem($small_widget);
+  button.flat { // padding is overridden by (1px 8px 2px 4px)
+    min-height: rem($small_widget);
 
-      box {
-        &:dir(ltr) { margin: -1px -4px -2px 4px; }
-        &:dir(rtl) { margin: -1px 4px -2px -4px; }
-      }
+    box {
+      &:dir(ltr) { margin: -1px -4px -2px 4px; }
+      &:dir(rtl) { margin: -1px 4px -2px -4px; }
     }
   }
 }
