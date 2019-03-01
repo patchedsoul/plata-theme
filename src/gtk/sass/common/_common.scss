@@ -2317,9 +2317,12 @@ headerbar {
 
 @if $maj_ver == 3 { // for Epiphany
   @if $mnr_ver > 23 {
-    window.incognito-mode {
-      headerbar { @extend %incognito_headerbar_bg; }
+    window.incognito-mode headerbar,
+    headerbar.incognito-mode {
+      @extend %incognito_headerbar_bg;
+    }
 
+    window.incognito-mode {
       &.tiled,
       &.tiled-top,
       &.tiled-bottom,
@@ -2329,6 +2332,16 @@ headerbar {
       &.fullscreen {
         headerbar { @extend %maxd_incognito_headerbar_bg; }
       }
+    }
+
+    headerbar.incognito-mode {
+      .tiled &,
+      .tiled-top &,
+      .tiled-bottom &,
+      .tiled-left &,
+      .tiled-right &,
+      .maximized &,
+      .fullscreen & { @extend %maxd_incognito_headerbar_bg; }
     }
   }
 }
