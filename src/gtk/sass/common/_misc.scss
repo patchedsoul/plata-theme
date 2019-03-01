@@ -737,7 +737,9 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
 
         > scrolledwindow { @extend %folder_frame; }
 
-        + statusbar > frame { background-color: $bg; }
+        + statusbar {
+          &, > frame { background-color: $bg; }
+        }
       }
     }
   }
@@ -752,7 +754,9 @@ dialog.background.csd > box.dialog-vbox > grid.horizontal {
 
     > scrolledwindow { @extend %folder_frame; }
 
-    + statusbar > frame { background-color: $bg; }
+    + statusbar {
+      &, > frame { background-color: $bg; }
+    }
   }
 }
 
