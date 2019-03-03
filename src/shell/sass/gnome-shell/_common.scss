@@ -2324,6 +2324,12 @@ $provider_icon_size: 32px; // for < 3.25
       spacing: if($ref_weight >= 1.0, $provider_icon_size / 2,
                                       $provider_icon_size / 4);
     }
+
+    // hide unneeded last separator
+    &:last-child .search-section-separator {
+      -gradient-start: transparent;
+      -gradient-end: transparent;
+    }
   }
 
   &-separator {
