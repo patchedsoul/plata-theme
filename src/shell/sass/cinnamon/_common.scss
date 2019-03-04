@@ -1493,15 +1493,6 @@ $large_item: 10px;
   box-shadow: $empty_shadow;
   font-weight: 400;
 
-  StIcon,
-  StBin {
-    .panel-top &,
-    .panel-bottom & { padding: 0 (6px - 2px); }
-  }
-
-  &.vertical StIcon,
-  &.vertical StBin { padding: 0; }
-
   StLabel {
     font-weight: 400;
 
@@ -1539,6 +1530,21 @@ $large_item: 10px;
       .panel-#{$position} & {
         box-shadow: inset #{$_indicator} $sel_bg;
       }
+    }
+  }
+}
+
+%item_box_active_unfocused {
+  background-color: $hidden_fill_bg;
+  color: if($variant != light, $sel_fg, black);
+  &:hover { background-color: $osd_semi_fill_bg; }
+
+  @each $position, $_indicator in (top, 0 2px),
+                                  (bottom, 0 -2px),
+                                  (left, 2px 0),
+                                  (right, -2px 0) {
+    .panel-#{$position} & {
+      box-shadow: inset #{$_indicator} $osd_out_fg;
     }
   }
 }
@@ -1597,6 +1603,15 @@ $large_item: 10px;
 
     &:progress,
     .progress { @extend %item_box_progress; }
+
+    StIcon,
+    StBin {
+      .panel-top &,
+      .panel-bottom & { padding: 0 (6px - 2px); }
+    }
+
+    &.vertical StIcon,
+    &.vertical StBin { padding: 0; }
   }
 
   &-item-demands-attention { @extend %item_box_attention; }
@@ -1616,8 +1631,13 @@ $large_item: 10px;
     @extend %item_box;
     &:hover { @extend %item_box_hover; }
     &:active,
-    &:checked,
-    &:focus { @extend %item_box_active; }
+    &:checked {
+      @extend %item_box_active_unfocused;
+      &:focus { @extend %item_box_active; }
+    }
+
+    StIcon,
+    StBin { padding: 2px; }
 
     .progress { @extend %item_box_progress; }
   }
@@ -1632,21 +1652,32 @@ $large_item: 10px;
 
     &-alert { background: $acc_fill_bg; }
 
-    &-menu { @extend %switcher_item_box_child; }
+    &-menu {
+      margin: 0.3em (0.3em * 2);
+      @extend %switcher_item_box_child;
+    }
   }
 
   &-number-label {
     padding: 0;
-    color: $osd_fg;
+    color: $osd_ter_fg;
     font-size: 10px; // use abs unit
     font-weight: 700;
     text-shadow: none;
+
+    .grouped-window-list-item-box:active:focus & { // highlight focused counter
+      color: $sel_fg;
+    }
   }
 
   &-badge { // backgrounds for num-labels
     border-radius: $r;
-    background-color: if($variant == mixed, opacity($inv_tooltip_bg, $a_osd),
-                                            opacity($tooltip_bg, $a_osd));
+    background-color: opacity($osd_bg, $a_osd);
+    box-shadow: $z-depth-1;
+
+    .grouped-window-list-item-box:active:focus & { // highlight focused badge
+      background-color: $sel_bg;
+    }
   }
 
   &-button-label {
