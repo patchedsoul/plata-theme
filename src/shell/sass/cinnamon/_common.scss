@@ -1263,10 +1263,7 @@ $large_item: 10px;
     // FIXME: override generic menuitem padding with default theme's value.
     // And we have no way to override the min-width of global section here,
     // so do not add min-width into .menu > .popup-menu-item.
-    .popup-menu-item {
-      padding: $large_item;
-      border-radius: $r;
-    }
+    .popup-menu-item { padding: $large_item; }
   }
 
   &-favorites-button {
