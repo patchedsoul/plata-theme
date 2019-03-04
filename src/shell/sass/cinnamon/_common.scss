@@ -1632,9 +1632,6 @@ $large_item: 10px;
       &:focus { @extend %item_box_active; }
     }
 
-    StIcon,
-    StBin { padding: 2px; }
-
     .progress { @extend %item_box_progress; }
   }
 
