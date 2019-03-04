@@ -1292,9 +1292,20 @@ $large_item: 10px;
     &:rtl { border-left-width: 1px; }
   }
 
-  &-applications-inner-box,
-  &-applications-outer-box {
-    padding: $menu_spacing $menu_spacing 0 $menu_spacing;
+  &-applications {
+    &-outer-box {
+      &:ltr {
+        padding: $menu_spacing ($menu_spacing * 2) 0 $menu_spacing;
+      }
+      &:rtl {
+        padding: $menu_spacing $menu_spacing 0 ($menu_spacing * 2);
+      }
+    }
+
+    &-inner-box { padding: $menu_spacing $menu_spacing 0 $menu_spacing; }
+  }
+
+  &-applications-scroll-box {
   }
 
   &-application-button {
@@ -1409,9 +1420,10 @@ $large_item: 10px;
   &-systembuttons-box {
   }
 
-  &-search-box {
-    &:ltr { padding-left: $large_item * 3; }
-    &:rtl { padding-right: $large_item * 3; }
+  // parent container of search-entry
+  &-search-box { // parent outer-box already has double L/R padding
+    &:ltr { padding: 0 0 $menu_spacing $menu_spacing; }
+    &:rtl { padding: 0 $menu_spacing $menu_spacing 0; }
   }
 
   &-search-entry-icon {
