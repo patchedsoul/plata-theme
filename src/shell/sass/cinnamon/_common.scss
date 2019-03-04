@@ -1257,17 +1257,16 @@ $large_item: 10px;
   &-favorites-box {
     padding: $menu_spacing;
     border-radius: 0;
-    border: 0 solid if($variant != dark,
-                       $div_fg,
-                       mix(white, $dark_bg, percentage($a_div_2)));
+    border: 0 none transparent;
     background-color: transparent;
-    &:ltr { border-right-width: 1px; }
-    &:rtl { border-left-width: 1px; }
 
     // FIXME: override generic menuitem padding with default theme's value.
     // And we have no way to override the min-width of global section here,
     // so do not add min-width into .menu > .popup-menu-item.
-    .popup-menu-item { padding: $large_item; }
+    .popup-menu-item {
+      padding: $large_item;
+      border-radius: $r;
+    }
   }
 
   &-favorites-button {
