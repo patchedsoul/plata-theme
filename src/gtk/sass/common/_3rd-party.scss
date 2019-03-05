@@ -492,6 +492,7 @@ button.flat.budgie-menu-launcher {
   }
 
   .categories { // left-paned elements of GtkPopover
+    background-color: transparent;
     &:dir(ltr) {
       margin-right: $popover_padding;
       border-right: 1px solid if($variant == dark, track(white, $a_div_2),
