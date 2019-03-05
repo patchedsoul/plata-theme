@@ -362,9 +362,10 @@ StScrollBar {
   &-logout-icon {
     width: $icon_size * 3;
     height: $icon_size * 3;
-    border-radius: $r_2;
     background-size: contain;
     color: $osd_fg;
+    @if $ver < 3.31 { border-radius: $r_2; }
+    @else { border-radius: $r; } // circular shape
   }
 
   &-shutdown-icon {
@@ -576,8 +577,9 @@ StScrollBar {
   &-user-icon {
     width: $icon_size * 3;
     height: $icon_size * 3;
-    border-radius: $r_2;
     background-size: contain;
+    @if $ver < 3.31 { border-radius: $r_2; }
+    @else { border-radius: $r; } // circular shape
   }
 }
 
@@ -3537,14 +3539,26 @@ $grid_size: 136px;
 //  * Auth Dialogs & Screen Shield *
 //  ********************************/
 
-.framed-user-icon {
+%framed_user_icon {
   background-size: contain;
   border: none;
   color: $osd_fg;
-  border-radius: $r_2;
   &:hover {
     border-color: $osd_fg;
     color: $osd_fg;
+  }
+}
+
+@if $ver < 3.31 {
+  .framed-user-icon {
+    @extend %framed_user_icon;
+    border-radius: $r_2;
+  }
+}
+@else {
+  .user-icon {
+    @extend %framed_user_icon;
+    border-radius: $r; // circular shape
   }
 }
 
