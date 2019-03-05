@@ -2100,6 +2100,21 @@ terminal-window {
       }
     }
   }
+
+  @if $maj_ver == 3 {
+    @if $mnr_ver > 23 { // 'Open new tab' button
+      > headerbar.titlebar > box.linked > button.image-button:only-child {
+        // FIXME: I've never seen a paired hidden GtkToggleButton
+        @include radius($r_2, none);
+      }
+    }
+  }
+  @else {
+    > headerbar.titlebar > box.linked > button.image-button:only-child {
+      // FIXME: I've never seen a paired hidden GtkToggleButton
+      @include radius($r_2, none);
+    }
+  }
 }
 
 @if $maj_ver == 3 {
