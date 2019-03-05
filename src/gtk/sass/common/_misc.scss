@@ -1530,6 +1530,9 @@ omnibar.linked {
 
     progress { background-color: track($acc_bg, $a_trk_out); }
   }
+
+  // child buttons have fixed 24px min-height/width via shared-omnibar.css
+  notification > box.horizontal { margin: -3px 0; }
 }
 
 %tabstrip {
