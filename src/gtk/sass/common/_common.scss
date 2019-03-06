@@ -3753,7 +3753,12 @@ switch {
     min-height: $icon_size;
   }
 
-  &, slider { color: transparent; }
+  &,
+  slider,
+  headerbar & image:disabled,
+  .titlebar & image:disabled { // specificity bump
+    color: transparent;
+  }
 
   // use ugly pixmaps
   @extend %pixmap_switch;
