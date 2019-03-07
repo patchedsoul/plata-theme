@@ -1664,6 +1664,7 @@ $large_item: 10px;
   }
 
   &-number-label {
+    margin: 0.1em 0 0; // correct baseline
     padding: 0;
     color: $osd_ter_fg;
     font-size: 10px; // use abs unit
@@ -1679,6 +1680,8 @@ $large_item: 10px;
     border-radius: $r;
     background-color: opacity($osd_bg, $a_osd);
     box-shadow: $z-depth-1;
+    &:ltr { margin: 1px 0 0 1px; }
+    &:rtl { margin: 1px 1px 0 0; }
 
     .grouped-window-list-item-box:active:focus & { // highlight focused badge
       background-color: $sel_bg;
