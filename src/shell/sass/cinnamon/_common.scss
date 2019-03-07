@@ -1668,7 +1668,7 @@ $large_item: 10px;
   &-number-label {
     margin: 0.1em 0 0; // correct baseline
     padding: 0;
-    color: $osd_ter_fg;
+    color: $osd_fg;
     font-size: 10px; // use abs unit
     font-weight: 700;
     text-shadow: none;
@@ -1680,7 +1680,8 @@ $large_item: 10px;
 
   &-badge { // backgrounds for num-labels
     border-radius: $r;
-    background-color: opacity($osd_bg, $a_osd);
+    background-color: if($variant == mixed, opacity($inv_tooltip_bg, $a_osd),
+                                            opacity($tooltip_bg, $a_osd));
     box-shadow: $z-depth-1;
     &:ltr { margin: 1px 0 0 1px; }
     &:rtl { margin: 1px 1px 0 0; }
