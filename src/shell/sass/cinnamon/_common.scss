@@ -395,6 +395,8 @@ StScrollBar {
   &-device-menu-item { spacing: 0.5em; }
 
   &-subtitle-menu-item { font-weight: 500; }
+
+  &-menu-item-dot { color: $sel_label; } // = ornament
 }
 
 .nm-menu-item-icons { spacing: 0.5em; }
