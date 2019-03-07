@@ -1499,11 +1499,11 @@ $large_item: 10px;
   background-color: $hidden_fill_bg;
   color: $osd_fg;
   box-shadow: $empty_shadow;
-  font-weight: 400;
+
+  &,
+  StLabel { font-weight: 400; }
 
   StLabel {
-    font-weight: 400;
-
     .panel-top &,
     .panel-bottom & {
       &:ltr { padding: 0 (6px - 2px) 0 0; }
@@ -1590,7 +1590,7 @@ $large_item: 10px;
   &-box {
     spacing: 0;
 
-    .panel-top,
+    .panel-top &,
     .panel-bottom & {
       &:ltr { padding: 0 0 0 8px; }
       &:rtl { padding: 0 8px 0 0; }
