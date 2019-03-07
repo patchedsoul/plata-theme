@@ -3599,18 +3599,20 @@ $grid_size: 136px;
     &:focus { @include button(flat-focus, $tc: $ovv_fg); }
     &:active { @include button(flat-active, $tc: $ovv_fg); }
     &:insensitive { @include button(flat-disabled, $tc: $ovv_fg); }
-    &:default { // raised button
+    &:default { // suggested-action button
       padding: (7px - 2px)  (16px - 2px) (8px - 2px); // subtract borders
-      @include button(raised-normal, $c: $sggt_bg, $tc: $sel_fg);
+      @include button(suggested-normal, $c: $sggt_bg, $tc: $sel_fg);
       &:hover {
-        @include button(raised-hover, $c: $sggt_bg, $tc: $sel_fg);
+        @include button(suggested-hover, $c: $sggt_bg, $tc: $sel_fg);
       }
       &:focus {
-        @include button(raised-focus, $c: $sggt_bg, $tc: $sel_fg);
+        @include button(suggested-focus, $c: $sggt_bg, $tc: $sel_fg);
       }
-      &:active { @include button(raised-active); }
+      &:active { @include button(suggested-active); }
       &:insensitive {
-        @include button(raised-disabled, $tc: $sel_fg);
+        // revert to standard padding since mixin has no borders
+        padding: 7px 16px 8px;
+        @include button(suggested-disabled, $tc: $sel_fg);
       }
     }
   }

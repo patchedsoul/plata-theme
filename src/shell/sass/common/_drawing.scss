@@ -72,8 +72,8 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
 // possible $t values:
 // normal, focus, hover, active, disabled, flat-normal,
 // flat-focus, flat-hover, flat-active, flat-disabled,
-// raised-normal, raized-focus, raised-hover, raised-active,
-// raised-disabled;
+// suggested-normal, suggested-focus, suggested-hover,
+// suggested-active, suggested-disabled;
 //
 
 @mixin button($t, $c: $base, $tc: $fg) {
@@ -138,31 +138,32 @@ $empty_shadow: 0 0 transparent; // replacement of the 'none'
     color: opacity($tc, $a_fg_dis);
     box-shadow: $empty_shadow;
   }
-  @else if $t == raised-normal {
+  @else if $t == suggested-normal {
     border: 2px solid transparent; // for outlines
     background-color: $c;
     color: opacity($tc, $a_fg_2nd);
-    box-shadow: $z-depth-1;
+    box-shadow: $empty_shadow;
   }
-  @else if $t == raised-focus {
+  @else if $t == suggested-focus {
     border: 2px solid opacity($tc, $a_trk_out);
     color: $tc;
-    box-shadow: $z-depth-1;
+    box-shadow: $empty_shadow;
+    transition-duration: $tr_d_std; // revive transitions
   }
-  @else if $t == raised-hover {
+  @else if $t == suggested-hover {
     border: 2px solid transparent;
     background-color: mix($tc, $c, percentage($a_trk_1));
     color: $tc;
-    box-shadow: $z-depth-2;
+    box-shadow: $empty_shadow;
   }
-  @else if $t == raised-active {
+  @else if $t == suggested-active {
     border: 2px solid transparent;
     background-color: $sel_bg;
     color: $sel_fg;
-    box-shadow: $z-depth-1;
+    box-shadow: $empty_shadow;
   }
-  @else if $t == raised-disabled {
-    border: 2px solid transparent;
+  @else if $t == suggested-disabled {
+    border: 0 none transparent;
     background-color: opacity($tc, ($a_trk_1));
     color: opacity($tc, $a_fg_dis);
     box-shadow: $empty_shadow;
