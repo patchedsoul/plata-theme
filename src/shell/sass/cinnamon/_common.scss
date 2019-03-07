@@ -1789,7 +1789,7 @@ $large_item: 10px;
   // padding: 0 6px; // NEEDS_REVIEW
   color: $osd_fg;
   background-color: $hidden_fill_bg;
-  transition-duration: 0.2s;
+  transition-duration: $tr_d_std;
 
   // .vertical & { padding: 3px; } // NEEDS_REVIEW
 

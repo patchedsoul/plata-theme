@@ -1139,7 +1139,7 @@ $avatar_width: $icon_size * 1.5;
     -panel-corner-background-color: $panel_hidden_bg;
     -panel-corner-border-width: 0;
     -panel-corner-border-color: transparent;
-    transition-duration: 0s;
+    transition-duration: $tr_d_non;
 
     &:hover,
     &:focus {
