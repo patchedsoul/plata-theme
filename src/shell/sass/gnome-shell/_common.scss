@@ -1455,7 +1455,14 @@ $avatar_width: $icon_size * 1.5;
     }
 
     &-forecast {
-      &-icon { icon-size: $icon_size * 1.75; }
+      &-icon {
+        width: 2.4em; // = .calendar-day-base
+        height: 2.4em;
+        border-radius: $r;
+        background-color: opacity($sec_fg, $a_trk_1);
+        color: $sec_fg;
+        icon-size: $icon_size;
+      }
 
       &-time {
         @include fontscaling($ref_size * 0.8);
