@@ -4038,7 +4038,8 @@ $tool_icon_size: 24px;
   &-title { spacing: 4px; }
 
   &-button {
-    height: $close_button_size - 1px; // subtract bottom-padding
+    // subtract bottom-padding and outlined button borders
+    height: $close_button_size - 1px - (1px * 2);
     padding: if($ref_weight >= 1.0, 0 16px 1px, 0 12px 1px);
     border-radius: $r_2;
     font-weight: 500;
