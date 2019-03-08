@@ -2022,15 +2022,15 @@ $avatar_width: $icon_size * 1.5;
 //  * Close Buttons *
 //  *****************/
 
-$cose_button_size: 32px;
+$close_button_size: 32px;
 
 .window-close {
-  width: $cose_button_size;
-  height: $cose_button_size;
-  -shell-close-overlap: $cose_button_size * 0.75;
+  width: $close_button_size;
+  height: $close_button_size;
+  -shell-close-overlap: $close_button_size * 0.75;
   @if $ver < 3.32 {
     @include image-loader($url: 'assets/window-close.svg');
-    background-size: $cose_button_size;
+    background-size: $close_button_size;
     -st-background-image-shadow: $z-depth-1;
   }
   @else {
@@ -4038,7 +4038,7 @@ $tool_icon_size: 24px;
   &-title { spacing: 4px; }
 
   &-button {
-    height: $cose_button_size - 1px; // subtract bottom-padding
+    height: $close_button_size - 1px; // subtract bottom-padding
     padding: if($ref_weight >= 1.0, 0 16px 1px, 0 12px 1px);
     border-radius: $r_2;
     font-weight: 500;
