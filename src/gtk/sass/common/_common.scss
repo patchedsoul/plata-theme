@@ -2639,7 +2639,12 @@ dialog.background.csd > headerbar.titlebar {
     + separator { background-color: transparent; }
   }
 
-  &:backdrop hdyleaflet { opacity: 1.0; } // prevent double fade_effect
+  &:backdrop { // prevent double fade_effect
+    hdyleaflet,
+    *:not(hdyleaflet) headerbar:not(.titlebar):not(:only-child) > * {
+      opacity: 1.0;
+    }
+  }
 }
 
 // /************
