@@ -2051,7 +2051,7 @@ $cose_button_size: 32px;
       -st-background-image-shadow: $z-depth-2;
     }
     @else {
-      background-color: mix($dest_bg, $sel_fg, percentage($a_trk_1));
+      background-color: mix($dest_bg, $sel_fg, percentage(1 - $a_trk_1));
       color: $sel_fg;
       box-shadow: $z-depth-2;
     }
