@@ -1761,9 +1761,17 @@ $avatar_width: $icon_size * 1.5;
     }
     color: $sec_fg;
 
-    .message-icon-bin > StIcon,
-    .message-title,
-    .message-content { color: $sec_fg; }
+    @if $ver < 3.31 {
+      .message-icon-bin > StIcon,
+      .message-title,
+      .message-content { color: $sec_fg; }
+    }
+    @else {
+      .message-icon-bin > StIcon,
+      .message-icon-bin > .fallback-window-icon,
+      .message-title,
+      .message-content { color: $sec_fg; }
+    }
 
     &:hover,
     &:focus {
@@ -1777,9 +1785,17 @@ $avatar_width: $icon_size * 1.5;
       }
       color: $fg;
 
-      .message-icon-bin > StIcon,
-      .message-title,
-      .message-content { color: $fg; }
+      @if $ver < 3.31 {
+        .message-icon-bin > StIcon,
+        .message-title,
+        .message-content { color: $fg; }
+      }
+      @else {
+        .message-icon-bin > StIcon,
+        .message-icon-bin > .fallback-window-icon,
+        .message-title,
+        .message-content { color: $fg; }
+      }
 
       .message-secondary-bin {
         &,
@@ -1797,9 +1813,17 @@ $avatar_width: $icon_size * 1.5;
       }
       color: $fg;
 
-      .message-icon-bin > StIcon,
-      .message-title,
-      .message-content { color: $fg; }
+      @if $ver < 3.31 {
+        .message-icon-bin > StIcon,
+        .message-title,
+        .message-content { color: $fg; }
+      }
+      @else {
+        .message-icon-bin > StIcon,
+        .message-icon-bin > .fallback-window-icon,
+        .message-title,
+        .message-content { color: $fg; }
+      }
 
       .message-secondary-bin {
         &,
@@ -1820,12 +1844,24 @@ $avatar_width: $icon_size * 1.5;
     padding: 0; // FIXME: needs to override the stock gresource
                 // (Since upstream still uses padding properties)
 
-    > StIcon {
-      min-width: $icon_size;  // for an indentation of .message-content
-      min-height: $icon_size; // reserve StIcon region even if StIcon was null
-      color: $osd_fg;
-      icon-size: $icon_size;
-      -st-icon-style: symbolic;
+    @if $ver < 3.31 {
+      > StIcon {
+        min-width: $icon_size;  // for an indentation of .message-content
+        min-height: $icon_size; // reserve StIcon region even if StIcon was null
+        color: $osd_fg;
+        icon-size: $icon_size;
+        -st-icon-style: symbolic;
+      }
+    }
+    @else {
+      > StIcon,
+      > .fallback-window-icon {
+        min-width: $icon_size;
+        min-height: $icon_size;
+        color: $osd_fg;
+        icon-size: $icon_size;
+        -st-icon-style: symbolic;
+      }
     }
   }
 
