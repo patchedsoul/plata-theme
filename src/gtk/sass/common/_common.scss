@@ -1543,7 +1543,11 @@ buttonbox {
     &:hover,
     &:active { color: $link_fg; }
 
-    *:selected & { color: $sec_sel_fg; }
+    *:selected & {
+      color: $sec_sel_fg;
+      &:hover,
+      &:active { color: $sel_fg; }
+    }
   }
 
   @at-root %visited_link,
@@ -1552,11 +1556,15 @@ buttonbox {
     &:hover,
     &:active { color: $link_vst_fg; }
 
-    *:selected & { color: $ter_sel_fg; }
+    *:selected & {
+      color: $ter_sel_fg;
+      &:hover,
+      &:active { color: $sec_sel_fg; }
+    }
   }
 
   @at-root %selected_link,
-  &:selected {  color: $sec_sel_fg; }
+  &:selected { color: $sec_sel_fg; }
 
   &:disabled { opacity: $a_fg_bdp; }
 }
