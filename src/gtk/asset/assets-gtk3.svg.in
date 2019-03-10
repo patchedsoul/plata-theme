@@ -14,7 +14,7 @@
    height="650"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92+devel (unknown)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="assets-gtk3.svg"
    viewBox="0 0 300 650"
    enable-background="new">
@@ -496,8 +496,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.00458"
-     inkscape:cx="164.09032"
-     inkscape:cy="417.9452"
+     inkscape:cx="206.15179"
+     inkscape:cy="425.53824"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -1124,7 +1124,7 @@
          height="12"
          width="32"
          id="rect2987-1-0-7"
-         style="opacity:0.28;fill:#111111;fill-opacity:0.54000002;stroke:none;stroke-width:1.13137078" />
+         style="opacity:1;fill:#d6d6d6;fill-opacity:1;stroke:none;stroke-width:1.13137078" />
       <circle
          r="8"
          style="fill:#d6d6d6;fill-opacity:1;stroke:none;stroke-width:0.20006999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1283,7 +1283,7 @@
          height="12"
          width="32"
          id="rect2987-1-0-4-5"
-         style="opacity:0.28;fill:#f5f5f5;fill-opacity:0.54000002;stroke:none;stroke-width:1.13137078" />
+         style="opacity:1;fill:#3e3e3e;fill-opacity:1;stroke:none;stroke-width:1.13137078" />
       <circle
          r="8"
          style="fill:#3e3e3e;fill-opacity:1;stroke:none;stroke-width:0.20006999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
