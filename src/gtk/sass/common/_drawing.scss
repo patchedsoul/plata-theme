@@ -328,6 +328,7 @@ $z-depth-1-label: 0 0 1px rgba(0, 0, 0, 0.26),
 }
 
 @mixin linked-entry-outline($dir: ltr, $cld: first) {
+  @if $cld == only { border-width: 2px; }
   @if $cld == center {
     border-left-width: 1px;
     border-right-width: 1px;

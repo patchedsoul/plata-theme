@@ -528,6 +528,19 @@ entry {
         }
       }
     }
+    &:only-child:last-child {
+      &:dir(ltr), &:dir(rtl) {
+        @include radius($r, none);
+        @include linked-entry-outline($cld: only);
+
+        @if $maj_ver == 3 {
+          progress { @include radius($r, none); }
+        }
+        @else {
+          progress > trough > progress { @include radius($r, none); }
+        }
+      }
+    }
   }
 
   .linked &.flat,
@@ -542,6 +555,11 @@ entry {
     &:dir(rtl) {
       &:first-child { @include radius(0 $r_4 0 0, none); }
       &:last-child { @include radius($r_4 0 0 0, none); }
+    }
+    &:only-child:last-child {
+      &:dir(ltr), &:dir(rtl) {
+        @include radius($r_4 $r_4 0 0, none);
+      }
     }
   }
 
@@ -598,6 +616,19 @@ entry {
         }
       }
     }
+    &:only-child:last-child {
+      &, .background & {
+        @include radius($r, none);
+        @include linked-entry-outline($cld: only);
+      }
+
+      @if $maj_ver == 3 {
+        progress { @include radius($r, none); }
+      }
+      @else {
+        progress > trough > progress { @include radius($r, none); }
+      }
+    }
   }
 
   .linked.vertical &.flat {
@@ -606,6 +637,9 @@ entry {
     }
     &:first-child { @include radius($r_4 $r_4 0 0, none); }
     &:last-child { @include radius(0 0 $r_4 $r_4, none); }
+    &:only-child:last-child {
+      @include radius($r_4 $r_4 0 0, none);
+    }
   }
 
   &.entry-tag { // for libgd apps
@@ -1182,6 +1216,12 @@ button {
         border-left-width: 1px;
       }
     }
+    &:only-child {
+      &:dir(ltr), &:dir(rtl) {
+        @include radius($r_2);
+        border-width: 1px;
+      }
+    }
 
     &.flat {
       border: none;
@@ -1199,6 +1239,12 @@ button {
           border-left-width: 0;
         }
       }
+      &:only-child {
+        &:dir(ltr), &:dir(rtl) {
+          @include radius($r_2);
+          border-width: 0;
+        }
+      }
     }
   }
 
@@ -1211,6 +1257,10 @@ button {
       @include radius(0 0 $r_2 $r_2);
       border-bottom-width: 1px;
     }
+    &:only-child {
+      @include radius($r_2);
+      border-width: 1px;
+    }
 
     &.flat {
       border: none;
@@ -1219,7 +1269,10 @@ button {
         @include radius(0 0 $r_2 $r_2);
         border-bottom-width: 0;
       }
-      &:only-child { @include radius($r_2); }
+      &:only-child {
+        @include radius($r_2);
+        border-width: 0;
+      }
     }
   }
 

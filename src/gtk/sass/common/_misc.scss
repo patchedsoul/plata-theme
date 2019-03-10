@@ -820,14 +820,6 @@ stack#conversation_viewer {
       }
     }
   }
-
-  // FIXME: entry + 2 meaningless buttons are contained with .linked,
-  // so enforce stand-alone entry border-radius and width
-  searchbar grid.horizontal.linked > entry.search {
-    @include radius($r, none);
-    &:dir(ltr),
-    &:dir(rtl) { border-width: 2px; }
-  }
 }
 
 // /************
@@ -2101,21 +2093,6 @@ terminal-window {
           }
         }
       }
-    }
-  }
-
-  @if $maj_ver == 3 {
-    @if $mnr_ver > 23 { // 'Open new tab' button
-      > headerbar.titlebar > box.linked > button.image-button:only-child {
-        // FIXME: I've never seen a paired hidden GtkToggleButton
-        @include radius($r_2, none);
-      }
-    }
-  }
-  @else {
-    > headerbar.titlebar > box.linked > button.image-button:only-child {
-      // FIXME: I've never seen a paired hidden GtkToggleButton
-      @include radius($r_2, none);
     }
   }
 }
