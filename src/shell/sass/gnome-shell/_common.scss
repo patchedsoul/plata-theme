@@ -3528,25 +3528,6 @@ $grid_size: 136px;
 
 @if $ver > 3.31 { // Emoji keyboard
   .emoji {
-    &-page {
-      .keyboard-key { // use flat-style
-        border: 0 none transparent;
-        background-color: transparent;
-        color: $ovv_sec_fg; // do not set variant-specific
-        &:focus,
-        &:hover {
-          border: 0 none transparent;
-          background-color: opacity($ovv_fg, $a_trk_1);
-          color: $ovv_fg;
-        }
-        &:active {
-          border: 0 none transparent;
-          background-color: opacity($ovv_fg, $a_trk_2);
-          color: $ovv_fg;
-        }
-      }
-    }
-
     &-panel {
       .keyboard-key {
         color: $ovv_sec_fg;
@@ -3554,9 +3535,7 @@ $grid_size: 136px;
         &:hover,
         &:active,
         &:checked { color: $ovv_fg; }
-      }
 
-      .keyboard-key {
         &.default-key { // 'ABC' and 'down-arrow' key
           color: $osd_sec_fg;
           &:focus,
@@ -3576,6 +3555,25 @@ $grid_size: 136px;
             border-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
             background-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
           }
+        }
+      }
+    }
+
+    &-page {
+      .keyboard-key { // use flat-style
+        border: 0 none transparent;
+        background-color: transparent;
+        color: $ovv_sec_fg; // do not set variant-specific
+        &:focus,
+        &:hover {
+          border: 0 none transparent;
+          background-color: opacity($ovv_fg, $a_trk_1);
+          color: $ovv_fg;
+        }
+        &:active {
+          border: 0 none transparent;
+          background-color: opacity($ovv_fg, $a_trk_2);
+          color: $ovv_fg;
         }
       }
     }
