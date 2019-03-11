@@ -2983,9 +2983,12 @@ $grid_size: 136px;
     padding: 2px;
     background-image: none;
     background-color: mix($sel_bg, $sel_fg, percentage($a_fg_2nd));
-    box-shadow: 0 0 0 ($icon_size / 2)
-                opacity(mix($sel_bg, $sel_fg, percentage($a_fg_2nd)),
-                        $a_trk_out);
+    @if $ver < 3.31 {
+      box-shadow: 0 0 0 ($icon_size / 2)
+                  opacity(mix($sel_bg, $sel_fg, percentage($a_fg_2nd)),
+                          $a_trk_out);
+    }
+    @else { box-shadow: $empty_shadow; }
   }
 }
 
