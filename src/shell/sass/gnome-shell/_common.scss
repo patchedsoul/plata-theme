@@ -3509,18 +3509,38 @@ $grid_size: 136px;
         &:focus,
         &:hover {
           border: 0 none transparent;
-          background-color: mix($osd_bg, $osd_fg, percentage($a_fg_2nd));
+          background-color: opacity($osd_fg, $a_trk_1);
           color: $osd_fg;
         }
         &:active {
           border: 0 none transparent;
-          background-color: mix($osd_bg, $osd_fg, percentage(1 - $a_trk_2));
+          background-color: opacity($osd_fg, $a_trk_2);
           color: $osd_fg;
         }
       }
     }
 
     &-panel {
+      .page-indicator {
+        padding: 0; // unset default padding
+
+        &,
+        &:active {
+          .page-indicator-icon {
+            margin: 2px;
+            padding: (($icon_size - 6px) / 2) - 2px; // 6px as default?
+          }
+        }
+
+        &:hover,
+        &:checked {
+          .page-indicator-icon { // increase all radio icon sizes
+            margin: 0;
+            padding: ($icon_size - 6px) / 2;
+          }
+        }
+      }
+
       .keyboard-key:latched {
         border-color: $sel_bg;
         background-color: $sel_bg;
