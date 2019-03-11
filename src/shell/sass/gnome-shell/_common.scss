@@ -3492,6 +3492,24 @@ $grid_size: 136px;
     background-color: $sggt_bg;
     color: $sel_fg;
     box-shadow: $z-depth-2;
+
+    .keyboard-key {
+      border-color: transparent;
+      background-color: transparent;
+      color: $sec_sel_fg;
+      &:focus,
+      &:hover,
+      &:checked {
+        border-color: transparent;
+        background-color: opacity($sel_fg, $a_trk_1);
+        color: $sel_fg;
+      }
+      &:active {
+        border-color: transparent;
+        background-color: opacity($sel_fg, $a_trk_2);
+        color: $sel_fg;
+      }
+    }
   }
 }
 
