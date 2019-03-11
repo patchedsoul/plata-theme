@@ -3494,20 +3494,23 @@ $grid_size: 136px;
     box-shadow: $z-depth-2;
 
     .keyboard-key {
-      border-color: transparent;
-      background-color: transparent;
+      border: 0 none transparent;
+      background-color: $hidden_fill_bg;
       color: $sec_sel_fg;
+      box-shadow: inset 0 0 0 2px $ovv_out_fg;
       &:focus,
       &:hover,
       &:checked {
-        border-color: transparent;
+        border: 0 none transparent;
         background-color: opacity($sel_fg, $a_trk_1);
         color: $sel_fg;
+        box-shadow: $empty_shadow;
       }
       &:active {
-        border-color: transparent;
+        border: 0 none transparent;
         background-color: opacity($sel_fg, $a_trk_2);
         color: $sel_fg;
+        box-shadow: $empty_shadow;
       }
     }
   }
