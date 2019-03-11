@@ -786,8 +786,14 @@ $avatar_width: $icon_size * 1.5;
   }
 
   &.panel-menu {
-    -boxpointer-gap: 4px;
-    @if $ver < 3.31 { margin-bottom: 16px; }
+    @if $ver < 3.31 {
+      -boxpointer-gap: 4px;
+      margin-bottom: 16px;
+    }
+    @else {
+      // child popup-menu-content has 3px top-margin
+      -boxpointer-gap: 4px - 3px;
+    }
   }
 
   StEntry { // use variant-sensitive foreground colors
