@@ -3507,8 +3507,7 @@ $grid_size: 136px;
         background-color: transparent;
         color: $osd_sec_fg;
         &:focus,
-        &:hover,
-        &:checked {
+        &:hover {
           border: 0 none transparent;
           background-color: mix($osd_bg, $osd_fg, percentage($a_fg_2nd));
           color: $osd_fg;
@@ -3523,19 +3522,15 @@ $grid_size: 136px;
 
     &-panel {
       .keyboard-key:latched {
-        border-color:
-          mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
-              $sel_bg, percentage($a_fg_2nd));
-        background-color:
-          mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
-              $sel_bg, percentage($a_fg_2nd));
+        border-color: $sel_bg;
+        background-color: $sel_bg;
         &:hover {
-          border-color:
-            mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
-                $sel_bg, percentage(1 - $a_trk_2));
-          background-color:
-            mix(mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2)),
-                $sel_bg, percentage(1 - $a_trk_2));
+          border-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
+          background-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
+        }
+        &:active {
+          border-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
+          background-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
         }
       }
     }
