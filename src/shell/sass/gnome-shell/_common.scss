@@ -871,14 +871,21 @@ $avatar_width: $icon_size * 1.5;
 
 .candidate-popup-boxpointer {
   -arrow-background-color: transparent;
-  // candidate popups are rendered as OSDs, so no need to set edge borders
   border: 0 none transparent;
   background: transparent; // needs to reset?
-  background-color: opacity($osd_bg, $a_osd);
-  color: $osd_sec_fg;
-  @if $ver > 3.31 {
-    border-radius: $r_4;
-    box-shadow: $z-depth-3;
+  // candidate popups are rendered as OSDs, so no need to set edge borders
+  @if $ver < 3.31 {
+    background-color: opacity($osd_bg, $a_osd);
+    color: $osd_sec_fg;
+  }
+  @else {
+    .candidate-popup-content {
+      margin: 3px 5px 12px;
+      border-radius: $r_4;
+      background-color: opacity($osd_bg, $a_osd);
+      color: $osd_sec_fg;
+      box-shadow: $z-depth-3;
+    }
   }
 }
 
