@@ -3313,13 +3313,16 @@ $grid_size: 136px;
                                           opacity(white, $a_fg_dis));
 
   @if $ver > 3.31 {
-    .page-indicator {
-      padding: $ref_size * 0.3px;
+    .page-indicator { // in the .emoji-panel
+      padding: 0 ($icon_size / 2) $icon_size;
 
-      .page-indicator-icon {
-        width: 6px;
-        height: 6px;
-      }
+      // set variant-specific colors
+      .page-indicator-icon { box-shadow: inset 0 0 0 2px $osd_ter_fg; }
+
+      &:hover .page-indicator-icon { box-shadow: inset 0 0 0 2px $osd_fg; }
+
+      &:active .page-indicator-icon,
+      &:checked .page-indicator-icon { box-shadow: $empty_shadow; }
     }
   }
 }
@@ -3508,52 +3511,50 @@ $grid_size: 136px;
       .keyboard-key { // use flat-style
         border: 0 none transparent;
         background-color: transparent;
-        color: $osd_sec_fg;
+        color: $ovv_sec_fg; // do not set variant-specific
         &:focus,
         &:hover {
           border: 0 none transparent;
-          background-color: opacity($osd_fg, $a_trk_1);
-          color: $osd_fg;
+          background-color: opacity($ovv_fg, $a_trk_1);
+          color: $ovv_fg;
         }
         &:active {
           border: 0 none transparent;
-          background-color: opacity($osd_fg, $a_trk_2);
-          color: $osd_fg;
+          background-color: opacity($ovv_fg, $a_trk_2);
+          color: $ovv_fg;
         }
       }
     }
 
     &-panel {
-      .page-indicator {
-        padding: 0; // unset default padding
-
-        &,
-        &:active {
-          .page-indicator-icon {
-            margin: 2px;
-            padding: (($icon_size - 6px) / 2) - 2px; // 6px as default?
-          }
-        }
-
+      .keyboard-key {
+        color: $ovv_sec_fg;
+        &:focus,
         &:hover,
-        &:checked {
-          .page-indicator-icon { // increase all radio icon sizes
-            margin: 0;
-            padding: ($icon_size - 6px) / 2;
-          }
-        }
+        &:active,
+        &:checked { color: $ovv_fg; }
       }
 
-      .keyboard-key:latched {
-        border-color: $sel_bg;
-        background-color: $sel_bg;
-        &:hover {
-          border-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
-          background-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
+      .keyboard-key {
+        &.default-key { // 'ABC' and 'down-arrow' key
+          color: $osd_sec_fg;
+          &:focus,
+          &:hover,
+          &:active,
+          &:checked { color: $osd_fg; }
         }
-        &:active {
-          border-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
-          background-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
+
+        &:latched {
+          border-color: $sel_bg;
+          background-color: $sel_bg;
+          &:hover {
+            border-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
+            background-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
+          }
+          &:active {
+            border-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
+            background-color: mix($sel_fg, $sel_bg, percentage($a_trk_2));
+          }
         }
       }
     }
