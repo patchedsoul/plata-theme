@@ -854,7 +854,7 @@ $switcher_height: $widget_size - if($ref_weight < 1.0, 10.7px, 5.3px);
     color: $fg;
     box-shadow: inset 1px 0 $div_sld_fg,
                 inset -1px 0 $div_sld_fg,
-                inset 0 -1px $div_sld_fg;
+                inset 0 -9px $div_sld_fg; // bottom-most 8px is dead
 
     button.image-button {
       margin: 0 rem(5.3px) if($ref_weight < 1.0, $raven_box_spacing * 1.5,
