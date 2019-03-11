@@ -864,7 +864,7 @@ $avatar_width: $icon_size * 1.5;
 }
 
 .candidate-popup-boxpointer {
-  -arrow-background-color: opacity($osd_bg, $a_osd);
+  -arrow-background-color: transparent;
   // candidate popups are rendered as OSDs, so no need to set edge borders
   border: 0 none transparent;
   background: transparent; // needs to reset?
