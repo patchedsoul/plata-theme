@@ -818,8 +818,11 @@ $avatar_width: $icon_size * 1.5;
 
 .popup-menu {
   &-arrow { // not really top bar only
-    width: $icon_size;
-    height: $icon_size;
+    @if $ver < 3.31 {
+      width: $icon_size;
+      height: $icon_size;
+    }
+    @else { icon-size: $icon_size; }
   }
 
   &-icon { icon-size: $icon_size; }
