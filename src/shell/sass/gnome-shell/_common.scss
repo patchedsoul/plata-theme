@@ -730,7 +730,7 @@ $avatar_width: $icon_size * 1.5;
     box-shadow: inset 0 2px 2px opacity(black, $a_trk_1);
   }
 
-  @if $ver < 3.31 {
+  @if $ver < 3.25 {
     .popup-menu-content { padding: if($ref_weight >= 1.0, 0.3em 0, 0.21em 0); }
   }
 
@@ -846,14 +846,14 @@ $avatar_width: $icon_size * 1.5;
   -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: $empty_shadow; // dreaming. bug #689995
-  @if $ver < 3.31 {
+  @if $ver < 3.25 {
     border-radius: $r_4;
     box-shadow: $z-depth-3;
   }
 }
 
 .popup-menu-boxpointer {
-  @if $ver < 3.31 {
+  @if $ver < 3.25 {
     -arrow-background-color: $dark_bg; // fake arrows
     border: 1px solid $div_sld_fg;
     background-color: $dark_bg;
@@ -877,7 +877,7 @@ $avatar_width: $icon_size * 1.5;
   border: 0 none transparent;
   background: transparent; // needs to reset?
   // candidate popups are rendered as OSDs, so no need to set edge borders
-  @if $ver < 3.31 {
+  @if $ver < 3.25 {
     background-color: opacity($osd_bg, $a_osd);
     color: $osd_sec_fg;
   }
@@ -2056,7 +2056,7 @@ $avatar_width: $icon_size * 1.5;
 }
 
 
-@if $ver > 3.31 { // limit maximum width
+@if $ver > 3.25 { // limit maximum width
   .app-menu,
   .app-well-menu { max-width: 28em; }
 }
