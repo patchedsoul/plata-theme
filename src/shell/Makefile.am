@@ -402,11 +402,6 @@ cinnamon_asset_checkbox_file = \
 	$(cinnamondir)/assets/checkbox/checkbox-unchecked.svg \
 	$(cinnamondir)/assets/checkbox/radiobutton-checked.svg \
 	$(cinnamondir)/assets/checkbox/radiobutton-unchecked.svg
-cinnamon_asset_menu_file = \
-	$(cinnamondir)/assets/menu/menu-hover.svg \
-	$(cinnamondir)/assets/menu/menu-separator.svg \
-	$(cinnamondir)/assets/menu/menu.svg \
-	$(cinnamondir)/assets/menu/submenu.svg
 cinnamon_asset_misc_file = \
 	$(cinnamondir)/assets/misc/add-workspace-active.svg \
 	$(cinnamondir)/assets/misc/add-workspace-hover.svg \
@@ -438,11 +433,6 @@ cinnamon_lumine_asset_checkbox_file = \
 	$(cinnamonluminedir)/assets/checkbox/checkbox-unchecked.svg \
 	$(cinnamonluminedir)/assets/checkbox/radiobutton-checked.svg \
 	$(cinnamonluminedir)/assets/checkbox/radiobutton-unchecked.svg
-cinnamon_lumine_asset_menu_file = \
-	$(cinnamonluminedir)/assets/menu/menu-hover.svg \
-	$(cinnamonluminedir)/assets/menu/menu-separator.svg \
-	$(cinnamonluminedir)/assets/menu/menu.svg \
-	$(cinnamonluminedir)/assets/menu/submenu.svg
 cinnamon_lumine_asset_misc_file = \
 	$(cinnamonluminedir)/assets/misc/add-workspace-active.svg \
 	$(cinnamonluminedir)/assets/misc/add-workspace-hover.svg \
@@ -474,11 +464,6 @@ cinnamon_noir_asset_checkbox_file = \
 	$(cinnamonnoirdir)/assets/checkbox/checkbox-unchecked.svg \
 	$(cinnamonnoirdir)/assets/checkbox/radiobutton-checked.svg \
 	$(cinnamonnoirdir)/assets/checkbox/radiobutton-unchecked.svg
-cinnamon_noir_asset_menu_file = \
-	$(cinnamonnoirdir)/assets/menu/menu-hover.svg \
-	$(cinnamonnoirdir)/assets/menu/menu-separator.svg \
-	$(cinnamonnoirdir)/assets/menu/menu.svg \
-	$(cinnamonnoirdir)/assets/menu/submenu.svg
 cinnamon_noir_asset_misc_file = \
 	$(cinnamonnoirdir)/assets/misc/add-workspace-active.svg \
 	$(cinnamonnoirdir)/assets/misc/add-workspace-hover.svg \
@@ -642,19 +627,16 @@ if ENABLE_CINNAMON
 
 	$(MKDIR_P) $(srcdir)/cinnamon/assets
 	$(MKDIR_P) $(srcdir)/cinnamon/assets/checkbox
-	$(MKDIR_P) $(srcdir)/cinnamon/assets/menu
 	$(MKDIR_P) $(srcdir)/cinnamon/assets/misc
 	$(MKDIR_P) $(srcdir)/cinnamon/assets/panel
 	$(MKDIR_P) $(srcdir)/cinnamon/assets/switch
 	$(MKDIR_P) $(srcdir)/cinnamon-light/assets
 	$(MKDIR_P) $(srcdir)/cinnamon-light/assets/checkbox
-	$(MKDIR_P) $(srcdir)/cinnamon-light/assets/menu
 	$(MKDIR_P) $(srcdir)/cinnamon-light/assets/misc
 	$(MKDIR_P) $(srcdir)/cinnamon-light/assets/panel
 	$(MKDIR_P) $(srcdir)/cinnamon-light/assets/switch
 	$(MKDIR_P) $(srcdir)/cinnamon-dark/assets
 	$(MKDIR_P) $(srcdir)/cinnamon-dark/assets/checkbox
-	$(MKDIR_P) $(srcdir)/cinnamon-dark/assets/menu
 	$(MKDIR_P) $(srcdir)/cinnamon-dark/assets/misc
 	$(MKDIR_P) $(srcdir)/cinnamon-dark/assets/panel
 	$(MKDIR_P) $(srcdir)/cinnamon-dark/assets/switch
@@ -771,15 +753,12 @@ if ENABLE_CINNAMON
 	$(MKDIR_P) $(platadir)/cinnamon
 	$(MKDIR_P) $(platadir)/cinnamon/assets
 	$(MKDIR_P) $(platadir)/cinnamon/assets/checkbox
-	$(MKDIR_P) $(platadir)/cinnamon/assets/menu
 	$(MKDIR_P) $(platadir)/cinnamon/assets/misc
 	$(MKDIR_P) $(platadir)/cinnamon/assets/panel
 	$(MKDIR_P) $(platadir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_file) $(platadir)/cinnamon
 	cp -Rv $(cinnamon_asset_checkbox_file) \
 		$(platadir)/cinnamon/assets/checkbox
-	cp -Rv $(cinnamon_asset_menu_file) \
-		$(platadir)/cinnamon/assets/menu
 	cp -Rv $(cinnamon_asset_misc_file) \
 		$(platadir)/cinnamon/assets/misc
 	cp -Rv $(cinnamon_asset_panel_file) \
@@ -792,15 +771,12 @@ if ENABLE_CINNAMON
 	$(MKDIR_P) $(luminedir)/cinnamon
 	$(MKDIR_P) $(luminedir)/cinnamon/assets
 	$(MKDIR_P) $(luminedir)/cinnamon/assets/checkbox
-	$(MKDIR_P) $(luminedir)/cinnamon/assets/menu
 	$(MKDIR_P) $(luminedir)/cinnamon/assets/misc
 	$(MKDIR_P) $(luminedir)/cinnamon/assets/panel
 	$(MKDIR_P) $(luminedir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_lumine_file) $(luminedir)/cinnamon
 	cp -Rv $(cinnamon_lumine_asset_checkbox_file) \
 		$(luminedir)/cinnamon/assets/checkbox
-	cp -Rv $(cinnamon_lumine_asset_menu_file) \
-		$(luminedir)/cinnamon/assets/menu
 	cp -Rv $(cinnamon_lumine_asset_misc_file) \
 		$(luminedir)/cinnamon/assets/misc
 	cp -Rv $(cinnamon_lumine_asset_panel_file) \
@@ -813,15 +789,12 @@ if ENABLE_CINNAMON
 	$(MKDIR_P) $(noirdir)/cinnamon
 	$(MKDIR_P) $(noirdir)/cinnamon/assets
 	$(MKDIR_P) $(noirdir)/cinnamon/assets/checkbox
-	$(MKDIR_P) $(noirdir)/cinnamon/assets/menu
 	$(MKDIR_P) $(noirdir)/cinnamon/assets/misc
 	$(MKDIR_P) $(noirdir)/cinnamon/assets/panel
 	$(MKDIR_P) $(noirdir)/cinnamon/assets/switch
 	cp -Rv $(cinnamon_noir_file) $(noirdir)/cinnamon
 	cp -Rv $(cinnamon_noir_asset_checkbox_file) \
 		$(noirdir)/cinnamon/assets/checkbox
-	cp -Rv $(cinnamon_noir_asset_menu_file) \
-		$(noirdir)/cinnamon/assets/menu
 	cp -Rv $(cinnamon_noir_asset_misc_file) \
 		$(noirdir)/cinnamon/assets/misc
 	cp -Rv $(cinnamon_noir_asset_panel_file) \
