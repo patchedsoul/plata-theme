@@ -392,6 +392,10 @@ entry {
 
   @if $maj_ver == 4 {
     &:focus > placeholder { opacity: 0; } // hide placeholders when focused
+
+    &.password image.caps-lock-indicator {
+      color: track(currentColor, $a_fg_3rd); // dim CapsLock icon
+    }
   }
 
   &:drop(active) {
