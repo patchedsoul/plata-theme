@@ -1529,7 +1529,7 @@ $avatar_width: $icon_size * 1.5;
 
 .calendar-change-month {
   &-back { // arrow back
-    @if $ver < 3.32 {
+    @if $ver < 3.31 {
       @include image-loader($url: 'assets/calendar-arrow-left.svg');
     }
     @else {
@@ -1539,13 +1539,13 @@ $avatar_width: $icon_size * 1.5;
     }
     &:hover,
     &:focus {
-      @if $ver < 3.32 {
+      @if $ver < 3.31 {
         @include image-loader($url: 'assets/calendar-arrow-left-hover.svg');
       }
       @else { color: $fg; }
     }
 
-    @if $ver < 3.32 {
+    @if $ver < 3.31 {
       &:rtl {
         @include image-loader($url: 'assets/calendar-arrow-right.svg');
       }
@@ -1557,7 +1557,7 @@ $avatar_width: $icon_size * 1.5;
   }
 
   &-forward { // arrow forward
-    @if $ver < 3.32 {
+    @if $ver < 3.31 {
       @include image-loader($url: 'assets/calendar-arrow-right.svg');
     }
     @else {
@@ -1567,13 +1567,13 @@ $avatar_width: $icon_size * 1.5;
     }
     &:hover,
     &:focus {
-      @if $ver < 3.32 {
+      @if $ver < 3.31 {
         @include image-loader($url: 'assets/calendar-arrow-right-hover.svg');
       }
       @else { color: $fg; }
     }
 
-    @if $ver < 3.32 {
+    @if $ver < 3.31 {
       &:rtl {
         @include image-loader($url: 'assets/calendar-arrow-left.svg');
       }
@@ -2109,7 +2109,7 @@ $close_button_size: 32px;
   width: $close_button_size;
   height: $close_button_size;
   -shell-close-overlap: $close_button_size * 0.75;
-  @if $ver < 3.32 {
+  @if $ver < 3.31 {
     @include image-loader($url: 'assets/window-close.svg');
     background-size: $close_button_size;
     -st-background-image-shadow: $z-depth-1;
@@ -2127,7 +2127,7 @@ $close_button_size: 32px;
   // while transitioning, keep non-duration here
   transition-duration: $tr_d_non;
   &:hover {
-    @if $ver < 3.32 {
+    @if $ver < 3.31 {
       @include image-loader($url: 'assets/window-close-hover.svg');
       -st-background-image-shadow: $z-depth-2;
     }
@@ -2138,7 +2138,7 @@ $close_button_size: 32px;
     }
   }
   &:active {
-    @if $ver < 3.32 {
+    @if $ver < 3.31 {
       @include image-loader($url: 'assets/window-close-active.svg');
       -st-background-image-shadow: $z-depth-2;
     }
