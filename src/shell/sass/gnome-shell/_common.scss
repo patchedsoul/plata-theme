@@ -3539,7 +3539,7 @@ $grid_size: 136px;
         color: $sel_fg;
       }
       &:active {
-        background-color: mix($sel_fg, $sggt_bg, percentage($a_trk_2));
+        background-color: $sel_bg;
         color: $sel_fg;
       }
     }
