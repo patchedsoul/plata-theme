@@ -1152,11 +1152,6 @@ $avatar_width: $icon_size * 1.5;
   transition-timing-function: $tr_t_std;
   transition-duration: $tr_d_lng;
 
-  @if $ver > 3.25 {
-    // NEEDS_REVIEW
-    // font-feature-settings: "tnum"; // >= 3.29
-  }
-
   &:overview,
   &.unlock-screen,
   &.login-screen,
@@ -1595,11 +1590,6 @@ $avatar_width: $icon_size * 1.5;
   border-radius: $r;
   text-align: center;
   transition-duration: $tr_d_sht;
-
-  @if $ver > 3.25 {
-    // NEEDS_REVIEW
-    // font-feature-settings: "tnum"; // >= 3.29
-  }
 
   &:hover,
   &:focus { background-color: $semi_fill_bg; }
@@ -4012,11 +4002,6 @@ $grid_size: 136px;
     padding-bottom: 1.5em;
     color: $ovv_fg;
     text-align: center;
-
-    @if $ver > 3.25 {
-      // NEEDS_REVIEW
-      // font-feature-settings: "tnum"; // >= 3.29
-    }
 
     &-time {
       @include fontscaling($ref_size * 8.4);
