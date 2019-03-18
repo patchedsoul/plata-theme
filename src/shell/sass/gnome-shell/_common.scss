@@ -1499,7 +1499,8 @@ $avatar_width: $icon_size * 1.5;
         border-radius: $r;
         background-color: opacity($sec_fg, $a_trk_1);
         color: $sec_fg;
-        icon-size: $icon_size;
+        icon-size: if($ref_weight >= 1.0, $icon_size * 1.5,
+                                          $icon_size);
       }
 
       &-time {
