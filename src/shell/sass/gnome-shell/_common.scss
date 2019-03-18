@@ -1917,7 +1917,7 @@ $avatar_width: $icon_size * 1.5;
     > .event-time {
       @if $ver > 3.25 {
         @include fontscaling($ref_size * 0.9);
-        min-height: 12px;
+        min-height: $icon_size - 4px;
         margin-bottom: (1.15em - 0.9em) * 1.22;
         padding: 0;
       }
@@ -1929,7 +1929,10 @@ $avatar_width: $icon_size * 1.5;
       color: $osd_ter_fg;
     }
 
-    > StIcon { icon-size: $icon_size; }
+    > StIcon {
+      padding: 0.2em;
+      icon-size: $icon_size;
+    }
 
     .popup-menu & {
       &,
@@ -1940,9 +1943,9 @@ $avatar_width: $icon_size * 1.5;
   &-title {
     @include fontscaling($ref_size * 1.1);
     @if $ver > 3.25 {
-      min-height: 14px;
-      margin-bottom: 0.05em; // base-line correction
-      padding: 0;
+      min-height: $icon_size - 4px;
+      margin-bottom: 0.1em; // base-line correction
+      padding: 1.33px 0 0; // for smaller font-scaling-factor
     }
     @else {
       padding: 0 0 4px;
@@ -1964,7 +1967,7 @@ $avatar_width: $icon_size * 1.5;
     * > StIcon {
       @if $ver > 3.25 {
         padding: 0.2em;
-        icon-size: 16px;
+        icon-size: $icon_size;
       }
       @else {
         padding: 2px;
