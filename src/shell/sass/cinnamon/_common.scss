@@ -1672,7 +1672,13 @@ $large_item: 10px;
     &-alert { background: $acc_fill_bg; }
 
     &-menu {
-      margin: 0.3em (0.3em * 2);
+      margin: 0.3em * 2;
+      border: none;
+      border-radius: $r_8;
+      color: $osd_fg;
+      background-color: opacity($osd_bg, $a_osd);
+      box-shadow: $z-depth-4;
+
       @extend %switcher_item_box_child;
     }
   }
@@ -2408,15 +2414,16 @@ StBin.menu {
   // .switcher-list should be with StBin
   // at the root metaWindow
   StBoxLayout.switcher-list {
-    margin: 0 0.3em;
-    border-radius: $r_4;
-    background-color: $osd_bg; // use opaque
+    margin: 3px 5px (12px - 2px); // reduce bottom margin a bit
+    border-radius: $r_8;
+    background-color: opacity($osd_bg, $a_osd);
 
     .item-box {
+      margin: 0.3em;
       background-color: $hidden_fill_bg;
       border-radius: $r_4;
       &:selected {
-        background-color: mix($osd_bg, $acc_bg, percentage(1 - $a_trk_2));
+        background-color: opacity($acc_bg, $a_trk_2);
       }
 
       > StBoxLayout { // icon and title
