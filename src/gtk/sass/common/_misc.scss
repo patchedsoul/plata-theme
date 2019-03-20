@@ -3152,3 +3152,17 @@ box#eog-thumb-nav { // image gallery
     }
   }
 }
+
+// /*************
+//  * Evolution *
+//  *************/
+
+window.background > box.vertical > box.horizontal + paned.horizontal > widget {
+  > toolbutton > button.image-button.toggle {
+    // damned 24px icons are not allocated at center of the parent button node
+    // without meaningless padding... 
+    min-width: $icon_size * 1.5;
+    min-height: $icon_size * 1.5;
+    padding: if($ref_weight < 1.0, $icon_size / 4, $icon_size / 2);
+  }
+}
