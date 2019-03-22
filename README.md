@@ -55,7 +55,7 @@ Supported Desktop Environments
  * Budgie-Desktop  >= 10.4
  * Cinnamon        >= 3.2.0
  * XFce4           >= 4.12.2
- * Mate            >= 1.14.0
+ * Mate            <= 1.20.0 (We no longer support Mate >= 1.22)
  * LXDE            >= 0.99.1 (Gtk+ 2.x only)
  ```
 
