@@ -3432,7 +3432,7 @@ combobox > window.popup { // combobox specific context-menu popup
         border-bottom-width: $tab_indicator_size;
         box-shadow: none;
         &.reorderable-page {
-          margin: 0 -1px 0 -1px;
+          margin: 0 -1px;
           padding: rem($menuitem_padding / 2) rem($menuitem_padding * 1.5);
           border-left-width: 1px;
           border-right-width: 1px;
@@ -3451,7 +3451,7 @@ combobox > window.popup { // combobox specific context-menu popup
         border-top-width: $tab_indicator_size;
         box-shadow: none;
         &.reorderable-page {
-          margin: 0 -1px 0 -1px;
+          margin: 0 -1px;
           padding: rem($menuitem_padding / 2) rem($menuitem_padding * 1.5);
           border-left-width: 1px;
           border-right-width: 1px;
@@ -3469,7 +3469,7 @@ combobox > window.popup { // combobox specific context-menu popup
         border-right-width: $tab_indicator_size;
         box-shadow: none;
         &.reorderable-page {
-          margin: -1px 0 -1px 0;
+          margin: -1px 0;
           border-bottom-width: 1px;
           border-top-width: 1px;
         }
@@ -3486,7 +3486,7 @@ combobox > window.popup { // combobox specific context-menu popup
         border-left-width: $tab_indicator_size;
         box-shadow: none;
         &.reorderable-page {
-          margin: -1px 0 -1px 0;
+          margin: -1px 0;
           border-bottom-width: 1px;
           border-top-width: 1px;
         }
@@ -3497,10 +3497,10 @@ combobox > window.popup { // combobox specific context-menu popup
 
 %reorderable_tab {
   @each $_tab, $_border, $_rad, $_line in
-    (top, bottom, $r_8 $r_8 0 0, 0 1px),
-    (bottom, top, 0 0 $r_8 $r_8, 0 -1px),
-    (left, right, $r_8 0 0 $r_8, 1px 0),
-    (right, left, 0 $r_8 $r_8 0, -1px 0) {
+    (top, bottom, $r_1 $r_1 0 0, 0 1px),
+    (bottom, top, 0 0 $r_1 $r_1, 0 -1px),
+    (left, right, $r_1 0 0 $r_1, 1px 0),
+    (right, left, 0 $r_1 $r_1 0, -1px 0) {
 
     &.#{$_tab} tab.reorderable-page {
       border: 1px solid transparent;
