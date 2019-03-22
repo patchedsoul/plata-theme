@@ -2862,15 +2862,12 @@ $grid_size: 136px;
 
 // Collections
 .app-folder-icon {
-  padding: 5px;
-  spacing-rows: 5px;
-  spacing-columns: 5px;
+  padding: 7px;
+  spacing-rows: 7px;
+  spacing-columns: 7px;
 }
 
 .app-well-app.app-folder {
-  width: $grid_size;
-  height: $grid_size;
-
   > .overview-icon {
     background-color: $ovv_semi_fill_bg;
     box-shadow: $empty_shadow;
