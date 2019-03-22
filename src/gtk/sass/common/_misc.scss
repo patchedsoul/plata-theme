@@ -14,8 +14,6 @@
 }
 
 %gnome_panel_applet {
-  // do not set transparent background in this template
-  // mate-panel >= 1.18.6 will be broken
   color: if($variant == mixed, $inv_fg, $fg);
   box-shadow: none;
 }

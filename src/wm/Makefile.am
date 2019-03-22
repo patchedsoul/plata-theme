@@ -8,7 +8,6 @@ noircompactdir   = $(DESTDIR)$(themedir)/Plata-Noir-Compact
 
 metacitydir   = $(srcdir)/metacity-1
 metacity_xml_file = \
-	$(metacitydir)/dark/metacity-theme-2.xml \
 	$(metacitydir)/dark/metacity-theme-3.xml
 metacity_asset_file = \
 	$(metacitydir)/dark/button_close_prelight.svg \
@@ -34,7 +33,6 @@ metacity_asset_file = \
 	$(metacitydir)/dark/max_button_unmaximize.svg \
 	$(metacitydir)/dark/thumbnail.png
 metacity_lumine_xml_file = \
-	$(metacitydir)/light/metacity-theme-2.xml \
 	$(metacitydir)/light/metacity-theme-3.xml
 metacity_lumine_asset_file = \
 	$(metacitydir)/light/button_close_prelight.svg \
@@ -235,14 +233,6 @@ if !ENABLE_FLASHBACK
 endif
 endif
 
-if ENABLE_MATE
-if !ENABLE_FLASHBACK
-	cd $(srcdir)/asset/assets-metacity-scripts && \
-	./clone-assets-metacity.sh && \
-	./render-assets-metacity.sh
-endif
-endif
-
 if ENABLE_XFCE
 if ENABLE_PARALLEL
 	cd $(srcdir)/asset/assets-xfwm-scripts && \
@@ -298,20 +288,6 @@ if !ENABLE_FLASHBACK
 endif
 endif
 
-if ENABLE_MATE
-if !ENABLE_FLASHBACK
-	$(MKDIR_P) $(platadir)/metacity-1
-	$(MKDIR_P) $(luminedir)/metacity-1
-	$(MKDIR_P) $(noirdir)/metacity-1
-	cp -Rv $(metacity_xml_file) $(platadir)/metacity-1
-	cp -Rv $(metacity_xml_file) $(noirdir)/metacity-1
-	cp -Rv $(metacity_lumine_xml_file) $(luminedir)/metacity-1
-	cp -Rv $(metacity_asset_file) $(platadir)/metacity-1
-	cp -Rv $(metacity_asset_file) $(noirdir)/metacity-1
-	cp -Rv $(metacity_lumine_asset_file) $(luminedir)/metacity-1
-endif
-endif
-
 if ENABLE_XFCE
 	$(MKDIR_P) $(platadir)/xfwm4
 	$(MKDIR_P) $(noirdir)/xfwm4
@@ -353,14 +329,6 @@ if !ENABLE_FLASHBACK
 endif
 endif
 
-if ENABLE_MATE
-if !ENABLE_FLASHBACK
-	test -e $(noirdir)/metacity-1 && rm -rfv $(noirdir)/metacity-1
-	test -e $(luminedir)/metacity-1 && rm -rfv $(luminedir)/metacity-1
-	test -e $(platadir)/metacity-1 && rm -rfv $(platadir)/metacity-1
-endif
-endif
-
 if ENABLE_XFCE
 	test -e $(noirdir)/xfwm4 && rm -rfv $(noirdir)/xfwm4
 	test -e $(luminedir)/xfwm4 && rm -rfv $(luminedir)/xfwm4
@@ -391,19 +359,6 @@ CLEANFILES += \
 endif
 
 if ENABLE_CINNAMON
-if !ENABLE_FLASHBACK
-CLEANFILES += \
-	$(metacitydir)/light/*.svg \
-	$(metacitydir)/light/*.png \
-	$(metacitydir)/dark/*.svg \
-	$(metacitydir)/dark/*.png \
-	$(srcdir)/asset/assets-metacity/common/button_close_pressed.svg \
-	$(srcdir)/asset/assets-metacity/common/button_close_prelight.svg \
-	$(srcdir)/asset/inkscape.log
-endif
-endif
-
-if ENABLE_MATE
 if !ENABLE_FLASHBACK
 CLEANFILES += \
 	$(metacitydir)/light/*.svg \

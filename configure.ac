@@ -29,7 +29,6 @@ PLATA_OPTION([GNOME],     [gnome],     [Gnome-Shell],         [enable])
 PLATA_OPTION([CINNAMON],  [cinnamon],  [Cinnamon],            [enable])
 PLATA_OPTION([FLASHBACK], [flashback], [Flashback],           [enable])
 PLATA_OPTION([XFCE],      [xfce],      [XFce],                [enable])
-PLATA_OPTION([MATE],      [mate],      [Mate],                [enable])
 PLATA_OPTION([OPENBOX],   [openbox],   [Openbox],             [enable])
 PLATA_OPTION([PLANK],     [plank],     [Plank],               [disable])
 PLATA_OPTION([TELEGRAM],  [telegram],  [Telegram],            [disable])
@@ -130,7 +129,6 @@ AC_MSG_RESULT([
          Cinnamon:               $ENABLE_CINNAMON (default: yes)
          GNOME-Flashback:        $ENABLE_FLASHBACK (default: yes)
          XFce:                   $ENABLE_XFCE (default: yes)
-         Mate:                   $ENABLE_MATE (default: yes)
          Openbox:                $ENABLE_OPENBOX (default: yes)
 
         -----------------------------------------------------------------
