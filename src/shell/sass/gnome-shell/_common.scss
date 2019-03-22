@@ -1468,7 +1468,7 @@ $avatar_width: $icon_size * 1.5;
     }
 
     &-time {
-      @include fontscaling($ref_size * 1.1);
+      @include fontscaling($ref_size * 1.0);
       color: $sec_fg;
     }
 
