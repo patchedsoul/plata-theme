@@ -731,7 +731,6 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
     margin: 0;
     padding: 0;
     border-radius: $r;
-    &:focus,
     &:hover { background-color: $semi_fill_bg; }
     &:active { background-color: $fill_bg; }
   }
