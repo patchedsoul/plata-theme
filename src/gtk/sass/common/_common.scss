@@ -5529,14 +5529,6 @@ tooltip {
 }
 
 .tooltip:not(tooltip) {
-  // FIXME: This should be purged! Only for ancient Marco.
-  background-color: if($variant == mixed, track($inv_tooltip_bg, $a_osd),
-                                          track($tooltip_bg, $a_osd));
-
-  > label { // for Marco
-      color: if($variant == mixed, $inv_fg, $fg);
-  }
-
   // protect the child widget foregrounds for damned Eclipse's debug tooltips
   > * > label { color: $fg; }
 }
