@@ -1518,8 +1518,12 @@ $avatar_width: $icon_size * 1.5;
   border-radius: $r;
   color: $fg;
   background-color: transparent;
-  &:hover,
-  &:focus { background-color: $semi_fill_bg; }
+  &:hover { background-color: $semi_fill_bg; }
+  &:focus {
+    background-color: opacity($dark_bg, 0.01);
+    box-shadow: inset 0 0 0 2px $out_fg;
+    &:hover { background-color: $semi_fill_bg; }
+  }
   &:active { background-color: $fill_bg; }
 }
 
