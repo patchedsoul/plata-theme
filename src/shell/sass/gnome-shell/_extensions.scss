@@ -256,6 +256,11 @@ $icon_padding: 9px;
 //  * Dash To Panel Extension *
 //  ***************************/
 
+$a_dtp_trk_1: if($variant == light, $a_trk_1,
+                                    $a_trk_1 - 0.08);
+$a_dtp_trk_2: if($variant == light, $a_trk_2,
+                                    $a_trk_2 - 0.15);
+
 @each $_position, $_line in (Top, 0 2px),
                             (Bottom, 0 -2px) {
   #panel.dashtopanelMainPanel.dashtopanel#{$_position} {
@@ -297,20 +302,15 @@ $icon_padding: 9px;
     #dashtopanelScrollview {
       padding: 0;
 
-      .app-well-app,
-      .show-apps { // unset underlines
-        &:focus .overview-icon,
-        &:hover .overview-icon {
+      .app-well-app { // stylesheet.css gets in our way
+        &:focus .dtp-container,
+        &:hover .dtp-container {
           background-color: $osd_semi_fill_bg;
-          box-shadow: $empty_shadow;
+          box-shadow: inset 0 0 0 999px opacity($osd_fg, $a_dtp_trk_1);
         }
-        &:active .overview-icon {
+        &:active .dtp-container {
           background-color: $osd_fill_bg;
-          box-shadow: $empty_shadow;
-        }
-        &:checked .overview-icon {
-          background-color: $hidden_fill_bg;
-          box-shadow: $empty_shadow;
+          box-shadow: inset 0 0 0 999px opacity($osd_fg, $a_dtp_trk_2);
         }
       }
     }
