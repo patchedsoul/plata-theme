@@ -2675,7 +2675,6 @@ $provider_icon_size: 32px; // for < 3.25
   padding: 0;
   border: none;
   border-radius: 0;
-  color: $ovv_fg;
   background-color: transparent;
   box-shadow: $empty_shadow;
   transition-duration: $tr_d_lng;
@@ -2796,6 +2795,7 @@ $grid_size: 136px;
     border: none;
     border-radius: $r_2;
     color: $ovv_sec_fg;
+    box-shadow: $empty_shadow;
     font-weight: 700;
     text-align: center;
     transition-duration: $tr_d_non;
@@ -2817,6 +2817,7 @@ $grid_size: 136px;
     background-color: $ovv_semi_fill_bg;
     background-image: none;
     color: $ovv_fg;
+    box-shadow: $empty_shadow;
     transition-duration: $tr_d_sht;
   }
 
@@ -2825,11 +2826,11 @@ $grid_size: 136px;
     background-color: $ovv_fill_bg;
     background-image: none;
     color: $ovv_fg;
+    box-shadow: $empty_shadow;
     transition-duration: $tr_d_std;
   }
 
   &:checked .overview-icon {
-    border-radius: $r_2;
     background-color: $sel_bg;
     color: $sel_fg;
     box-shadow: $empty_shadow;
@@ -2847,6 +2848,8 @@ $grid_size: 136px;
   .overview-icon {
     // set circle dock buttons on dash
     #dash & { border-radius: $r; }
+
+    #panel & { border-radius: 0; }
   }
 }
 

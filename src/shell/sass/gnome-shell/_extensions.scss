@@ -164,14 +164,16 @@ $icon_padding: 9px;
   }
 
   &:overview #dash { // overview-mode #1
-    background-color: $panel_hidden_bg;
+    background-color: if($variant == light, opacity($panel_bg, $a_fg_3rd),
+                                            $panel_hidden_bg);
     box-shadow: $empty_shadow;
   }
 
   &.opaque:overview,
   &.transparent:overview { // overview-mode #2
     #dash {
-      background-color: transparent !important;
+      background-color: if($variant == light, opacity($panel_bg, $a_fg_3rd),
+                                              transparent !important);
       box-shadow: none !important;
     }
   }
@@ -180,7 +182,8 @@ $icon_padding: 9px;
   &.opaque.extended:overview,
   &.transparent.extended:overview {
     #dash {
-      background-color: $panel_hidden_bg;
+      background-color: if($variant == light, opacity($panel_bg, $a_fg_3rd),
+                                              $panel_hidden_bg);
       box-shadow: $empty_shadow;
     }
   }
@@ -190,6 +193,19 @@ $icon_padding: 9px;
     .overview-icon {
       padding: $icon_padding;
       background-size: contain;
+    }
+  }
+
+  .app-well-app,
+  .show-apps {
+    &:focus .overview-icon,
+    &:hover .overview-icon,
+    &:selected .overview-icon { background-color: $osd_semi_fill_bg; }
+
+    &:active .overview-icon { background-color: $osd_fill_bg; }
+
+    &:checked:hover .overview-icon {
+      background-color: mix($sel_fg, $sel_bg, percentage($a_trk_1));
     }
   }
 
@@ -203,7 +219,7 @@ $icon_padding: 9px;
       height: 3px;
       margin-bottom: 0;
       border-radius: 0;
-      background-color: $ovv_sel_label;
+      background-color: $osd_sel_label;
     }
 
     > StWidget.focused .app-well-app-running-dot {
@@ -238,15 +254,16 @@ $icon_padding: 9px;
 @each $_dock in top, bottom, left, right {
   #dashtodockContainer.#{$_dock},
   #dashtodockContainer.extended.#{$_dock} {
-    .dash-item-container > StWidget.focused { // fill whole focused backgrounds
+    // fill whole focused backgrounds
+    .dash-item-container > .app-well-app.focused {
       .overview-icon {
         border-radius: 0;
-        background-color: $ovv_semi_fill_bg;
+        background-color: $osd_semi_fill_bg;
       }
 
       &:hover .overview-icon {
         border-radius: 0;
-        background-color: $ovv_fill_bg;
+        background-color: $osd_fill_bg;
       }
     }
   }
@@ -272,21 +289,15 @@ $a_dtp_trk_2: if($variant == light, $a_trk_2,
     #panelCenter,
     .panel-corner,
     .panel-button {
-      &:hover {
-        box-shadow: inset #{$_line} $osd_out_fg;
-      }
+      &:hover { box-shadow: inset #{$_line} $osd_out_fg; }
       &:active,
       &:focus,
       &:checked,
-      &:overview {
-        box-shadow: inset #{$_line} $sel_bg;
-      }
+      &:overview { box-shadow: inset #{$_line} $sel_bg; }
     }
 
     .app-well-app,
     .show-apps {
-      .overview-icon { border-radius: 0; }
-
       &:focus,
       &:hover,
       &:active,
@@ -314,7 +325,7 @@ $a_dtp_trk_2: if($variant == light, $a_trk_2,
         }
 
         // unfocused dot(s)
-        .app-well-app-running-dot { background-color: $ovv_sel_label; }
+        .app-well-app-running-dot { background-color: $osd_sel_label; }
         // focused dot(s)
         &.focused .app-well-app-running-dot { background-color: $sel_bg; }
       }
@@ -332,7 +343,6 @@ $a_dtp_trk_2: if($variant == light, $a_trk_2,
       }
       &:checked {
         background-color: $panel_hidden_bg;
-        color: $osd_fg;
         box-shadow: inset #{$_line} $sel_bg;
         &:hover { background-color: $osd_semi_fill_bg; }
       }

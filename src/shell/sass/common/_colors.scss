@@ -64,6 +64,11 @@ $sel_label: if($variant == dark,
                  lighten($sel_bg, percentage($a_trk_2)),
                  percentage($a_trk_2)),
                $sel_bg);
+$osd_sel_label: if($variant != light,
+                   saturate(
+                     lighten($sel_bg, percentage($a_trk_2)),
+                     percentage($a_trk_2)),
+                   $sel_bg);
 $ovv_sel_label: saturate(
                   lighten($sel_bg, percentage($a_trk_2)),
                   percentage($a_trk_2));
