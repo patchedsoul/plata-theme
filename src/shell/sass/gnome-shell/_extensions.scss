@@ -312,6 +312,11 @@ $a_dtp_trk_2: if($variant == light, $a_trk_2,
           background-color: $osd_fill_bg;
           box-shadow: inset 0 0 0 999px opacity($osd_fg, $a_dtp_trk_2);
         }
+
+        // unfocused dot(s)
+        .app-well-app-running-dot { background-color: $ovv_sel_label; }
+        // focused dot(s)
+        &.focused .app-well-app-running-dot { background-color: $sel_bg; }
       }
     }
 
