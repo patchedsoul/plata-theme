@@ -1285,6 +1285,13 @@ $avatar_width: $icon_size * 1.5;
   .panel-status-indicators-box,
   .panel-status-menu-box { spacing: 0; }
 
+  .panel-status-indicators-box {
+    .power-status StLabel { // battery percentage?
+      margin-top: 0.05em; // smaller fonts are used
+      padding: 0;
+    }
+  }
+
   .screencast-indicator { color: $dest_bg; }
 
   @if $ver > 3.25 {
