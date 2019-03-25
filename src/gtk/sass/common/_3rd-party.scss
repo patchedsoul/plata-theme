@@ -2517,32 +2517,6 @@ revealer > widget > headerbar.imageOverlay.titlebar {
   }
 }
 
-list.fr-sidebar { // left-most sidebar
-  > row.activatable {
-    &:hover {
-      box-shadow: inset 0 0 0 999px mix($fg, $bg, percentage($a_trk_1));
-    }
-    &:active {
-      box-shadow: inset 0 0 0 999px mix($fg, $bg, percentage($a_trk_2));
-    }
-    &:selected:hover {
-      * {
-        box-shadow:
-          inset 0 0 0 999px mix($sel_fg, $sel_bg, percentage($a_trk_1));
-      }
-    }
-  }
-}
-
-button.flat.fr-sidebar-symbolic { // '+' and '-' buttons
-  &:hover {
-    box-shadow: inset 0 0 0 999px mix($fg, $bg, percentage($a_trk_1));
-  }
-  &:active {
-    box-shadow: inset 0 0 0 999px mix($fg, $bg, percentage($a_trk_2));
-  }
-}
-
 // /************
 //  * Synaptic *
 //  ************/
