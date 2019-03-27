@@ -6,8 +6,8 @@
 // provide font size in rem, with px fallback
 $ref_size: 13.33;
 
-@mixin fontscaling($size: $ref_size) {
-  font-size: round( $size * 72 / 96 * 10 ) / 10 + pt;
+@mixin fontscaling($s: 1.0) {
+  font-size: round($ref_size * $s * 72 / 96 * 10) / 10 + pt;
 }
 
 // image loader
