@@ -111,14 +111,14 @@ AC_MSG_RESULT([
          destruction-color:      $DESTRUCTION (default: $destruction_default)
 
         -----------------------------------------------------------------
-        | Supported Gtk+ Version
+        | Supported Gtk Version
         -----------------------------------------------------------------
 
-         Gtk+ 2.0:               always
-         Gtk+ 3.20:              always
-         Gtk+ 3.22:              always
-         Gtk+ 3.24:              always
-         Gtk+ 4.0:               $ENABLE_GTK_NEXT (default: no)
+         Gtk 2.0:                always
+         Gtk 3.20:               always
+         Gtk 3.22:               always
+         Gtk 3.24:               always
+         Gtk 4.0:                $ENABLE_GTK_NEXT (default: no)
 
         -----------------------------------------------------------------
         | DE and WM Support
