@@ -17,7 +17,7 @@
 # Usage: ./parse-sass.sh [ -a ]
 #
 # Optional arguments:
-#    -a        generates CSSs for all of Gtk+ versioned
+#    -a        generates CSSs for all of Gtk versioned
 
 usage() {
     sed -rn '/^# Usage/,${/^#/!q;s/^# ?//;p}' "$0"
@@ -28,13 +28,13 @@ if [ "$1" = '-h' ] || [ "$1" = '--help' ] || [ "$1" = 'help' ]; then
     exit 1
 fi
 
-##########################
-# Check Gtk+-3.0 version #
-##########################
+#########################
+# Check Gtk-3.0 version #
+#########################
 
 PKG_CONFIG="`command -v pkg-config`"
 
-# evenize minor version number of gtk+-3.0
+# evenize minor version number of gtk-3.0
 major="`$PKG_CONFIG --modversion gtk+-3.0 | cut -d. -f1`"
 minor="`$PKG_CONFIG --modversion gtk+-3.0 | cut -d. -f2`"
 if [ $(expr "$minor" % 2) -ne 0 ]; then

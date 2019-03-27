@@ -2484,7 +2484,7 @@ style "calendar" {
 }
 
 style "tooltips" {
-  # Gtk+3: 7px 8px 8px
+  # Gtk-3: 7px 8px 8px
   xthickness = 8
   ythickness = 9
 

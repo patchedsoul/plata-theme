@@ -19,7 +19,7 @@
 # Example:
 #   ./compile-gresource.sh 3.22
 #
-#   compile gtk.gresouce for Gtk+ version 3.22
+#   compile gtk.gresouce for Gtk version 3.22
 
 usage() {
     sed -rn '/^# Usage/,${/^#/!q;s/^# ?//;p}' "$0"

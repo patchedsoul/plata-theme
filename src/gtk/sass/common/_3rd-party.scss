@@ -2938,7 +2938,7 @@ box#DockBox > paned#DockBoxPane {
             background-color: $dark_bg;
             color: mix($fix_fg, $dark_bg, percentage($a_fg_dis));
 
-            label, // reset for generic non-composited Gtk+ apps
+            label, // reset for generic non-composited Gtk apps
             arrow { color: mix($fg, $dark_bg, percentage($a_fg_dis)); }
           }
         }

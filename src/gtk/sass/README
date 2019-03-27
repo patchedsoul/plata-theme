@@ -13,8 +13,8 @@ processed in SASS. The generated CSS is then transformed into a gresource
 file during gtk build and used at runtime in a non-legible or editable form.
 
 The 'parse-sass.sh' requires a development package of libgtk-3.0 to check
-the current version of Gtk+ 3.x via pkg-config. Or simply run
-'./parse-sass.sh -a' to generate all of Gtk+ versioned CSSs.
+the current version of Gtk 3.x via pkg-config. Or simply run
+'./parse-sass.sh -a' to generate all of Gtk versioned CSSs.
 
 It is very likely your change will happen in the _common.scss file.
 That's where all the widget selectors are defined.

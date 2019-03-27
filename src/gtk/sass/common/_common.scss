@@ -3695,7 +3695,7 @@ scrollbar {
       .background scrolledwindow > &:not(.overlay-indicator) {
         // Negative margins can reduce the unwanted gap
         // since we don't have any outer borders and
-        // Gtk+ seems to allocate 1px borders always when
+        // Gtk seems to allocate 1px borders always when
         // overlay-indicator was disabled.
         margin: #{$_margin};
       }
