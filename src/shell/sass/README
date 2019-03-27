@@ -21,7 +21,7 @@ right place for a drive by stylesheet fix:
 _colors.scss        - global color definitions. We keep the number of defined
                       colors to a necessary minimum, most colors are derived
                       from a handful of basics. It is an exact copy of the
-                      gtk+ counterpart. Light theme is used for the classic
+                      gtk counterpart. Light theme is used for the classic
                       theme and dark is for GNOME3 shell default.
 
 _drawing.scss       - drawing helper mixings/functions to allow easier
