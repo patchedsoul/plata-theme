@@ -2,7 +2,7 @@
 
 ### Plata-theme
 
-A Gtk+ theme based on Material Design Refresh.
+A Gtk theme based on Material Design Refresh.
 
 ----------------------------------------------
 
@@ -27,7 +27,7 @@ In Gnome, "window-scaling-factor = 1.0" means `-gtk-dpi = 96`, it also means:
   13 [px] x 72 [pt/inch] / 96 [px/inch] = 9.75 [pt]
   14 [px] x 72 [pt/inch] / 96 [px/inch] = 10.5 [pt]
   ```
-That's the reason why `13.33px = 10pt` is used for rem/px conversion in Gtk+ 3.2x/4.0 theming.
+That's the reason why `13.33px = 10pt` is used for rem/px conversion in Gtk 3.2x/4.0 theming.
 
 > **Note:**
 >
@@ -37,11 +37,11 @@ That's the reason why `13.33px = 10pt` is used for rem/px conversion in Gtk+ 3.2
 
 Required Components
 -------------------
-Plata supports Gtk+ 2.24.x, 3.20.x, 3.22.x and 3.24.x.
+Plata supports Gtk 2.24.x, 3.20.x, 3.22.x and 3.24.x.
 
  ```
- * Gtk+-3.0             >= 3.20.0
- * Gtk+-2.0             >= 2.24.30
+ * Gtk-3.0             >= 3.20.0
+ * Gtk-2.0             >= 2.24.30
  * gtk2-engines-pixbuf  >= 2.24.30
  * gtk2-engines-murrine >= 0.98.1
  ```
@@ -55,10 +55,10 @@ Supported Desktop Environments
  * Budgie-Desktop  >= 10.4
  * Cinnamon        >= 3.2.0
  * XFce4           >= 4.12.2
- * LXDE            >= 0.99.1 (Gtk+ 2.x only)
+ * LXDE            >= 0.99.1 (Gtk 2.x only)
  ```
 
-Unsupported Gtk+ Based Desktop(s)
+Unsupported Gtk Based Desktop(s)
 -------------------------------
  * Pantheon
  * Unity7
@@ -114,7 +114,7 @@ Installation from Git Source
  >
  >   * Plata employs **SassC** wrapper of `libsass` to generate CSS stylesheets.
  >   * Plata uses `inkscape` to generate installable PNG files.
- >   * Plata uses `glib-compile-resources` to compile the gresource files for Gtk+ and Gnome-Shell.
+ >   * Plata uses `glib-compile-resources` to compile the gresource files for Gtk and Gnome-Shell.
  >   * `glib-2.0 >= 2.53`, Gnome-Shell 3.26 theming is used if `--enable-gnome`.
 
 3. Build and install system-wide:
@@ -132,7 +132,7 @@ Installation from Git Source
  >   * `make` generates proper CSSs and PNGs to be installed.
  >     It will take about 5min to 15min to build.
  >     For example, Ubuntu's build-server takes 10min.
- >   * `sudo make install` installs multiple versioned theme and Gtk+ automatically selects the properly versioned one when running.
+ >   * `sudo make install` installs multiple versioned theme and Gtk automatically selects the properly versioned one when running.
 
 4. To speed up by using concurrency-build, pass this specific option to `autogen.sh`:
 
@@ -163,10 +163,10 @@ Installation from Git Source
  >   * The installer installs Budgie-Desktop support even if all of options above were applied.
  >   * Cinnamon hooks `metacity-1` directory even if GNOME-Flashback support was disabled.
 
-6. To enable extra Gtk+ release support, pass these options:
+6. To enable extra Gtk release support, pass these options:
 
  ```
- --enable-gtk_next      enable Gtk+ 4.0 support (type: bool)
+ --enable-gtk_next      enable Gtk 4.0 support (type: bool)
  ```
 
 7. To change the default 4 **Key-Colors**, pass these options:
@@ -236,7 +236,7 @@ Extra Dock Support
  --enable-plank         enable Plank support (type: bool)
  ```
 
- Then select `Gtk+` via `plank --preferences`.
+ Then select `Gtk` via `plank --preferences`.
 
  > **Note:**
  >
