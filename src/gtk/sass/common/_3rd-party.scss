@@ -414,31 +414,15 @@ stack.icon-popover-stack {
   background-color: transparent;
   color: if($variant == mixed, $inv_fg, $fg);
   font-weight: 700; // enforce bold weight
-  &:hover,
-  &:active {
+  &:not(:disabled) {
     background-color: transparent;
-    color: if($variant == light, black, $sel_fg);
+    background-image: none;
+    animation: none;
   }
 }
 
 button.flat.budgie-menu-launcher {
   @extend %budgie_trigger_button;
-  @if $variant == mixed {
-    @include ink-reaction(tab-normal, $fc: $inv_fg, $bs: 8, $i: 2);
-  }
-  @else {
-    @include ink-reaction(tab-normal, $fc: $fg, $bs: 8, $i: 2);
-  }
-  &:checked {
-    @if $variant == mixed {
-      background-color: transparent;
-      @include ink-reaction(tab-active, $fc: $inv_fg, $bs: 8);
-    }
-    @else {
-      background-color: transparent;
-      @include ink-reaction(tab-active, $fc: $fg, $bs: 8);
-    }
-  }
 
   box.horizontal > label {
     &:dir(ltr) { margin-left: -$icon_size / 4; }
@@ -1537,18 +1521,6 @@ window.budgie-switcher-window {
 // raven-controller applet
 button.flat.raven-trigger {
   @extend %budgie_trigger_button;
-  @if $variant != light {
-    @include ink-reaction(normal, $fc: $sel_fg, $tr: ink-normal-dec);
-    &:active {
-      @include ink-reaction(active-dec, $fc: $sel_fg, $tr: ink-active-dec);
-    }
-  }
-  @else {
-    @include ink-reaction(normal, $fc: black, $tr: ink-normal-dec);
-    &:active {
-      @include ink-reaction(active-dec, $fc: black, $tr: ink-active-dec);
-    }
-  }
 
   image { margin: 0 3px; } // add internal spacing
 
