@@ -1880,6 +1880,14 @@ combobox {
     &:disabled { @include combobutton(solid-disabled); }
 
     .background & { outline-width: 2px; } // revive standard outlines
+
+    // some rare cases
+    row.activatable:hover & {
+      background-color: $base; // tone down
+      &:hover,
+      &:active,
+      &:checked { background-color: track($fg, $a_trk_2); }
+    }
   }
 
   entry.combo:not(.flat) + button.combo {
