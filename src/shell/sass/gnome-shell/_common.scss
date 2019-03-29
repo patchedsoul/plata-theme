@@ -786,7 +786,7 @@ $avatar_width: $icon_size * 1.5;
   }
 
   &.panel-menu {
-    @if $ver < 3.31 {
+    @if $ver < 3.25 {
       -boxpointer-gap: 4px;
       margin-bottom: 16px;
     }
