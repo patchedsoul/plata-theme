@@ -62,6 +62,7 @@ shell_asset_file = \
 	$(shelldir)/assets/checkbox-off.svg \
 	$(shelldir)/assets/checkbox.svg \
 	$(shelldir)/assets/dash-placeholder.svg \
+	$(shelldir)/assets/dialog-shadow.svg \
 	$(shelldir)/assets/go-down.svg \
 	$(shelldir)/assets/go-up.svg \
 	$(shelldir)/assets/media-control-active.svg \
@@ -144,6 +145,7 @@ shell_lumine_asset_file = \
 	$(shellluminedir)/assets/checkbox-off.svg \
 	$(shellluminedir)/assets/checkbox.svg \
 	$(shellluminedir)/assets/dash-placeholder.svg \
+	$(shellluminedir)/assets/dialog-shadow.svg \
 	$(shellluminedir)/assets/go-down.svg \
 	$(shellluminedir)/assets/go-up.svg \
 	$(shellluminedir)/assets/media-control-active.svg \
@@ -205,6 +207,7 @@ shell_noir_asset_file = \
 	$(shellnoirdir)/assets/checkbox-off.svg \
 	$(shellnoirdir)/assets/checkbox.svg \
 	$(shellnoirdir)/assets/dash-placeholder.svg \
+	$(shellnoirdir)/assets/dialog-shadow.svg \
 	$(shellnoirdir)/assets/go-down.svg \
 	$(shellnoirdir)/assets/go-up.svg \
 	$(shellnoirdir)/assets/media-control-active.svg \
@@ -266,6 +269,7 @@ shell_compact_asset_file = \
 	$(shellcompactdir)/assets/checkbox-off.svg \
 	$(shellcompactdir)/assets/checkbox.svg \
 	$(shellcompactdir)/assets/dash-placeholder.svg \
+	$(shellcompactdir)/assets/dialog-shadow.svg \
 	$(shellcompactdir)/assets/go-down.svg \
 	$(shellcompactdir)/assets/go-up.svg \
 	$(shellcompactdir)/assets/media-control-active.svg \
@@ -327,6 +331,7 @@ shell_lumine_compact_asset_file = \
 	$(shellluminecompactdir)/assets/checkbox-off.svg \
 	$(shellluminecompactdir)/assets/checkbox.svg \
 	$(shellluminecompactdir)/assets/dash-placeholder.svg \
+	$(shellluminecompactdir)/assets/dialog-shadow.svg \
 	$(shellluminecompactdir)/assets/go-down.svg \
 	$(shellluminecompactdir)/assets/go-up.svg \
 	$(shellluminecompactdir)/assets/media-control-active.svg \
@@ -387,6 +392,7 @@ shell_noir_compact_asset_file = \
 	$(shellnoircompactdir)/assets/checkbox-off.svg \
 	$(shellnoircompactdir)/assets/checkbox.svg \
 	$(shellnoircompactdir)/assets/dash-placeholder.svg \
+	$(shellnoircompactdir)/assets/dialog-shadow.svg \
 	$(shellnoircompactdir)/assets/go-down.svg \
 	$(shellnoircompactdir)/assets/go-up.svg \
 	$(shellnoircompactdir)/assets/media-control-active.svg \
