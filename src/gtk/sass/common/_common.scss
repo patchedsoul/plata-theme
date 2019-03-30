@@ -5743,6 +5743,29 @@ decoration {
     &, &:backdrop { border-radius: 0; }
   }
 
+  @if $maj_ver == 3 {
+    @if $mnr_ver > 23 {
+      // FIXME: maxd SSDs seem to introduce unwanted window edge artifacts
+      // when the child modal-dialog is attached on GNOME 3.32, mystery...
+      window.fullscreen:not(.csd) &,
+      window.maximized:not(.csd) & {
+        &, &:backdrop {
+          box-shadow: none;
+          transition-duration: 0s;
+        }
+      }
+    }
+  }
+  @else {
+    window.fullscreen:not(.csd) &,
+    window.maximized:not(.csd) & {
+      &, &:backdrop {
+        box-shadow: none;
+        transition-duration: 0s;
+      }
+    }
+  }
+
   @each $_constraint,
         $_shadow in ('', $z-depth-2-backdrop-tiled),
                     ('-top', $z-depth-2-backdrop-tiled-top),
