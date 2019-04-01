@@ -857,6 +857,10 @@ $avatar_width: $icon_size * 1.5;
     border-radius: $r_4;
     box-shadow: $z-depth-3;
   }
+  @else { // shut up 3rd-party gresources
+    border-radius: 0;
+    box-shadow: $empty_shadow;
+  }
 }
 
 .popup-menu-boxpointer {
@@ -2234,6 +2238,7 @@ $close_button_size: 32px;
     @include fontscaling(1.0);
     spacing: if($ref_weight >= 1.0, 20px, 16px);
     padding: if($ref_weight >= 1.0, 12px, 8px);
+    background-color: transparent; // shut up 3rd-party gresources
     color: $osd_fg;
     &:selected {
       background-color: $sel_bg;
@@ -2346,7 +2351,6 @@ $close_button_size: 32px;
   padding: if($ref_weight >= 1.0, 0.4em 0.8em, 0.3em 0.6em);
   border-radius: $r;
   border: 2px solid transparent;
-  color: $ter_fg;
   background-color: opacity($base, $a_fg_3rd);
   box-shadow: $empty_shadow;
   font-weight: 400;
@@ -2355,14 +2359,22 @@ $close_button_size: 32px;
   selection-background-color: $sel_bg;
   selected-color: $sel_fg;
 
-  StLabel { margin-bottom: 0.1em; }
+  &,
+  StLabel {
+    margin-bottom: 0.1em;
+    color: $ter_fg; // shut up 3rd-party gresources
+  }
 
   &:hover,
   &:focus {
-    color: $fg;
     caret-color: $fg;
     background-color: $base;
     box-shadow: $z-depth-2;
+
+    &,
+    StLabel {
+      color: $fg; // shut up 3rd-party gresources
+    }
   }
 
   &:focus { border-color: $sel_bg; }
