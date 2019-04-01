@@ -2886,8 +2886,8 @@ $grid_size: 136px;
   background-color: $sel_bg;
 
   .dash-item-container & {
-    width: 6px;
-    height: 6px;
+    width: $icon_size / 2;
+    height:  $icon_size / 2;
     margin-bottom: 2px;
     border-radius: $r;
   }
