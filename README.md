@@ -62,7 +62,7 @@ Unsupported Gtk Based Desktop(s)
 -------------------------------
  * Pantheon
  * Unity7
- * Gnome-Shell customed by Canonical ( = Ubuntu session)
+ * Gnome-Shell customed by downstream (Ubuntu session, Pop! OS ...etc)
  * Mate
 
  > **Note:**
