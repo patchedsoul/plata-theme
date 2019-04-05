@@ -1728,10 +1728,12 @@ headerbar button.dzlmenubutton.popup.toggle {
   }
 }
 
-popover.messagepopover {
-  box.popover-content-area {
+list {
+  popover.messagepopover box.popover-content-area &,
+  popover.omnibar box.vertical & {
     // list node at the bottom?
-    list { margin: 0 $popover_padding $popover_padding; }
+    margin: $popover_padding;
+    background-color: $dark_bg;
   }
 }
 
