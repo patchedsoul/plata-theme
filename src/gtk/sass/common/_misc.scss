@@ -230,6 +230,7 @@ headerbar.titlebar.tweak-titlebar {
 
 // basic row node container in right-pane
 row.tweak {
+  outline-width: 0; // hide outlines
   &:dir(ltr) { margin-left: rem($ref_size, $sw: 1.0); }
   &:dir(rtl) { margin-right: rem($ref_size, $sw: 1.0); }
 
@@ -286,6 +287,7 @@ list.tweak-group-startup { background-color: $bg; }
   background-repeat: repeat-x;
   background-size: auto;
   transition-duration: 0s; // child 'grid' already has
+  outline-width: 0; // hide outlines
   &:hover {
     > grid {
       background-image: image(track($sec_fg, $a_trk_1));
