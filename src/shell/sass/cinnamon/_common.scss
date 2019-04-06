@@ -167,14 +167,23 @@ StScrollBar {
 //  * Check Boxes *
 //  ***************/
 
-.check-box {
+%check_radio_childs {
   CinnamonGenericContainer {
-    spacing: 0.2em;
-    min-height: 30px;
-    padding-top: 2px;
+    min-height: $ref_size * 2px;
+    spacing: 0.4em;
+    padding-top: ($ref_size * 2px - $icon_size) / 2;
   }
 
-  StLabel { font-weight: 500; }
+  StLabel {
+    @include fontscaling(1.0);
+    padding-top: 0.1em;
+    padding-bottom: 0.1em + 0.1em;
+    font-weight: 400;
+  }
+}
+
+.check-box {
+  @extend %check_radio_childs;
 
   StBin {
     width: $icon_size;
@@ -198,16 +207,7 @@ StScrollBar {
 //  *****************/
 
 .radiobutton {
-  CinnamonGenericContainer {
-    height: 26px;
-    spacing: 0.2em;
-    padding-top: 2px;
-  }
-
-  StLabel {
-    @include fontscaling(0.9);
-    padding-top: 4px;
-  }
+  @extend %check_radio_childs;
 
   StBin {
     width: $icon_size;
