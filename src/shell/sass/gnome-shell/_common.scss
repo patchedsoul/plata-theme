@@ -179,8 +179,8 @@ StScrollBar {
   StBoxLayout { spacing: 0.8em; }
 
   StBin {
-    width: 20px;
-    height: 20px;
+    width: $icon_size;
+    height: $icon_size;
     @include image-loader($url: 'assets/checkbox-off.svg');
     color: $osd_sec_fg;
   }
