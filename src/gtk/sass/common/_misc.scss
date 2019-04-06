@@ -2043,23 +2043,23 @@ window.background > box.vertical box.horizontal {
 @if $maj_ver == 3 {
   @if $mnr_ver > 23 {
     button.title-menu-button.flat {
-      .title {
+      label.title {
         margin-top: if($ref_weight < 1.0, 0, rem($baseline * 2));
         margin-bottom: 0;
       }
 
-      .subtitle { margin: 0; }
+      label.subtitle { margin: 0; }
     }
   }
 }
 @else {
   button.title-menu-button.flat {
-    .title {
+    label.title {
       margin-top: if($ref_weight < 1.0, 0, rem($baseline * 2));
       margin-bottom: 0;
     }
 
-    .subtitle { margin: 0; }
+    label.subtitle { margin: 0; }
   }
 }
 

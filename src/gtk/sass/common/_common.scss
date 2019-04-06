@@ -2223,13 +2223,13 @@ headerbar {
   }
 
   // titles
-  .title {
+  label.title {
     margin-bottom: rem($baseline, $sw: 1.0);
     padding: 0 rem($txt_button_lr_space);
     font-weight: 700;
   }
 
-  .subtitle {
+  label.subtitle {
     @extend %dim_label;
     padding: 0 rem($txt_button_lr_space);
     font-size: if($ref_weight < 1.0, 80%, 90%);
@@ -2238,13 +2238,13 @@ headerbar {
   button { // titles inside the buttons
     box.vertical,
     grid {
-      .title {
+      label.title {
         margin: rem(-$baseline * 2) 0;
         padding: 0 rem($txt_button_lr_space);
         font-size: if($ref_weight < 1.0, 90%, 100%);
       }
 
-      .subtitle {
+      label.subtitle {
         margin: rem(-$baseline * 2) 0;
         padding: 0 rem($txt_button_lr_space);
         padding-bottom: rem($baseline);
@@ -2514,11 +2514,11 @@ headerbar {
 
   > box.vertical,
   > stack > box.vertical {
-    > .title {
+    > label.title {
       margin: if($ref_weight < 1.0, rem(-$baseline * 2) 0, 0);
     }
 
-    > .subtitle { margin: rem(-$baseline * 2) 0; }
+    > label.subtitle { margin: rem(-$baseline * 2) 0; }
   }
 }
 
