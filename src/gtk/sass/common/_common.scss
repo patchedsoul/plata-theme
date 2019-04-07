@@ -3327,6 +3327,13 @@ combobox > window.popup { // combobox specific context-menu popup
       &:disabled { color: $dis_sec_fg; }
     }
   }
+
+  *:not(.linked) entry {
+    @extend %flat_entry_sizing;
+    @include entry(flat-normal);
+    &:focus { @include entry(flat-focus); }
+    &:disabled { @include entry(flat-disabled); }
+  }
 }
 
 %popover_osd {
@@ -6123,13 +6130,6 @@ cursor-handle {
 popover.emoji {
   &-picker {
     padding: $popover_padding;
-
-    entry {
-      @extend %flat_entry_sizing;
-      @include entry(flat-normal);
-      &:focus { @include entry(flat-focus); }
-      &:disabled { @include entry(flat-disabled); }
-    }
 
     scrolledwindow.view {
       margin: $popover_padding 0;

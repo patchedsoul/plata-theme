@@ -442,14 +442,7 @@ button.flat.budgie-menu-launcher {
     box-shadow: none;
   }
 
-  entry { // use flat entry
-    margin-bottom: $popover_padding;
-    @include radius($r_4 $r_4 0 0, none);
-    @include entry(flat-normal, $tc: $fg);
-    caret-color: $fg;
-    &:focus { @include entry(flat-focus, $tc: $fg); }
-    &:disabled { @include entry(flat-disabled, $tc: $fg); }
-  }
+  entry { margin-bottom: $popover_padding; }
 
   row.activatable { // reset background
     padding: 0;
@@ -2195,7 +2188,6 @@ window.background:not(.csd) > box.vertical {
   }
 
   .passwordentry {
-    @include radius($r_4 $r_4 0 0, none);
     @extend %flat_entry_sizing;
     @include entry(flat-normal, $tc: $inv_fg);
     caret-color: $inv_fg;
