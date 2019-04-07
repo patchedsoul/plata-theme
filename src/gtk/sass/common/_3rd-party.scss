@@ -1759,14 +1759,22 @@ window.background.budgie-settings-window.csd {
   #restart_dialog,
   #shutdown_dialog {
     padding: 0;
-    border-radius: $r_8;
-    @if $variant == mixed {
-      background-color: track($inv_dark_bg, $a_osd);
-      color: $inv_fg;
-    }
-    @else {
-      background-color: track($dark_bg, $a_osd);
-      color: $fg;
+    border: 0 none transparent;
+    background-color: transparent;
+    box-shadow: none;
+
+    > box { // set actual raised dialog styling
+      margin: $shadow_margin_4;
+      border-radius: $r_8;
+      box-shadow: $z-depth-4;
+      @if $variant == mixed {
+        background-color: track($inv_dark_bg, $a_osd);
+        color: $inv_fg;
+      }
+      @else {
+        background-color: track($dark_bg, $a_osd);
+        color: $fg;
+      }
     }
 
     button:not(.combo) {
