@@ -2388,6 +2388,13 @@ window#whiskermenu-window {
     &:last-child > widget:last-child { color: $trk_out_fg; }
   }
 
+  entry { // enforce flat-style
+    @extend %flat_entry_sizing;
+    @include entry(flat-normal);
+    &:focus { @include entry(flat-focus); }
+    &:disabled { @include entry(flat-disabled); }
+  }
+
   scrolledwindow {
     > viewport button.radio {
       &:not(:disabled) {
