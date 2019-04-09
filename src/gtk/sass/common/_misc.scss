@@ -789,8 +789,17 @@ window.background > box.vertical > paned.horizontal > frame {
 
 // right-pane styling
 stack#conversation_viewer {
-  scrolledwindow.geary-conversation-scroller > viewport.frame {
-    border: none; // unset borders
+  scrolledwindow.geary-conversation-scroller {
+    // FIXME: overshoot effect sometimes can't finish its transition,
+    // then it causes ramaining some part of indicators.
+    overshoot {
+      &.top,
+      &.bottom,
+      &.left,
+      &.right { background: none; }
+    }
+
+    > viewport.frame { border: none; } // unset borders
   }
 
   list.background.conversation-listbox {
