@@ -3328,11 +3328,32 @@ combobox > window.popup { // combobox specific context-menu popup
     }
   }
 
-  *:not(.linked) entry {
-    @extend %flat_entry_sizing;
-    @include entry(flat-normal);
-    &:focus { @include entry(flat-focus); }
-    &:disabled { @include entry(flat-disabled); }
+  *:not(.linked) {
+    entry:not(.combo) {
+      @extend %flat_entry_sizing;
+      @include entry(flat-normal);
+      &:focus { @include entry(flat-focus); }
+      &:disabled { @include entry(flat-disabled); }
+    }
+
+    spinbutton:not(.vertical),
+    spinbutton.vertical {
+      entry {
+        @if $maj_ver == 3 {
+          &,
+          &:focus,
+          &:disabled {
+            margin: 0;
+            background: none;
+            border: none;
+            box-shadow: none;
+          }
+        }
+        @else {
+          progress > trough > progress { @include radius($r_4, none); }
+        }
+      }
+    }
   }
 }
 
