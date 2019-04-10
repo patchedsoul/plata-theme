@@ -1663,26 +1663,7 @@ spinbutton {
     // color
     &:disabled { color: $dis_fg; }
 
-    @if $maj_ver == 3 {
-      entry {
-        &, // unset all of fallback mode
-        &:focus,
-        &:disabled {
-          margin: 0;
-          background: none;
-          border: none;
-          box-shadow: none;
-        }
-
-        progress {  @include radius($r_4, none); }
-      }
-    }
-    @else { // NEEDS_REVIEW
-      text {
-      }
-
-      progress > trough > progress { @include radius($r_4, none); }
-    }
+    @extend %spin_entry_reset;
 
     button {
       min-width: $icon_size;
@@ -1777,23 +1758,7 @@ spinbutton {
     &:focus { @include entry(focus); }
     &:disabled { @include entry(disabled); }
 
-    @if $maj_ver == 3 {
-      entry {
-        &, // unset all of fallback mode
-        &:focus,
-        &:disabled {
-          margin: 0;
-          padding: 0;
-          background: none;
-          border: none;
-          box-shadow: none;
-        }
-      }
-    }
-    @else { // NEEDS_REVIEW
-      text {
-      }
-    }
+    @extend %spin_entry_reset;
 
     button {
       min-width: calc(#{rem($widget_size)} - 2px * 2);
@@ -1839,6 +1804,29 @@ spinbutton {
         &:selected { @extend %selected_items; }
       }
     }
+  }
+}
+
+%spin_entry_reset {
+  @if $maj_ver == 3 {
+    entry {
+      &, // unset all of fallback mode
+      &:focus,
+      &:disabled {
+        margin: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      progress {  @include radius($r_4, none); }
+    }
+  }
+  @else { // NEEDS_REVIEW
+    text {
+    }
+
+    progress > trough > progress { @include radius($r_4, none); }
   }
 }
 
@@ -3328,7 +3316,7 @@ combobox > window.popup { // combobox specific context-menu popup
     }
   }
 
-  *:not(.linked) {
+  *:not(.linked):not(combobox) {
     entry:not(.combo) {
       @extend %flat_entry_sizing;
       @include entry(flat-normal);
@@ -3338,21 +3326,7 @@ combobox > window.popup { // combobox specific context-menu popup
 
     spinbutton:not(.vertical),
     spinbutton.vertical {
-      entry {
-        @if $maj_ver == 3 {
-          &,
-          &:focus,
-          &:disabled {
-            margin: 0;
-            background: none;
-            border: none;
-            box-shadow: none;
-          }
-        }
-        @else {
-          progress > trough > progress { @include radius($r_4, none); }
-        }
-      }
+      @extend %spin_entry_reset;
     }
   }
 }
