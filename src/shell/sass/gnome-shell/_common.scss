@@ -2115,6 +2115,17 @@ $avatar_width: $icon_size * 1.5;
   &:rtl { border-radius: 0 0 0 52px; } // top-right corner
 }
 
+// /**************
+//  * Rubberband *
+//  **************/
+
+@if $ver > 3.31 {
+  .select-area-rubberband {
+    border: 1px solid $sel_bg;
+    background-color: opacity($sel_bg, $a_trk_out);
+  }
+}
+
 // /*****************
 //  * Close Buttons *
 //  *****************/
