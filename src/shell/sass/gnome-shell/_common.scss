@@ -1074,8 +1074,7 @@ $avatar_width: $icon_size * 1.5;
 
 .cycler-highlight {
   border-radius: $r_2 $r_2 0 0;
-  border: 1px solid $sel_bg;
-  background-color: opacity($sel_bg, $a_trk_out);
+  @extend %rubberband;
 }
 
 // /**********************
@@ -2119,10 +2118,15 @@ $avatar_width: $icon_size * 1.5;
 //  * Rubberband *
 //  **************/
 
+%rubberband {
+  border: 1px solid $sel_bg;
+  background-color: opacity($sel_bg, $a_trk_out);
+}
+
 @if $ver > 3.31 {
   .select-area-rubberband {
-    border: 1px solid $sel_bg;
-    background-color: opacity($sel_bg, $a_trk_out);
+    border-radius: 0;
+    @extend %rubberband;
   }
 }
 
