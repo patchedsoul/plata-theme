@@ -248,7 +248,9 @@ StScrollBar {
   border-radius: $r_8;
   color: $osd_fg;
   background-color: opacity($osd_bg, $a_osd);
-  box-shadow: $z-depth-4;
+  @if $ver < 3.31 { box-shadow: $z-depth-4; }
+  // FIXME: Lock drop-shadows until upstream computes proper shadow-region
+  @else { box-shadow: $empty_shadow; }
 
   &-content-box { padding: if($ref_weight >= 1.0, 24px, 20px); }
 
