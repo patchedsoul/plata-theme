@@ -244,18 +244,11 @@ StScrollBar {
 .flashspot { background-color: white; }
 
 .modal-dialog {
+  border: none;
   border-radius: $r_8;
   color: $osd_fg;
   background-color: opacity($osd_bg, $a_osd);
-  @if $ver < 3.31 {
-    border: none;
-    box-shadow: $z-depth-4;
-  }
-  @else {
-    border: 25px solid transparent;
-    border-image: url("assets/dialog-shadow.svg") 32;
-    box-shadow: $empty_shadow;
-  }
+  box-shadow: $z-depth-4;
 
   &-content-box { padding: if($ref_weight >= 1.0, 24px, 20px); }
 
@@ -342,7 +335,7 @@ StScrollBar {
 
 .end-session-dialog {
   spacing: if($ref_weight >= 1.0, 42px, 30px);
-  @if $ver < 3.31 { border: none; }
+  border: none;
 
   &-list { padding-top: if($ref_weight >= 1.0, 20px, 14px); }
 
@@ -526,7 +519,7 @@ StScrollBar {
 .prompt-dialog {
   // this is the width of the entire modal popup
   width: 34em;
-  @if $ver < 3.31 { border: none; }
+  border: none;
 
   .message-dialog {
     &-main-layout {
