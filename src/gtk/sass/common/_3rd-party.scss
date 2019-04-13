@@ -2134,6 +2134,12 @@ window.background:not(.csd) > box.vertical {
           background-image: image($sel_bg);
           color: $sel_fg;
         }
+
+        &:hover combobox button.combo { // revert to standard highlighting
+          @include combobutton(solid-normal);
+          &:hover { @include combobutton(solid-hover); }
+          &:active { @include combobutton(solid-active); }
+        }
       }
     }
   }
