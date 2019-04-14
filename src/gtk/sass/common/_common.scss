@@ -4980,6 +4980,11 @@ messagedialog {
     buttonbox.dialog-action-area { margin: -6px; }
   }
 
+  @if $maj_ver == 4 {
+    // prevent labels running into action-area
+    box.dialog-vbox.vertical { border-spacing: 10px; }
+  }
+
   .titlebar {
     min-height: $titlebutton_small + 3px + 2px;
     border-style: none;
