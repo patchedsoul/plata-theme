@@ -4735,6 +4735,11 @@ row {
 
     // move root padding to its childs
     &.expander .row-header { padding: 2px rem($menuitem_padding); }
+
+    list.separators &:not(:first-child) {
+      // draw list separators
+      border-top: 1px solid $div_sld_fg;
+    }
   }
 }
 
