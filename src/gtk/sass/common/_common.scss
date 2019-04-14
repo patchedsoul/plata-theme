@@ -1874,7 +1874,7 @@ combobox {
       background-color: $base; // tone down
       &:hover,
       &:active,
-      &:checked { background-color: track($fg, $a_trk_2); }
+      &:checked { background-color: track($fg, $a_trk_1); }
     }
   }
 
