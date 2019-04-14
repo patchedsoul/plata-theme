@@ -2017,7 +2017,7 @@ $large_item: 10px;
     }
   }
 
-  &-icon {
+  &-icon { // symbolic icons will use system-status-icon instead
     icon-size: $icon_size;
     color: $osd_fg;
 
