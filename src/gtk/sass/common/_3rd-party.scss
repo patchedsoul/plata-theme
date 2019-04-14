@@ -2136,9 +2136,14 @@ window.background:not(.csd) > box.vertical {
         }
 
         &:hover combobox button.combo { // revert to standard highlighting
-          @include combobutton(solid-normal);
-          &:hover { @include combobutton(solid-hover); }
-          &:active { @include combobutton(solid-active); }
+          background-color: mix($fg, $base, percentage($a_trk_1));
+          &:hover { background-color: track($fg, $a_trk_1 * 1.5); }
+          &:active,
+          &:checked { background-color: track($fg, $a_trk_2); }
+          &:disabled {
+            background-color:
+              mix($fg, $base, percentage(($a_trk_1 * 2 / 3) * $a_fg_dis));
+          }
         }
       }
     }

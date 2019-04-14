@@ -1875,6 +1875,10 @@ combobox {
       &:hover,
       &:active,
       &:checked { background-color: track($fg, $a_trk_1); }
+      &:disabled {
+        background-color:
+          mix($fg, $base, percentage(($a_trk_1 * 2 / 3) * $a_fg_dis));
+      }
     }
   }
 
