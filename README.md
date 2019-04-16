@@ -284,6 +284,21 @@ Extra Tweetdeck Support
  >   * Mixed and dark variants are supported.
  >   * Currently those files support "Colors" only, so enabling "Colors" checkbox is enough.
 
+Extra Air-for-Steam Support
+---------------------------
+ To try "Air for Steam" colors and themes, pass this option (dark-variant only):
+
+ ```
+ --enable-airforsteam      enable Air-for-Steam support (type: bool)
+ ```
+
+ You should veify that you've already installed Air-for-Steam skin to `~/.steam/skins` directory.
+ The installer installs 2 files into `Plata-Noir/airforsteam` directory if Air-for-Steam support is enabled:
+  * Copy `Resource/colors/plata-noir.styles` to `~/.steam/skins/Air-for-Steam-*/Resource/colors` or
+    `~/.steam/skins/Air-for-Steam-*/Resource/colors/user`.
+  * Copy `Resource/themes/_plata-noir.styles` to `~/.steam/skins/Air-for-Steam-*/Resource/themes`.
+ Edit `~/.steam/skins/Air-for-Steam-*/config.init` to activate those styles, then restart the Steam app.
+
 Work in Progress
 ----------------
 

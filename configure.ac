@@ -23,16 +23,17 @@ AM_INIT_AUTOMAKE([
 AC_PREFIX_DEFAULT(/usr/local)
 AM_SILENT_RULES([yes])
 
-PLATA_OPTION([PARALLEL],  [parallel],  [parallel-build],      [disable])
-PLATA_OPTION([GTK_NEXT],  [gtk_next],  [Gtk-4.0],             [disable])
-PLATA_OPTION([GNOME],     [gnome],     [Gnome-Shell],         [enable])
-PLATA_OPTION([CINNAMON],  [cinnamon],  [Cinnamon],            [enable])
-PLATA_OPTION([FLASHBACK], [flashback], [Flashback],           [enable])
-PLATA_OPTION([XFCE],      [xfce],      [XFce],                [enable])
-PLATA_OPTION([OPENBOX],   [openbox],   [Openbox],             [enable])
-PLATA_OPTION([PLANK],     [plank],     [Plank],               [disable])
-PLATA_OPTION([TELEGRAM],  [telegram],  [Telegram],            [disable])
-PLATA_OPTION([TWEETDECK], [tweetdeck], [Tweetdeck-Colordeck], [disable])
+PLATA_OPTION([PARALLEL],    [parallel],    [parallel-build],      [disable])
+PLATA_OPTION([GTK_NEXT],    [gtk_next],    [Gtk-4.0],             [disable])
+PLATA_OPTION([GNOME],       [gnome],       [Gnome-Shell],         [enable])
+PLATA_OPTION([CINNAMON],    [cinnamon],    [Cinnamon],            [enable])
+PLATA_OPTION([FLASHBACK],   [flashback],   [Flashback],           [enable])
+PLATA_OPTION([XFCE],        [xfce],        [XFce],                [enable])
+PLATA_OPTION([OPENBOX],     [openbox],     [Openbox],             [enable])
+PLATA_OPTION([PLANK],       [plank],       [Plank],               [disable])
+PLATA_OPTION([TELEGRAM],    [telegram],    [Telegram],            [disable])
+PLATA_OPTION([TWEETDECK],   [tweetdeck],   [Tweetdeck-Colordeck], [disable])
+PLATA_OPTION([AIRFORSTEAM], [airforsteam], [Air-for-Steam],       [disable])
 
 PKG_PROG_PKG_CONFIG
 AS_IF([test -z "$PKG_CONFIG"], [AC_MSG_ERROR(['pkg-config' not found.])])
@@ -139,6 +140,7 @@ AC_MSG_RESULT([
          Plank:                  $ENABLE_PLANK (default: no)
          Telegram:               $ENABLE_TELEGRAM (default: no)
          Tweetdeck-Colordeck:    $ENABLE_TWEETDECK (default: no)
+         Air-for-Steam:          $ENABLE_AIRFORSTEAM (default: no)
 
         =================================================================
                                    =>> run 'make' and 'sudo make install'

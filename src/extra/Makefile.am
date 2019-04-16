@@ -25,6 +25,10 @@ tweetdeckdir          = $(srcdir)/tweetdeck
 tweetdeck_lumine_file = $(tweetdeckdir)/light/ColorDeck-light.cdk
 tweetdeck_noir_file   = $(tweetdeckdir)/dark/ColorDeck-dark.cdk
 
+airdir              = $(srcdir)/airforsteam
+air_dark_color_file = $(airdir)/Resource/colors/plata-noir.styles
+air_dark_theme_file = $(airdir)/Resource/themes/_plata-noir.styles
+
 # ******************
 # * Generate files *
 # ******************
@@ -72,6 +76,13 @@ if ENABLE_TWEETDECK
 	cp -Rv $(tweetdeck_noir_file) $(noirdir)/tweetdeck
 endif
 
+if ENABLE_AIRFORSTEAM
+	$(MKDIR_P) $(noirdir)/airforsteam/Resource/colors
+	$(MKDIR_P) $(noirdir)/airforsteam/Resource/themes
+	cp -Rv $(air_dark_color_file) $(noirdir)/airforsteam/Resource/colors
+	cp -Rv $(air_dark_theme_file) $(noirdir)/airforsteam/Resource/themes
+endif
+
 	$(MKDIR_P) $(platadir)/gtksourceview
 	$(MKDIR_P) $(luminedir)/gtksourceview
 	$(MKDIR_P) $(noirdir)/gtksourceview
@@ -103,6 +114,10 @@ if ENABLE_TWEETDECK
 	test -e $(noirdir)/tweetdeck && rm -rfv $(noirdir)/tweetdeck
 	test -e $(luminedir)/tweetdeck && rm -rfv $(luminedir)/tweetdeck
 	test -e $(platadir)/tweetdeck && rm -rfv $(platadir)/tweetdeck
+endif
+
+if ENABLE_AIRFORSTEAM
+	test -e $(noirdir)/airforsteam && rm -rfv $(noirdir)/airforsteam
 endif
 
 	test -e $(noirdir)/gtksourceview && rm -rfv $(noirdir)/gtksourceview

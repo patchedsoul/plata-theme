@@ -1,0 +1,49 @@
+plata-noir.styles {
+  colors {
+    A2Background   "029 029 029 255" //client bg
+    A2Ribbon       "017 017 017 255" //bg for section emphasis (ie. left side of settings dialog)
+    A2Divider      "012 012 012 255" //client dividers
+    A2Snackbar     "066 066 066 237" //bg for download notification
+    A2Notification "008 008 008 237" //bg for steam popup notifications
+    A2Bar          "A2Background"    //bg for greater section emphasis (ie. voice chat and trade notifications)
+    A2Menu         "A2Notification"  //menu bg
+    A2MenuDivider  "027 027 027 255" //menu dividers
+
+    A2ButtonHover        "245 245 245 033" //button bg on hover
+    A2ButtonActive       "245 245 245 064" //button bg on click
+    A2DetailsButton      "000 000 000 033" //details install/play button
+    A2DetailsButtonHover "000 000 000 064" //details install/play button hover
+
+    A2Scroll       "245 245 245 074" //scrollbar handle
+    A2ScrollHover  "245 245 245 120" //scrollbar handle on hover
+    A2ScrollGutter "017 017 017 138" //scrollbar gutter/backdrop
+
+    A2TextPrimary    "245 245 245 255" //white 87%, text
+    A2TextSecondary  "245 245 245 138" //white 54%, caption
+    A2TextLabel      "245 245 245 102" //white 40%, label
+    A2TextHint       "245 245 245 071" //white 28%, hint text, disabled items
+    A2TextBlack      "000 000 000 222" //black text
+    A2TextBlackHover "000 000 000 255" //hover
+    A2TextWhite      "255 255 255 222" //white text
+    A2TextWhiteHover "255 255 255 255" //hover
+
+    A2TextOnFocus          "245 245 245 222"  //text color on focus color (header)
+    A2TextOnFocusHover     "A2TextPrimary"    //hover
+    A2TextNotification     "A2TextPrimary"    //text color of a notification
+    A2TextNotificationSoft "A2TextOnFocus"    //softer text color on notification (also used for hover)
+    A2TextSelected         "A2TextWhiteHover" //selected text color (usually on focus2)
+
+    A2TextOverlay           "A2TextPrimary"   //overlay text color
+    A2TextOverlaySoft       "A2TextOnFocus"   //softer overlay text color (also used for hover)
+    A2TextOverlayLabel      "A2TextSecondary" //overlay label text color
+    A2TextOverlayLabelHover "A2TextPrimary"   //hover
+
+    A2FriendsOnline  "121 134 203 255" //friend online text
+    A2FriendsInGame  "076 175 080 255" //friend in-game text
+    A2FriendsOffline "A2TextHint"      //friend offline text
+
+    A2ChatFriend  "A2TextPrimary"   //chat window friend text
+    A2ChatSelf    "A2TextSecondary" //chat window self text
+    A2ChatHistory "A2TextLabel"     //chat window history text
+  }
+}
