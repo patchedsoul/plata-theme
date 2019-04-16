@@ -297,6 +297,7 @@ Extra Air-for-Steam Support
   * Copy `Resource/colors/plata-noir.styles` to `~/.steam/skins/Air-for-Steam-*/Resource/colors` or
     `~/.steam/skins/Air-for-Steam-*/Resource/colors/user`.
   * Copy `Resource/themes/_plata-noir.styles` to `~/.steam/skins/Air-for-Steam-*/Resource/themes`.
+
  Edit `~/.steam/skins/Air-for-Steam-*/config.init` to activate those styles, then restart the Steam app.
 
 Work in Progress
