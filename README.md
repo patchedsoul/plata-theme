@@ -102,6 +102,7 @@ Installation from Git Source
  * sassc                                     >= 3.3
 
  * parallel                                  (if --enable-parallel)
+ * zip                                       (if --enable-telegram)
  ```
 
  > **Note:**

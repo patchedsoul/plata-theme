@@ -68,6 +68,13 @@ if test x"$ENABLE_PARALLEL" = xyes; then
 	fi
 fi
 
+if test x"$ENABLE_TELEGRAM" = xyes; then
+	AC_PATH_TOOL([ZIP], [zip])
+	if test x"$ZIP" = x; then
+		AC_MSG_ERROR(['zip' not found.])
+	fi
+fi
+
 if test x"$ENABLE_GNOME" = xyes; then
 	PLATA_GNOME
 fi
@@ -105,6 +112,8 @@ AC_MSG_RESULT([
 
          parallel-build:         $ENABLE_PARALLEL (default: no)
          parallel:               $PARALLEL
+
+         zip:                    $ZIP (if --enable-telegram)
 
          selection-color:        $SELECTION (default: $selection_default)
          accent-color:           $ACCENT (default: $accent_default)
