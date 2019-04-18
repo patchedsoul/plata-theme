@@ -193,7 +193,7 @@ Installation from Git Source
  >     and `accent_color` should use `300` colors.
  >   * While doing `make`, Plata changes those 4 colors in all stylesheets and images,
  >     and `make clean` cleans up all generated files from source directories.
- >   * This feature unfortunately is not supported in `Telegram 1.0` and `Air-for-steam` theming.
+ >   * This feature unfortunately is not supported in `Telegram 1.0` theming.
 
 GtkSourceView/Gedit Color Scheme Support
 ----------------------------------------
