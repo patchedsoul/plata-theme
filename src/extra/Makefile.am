@@ -47,6 +47,10 @@ if ENABLE_TELEGRAM
 		./colors.tdesktop-theme ./tiled.png
 endif
 
+if ENABLE_AIRFORSTEAM
+	cd $(airdir) && ./recolor-air.sh
+endif
+
 # *****************
 # * Install files *
 # *****************
@@ -150,6 +154,11 @@ CLEANFILES += \
 	$(telegramdir)/plata.tdesktop-theme \
 	$(telegramdir)/plata-lumine.tdesktop-theme \
 	$(telegramdir)/plata-noir.tdesktop-theme
+endif
+
+if ENABLE_AIRFORSTEAM
+CLEANFILES += \
+	$(airdir)/Resource/colors/plata-noir.styles
 endif
 
 DISTCLEANFILES = \

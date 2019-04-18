@@ -1,0 +1,24 @@
+//
+// Import resources
+//
+
+// Import key color-scheme defined at build-time.
+@import '../../../gtk/sass/common/resources/color_palette';
+@import '../../../gtk/sass/common/resources/functions';
+@import '../../../gtk/sass/common/resources/variables';
+@import '../../../gtk/sass/common/colors';
+
+colors {
+  rb: #{red($key_selection_color)};
+
+  gb: #{green($key_selection_color)};
+
+  bb: #{blue($key_selection_color)};
+
+  // round values for selected-label color
+  rl: #{round(red($sel_label))};
+
+  gl: #{round(green($sel_label))};
+
+  bl: #{round(blue($sel_label))};
+}

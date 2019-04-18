@@ -1,0 +1,11 @@
+"Resource/colors/user/plata-noir.styles" {
+  colors {
+    Focus=  "008 008 008 255"
+    Focus2= "@R_LABEL@ @G_LABEL@ @B_LABEL@ 255"
+    Focus3= "@R_BG@ @G_BG@ @B_BG@ 255"
+    Focus4= "@R_BG@ @G_BG@ @B_BG@ 138" // Focus3 transparent for details box
+
+    A2TextFocus=      "Focus2"
+    A2TextFocusHover= "Focus2"
+  }
+}
