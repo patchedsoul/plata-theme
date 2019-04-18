@@ -27,13 +27,12 @@ RL="`grep -e rl sass/air-dark.css | cut -d':' -f2 | cut -d';' -f1`"
 GL="`grep -e gl sass/air-dark.css | cut -d':' -f2 | cut -d';' -f1`"
 BL="`grep -e bl sass/air-dark.css | cut -d':' -f2 | cut -d';' -f1`"
 
+# Colors in HEXs
+selection="`grep -e selection sass/air-dark.css | cut -d':' -f2 | cut -d';' -f1`"
+accent="`grep -e accent_label sass/air-dark.css | cut -d':' -f2 | cut -d';' -f1`"
+
 # Check and re-color color-scheme
 if [ -e $KEY_FILE ]; then
-    selection="`grep 'key_selection' $KEY_FILE | \
-                cut -d' ' -f2 | cut -d';' -f1`"
-    accent="`grep 'key_accent' $KEY_FILE | \
-             cut -d' ' -f2 | cut -d';' -f1`"
-
     cp -f $SRC_FILE.in $SRC_FILE && sleep 1
 
     echo Setting selection-color $selection...

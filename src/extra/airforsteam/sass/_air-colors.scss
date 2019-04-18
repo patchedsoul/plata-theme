@@ -9,11 +9,15 @@
 @import '../../../gtk/sass/common/colors';
 
 colors {
+  selection: $key_selection_color;
+
   rb: #{red($key_selection_color)};
 
   gb: #{green($key_selection_color)};
 
   bb: #{blue($key_selection_color)};
+
+  accent_label: $acc_fg;
 
   // round values for selected-label color
   rl: #{round(red($acc_fg))};
