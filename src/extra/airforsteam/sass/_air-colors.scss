@@ -16,9 +16,9 @@ colors {
   bb: #{blue($key_selection_color)};
 
   // round values for selected-label color
-  rl: #{round(red($sel_label))};
+  rl: #{round(red($acc_fg))};
 
-  gl: #{round(green($sel_label))};
+  gl: #{round(green($acc_fg))};
 
-  bl: #{round(blue($sel_label))};
+  bl: #{round(blue($acc_fg))};
 }
