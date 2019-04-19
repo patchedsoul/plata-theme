@@ -15,12 +15,6 @@ telegram_file        = $(telegramdir)/plata.tdesktop-theme
 telegram_lumine_file = $(telegramdir)/plata-lumine.tdesktop-theme
 telegram_noir_file   = $(telegramdir)/plata-noir.tdesktop-theme
 
-gtksourceviewdir   = $(srcdir)/gtksourceview
-gtksourceview_noir_file = \
-	$(gtksourceviewdir)/plata-dark.xml
-gtksourceview_lumine_file = \
-	$(gtksourceviewdir)/plata-light.xml
-
 tweetdeckdir          = $(srcdir)/tweetdeck
 tweetdeck_lumine_file = $(tweetdeckdir)/light/ColorDeck-light.cdk
 tweetdeck_noir_file   = $(tweetdeckdir)/dark/ColorDeck-dark.cdk
@@ -28,6 +22,12 @@ tweetdeck_noir_file   = $(tweetdeckdir)/dark/ColorDeck-dark.cdk
 airdir              = $(srcdir)/airforsteam
 air_dark_color_file = $(airdir)/Resource/colors/plata-noir.styles
 air_dark_theme_file = $(airdir)/Resource/themes/_plata-noir.styles
+
+gtksourceviewdir   = $(srcdir)/gtksourceview
+gtksourceview_noir_file = \
+	$(gtksourceviewdir)/plata-dark.xml
+gtksourceview_lumine_file = \
+	$(gtksourceviewdir)/plata-light.xml
 
 # ******************
 # * Generate files *
@@ -50,6 +50,8 @@ endif
 if ENABLE_AIRFORSTEAM
 	cd $(airdir) && ./recolor-air.sh
 endif
+
+	cd $(gtksourceviewdir) && ./recolor-gtksourceview.sh
 
 # *****************
 # * Install files *
@@ -141,7 +143,9 @@ endif
 # * Clean up generated files *
 # ****************************
 
-CLEANFILES =
+CLEANFILES = \
+	$(gtksourceviewdir)/plata-light.xml \
+	$(gtksourceviewdir)/plata-dark.xml
 
 if ENABLE_TWEETDECK
 CLEANFILES += \

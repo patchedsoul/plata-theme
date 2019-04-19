@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<style-scheme id="plata-light" name="Plata-Light" filename="plata-light.xml" version="1.0">
+<style-scheme id="plata-dark" name="Plata-Dark" filename="plata-dark.xml" version="1.0">
   <author>Tista</author>
-  <_description>GtkSourceView light color scheme</_description>
+  <_description>GtkSourceView dark color scheme forked from Adapta</_description>
 
   <!-- Color Palette -->
-  <color name="plata0"                      value="#FFFFFF" />
-  <color name="plata1"                      value="#F8F8F8" />
-  <color name="plata2"                      value="#3F51B5" />
-  <color name="plata3"                      value="#7B7B7B" />
-  <color name="plata4"                      value="#111111" />
-  <color name="plata5"                      value="#00796B" />
-  <color name="plata6"                      value="#D32F2F" />
-  <color name="plata7"                      value="#01579B" />
-  <color name="plata8"                      value="#004D40" />
-  <color name="plata9"                      value="#6D4C41" />
-  <color name="plata10"                     value="#FF6F00" />
-  <color name="plata11"                     value="#689F38" />
-  <color name="plata12"                     value="#7B1FA2" />
+  <color name="plata0"                      value="#111111" />
+  <color name="plata1"                      value="#1D1D1D" />
+  <color name="plata2"                      value="@selection1@" />
+  <color name="plata3"                      value="#8C8C8C" />
+  <color name="plata4"                      value="#F5F5F5" />
+  <color name="plata5"                      value="#1DE9B6" />
+  <color name="plata6"                      value="#F77669" />
+  <color name="plata7"                      value="#81D4FA" />
+  <color name="plata8"                      value="#009587" />
+  <color name="plata9"                      value="#AB7967" />
+  <color name="plata10"                     value="#FFCB6B" />
+  <color name="plata11"                     value="#C3E88D" />
+  <color name="plata12"                     value="#C792EA" />
   <color name="plata13"                     value="#FFFFFF" />
-  <color name="plata14"                     value="#B2B9E1" />
 
   <!-- GUI Styling -->
   <style name="background-pattern"          background="plata1" />
   <style name="bookmark"                    background="plata4" />
-  <style name="bracket-match"               foreground="plata13" background="plata2" />
+  <style name="bracket-match"               foreground="plata4" background="plata2" />
   <style name="bracket-mismatch"            foreground="plata6" underline="true" />
   <style name="current-line"                foreground="plata4" background="plata1" />
   <style name="cursor"                      foreground="plata4" />
@@ -32,7 +31,7 @@
   <style name="line-numbers"                foreground="plata3" background="plata1" />
   <style name="search-match"                foreground="plata4" background="plata8" />
   <style name="secondary-cursor"            use-style="cursor" />
-  <style name="selection"                   foreground="plata4" background="plata14" />
+  <style name="selection"                   foreground="plata13" background="plata2" />
   <style name="selection-unfocused"         use-style="selection" />
   <style name="right-margin"                foreground="plata4" />
   <style name="text"                        foreground="plata4" background="plata0" />
@@ -351,13 +350,13 @@
   <style name="meld:insert" foreground="plata4" background="#rgba(77, 182, 172, 0.1)" line-background="#rgba(77, 182, 172, 0.1)" />
   <style name="meld:replace" foreground="plata4" background="#rgba(3, 169, 244, 0.1)" line-background="#rgba(3, 169, 244, 0.1)" />
   <style name="meld:conflict" foreground="plata4" background="#rgba(244, 67, 54, 0.1)" line-background="#rgba(244, 67, 54, 0.1)" />
-  <style name="meld:current-line-highlight" background="#rgba(17, 17, 17, 0.1)" />
-  <style name="meld:current-chunk-highlight" background="#rgba(17, 17, 17, 0.1)" />
+  <style name="meld:current-line-highlight" background="#rgba(245, 245, 245, 0.1)" />
+  <style name="meld:current-chunk-highlight" background="#rgba(245, 245, 245, 0.1)" />
   <style name="meld:inline" background="#rgba(3, 169, 244, 0.4)" />
   <style name="meld:unknown-text" foreground="plata4" />
   <style name="meld:dimmed" foreground="plata3" />
 
   <!-- Gedit/Builder -->
-  <style name="map-overlay" background="#rgba(17, 17, 17, 0.1)" />
+  <style name="map-overlay" background="#rgba(245, 245, 245, 0.1)" />
 
 </style-scheme>
