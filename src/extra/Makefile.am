@@ -39,6 +39,8 @@ if ENABLE_TWEETDECK
 endif
 
 if ENABLE_TELEGRAM
+	cd $(telegramdir) && ./recolor-telegram.sh
+
 	cd $(telegramdir)/mixed && $(ZIP) -o ../plata.tdesktop-theme \
 		./colors.tdesktop-theme ./tiled.png
 	cd $(telegramdir)/light && $(ZIP) -o ../plata-lumine.tdesktop-theme \
@@ -155,6 +157,9 @@ endif
 
 if ENABLE_TELEGRAM
 CLEANFILES += \
+	$(telegramdir)/light/colors.tdesktop-theme \
+	$(telegramdir)/mixed/colors.tdesktop-theme \
+	$(telegramdir)/dark/colors.tdesktop-theme \
 	$(telegramdir)/plata.tdesktop-theme \
 	$(telegramdir)/plata-lumine.tdesktop-theme \
 	$(telegramdir)/plata-noir.tdesktop-theme

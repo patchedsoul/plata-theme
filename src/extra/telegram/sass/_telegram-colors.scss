@@ -1,0 +1,26 @@
+//
+// Import resources
+//
+
+// Import key color-scheme defined at build-time.
+@import '../../../gtk/sass/common/resources/color_palette';
+@import '../../../gtk/sass/common/resources/functions';
+@import '../../../gtk/sass/common/resources/variables';
+@import '../../../gtk/sass/common/colors';
+
+colors {
+  sel_bg: $sel_bg;
+
+  acc_fg: $acc_fg;
+  acc_bg: $acc_bg;
+  acc_f1: mix($acc_fg, $bg, percentage($a_trk_1));
+  acc_f2: mix($acc_fg, $bg, percentage($a_trk_2));
+
+  sgt_bg: $sggt_bg;
+  sgt_f1: mix($sel_fg, $sggt_bg, percentage($a_trk_1));
+  sgt_f2: mix($sel_fg, $sggt_bg, percentage($a_trk_2));
+
+  dst_bg: $dest_bg;
+  dst_f1: mix($dest_bg, $bg, percentage($a_trk_1));
+  dst_f2: mix($dest_bg, $bg, percentage($a_trk_2));
+}
