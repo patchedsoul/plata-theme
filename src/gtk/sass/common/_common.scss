@@ -5494,6 +5494,9 @@ infobar {
       }
       &:disabled {
         @include button(flat-disabled, $tc: $fix_fg);
+
+        label, // override generic disabled labels/images color
+        image { color: track($fix_fg, $a_fg_dis); }
       }
       &:checked {
         @include button(flat-checked, $tc: $fix_fg);
