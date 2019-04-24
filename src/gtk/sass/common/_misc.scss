@@ -2357,6 +2357,10 @@ stack > box.vertical widget overlay grid.horizontal > stack {
   margin-bottom: -1px;
 }
 
+button.carousel-item.flat.menu.radio:focus {
+  outline-width: 0; // hide unneeded outlines
+}
+
 // > 3.25.90
 scrolledwindow.view > viewport.frame > stack > list { // left-pane
   @extend %sidebar_template;
