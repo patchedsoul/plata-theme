@@ -9,15 +9,15 @@
 @import '../../../gtk/sass/common/colors';
 
 colors {
-  selection: $key_selection_color;
+  selection: to-upper-case(#{$sel_bg});
 
-  rb: #{red($key_selection_color)};
+  rb: #{red($sel_bg)};
 
-  gb: #{green($key_selection_color)};
+  gb: #{green($sel_bg)};
 
-  bb: #{blue($key_selection_color)};
+  bb: #{blue($sel_bg)};
 
-  accent_label: $acc_fg;
+  accent_label: to-upper-case(#{$acc_fg});
 
   // round values for selected-label color
   rl: #{round(red($acc_fg))};
