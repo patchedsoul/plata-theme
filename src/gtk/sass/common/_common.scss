@@ -301,6 +301,37 @@ spinner {
   }
 }
 
+// /**********************
+//  * General Typography *
+//  **********************/
+
+.type {
+  &-large-title {
+    @include fontscaling(2.4);
+    font-weight: 300;
+  }
+
+  &-title {
+    @include fontscaling(1.3);
+    font-weight: 700;
+  }
+
+  &-heading {
+    @include fontscaling(1.1);
+    font-weight: 500;
+  }
+
+  &-body {
+    @include fontscaling(1.0);
+    font-weight: 400;
+  }
+
+  &-caption {
+    @include fontscaling(0.9);
+    font-weight: 400;
+  }
+}
+
 // /****************
 //  * Text Entries *
 //  ****************/

@@ -27,3 +27,8 @@ $ref_size: 13.33px; // = 10pt = 1em
 @function rem($px, $fs: $ref_size, $sw: $ref_weight) {
   @return round($px / $fs * $sw * 100) / 100 * 1rem;
 }
+
+@mixin fontscaling($s: 1.0) {
+  font-size:
+    round(($ref_size / ($ref_size * 0 + 1)) * $s * 72 / 96 * 10) / 10 + pt;
+}
