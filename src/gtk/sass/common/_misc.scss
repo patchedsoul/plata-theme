@@ -2358,7 +2358,9 @@ stack > box.vertical widget overlay grid.horizontal > stack {
 }
 
 button.carousel-item.flat.menu.radio:focus {
-  outline-width: 0; // hide unneeded outlines
+  // outlines cause unwanted region-violations on avatar GtkImages,
+  // so let's hide them
+  outline-width: 0;
 }
 
 // > 3.25.90
