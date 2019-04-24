@@ -21,8 +21,8 @@ SASSC_OPTION="-M -t nested"
 $SASSC $SASSC_OPTION sass/gtksourceview.scss sass/gtksourceview.css
 
 # Colors in HEXs
-selection1="`grep -e selection1 sass/gtksourceview.css | cut -c15-21 | awk '{print toupper($0)}'`"
-selection2="`grep -e selection2 sass/gtksourceview.css | cut -c15-21 | awk '{print toupper($0)}'`"
+selection1="`grep -e selection1 sass/gtksourceview.css | cut -c15-21`"
+selection2="`grep -e selection2 sass/gtksourceview.css | cut -c15-21`"
 
 # Check and re-color color-scheme
 if [ -e $KEY_FILE ]; then
