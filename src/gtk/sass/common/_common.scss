@@ -131,18 +131,29 @@
   }
 }
 
-.view,
-textview {
-  text {
-    background-color: $base;
-    color: $fg;
-    &:disabled { color: $dis_fg; }
+@if $maj_ver == 3 {
+  .view,
+  textview {
+    text { @extend %text; }
+  }
 
-    selection { @extend %selected_texts; }
+  textview border { background-color: $bg; }
+}
+@else {
+  textview {
+    > text { @extend %text; }
+
+    border { background-color: $bg; }
   }
 }
 
-textview border { background-color: $bg; }
+%text {
+  background-color: $base;
+  color: $fg;
+  &:disabled { color: $dis_fg; }
+
+  selection { @extend %selected_texts; }
+}
 
 iconview { @extend %view; }
 
