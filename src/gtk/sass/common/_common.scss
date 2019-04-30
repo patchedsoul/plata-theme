@@ -428,10 +428,11 @@ entry {
     }
   }
 
-  image { // entry icons colors
-    &:not(:hover):not(:active) { color: track(currentColor, $a_fg_2nd); }
-    &:active { color: $sel_bg; }
-    &:disabled { color: track(currentColor, $a_fg_dis); }
+  @if $maj_ver == 3 { // entry icons colors
+    image { @extend %entry_icon; }
+  }
+  @else {
+    > image { @extend %entry_icon; }
   }
 
   @if $maj_ver == 4 {
@@ -751,6 +752,12 @@ entry {
     padding: 0 rem($entry_lr_space);
     &.flat { min-height: rem($small_widget); }
   }
+}
+
+%entry_icon {
+  &:not(:hover):not(:active) { color: track(currentColor, $a_fg_2nd); }
+  &:active { color: $sel_bg; }
+  &:disabled { color: track(currentColor, $a_fg_dis); }
 }
 
 %entry_progress {
