@@ -5342,9 +5342,16 @@ placesview {
   row.activatable:hover { background-color: transparent; }
 
   // this selects the "connect to server" label
-  > actionbar > revealer > box > label {
-    padding-left: rem($menuitem_padding);
-    padding-right: rem($menuitem_padding);
+  > actionbar > revealer > box {
+    @if $maj_ver == 3 {
+      > label {
+        padding-left: rem($menuitem_padding);
+        padding-right: rem($menuitem_padding);
+      }
+    }
+    @else { // NEEDS_REVIEW
+      > box { border-spacing: 6px; }
+    }
   }
 }
 
