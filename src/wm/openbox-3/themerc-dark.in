@@ -113,7 +113,7 @@ window.inactive.button.toggled.hover.image.color: #737373
 
 window.inactive.button.disabled.bg: flat solid
 window.inactive.button.disabled.bg.color: #1d1d1d
-window.inactive.button.disabled.image.color: #1f1f1f
+window.inactive.button.disabled.image.color: #353535
 
 
 # Menu
