@@ -360,29 +360,48 @@ dialog.background.csd > box.dialog-vbox.vertical {
 //  *******************/
 
 // use message-dialog style for popup osd windows
+$gf_margin: 12px;
 
 %gf_window {
   &, &.solid {
-    @if $variant == mixed {
-      background-color: track($inv_dark_bg, $a_osd);
-      color: $inv_fg;
-    }
-    @else {
-      background-color: track($dark_bg, $a_osd);
-      color: $fg;
-    }
+    @if $variant == mixed { color: $inv_fg; }
+    @else { color: $fg; }
 
-    levelbar {
-      block:not(.empty) { background-color: $sccs_bg; }
-    }
+    levelbar block:not(.empty) { background-color: $sccs_bg; }
   }
 
-  &:not(.solid) { @include radius($r_8, none); }
+  &:not(.solid) {
+    background: none;
+
+    > box {
+      padding: $gf_margin;
+      @if $variant == mixed { background-color: track($inv_dark_bg, $a_osd); }
+      @else { background-color: track($dark_bg, $a_osd); }
+    }
+  }
 
   // for non-composited environments
   &.solid {
     border-radius: 0;
     border: 1px solid $div_fg;
+    @if $variant == mixed { background-color: track($inv_dark_bg, $a_osd); }
+    @else { background-color: track($dark_bg, $a_osd); }
+  }
+}
+
+%gf_window_decoration_3 {
+  &:not(.solid) > box {
+    margin: 0 0 (16px - $gf_margin);
+    @include radius($r_4, none);
+    box-shadow: $z-depth-3;
+  }
+}
+
+%gf_window_decoration_4 {
+  &:not(.solid) > box {
+    margin: (16px - $gf_margin) (24px - $gf_margin) (32px - $gf_margin);
+    @include radius($r_8, none);
+    box-shadow: $z-depth-4;
   }
 }
 
@@ -390,7 +409,10 @@ dialog.background.csd > box.dialog-vbox.vertical {
 #gf-label-window,
 #gf-bubble,
 #gf-osd-window,
-#gf-input-source-popup { @extend %gf_window; }
+#gf-input-source-popup {
+  @extend %gf_window;
+  @extend %gf_window_decoration_4;
+}
 
 #gf-label-window {
   font-size: rem($ref_size * 3, $sw: 1.0);
@@ -440,6 +462,7 @@ dialog.background.csd > box.dialog-vbox.vertical {
 // popup for input-source candidates
 #gf-candidate-popup {
   @extend %gf_window;
+  @extend %gf_window_decoration_3;
 
   gf-candidate-box {
     @include radius($r_2, none);
