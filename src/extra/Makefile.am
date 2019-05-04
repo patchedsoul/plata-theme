@@ -41,11 +41,11 @@ endif
 if ENABLE_TELEGRAM
 	cd $(telegramdir) && ./recolor-telegram.sh
 
-	cd $(telegramdir)/mixed && $(ZIP) -o ../plata.tdesktop-theme \
+	cd $(telegramdir)/mixed && $(ZIP) --strip-extra -o ../plata.tdesktop-theme \
 		./colors.tdesktop-theme ./tiled.png
-	cd $(telegramdir)/light && $(ZIP) -o ../plata-lumine.tdesktop-theme \
+	cd $(telegramdir)/light && $(ZIP) --strip-extra -o ../plata-lumine.tdesktop-theme \
 		./colors.tdesktop-theme ./tiled.png
-	cd $(telegramdir)/dark && $(ZIP) -o ../plata-noir.tdesktop-theme \
+	cd $(telegramdir)/dark && $(ZIP) --strip-extra -o ../plata-noir.tdesktop-theme \
 		./colors.tdesktop-theme ./tiled.png
 endif
 
