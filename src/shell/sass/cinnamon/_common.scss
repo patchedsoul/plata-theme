@@ -1475,8 +1475,8 @@ $large_item: 10px;
   min-width: 64px;
   min-height: 64px;
   spacing: 1em;
+  margin: 0; // no need to expand (reserve)
   padding: 20px;
-  margin: 32px;
   border: none;
   border-radius: $r_8;
   color: $osd_fg;
