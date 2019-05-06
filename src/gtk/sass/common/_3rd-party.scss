@@ -2232,10 +2232,18 @@ window.background:not(.csd) > box.vertical {
     }
 
     @if $maj_ver == 3 {
-      progress { @include radius(0, none); }
+      progress {
+        @include radius(0, none);
+        margin: 0; // unset spacing
+        padding: 0;
+      }
     }
     @else {
-      progress > trough > progress { @include radius(0, none); }
+      progress > trough > progress {
+        @include radius(0, none);
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 
