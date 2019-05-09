@@ -892,8 +892,6 @@ CLEANFILES += \
 	$(srcdir)/gnome-shell-dark-compact/*.png \
 	$(srcdir)/gnome-shell-dark-compact/assets/*.svg \
 	$(srcdir)/gnome-shell-dark-compact/extensions/workspaces-to-dock/assets/*.svg \
-	$(srcdir)/asset/assets-gnome-shell/common/checkbox-hover.svg \
-	$(srcdir)/asset/assets-gnome-shell/common/checkbox.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/dash-placeholder.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/go-down.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/go-up.svg \
@@ -907,6 +905,12 @@ CLEANFILES += \
 	$(srcdir)/asset/assets-gnome-shell/common/window-close.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/window-close-active.svg \
 	$(srcdir)/asset/assets-gnome-shell/common/window-close-hover.svg \
+	$(srcdir)/asset/assets-gnome-shell/light/checkbox-hover.svg \
+	$(srcdir)/asset/assets-gnome-shell/light/checkbox.svg \
+	$(srcdir)/asset/assets-gnome-shell/mixed/checkbox-hover.svg \
+	$(srcdir)/asset/assets-gnome-shell/mixed/checkbox.svg \
+	$(srcdir)/asset/assets-gnome-shell/dark/checkbox-hover.svg \
+	$(srcdir)/asset/assets-gnome-shell/dark/checkbox.svg \
 	$(srcdir)/asset/assets-gnome-shell/workspaces-to-dock/*.svg
 if !GNOME_IS_320_TO_324
 CLEANFILES += \

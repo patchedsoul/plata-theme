@@ -25,8 +25,6 @@ dark/no-events.svg .
 dark/no-notifications.svg .
 dark/toggle-off.svg .
 
-common/checkbox-hover.svg assets r1
-common/checkbox.svg assets r1
 common/dash-placeholder.svg assets r2
 common/go-down.svg assets r2
 common/go-up.svg assets r2
@@ -36,18 +34,24 @@ common/more-results.svg assets r2
 common/window-close-active.svg assets r1
 common/window-close-hover.svg assets r3
 common/window-close.svg assets r3
+mixed/checkbox-hover.svg assets r1
+mixed/checkbox.svg assets r1
 mixed/checkbox-off-hover.svg assets
 mixed/checkbox-off.svg assets
 mixed/calendar-arrow-left-hover.svg assets
 mixed/calendar-arrow-left.svg assets
 mixed/calendar-arrow-right-hover.svg assets
 mixed/calendar-arrow-right.svg assets
+light/checkbox-hover.svg assets r1
+light/checkbox.svg assets r1
 light/checkbox-off-hover.svg assets
 light/checkbox-off.svg assets
 light/calendar-arrow-left-hover.svg assets
 light/calendar-arrow-left.svg assets
 light/calendar-arrow-right-hover.svg assets
 light/calendar-arrow-right.svg assets
+dark/checkbox-hover.svg assets r1
+dark/checkbox.svg assets r1
 dark/checkbox-off-hover.svg assets
 dark/checkbox-off.svg assets
 dark/calendar-arrow-left-hover.svg assets
