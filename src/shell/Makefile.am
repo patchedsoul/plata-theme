@@ -930,7 +930,7 @@ CLEANFILES += \
 	$(srcdir)/cinnamon/assets/*/*.svg \
 	$(srcdir)/cinnamon-light/assets/*/*.svg \
 	$(srcdir)/cinnamon-dark/assets/*/*.svg \
-	$(srcdir)/asset/assets-cinnamon/common/checkbox/*.svg \
+	$(srcdir)/asset/assets-cinnamon/common/checkbox/radiobutton-checked.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close-active.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close-hover.svg \
@@ -939,8 +939,11 @@ CLEANFILES += \
 	$(srcdir)/asset/assets-cinnamon/common/panel/window-list-active-bottom.svg \
 	$(srcdir)/asset/assets-cinnamon/common/panel/window-list-active-top.svg \
 	$(srcdir)/asset/assets-cinnamon/common/switch/switch-on.svg \
+	$(srcdir)/asset/assets-cinnamon/light/checkbox/checkbox-checked.svg \
 	$(srcdir)/asset/assets-cinnamon/light/misc/thumbnail.svg \
+	$(srcdir)/asset/assets-cinnamon/mixed/checkbox/checkbox-checked.svg \
 	$(srcdir)/asset/assets-cinnamon/mixed/misc/thumbnail.svg \
+	$(srcdir)/asset/assets-cinnamon/dark/checkbox/checkbox-checked.svg \
 	$(srcdir)/asset/assets-cinnamon/dark/misc/thumbnail.svg \
 	$(srcdir)/asset/inkscape.log
 endif

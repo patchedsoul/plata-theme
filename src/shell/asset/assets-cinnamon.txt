@@ -1,4 +1,3 @@
-common/checkbox/checkbox-checked r1
 common/checkbox/radiobutton-checked r1
 common/misc/close-active r1
 common/misc/close-hover r3
@@ -10,6 +9,7 @@ common/panel/activities-active r2
 common/panel/activities
 common/switch/switch-on r1
 
+light/checkbox/checkbox-checked r1
 light/checkbox/checkbox-unchecked
 light/checkbox/radiobutton-unchecked
 light/misc/add-workspace-active
@@ -21,6 +21,7 @@ light/misc/osd
 light/misc/trash-icon
 light/switch/switch-off
 
+mixed/checkbox/checkbox-checked r1
 mixed/checkbox/checkbox-unchecked
 mixed/checkbox/radiobutton-unchecked
 mixed/misc/add-workspace-active
@@ -32,6 +33,7 @@ mixed/misc/osd
 mixed/misc/trash-icon
 mixed/switch/switch-off
 
+dark/checkbox/checkbox-checked r1
 dark/checkbox/checkbox-unchecked
 dark/checkbox/radiobutton-unchecked
 dark/misc/add-workspace-active
