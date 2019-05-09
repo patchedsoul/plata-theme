@@ -384,10 +384,10 @@ gtk2_noir_checkradio_file = \
 	$(gtk2_assetdir)/Check-Radio/check-mixed-active-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-mixed-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-mixed-hover-dark.png \
-	$(gtk2_assetdir)/Check-Radio/check-mixed-hover-menuitem.png \
+	$(gtk2_assetdir)/Check-Radio/check-mixed-hover-menuitem-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-mixed-insensitive-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-mixed-insensitive-menuitem.png \
-	$(gtk2_assetdir)/Check-Radio/check-mixed-menuitem.png \
+	$(gtk2_assetdir)/Check-Radio/check-mixed-menuitem-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-off-active-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-off-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-off-hover-dark.png \
@@ -399,9 +399,9 @@ gtk2_noir_checkradio_file = \
 	$(gtk2_assetdir)/Check-Radio/check-on-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-on-hover-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-on-insensitive-dark.png \
-	$(gtk2_assetdir)/Check-Radio/check-on-hover-menuitem.png \
+	$(gtk2_assetdir)/Check-Radio/check-on-hover-menuitem-dark.png \
 	$(gtk2_assetdir)/Check-Radio/check-on-insensitive-menuitem.png \
-	$(gtk2_assetdir)/Check-Radio/check-on-menuitem.png \
+	$(gtk2_assetdir)/Check-Radio/check-on-menuitem-dark.png \
 	$(gtk2_assetdir)/Check-Radio/radio-mixed-active-dark.png \
 	$(gtk2_assetdir)/Check-Radio/radio-mixed-dark.png \
 	$(gtk2_assetdir)/Check-Radio/radio-mixed-hover-dark.png \

@@ -14,7 +14,7 @@
    height="840"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92+devel (unknown)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="assets-gtk2.svg"
    viewBox="0 0 320 840"
    style="enable-background:new">
@@ -6652,9 +6652,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.459375"
-     inkscape:cx="160"
-     inkscape:cy="487.91028"
+     inkscape:zoom="6.91875"
+     inkscape:cx="136.28232"
+     inkscape:cy="784.95949"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -7051,7 +7051,7 @@
          id="path4-9-7"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccc"
-         style="fill:#ffffff;fill-opacity:1" />
+         style="fill:#111111;fill-opacity:1" />
     </g>
     <g
        inkscape:label="#g4584"
@@ -7071,7 +7071,7 @@
          id="path4-9-1-0"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccc"
-         style="fill:#ffffff;fill-opacity:1" />
+         style="fill:#111111;fill-opacity:1" />
     </g>
     <g
        transform="matrix(0.8,0,0,0.8,248,420.47246)"
@@ -7162,7 +7162,7 @@
          id="path4-9-1-2-7"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccc"
-         style="fill:#ffffff;fill-opacity:1" />
+         style="fill:#111111;fill-opacity:1" />
     </g>
     <g
        id="Check-Radio_radio-off-hover-dark"
@@ -10111,7 +10111,7 @@
     <g
        id="Check-Radio_check-off-menuitem-dark"
        inkscape:label="#g3217"
-       transform="translate(0,-97.999996)">
+       transform="translate(0,-66.000013)">
       <rect
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -10136,7 +10136,7 @@
     <g
        id="Check-Radio_check-off-hover-menuitem-dark"
        inkscape:label="#g3222"
-       transform="translate(0,-97.999996)">
+       transform="translate(0,-66.000013)">
       <g
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -10166,7 +10166,7 @@
     <g
        id="Check-Radio_check-off-insensitive-menuitem-dark"
        inkscape:label="#g3227"
-       transform="translate(0,-97.999996)">
+       transform="translate(0,-66.000013)">
       <g
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -10196,7 +10196,7 @@
     <g
        id="Check-Radio_radio-off-hover-menuitem-dark"
        inkscape:label="#g3260"
-       transform="translate(0,-97.999996)">
+       transform="translate(0,-66.000013)">
       <g
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -10287,7 +10287,7 @@
          style="opacity:0;fill:#ffffff;fill-opacity:0;fill-rule:evenodd;enable-background:new" />
     </g>
     <g
-       transform="translate(-40,-97.999999)"
+       transform="translate(-40,-66.000016)"
        style="enable-background:new"
        id="Check-Radio_radio-off-menuitem-dark"
        inkscape:label="#g3260">
@@ -10447,7 +10447,7 @@
          inkscape:connector-curvature="0"
          id="path3050-7"
          d="m 14.999993,954.36813 9.997653,-0.0119"
-         style="fill:none;stroke:#ffffff;stroke-width:1.98814213;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;stroke:#111111;stroke-width:1.98814213;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
        transform="translate(160)"
@@ -10475,7 +10475,7 @@
              sodipodi:nodetypes="sssssssss" />
         </g>
         <path
-           style="fill:none;stroke:#ffffff;stroke-width:1.98814213;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;stroke:#111111;stroke-width:1.98814213;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 14.999993,954.36813 9.997653,-0.0119"
            id="path3050-9-3"
            inkscape:connector-curvature="0" />
@@ -10507,7 +10507,7 @@
              sodipodi:nodetypes="sssssssss" />
         </g>
         <path
-           style="fill:none;stroke:#ffffff;stroke-width:1.98814213;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;stroke:#111111;stroke-width:1.98814213;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 14.999993,954.36813 9.997653,-0.0119"
            id="path3050-1-2"
            inkscape:connector-curvature="0" />
@@ -11062,7 +11062,7 @@
          style="opacity:0;fill:#ffffff;fill-opacity:0;fill-rule:evenodd;enable-background:new" />
     </g>
     <g
-       transform="translate(40,-98.999999)"
+       transform="translate(40,-67.000016)"
        style="enable-background:new"
        id="Check-Radio_radio-off-insensitive-menuitem-dark"
        inkscape:label="#g3260">
@@ -11092,7 +11092,7 @@
     <g
        id="Check-Radio_check-mixed-menuitem"
        inkscape:label="#g3944"
-       style="opacity:0.87000002"
+       style="opacity:0.87"
        transform="translate(0,-39.999983)">
       <g
          style="opacity:0.87000002;enable-background:new"
@@ -11105,7 +11105,8 @@
            transform="matrix(0.6,0,0,0.6,9,-124.0551)"
            inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-menuitem.png"
            inkscape:export-xdpi="90"
-           inkscape:export-ydpi="90">
+           inkscape:export-ydpi="90"
+           style="">
           <path
              style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
              d="m 7,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
@@ -11124,44 +11125,6 @@
       <path
          inkscape:connector-curvature="0"
          id="path3937"
-         d="m 14,280.3622 h 8"
-         style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    </g>
-    <g
-       transform="translate(40,-39.999983)"
-       id="Check-Radio_check-mixed-hover-menuitem"
-       inkscape:label="#g3944"
-       style="opacity:1;enable-background:new">
-      <g
-         style="opacity:0.87000002;enable-background:new"
-         transform="translate(0,19.000002)"
-         inkscape:label="#g6167"
-         id="g6167-3">
-        <g
-           inkscape:label="#g4615"
-           id="g4615-7-8"
-           transform="matrix(0.6,0,0,0.6,9,-124.0551)"
-           inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-menuitem.png"
-           inkscape:export-xdpi="90"
-           inkscape:export-ydpi="90">
-          <path
-             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-             d="m 7,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
-             id="rect4138-6-6-8"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="sssssssss" />
-        </g>
-        <rect
-           style="fill:none;stroke:none"
-           id="rect6165-1-3"
-           width="16"
-           height="16"
-           x="10"
-           y="253.3622" />
-      </g>
-      <path
-         inkscape:connector-curvature="0"
-         id="path3937-1"
          d="m 14,280.3622 h 8"
          style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
@@ -12632,5 +12595,183 @@
        id="Buttons_flat-button-semi-active-dark"
        style="opacity:0.18;fill:#f5f5f5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        inkscape:label="#rect3052-9-8-1" />
+    <g
+       id="Check-Radio_check-on-menuitem-dark"
+       inkscape:label="#g6167"
+       transform="translate(160,-36.999978)"
+       style="opacity:0.87000002;enable-background:new">
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-menuitem.png"
+         transform="matrix(0.6,0,0,0.6,9,-124.0551)"
+         id="g4615-6"
+         inkscape:label="#g4615">
+        <path
+           sodipodi:nodetypes="sssssssss"
+           inkscape:connector-curvature="0"
+           id="rect4138-6-7"
+           d="m 7,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
+           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+        <path
+           style="fill:#111111;fill-opacity:1"
+           sodipodi:nodetypes="ccccccc"
+           inkscape:connector-curvature="0"
+           id="path4-9-75-5"
+           d="M 12.805556,648.23718 7.25,642.68158 l 1.566667,-1.5666 3.988889,3.9777 8.433333,-8.4333 1.566667,1.5778 z" />
+      </g>
+      <rect
+         y="253.3622"
+         x="10"
+         height="16"
+         width="16"
+         id="rect6165-3"
+         style="fill:none;stroke:none" />
+    </g>
+    <g
+       style="enable-background:new"
+       id="Check-Radio_check-on-hover-menuitem-dark"
+       inkscape:label="#g6175"
+       transform="translate(160,-36.999978)">
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-hover-menuitem.png"
+         transform="matrix(0.6,0,0,0.6,34,-124.0551)"
+         id="g4584-6"
+         inkscape:label="#g4584">
+        <path
+           sodipodi:nodetypes="sssssssss"
+           inkscape:connector-curvature="0"
+           id="rect4138-4-5-2"
+           d="m 32,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
+           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+        <path
+           style="fill:#111111;fill-opacity:1"
+           sodipodi:nodetypes="ccccccc"
+           inkscape:connector-curvature="0"
+           id="path4-9-1-29-9"
+           d="m 37.805556,648.23718 -5.555556,-5.5556 1.566667,-1.5666 3.988889,3.9777 8.433333,-8.4333 1.566667,1.5778 z" />
+      </g>
+      <rect
+         y="253.3622"
+         x="50"
+         height="16"
+         width="16"
+         id="rect6173-1"
+         style="fill:none;stroke:none" />
+    </g>
+    <g
+       id="Check-Radio_check-mixed-menuitem-dark"
+       inkscape:label="#g3944"
+       style="opacity:0.87000002;enable-background:new"
+       transform="translate(160,-39.999978)">
+      <g
+         style="opacity:0.87000002;enable-background:new"
+         transform="translate(0,19.000002)"
+         inkscape:label="#g6167"
+         id="g6167-6">
+        <g
+           inkscape:label="#g4615"
+           id="g4615-7-2"
+           transform="matrix(0.6,0,0,0.6,9,-124.0551)"
+           inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-menuitem.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <path
+             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+             d="m 7,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
+             id="rect4138-6-6-6"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="sssssssss" />
+        </g>
+        <rect
+           style="fill:none;stroke:none"
+           id="rect6165-1-1"
+           width="16"
+           height="16"
+           x="10"
+           y="253.3622" />
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3937-8"
+         d="m 14,280.3622 h 8"
+         style="fill:none;stroke:#111111;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="Check-Radio_check-mixed-hover-menuitem"
+       inkscape:label="#g3052">
+      <g
+         transform="translate(0,-20.999998)"
+         inkscape:label="#g6175"
+         id="g6175"
+         style="enable-background:new">
+        <g
+           inkscape:label="#g4584"
+           id="g4584-7"
+           transform="matrix(0.6,0,0,0.6,34,-124.0551)"
+           inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-hover-menuitem.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <path
+             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+             d="m 32,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
+             id="rect4138-4-5-3"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="sssssssss" />
+        </g>
+        <rect
+           style="fill:none;stroke:none"
+           id="rect6173-12"
+           width="16"
+           height="16"
+           x="50"
+           y="253.3622" />
+      </g>
+      <path
+         style="opacity:1;fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+         d="m 54,240.36222 h 8"
+         id="path3937-9"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(160)"
+       style="enable-background:new"
+       id="Check-Radio_check-mixed-hover-menuitem-dark"
+       inkscape:label="#g3052">
+      <g
+         transform="translate(0,-20.999998)"
+         inkscape:label="#g6175"
+         id="g6175-1"
+         style="enable-background:new">
+        <g
+           inkscape:label="#g4584"
+           id="g4584-7-9"
+           transform="matrix(0.6,0,0,0.6,34,-124.0551)"
+           inkscape:export-filename="/usr/share/themes/Plata/gtk-2.0/Check-Radio/check-on-hover-menuitem.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90">
+          <path
+             style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#3f51b5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+             d="m 32,632.36218 c -1.10801,0 -2,0.89199 -2,2 v 16 c 0,1.10801 0.89199,2 2,2 h 16 c 1.10801,0 2,-0.89199 2,-2 v -16 c 0,-1.10801 -0.89199,-2 -2,-2 z"
+             id="rect4138-4-5-3-4"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="sssssssss" />
+        </g>
+        <rect
+           style="fill:none;stroke:none"
+           id="rect6173-12-7"
+           width="16"
+           height="16"
+           x="50"
+           y="253.3622" />
+      </g>
+      <path
+         style="opacity:1;fill:none;stroke:#111111;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+         d="m 54,240.36222 h 8"
+         id="path3937-9-8"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>

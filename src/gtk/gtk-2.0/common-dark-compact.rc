@@ -1931,7 +1931,7 @@ style "menu_item" {
       recolorable     = TRUE
       state           = NORMAL
       shadow          = IN
-      overlay_file    = "Check-Radio/check-on-menuitem.png"
+      overlay_file    = "Check-Radio/check-on-menuitem-dark.png"
       overlay_stretch = FALSE
     }
     image {
@@ -1939,7 +1939,7 @@ style "menu_item" {
       recolorable     = TRUE
       state           = PRELIGHT
       shadow          = IN
-      overlay_file    = "Check-Radio/check-on-hover-menuitem.png"
+      overlay_file    = "Check-Radio/check-on-hover-menuitem-dark.png"
       overlay_stretch = FALSE
     }
     image {
@@ -1947,7 +1947,7 @@ style "menu_item" {
       recolorable     = TRUE
       state           = ACTIVE
       shadow          = IN
-      overlay_file    = "Check-Radio/check-on-hover-menuitem.png"
+      overlay_file    = "Check-Radio/check-on-hover-menuitem-dark.png"
       overlay_stretch = FALSE
     }
     image {
@@ -1963,7 +1963,7 @@ style "menu_item" {
       recolorable     = TRUE
       state           = NORMAL
       shadow          = ETCHED_IN
-      overlay_file    = "Check-Radio/check-mixed-menuitem.png"
+      overlay_file    = "Check-Radio/check-mixed-menuitem-dark.png"
       overlay_stretch = FALSE
     }
     image {
@@ -1971,7 +1971,7 @@ style "menu_item" {
       recolorable     = TRUE
       state           = PRELIGHT
       shadow          = ETCHED_IN
-      overlay_file    = "Check-Radio/check-mixed-hover-menuitem.png"
+      overlay_file    = "Check-Radio/check-mixed-hover-menuitem-dark.png"
       overlay_stretch = FALSE
     }
     image {
@@ -1979,7 +1979,7 @@ style "menu_item" {
       recolorable     = TRUE
       state           = ACTIVE
       shadow          = ETCHED_IN
-      overlay_file    = "Check-Radio/check-mixed-hover-menuitem.png"
+      overlay_file    = "Check-Radio/check-mixed-hover-menuitem-dark.png"
       overlay_stretch = FALSE
     }
     image {
