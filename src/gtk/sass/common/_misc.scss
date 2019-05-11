@@ -533,6 +533,10 @@ $gf_margin: 12px;
 .nautilus { // hide outlines
   &-canvas-item {
     @include radius($r_2, none);
+    &:not(:focus) { // FIXME: prevent unneeded icon dimming when unfocused
+      background-color: $sel_bg;
+      color: $sel_fg;
+    }
     @if $maj_ver == 3 {
       outline-width: 0; // unset outlines
     }
