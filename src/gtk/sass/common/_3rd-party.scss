@@ -1568,8 +1568,79 @@ window.background.budgie-settings-window.csd {
   }
 }
 
-// pixel-saver(?) applet
-.budgie-panel box.titlebar {
+// pixel-saver-applet
+%pixel_saver_button {
+  min-width: $icon_size;
+  min-height: $icon_size;
+  padding: 0;
+  border: none;
+  background: none;
+  color: if($variant == mixed, $inv_fg, $fg);
+  @include transition(reset);
+
+  image {
+    border-radius: $r;
+    background-size: $icon_size $icon_size;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:active {
+    background: none;
+    color: if($variant != light, $sel_fg, black);
+    @include transition(reset);
+
+    image { -gtk-icon-shadow: none; }
+  }
+
+  // hide unneeded button images when Raven widget was shown
+  &:disabled image { opacity: 0; }
+}
+
+%pixel_saver_button_ink_reaction {
+  &:hover image {
+    @if $variant != light {
+      background-image: image(track($sel_fg, $a_trk_1));
+    }
+    @else {
+      background-image: image(track(black, $a_trk_1));
+    }
+  }
+
+  &:active image {
+    @if $variant != light {
+      background-image: image(track($sel_fg, $a_trk_2));
+    }
+    @else {
+      background-image: image(track(black, $a_trk_2));
+    }
+  }
+}
+
+%pixel_saver_label_spacing {
+  > widget > label {
+    &:dir(ltr) { padding-right: 3px; }
+    &:dir(rtl) { padding-left: 3px; }
+  }
+}
+
+.budgie-panel > box > widget > box {
+  // FIXME: Ubuntu-budgie has a downstream patch breaking our theming,
+  // there's no specific style-classes.
+  > button.flat.image-button {
+    @extend %pixel_saver_button;
+    @extend %pixel_saver_button_ink_reaction;
+  }
+
+  &.horizontal {
+    @extend %pixel_saver_label_spacing;
+
+    > button.flat.image-button { padding: 0 3px; }
+  }
+}
+
+.budgie-panel box.titlebar { // Github original applet
   border-radius: 0;
   background: unset;
 
@@ -1578,29 +1649,7 @@ window.background.budgie-settings-window.csd {
   }
 
   > button.image-button.titlebutton {
-    min-width: $icon_size;
-    min-height: $icon_size;
-    padding: 0;
-    border: none;
-    background: none;
-    color: if($variant == mixed, $inv_fg, $fg);
-    @include transition(reset);
-
-    image {
-      border-radius: $r;
-      background-size: $icon_size $icon_size;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-
-    &:hover,
-    &:active {
-      background: none;
-      color: if($variant != light, $sel_fg, black);
-      @include transition(reset);
-
-      image { -gtk-icon-shadow: none; }
-    }
+    @extend %pixel_saver_button;
 
     &.close {
       &:hover image {
@@ -1614,37 +1663,12 @@ window.background.budgie-settings-window.csd {
       }
     }
 
-    &:not(.close) {
-      &:hover image {
-        @if $variant != light {
-          background-image: image(track($sel_fg, $a_trk_1));
-        }
-        @else {
-          background-image: image(track(black, $a_trk_1));
-        }
-      }
-
-      &:active image {
-        @if $variant != light {
-          background-image: image(track($sel_fg, $a_trk_2));
-        }
-        @else {
-          background-image: image(track(black, $a_trk_2));
-        }
-      }
-    }
-
-    // hide unneeded button images when Raven widget was shown
-    &:disabled image { opacity: 0; }
+    &:not(.close) { @extend %pixel_saver_button_ink_reaction; }
   }
 
   &.horizontal { // spacing
+    @extend %pixel_saver_label_spacing;
     padding: 0 3px;
-
-    > widget > label {
-      &:dir(ltr) { padding-right: 3px; }
-      &:dir(rtl) { padding-left: 3px; }
-    }
 
     > button.image-button.titlebutton { padding: 0 3px; }
   }
