@@ -111,7 +111,9 @@ $sec_acc_fg: track($acc_fg, $a_fg_sel_2nd);
 $drp_fg: $acc_fg;
 $drp_bg: track($drp_fg, $a_trk_out);
 
-$inv_acc_fg: mix($acc_bg, $inv_fg, percentage($a_fg_3rd));
+$inv_acc_fg: saturate(
+              lighten($acc_bg, percentage($a_trk_1)),
+              percentage($a_trk_1));
 $inv_sec_acc_fg: track($inv_acc_fg, $a_fg_2nd);
 $inv_drp_fg: $inv_acc_fg;
 
