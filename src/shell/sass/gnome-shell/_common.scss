@@ -565,6 +565,10 @@ StScrollBar {
     @include fontscaling(1.0);
     padding-bottom: 8px;
   }
+
+  @if $ver > 3.31 {
+    &-grid { @extend %table_grid_spacing; }
+  }
 }
 
 .hidden { color: transparent; }
@@ -716,7 +720,9 @@ StScrollBar {
 //  ************************/
 
 .network-dialog-secret-table,
-.keyring-dialog-control-table {
+.keyring-dialog-control-table { @extend %table_grid_spacing; }
+
+%table_grid_spacing {
   spacing-rows: 15px;
   spacing-columns: 1em;
 }
