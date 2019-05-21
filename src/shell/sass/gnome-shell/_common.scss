@@ -551,6 +551,7 @@ StScrollBar {
 
   &-password-box {
     spacing: 1em;
+    // FIXME: 3.33/34 cycle, we should drop this?
     padding-bottom: if($ref_weight >= 1.0, 1em, 0.7em);
   }
 
@@ -567,7 +568,13 @@ StScrollBar {
   }
 
   @if $ver > 3.31 {
+    &-pim-box,
+    &-keyfiles-box { spacing: 1em; }
+
     &-grid { @extend %table_grid_spacing; }
+
+    &-button.button {
+    }
   }
 }
 
