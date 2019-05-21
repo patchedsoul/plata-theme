@@ -569,7 +569,7 @@ $gf_margin: 12px;
 
   > headerbar.titlebar { // radial-progress widget
     revealer > button.popup.toggle {
-      > widget { color: $acc_fg; }
+      > widget { color: if($variant == mixed, $inv_acc_fg, $acc_fg); }
 
       &:checked > widget { color: $sel_fg; }
     }
