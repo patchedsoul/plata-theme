@@ -117,7 +117,13 @@ $acc_semi_fill_bg: opacity($acc_fg, $a_trk_1);
 $acc_fill_bg: opacity($acc_fg, $a_trk_2);
 $acc_out_fg: opacity($acc_fg, $a_trk_out);
 
-$inv_acc_fg: mix($acc_bg, $osd_fg, percentage($a_fg_3rd));
+$inv_acc_fg:if($variant == light,
+            saturate(
+              darken($acc_bg, percentage($a_trk_2)),
+              percentage($a_trk_2)),
+            saturate(
+              lighten($acc_bg, percentage($a_trk_1)),
+              percentage($a_trk_1)));
 $inv_sec_acc_fg: track($inv_acc_fg, $a_fg_2nd);
 $ovv_acc_fg: saturate(
              lighten($acc_bg, percentage($a_trk_1)),
