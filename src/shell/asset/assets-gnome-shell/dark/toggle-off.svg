@@ -13,7 +13,7 @@
    height="20"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="toggle-off.svg">
   <defs
      id="defs4">
@@ -106,8 +106,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="14.364584"
-     inkscape:cx="12.327432"
-     inkscape:cy="8.9874987"
+     inkscape:cx="-0.86473563"
+     inkscape:cy="8.8482674"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -175,7 +175,7 @@
            x="0"
            y="567.36218" />
         <rect
-           style="opacity:1;fill:#f5f5f5;fill-opacity:0.54000005;stroke:none;stroke-width:1.41421354"
+           style="opacity:1;fill:#d7d7d7;fill-opacity:0.5411765;stroke:none;stroke-width:1.41421354"
            id="rect2987-6"
            width="40"
            height="15"
@@ -199,7 +199,7 @@
            cy="512.36218"
            cx="165"
            id="path3757-68"
-           style="fill:#f5f5f5;fill-opacity:1;stroke:none;stroke-width:0.2500875;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:#d7d7d7;fill-opacity:1;stroke:none;stroke-width:0.2500875;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            r="10" />
         <rect
            style="fill:#000000;fill-opacity:0;stroke:none;stroke-opacity:0"
