@@ -2520,8 +2520,6 @@ $tabwin_padding: 12px;
 
 window.thunar {
   toolbar#location-toolbar {
-    border-bottom: 1px solid $div_fg;
-
     // why didn't devs use .text/.image button class?
     .linked.path-bar > button.path-bar-button { @extend %pathbar_button; }
 
@@ -2531,9 +2529,14 @@ window.thunar {
     }
   }
 
+  > grid.horizontal > paned.horizontal { border-top: 1px solid $div_fg; }
+
   notebook {
     // hide unneeded border
     stack > scrolledwindow.frame.standard-view { border-top-width: 0; }
+
+    // EelCanvasItem
+    widget.view { @extend .nautilus-canvas-item; }
   }
 }
 
