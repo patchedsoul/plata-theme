@@ -1,2 +1,4 @@
 light/thumbnail
+light-compact/thumbnail
 dark/thumbnail
+dark-compact/thumbnail

@@ -7,6 +7,6 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 Type=X-GNOME-Metatheme
 GtkTheme=Plata-Compact
-MetacityTheme=Plata
+MetacityTheme=Plata-Compact
 IconTheme=Adwaita
 CursorTheme=Adwaita

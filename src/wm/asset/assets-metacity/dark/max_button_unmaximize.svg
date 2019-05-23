@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="24"
-   height="24"
-   viewBox="0 0 24 24.000001"
+   width="38"
+   height="38"
+   viewBox="0 0 38 38.000002"
    id="svg4747"
    version="1.1"
-   inkscape:version="0.92+devel (unknown)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="max_button_unmaximize.svg">
   <defs
      id="defs4749" />
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="30.885714"
-     inkscape:cx="9.4252633"
-     inkscape:cy="12.449015"
+     inkscape:zoom="15.442857"
+     inkscape:cx="3.2897406"
+     inkscape:cy="22.745037"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
       </cc:Work>
@@ -75,17 +75,17 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-1028.3622)">
+     transform="translate(0,-1014.3622)">
     <circle
-       style="opacity:1;fill:#f5f5f5;fill-opacity:0.12156863;fill-rule:evenodd;stroke:none;stroke-width:9.60499954;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:478.43673706;stroke-opacity:0.75"
+       style="opacity:1;fill:#f5f5f5;fill-opacity:0.12156863;fill-rule:evenodd;stroke:none;stroke-width:14.40749836;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:478.43673706;stroke-opacity:0.75"
        id="path5326"
-       cx="-14.999999"
-       cy="1040.3622"
-       r="10.000001" />
+       cx="-20"
+       cy="1033.3622"
+       r="15" />
     <path
        id="rect4513"
        style="opacity:1;fill:#f5f5f5;fill-opacity:0.87058824;fill-rule:evenodd"
-       d="m 11,1036.3622 v 5 h 5 v -5 z m 2,2 h 1 v 1 h -1 z m -3,4 h 4 v 2 h -4 z m -2,-4 h 2 v 6 H 8 Z"
+       d="m 18,1029.3622 v 5 h 5 v -5 z m 2,2 h 1 v 1 h -1 z m -3,4 h 4 v 2 h -4 z m -2,-4 h 2 v 6 h -2 z"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccccccccccccc" />
   </g>

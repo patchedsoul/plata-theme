@@ -16,6 +16,8 @@ INDEX_C="assets-metacity-common.txt"
 INDEX="assets-metacity.txt"
 RECOLOR_FILE1=$SRC_DIR/"common/button_close_pressed.svg"
 RECOLOR_FILE2=$SRC_DIR/"common/button_close_prelight.svg"
+RECOLOR_FILE3=$SRC_DIR/"common-compact/button_close_pressed.svg"
+RECOLOR_FILE4=$SRC_DIR/"common-compact/button_close_prelight.svg"
 COL_FILE="../../../gtk/sass/common/_colors.scss"
 KEY_FILE="../../../gtk/sass/common/resources/_key_colors.scss"
 
@@ -34,14 +36,18 @@ if [ -e $KEY_FILE ]; then
 
     cp -f $RECOLOR_FILE1.in $RECOLOR_FILE1
     cp -f $RECOLOR_FILE2.in $RECOLOR_FILE2
+    cp -f $RECOLOR_FILE3.in $RECOLOR_FILE3
+    cp -f $RECOLOR_FILE4.in $RECOLOR_FILE4
 
     if [ $selection1 != $selection2 ]; then
         sed -i "s/$selection1/$selection2/gi" $RECOLOR_FILE1
+        sed -i "s/$selection1/$selection2/gi" $RECOLOR_FILE3
         echo $selection1 is re-colored with $selection2.
     fi
 
     if [ $destruction1 != $destruction2 ]; then
         sed -i "s/$destruction1/$destruction2/gi" $RECOLOR_FILE2
+        sed -i "s/$destruction1/$destruction2/gi" $RECOLOR_FILE4
         echo $destruction1 is re-colored with $destruction2.
     fi
 else
@@ -58,6 +64,12 @@ do
     if [ '!' -d $ASSETS_DIR/dark ]; then
         mkdir -p $ASSETS_DIR/dark
     fi
+    if [ '!' -d $ASSETS_DIR/light-compact ]; then
+        mkdir -p $ASSETS_DIR/light-compact
+    fi
+    if [ '!' -d $ASSETS_DIR/dark-compact ]; then
+        mkdir -p $ASSETS_DIR/dark-compact
+    fi
     if [ -f $ASSETS_DIR/light/$i.svg ] && \
         [ $SRC_DIR/common/$i.svg -ot $ASSETS_DIR/light/$i.svg ]; then
         echo $ASSETS_DIR/light/$i.svg exists.
@@ -65,12 +77,26 @@ do
         echo Cloning $ASSETS_DIR/light/$i.svg
         cp $SRC_DIR/common/$i.svg $ASSETS_DIR/light
     fi
+    if [ -f $ASSETS_DIR/light-compact/$i.svg ] && \
+        [ $SRC_DIR/common-compact/$i.svg -ot $ASSETS_DIR/light-compact/$i.svg ]; then
+        echo $ASSETS_DIR/light-compact/$i.svg exists.
+    else
+        echo Cloning $ASSETS_DIR/light-compact/$i.svg
+        cp $SRC_DIR/common-compact/$i.svg $ASSETS_DIR/light-compact
+    fi
     if [ -f $ASSETS_DIR/dark/$i.svg ] && \
         [ $SRC_DIR/common/$i.svg -ot $ASSETS_DIR/dark/$i.svg ]; then
         echo $ASSETS_DIR/dark/$i.svg exists.
     else
         echo Cloning $ASSETS_DIR/dark/$i.svg
         cp $SRC_DIR/common/$i.svg $ASSETS_DIR/dark
+    fi
+    if [ -f $ASSETS_DIR/dark-compact/$i.svg ] && \
+        [ $SRC_DIR/common-compact/$i.svg -ot $ASSETS_DIR/dark-compact/$i.svg ]; then
+        echo $ASSETS_DIR/dark-compact/$i.svg exists.
+    else
+        echo Cloning $ASSETS_DIR/dark-compact/$i.svg
+        cp $SRC_DIR/common-compact/$i.svg $ASSETS_DIR/dark-compact
     fi
 done
 for i in $(<$INDEX)
@@ -82,12 +108,26 @@ do
         echo Cloning $ASSETS_DIR/light/$i.svg
         cp $SRC_DIR/light/$i.svg $ASSETS_DIR/light
     fi
+    if [ -f $ASSETS_DIR/light-compact/$i.svg ] && \
+        [ $SRC_DIR/light-compact/$i.svg -ot $ASSETS_DIR/light-compact/$i.svg ]; then
+        echo $ASSETS_DIR/light-compact/$i.svg exists.
+    else
+        echo Cloning $ASSETS_DIR/light-compact/$i.svg
+        cp $SRC_DIR/light-compact/$i.svg $ASSETS_DIR/light-compact
+    fi
     if [ -f $ASSETS_DIR/dark/$i.svg ] && \
         [ $SRC_DIR/dark/$i.svg -ot $ASSETS_DIR/dark/$i.svg ]; then
         echo $ASSETS_DIR/dark/$i.svg exists.
     else
         echo Cloning $ASSETS_DIR/dark/$i.svg
         cp $SRC_DIR/dark/$i.svg $ASSETS_DIR/dark
+    fi
+    if [ -f $ASSETS_DIR/dark-compact/$i.svg ] && \
+        [ $SRC_DIR/dark-compact/$i.svg -ot $ASSETS_DIR/dark-compact/$i.svg ]; then
+        echo $ASSETS_DIR/dark-compact/$i.svg exists.
+    else
+        echo Cloning $ASSETS_DIR/dark-compact/$i.svg
+        cp $SRC_DIR/dark-compact/$i.svg $ASSETS_DIR/dark-compact
     fi
 done
 

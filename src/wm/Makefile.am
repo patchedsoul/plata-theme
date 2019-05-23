@@ -32,6 +32,31 @@ metacity_asset_file = \
 	$(metacitydir)/dark/max_button_unmaximize_pressed.svg \
 	$(metacitydir)/dark/max_button_unmaximize.svg \
 	$(metacitydir)/dark/thumbnail.png
+metacity_compact_xml_file = \
+	$(metacitydir)/dark-compact/metacity-theme-3.xml
+metacity_compact_asset_file = \
+	$(metacitydir)/dark-compact/button_close_prelight.svg \
+	$(metacitydir)/dark-compact/button_close_pressed.svg \
+	$(metacitydir)/dark-compact/button_close.svg \
+	$(metacitydir)/dark-compact/button_maximize_prelight.svg \
+	$(metacitydir)/dark-compact/button_maximize_pressed.svg \
+	$(metacitydir)/dark-compact/button_maximize.svg \
+	$(metacitydir)/dark-compact/button_menu_prelight.svg \
+	$(metacitydir)/dark-compact/button_menu_pressed.svg \
+	$(metacitydir)/dark-compact/button_menu.svg \
+	$(metacitydir)/dark-compact/button_minimize_prelight.svg \
+	$(metacitydir)/dark-compact/button_minimize_pressed.svg \
+	$(metacitydir)/dark-compact/button_minimize.svg \
+	$(metacitydir)/dark-compact/button_shade_prelight.svg \
+	$(metacitydir)/dark-compact/button_shade_pressed.svg \
+	$(metacitydir)/dark-compact/button_shade.svg \
+	$(metacitydir)/dark-compact/button_unshade_prelight.svg \
+	$(metacitydir)/dark-compact/button_unshade_pressed.svg \
+	$(metacitydir)/dark-compact/button_unshade.svg \
+	$(metacitydir)/dark-compact/max_button_unmaximize_prelight.svg \
+	$(metacitydir)/dark-compact/max_button_unmaximize_pressed.svg \
+	$(metacitydir)/dark-compact/max_button_unmaximize.svg \
+	$(metacitydir)/dark-compact/thumbnail.png
 metacity_lumine_xml_file = \
 	$(metacitydir)/light/metacity-theme-3.xml
 metacity_lumine_asset_file = \
@@ -57,6 +82,31 @@ metacity_lumine_asset_file = \
 	$(metacitydir)/light/max_button_unmaximize_pressed.svg \
 	$(metacitydir)/light/max_button_unmaximize.svg \
 	$(metacitydir)/light/thumbnail.png
+metacity_lumine_compact_xml_file = \
+	$(metacitydir)/light-compact/metacity-theme-3.xml
+metacity_lumine_compact_asset_file = \
+	$(metacitydir)/light-compact/button_close_prelight.svg \
+	$(metacitydir)/light-compact/button_close_pressed.svg \
+	$(metacitydir)/light-compact/button_close.svg \
+	$(metacitydir)/light-compact/button_maximize_prelight.svg \
+	$(metacitydir)/light-compact/button_maximize_pressed.svg \
+	$(metacitydir)/light-compact/button_maximize.svg \
+	$(metacitydir)/light-compact/button_menu_prelight.svg \
+	$(metacitydir)/light-compact/button_menu_pressed.svg \
+	$(metacitydir)/light-compact/button_menu.svg \
+	$(metacitydir)/light-compact/button_minimize_prelight.svg \
+	$(metacitydir)/light-compact/button_minimize_pressed.svg \
+	$(metacitydir)/light-compact/button_minimize.svg \
+	$(metacitydir)/light-compact/button_shade_prelight.svg \
+	$(metacitydir)/light-compact/button_shade_pressed.svg \
+	$(metacitydir)/light-compact/button_shade.svg \
+	$(metacitydir)/light-compact/button_unshade_prelight.svg \
+	$(metacitydir)/light-compact/button_unshade_pressed.svg \
+	$(metacitydir)/light-compact/button_unshade.svg \
+	$(metacitydir)/light-compact/max_button_unmaximize_prelight.svg \
+	$(metacitydir)/light-compact/max_button_unmaximize_pressed.svg \
+	$(metacitydir)/light-compact/max_button_unmaximize.svg \
+	$(metacitydir)/light-compact/thumbnail.png
 
 xfwmdir   = $(srcdir)/xfwm4
 xfwm_file = \
@@ -266,12 +316,21 @@ if ENABLE_FLASHBACK
 	$(MKDIR_P) $(platadir)/metacity-1
 	$(MKDIR_P) $(luminedir)/metacity-1
 	$(MKDIR_P) $(noirdir)/metacity-1
+	$(MKDIR_P) $(platacompactdir)/metacity-1
+	$(MKDIR_P) $(luminecompactdir)/metacity-1
+	$(MKDIR_P) $(noircompactdir)/metacity-1
 	cp -Rv $(metacity_xml_file) $(platadir)/metacity-1
 	cp -Rv $(metacity_xml_file) $(noirdir)/metacity-1
 	cp -Rv $(metacity_lumine_xml_file) $(luminedir)/metacity-1
+	cp -Rv $(metacity_compact_xml_file) $(platacompactdir)/metacity-1
+	cp -Rv $(metacity_compact_xml_file) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_lumine_compact_xml_file) $(luminecompactdir)/metacity-1
 	cp -Rv $(metacity_asset_file) $(platadir)/metacity-1
 	cp -Rv $(metacity_asset_file) $(noirdir)/metacity-1
 	cp -Rv $(metacity_lumine_asset_file) $(luminedir)/metacity-1
+	cp -Rv $(metacity_compact_asset_file) $(platacompactdir)/metacity-1
+	cp -Rv $(metacity_compact_asset_file) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_lumine_compact_asset_file) $(luminecompactdir)/metacity-1
 endif
 
 if ENABLE_CINNAMON
@@ -279,12 +338,21 @@ if !ENABLE_FLASHBACK
 	$(MKDIR_P) $(platadir)/metacity-1
 	$(MKDIR_P) $(luminedir)/metacity-1
 	$(MKDIR_P) $(noirdir)/metacity-1
+	$(MKDIR_P) $(platacompactdir)/metacity-1
+	$(MKDIR_P) $(luminecompactdir)/metacity-1
+	$(MKDIR_P) $(noircompactdir)/metacity-1
 	cp -Rv $(metacity_xml_file) $(platadir)/metacity-1
 	cp -Rv $(metacity_xml_file) $(noirdir)/metacity-1
 	cp -Rv $(metacity_lumine_xml_file) $(luminedir)/metacity-1
+	cp -Rv $(metacity_compact_xml_file) $(platacompactdir)/metacity-1
+	cp -Rv $(metacity_compact_xml_file) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_lumine_compact_xml_file) $(luminecompactdir)/metacity-1
 	cp -Rv $(metacity_asset_file) $(platadir)/metacity-1
 	cp -Rv $(metacity_asset_file) $(noirdir)/metacity-1
 	cp -Rv $(metacity_lumine_asset_file) $(luminedir)/metacity-1
+	cp -Rv $(metacity_compact_asset_file) $(platacompactdir)/metacity-1
+	cp -Rv $(metacity_compact_asset_file) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_lumine_compact_asset_file) $(luminecompactdir)/metacity-1
 endif
 endif
 
@@ -319,6 +387,9 @@ if ENABLE_FLASHBACK
 	test -e $(noirdir)/metacity-1 && rm -rfv $(noirdir)/metacity-1
 	test -e $(luminedir)/metacity-1 && rm -rfv $(luminedir)/metacity-1
 	test -e $(platadir)/metacity-1 && rm -rfv $(platadir)/metacity-1
+	test -e $(noircompactdir)/metacity-1 && rm -rfv $(noircompactdir)/metacity-1
+	test -e $(luminecompactdir)/metacity-1 && rm -rfv $(luminecompactdir)/metacity-1
+	test -e $(platacompactdir)/metacity-1 && rm -rfv $(platacompactdir)/metacity-1
 endif
 
 if ENABLE_CINNAMON
@@ -326,6 +397,9 @@ if !ENABLE_FLASHBACK
 	test -e $(noirdir)/metacity-1 && rm -rfv $(noirdir)/metacity-1
 	test -e $(luminedir)/metacity-1 && rm -rfv $(luminedir)/metacity-1
 	test -e $(platadir)/metacity-1 && rm -rfv $(platadir)/metacity-1
+	test -e $(noircompactdir)/metacity-1 && rm -rfv $(noircompactdir)/metacity-1
+	test -e $(luminecompactdir)/metacity-1 && rm -rfv $(luminecompactdir)/metacity-1
+	test -e $(platacompactdir)/metacity-1 && rm -rfv $(platacompactdir)/metacity-1
 endif
 endif
 
@@ -353,8 +427,14 @@ CLEANFILES += \
 	$(metacitydir)/light/*.png \
 	$(metacitydir)/dark/*.svg \
 	$(metacitydir)/dark/*.png \
+	$(metacitydir)/light-compact/*.svg \
+	$(metacitydir)/light-compact/*.png \
+	$(metacitydir)/dark-compact/*.svg \
+	$(metacitydir)/dark-compact/*.png \
 	$(srcdir)/asset/assets-metacity/common/button_close_pressed.svg \
 	$(srcdir)/asset/assets-metacity/common/button_close_prelight.svg \
+	$(srcdir)/asset/assets-metacity/common-compact/button_close_pressed.svg \
+	$(srcdir)/asset/assets-metacity/common-compact/button_close_prelight.svg \
 	$(srcdir)/asset/inkscape.log
 endif
 
@@ -365,8 +445,14 @@ CLEANFILES += \
 	$(metacitydir)/light/*.png \
 	$(metacitydir)/dark/*.svg \
 	$(metacitydir)/dark/*.png \
+	$(metacitydir)/light-compact/*.svg \
+	$(metacitydir)/light-compact/*.png \
+	$(metacitydir)/dark-compact/*.svg \
+	$(metacitydir)/dark-compact/*.png \
 	$(srcdir)/asset/assets-metacity/common/button_close_pressed.svg \
 	$(srcdir)/asset/assets-metacity/common/button_close_prelight.svg \
+	$(srcdir)/asset/assets-metacity/common-compact/button_close_pressed.svg \
+	$(srcdir)/asset/assets-metacity/common-compact/button_close_prelight.svg \
 	$(srcdir)/asset/inkscape.log
 endif
 endif
