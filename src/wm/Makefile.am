@@ -239,6 +239,136 @@ xfwm_lumine_file = \
 	$(xfwmdir)/light/top-right-active-shaded.png \
 	$(xfwmdir)/light/top-right-active.png \
 	$(xfwmdir)/light/top-right-inactive.png
+xfwm_compact_file = \
+	$(xfwmdir)/dark-compact/bottom-active.png \
+	$(xfwmdir)/dark-compact/bottom-inactive.png \
+	$(xfwmdir)/dark-compact/bottom-left-active.png \
+	$(xfwmdir)/dark-compact/bottom-left-inactive.png \
+	$(xfwmdir)/dark-compact/bottom-right-active.png \
+	$(xfwmdir)/dark-compact/bottom-right-inactive.png \
+	$(xfwmdir)/dark-compact/close-active.png \
+	$(xfwmdir)/dark-compact/close-inactive.png \
+	$(xfwmdir)/dark-compact/close-prelight.png \
+	$(xfwmdir)/dark-compact/close-pressed.png \
+	$(xfwmdir)/dark-compact/hide-active.png \
+	$(xfwmdir)/dark-compact/hide-inactive.png \
+	$(xfwmdir)/dark-compact/hide-prelight.png \
+	$(xfwmdir)/dark-compact/hide-pressed.png \
+	$(xfwmdir)/dark-compact/left-active.png \
+	$(xfwmdir)/dark-compact/left-inactive.png \
+	$(xfwmdir)/dark-compact/maximize-active.png \
+	$(xfwmdir)/dark-compact/maximize-inactive.png \
+	$(xfwmdir)/dark-compact/maximize-prelight.png \
+	$(xfwmdir)/dark-compact/maximize-pressed.png \
+	$(xfwmdir)/dark-compact/maximize-toggled-active.png \
+	$(xfwmdir)/dark-compact/maximize-toggled-inactive.png \
+	$(xfwmdir)/dark-compact/maximize-toggled-prelight.png \
+	$(xfwmdir)/dark-compact/maximize-toggled-pressed.png \
+	$(xfwmdir)/dark-compact/menu-active.png \
+	$(xfwmdir)/dark-compact/menu-inactive.png \
+	$(xfwmdir)/dark-compact/menu-prelight.png \
+	$(xfwmdir)/dark-compact/menu-pressed.png \
+	$(xfwmdir)/dark-compact/right-active.png \
+	$(xfwmdir)/dark-compact/right-inactive.png \
+	$(xfwmdir)/dark-compact/shade-active.png \
+	$(xfwmdir)/dark-compact/shade-inactive.png \
+	$(xfwmdir)/dark-compact/shade-prelight.png \
+	$(xfwmdir)/dark-compact/shade-pressed.png \
+	$(xfwmdir)/dark-compact/shade-toggled-active.png \
+	$(xfwmdir)/dark-compact/shade-toggled-inactive.png \
+	$(xfwmdir)/dark-compact/shade-toggled-prelight.png \
+	$(xfwmdir)/dark-compact/shade-toggled-pressed.png \
+	$(xfwmdir)/dark-compact/stick-active.png \
+	$(xfwmdir)/dark-compact/stick-inactive.png \
+	$(xfwmdir)/dark-compact/stick-prelight.png \
+	$(xfwmdir)/dark-compact/stick-pressed.png \
+	$(xfwmdir)/dark-compact/stick-toggled-active.png \
+	$(xfwmdir)/dark-compact/stick-toggled-inactive.png \
+	$(xfwmdir)/dark-compact/stick-toggled-prelight.png \
+	$(xfwmdir)/dark-compact/stick-toggled-pressed.png \
+	$(xfwmdir)/dark-compact/themerc \
+	$(xfwmdir)/dark-compact/title-1-active-shaded.png \
+	$(xfwmdir)/dark-compact/title-1-active.png \
+	$(xfwmdir)/dark-compact/title-1-inactive.png \
+	$(xfwmdir)/dark-compact/title-2-active.png \
+	$(xfwmdir)/dark-compact/title-2-inactive.png \
+	$(xfwmdir)/dark-compact/title-3-active.png \
+	$(xfwmdir)/dark-compact/title-3-inactive.png \
+	$(xfwmdir)/dark-compact/title-4-active.png \
+	$(xfwmdir)/dark-compact/title-4-inactive.png \
+	$(xfwmdir)/dark-compact/title-5-active.png \
+	$(xfwmdir)/dark-compact/title-5-inactive.png \
+	$(xfwmdir)/dark-compact/top-left-active-shaded.png \
+	$(xfwmdir)/dark-compact/top-left-active.png \
+	$(xfwmdir)/dark-compact/top-left-inactive.png \
+	$(xfwmdir)/dark-compact/top-right-active-shaded.png \
+	$(xfwmdir)/dark-compact/top-right-active.png \
+	$(xfwmdir)/dark-compact/top-right-inactive.png
+xfwm_lumine_compact_file = \
+	$(xfwmdir)/light-compact/bottom-active.png \
+	$(xfwmdir)/light-compact/bottom-inactive.png \
+	$(xfwmdir)/light-compact/bottom-left-active.png \
+	$(xfwmdir)/light-compact/bottom-left-inactive.png \
+	$(xfwmdir)/light-compact/bottom-right-active.png \
+	$(xfwmdir)/light-compact/bottom-right-inactive.png \
+	$(xfwmdir)/light-compact/close-active.png \
+	$(xfwmdir)/light-compact/close-inactive.png \
+	$(xfwmdir)/light-compact/close-prelight.png \
+	$(xfwmdir)/light-compact/close-pressed.png \
+	$(xfwmdir)/light-compact/hide-active.png \
+	$(xfwmdir)/light-compact/hide-inactive.png \
+	$(xfwmdir)/light-compact/hide-prelight.png \
+	$(xfwmdir)/light-compact/hide-pressed.png \
+	$(xfwmdir)/light-compact/left-active.png \
+	$(xfwmdir)/light-compact/left-inactive.png \
+	$(xfwmdir)/light-compact/maximize-active.png \
+	$(xfwmdir)/light-compact/maximize-inactive.png \
+	$(xfwmdir)/light-compact/maximize-prelight.png \
+	$(xfwmdir)/light-compact/maximize-pressed.png \
+	$(xfwmdir)/light-compact/maximize-toggled-active.png \
+	$(xfwmdir)/light-compact/maximize-toggled-inactive.png \
+	$(xfwmdir)/light-compact/maximize-toggled-prelight.png \
+	$(xfwmdir)/light-compact/maximize-toggled-pressed.png \
+	$(xfwmdir)/light-compact/menu-active.png \
+	$(xfwmdir)/light-compact/menu-inactive.png \
+	$(xfwmdir)/light-compact/menu-prelight.png \
+	$(xfwmdir)/light-compact/menu-pressed.png \
+	$(xfwmdir)/light-compact/right-active.png \
+	$(xfwmdir)/light-compact/right-inactive.png \
+	$(xfwmdir)/light-compact/shade-active.png \
+	$(xfwmdir)/light-compact/shade-inactive.png \
+	$(xfwmdir)/light-compact/shade-prelight.png \
+	$(xfwmdir)/light-compact/shade-pressed.png \
+	$(xfwmdir)/light-compact/shade-toggled-active.png \
+	$(xfwmdir)/light-compact/shade-toggled-inactive.png \
+	$(xfwmdir)/light-compact/shade-toggled-prelight.png \
+	$(xfwmdir)/light-compact/shade-toggled-pressed.png \
+	$(xfwmdir)/light-compact/stick-active.png \
+	$(xfwmdir)/light-compact/stick-inactive.png \
+	$(xfwmdir)/light-compact/stick-prelight.png \
+	$(xfwmdir)/light-compact/stick-pressed.png \
+	$(xfwmdir)/light-compact/stick-toggled-active.png \
+	$(xfwmdir)/light-compact/stick-toggled-inactive.png \
+	$(xfwmdir)/light-compact/stick-toggled-prelight.png \
+	$(xfwmdir)/light-compact/stick-toggled-pressed.png \
+	$(xfwmdir)/light-compact/themerc \
+	$(xfwmdir)/light-compact/title-1-active-shaded.png \
+	$(xfwmdir)/light-compact/title-1-active.png \
+	$(xfwmdir)/light-compact/title-1-inactive.png \
+	$(xfwmdir)/light-compact/title-2-active.png \
+	$(xfwmdir)/light-compact/title-2-inactive.png \
+	$(xfwmdir)/light-compact/title-3-active.png \
+	$(xfwmdir)/light-compact/title-3-inactive.png \
+	$(xfwmdir)/light-compact/title-4-active.png \
+	$(xfwmdir)/light-compact/title-4-inactive.png \
+	$(xfwmdir)/light-compact/title-5-active.png \
+	$(xfwmdir)/light-compact/title-5-inactive.png \
+	$(xfwmdir)/light-compact/top-left-active-shaded.png \
+	$(xfwmdir)/light-compact/top-left-active.png \
+	$(xfwmdir)/light-compact/top-left-inactive.png \
+	$(xfwmdir)/light-compact/top-right-active-shaded.png \
+	$(xfwmdir)/light-compact/top-right-active.png \
+	$(xfwmdir)/light-compact/top-right-inactive.png
 
 openboxdir   = $(srcdir)/openbox-3
 openbox_file = \
@@ -360,9 +490,15 @@ if ENABLE_XFCE
 	$(MKDIR_P) $(platadir)/xfwm4
 	$(MKDIR_P) $(noirdir)/xfwm4
 	$(MKDIR_P) $(luminedir)/xfwm4
+	$(MKDIR_P) $(platacompactdir)/xfwm4
+	$(MKDIR_P) $(noircompactdir)/xfwm4
+	$(MKDIR_P) $(luminecompactdir)/xfwm4
 	cp -Rv $(xfwm_file) $(platadir)/xfwm4
 	cp -Rv $(xfwm_file) $(noirdir)/xfwm4
 	cp -Rv $(xfwm_lumine_file) $(luminedir)/xfwm4
+	cp -Rv $(xfwm_compact_file) $(platacompactdir)/xfwm4
+	cp -Rv $(xfwm_compact_file) $(noircompactdir)/xfwm4
+	cp -Rv $(xfwm_lumine_compact_file) $(luminecompactdir)/xfwm4
 endif
 
 if ENABLE_OPENBOX
@@ -461,10 +597,16 @@ if ENABLE_XFCE
 CLEANFILES += \
 	$(xfwmdir)/light/*.png \
 	$(xfwmdir)/dark/*.png \
+	$(xfwmdir)/light-compact/*.png \
+	$(xfwmdir)/dark-compact/*.png \
 	$(srcdir)/asset/assets-xfwm/light/close-pressed.svg \
 	$(srcdir)/asset/assets-xfwm/light/close-prelight.svg \
 	$(srcdir)/asset/assets-xfwm/dark/close-pressed.svg \
 	$(srcdir)/asset/assets-xfwm/dark/close-prelight.svg \
+	$(srcdir)/asset/assets-xfwm/light-compact/close-pressed.svg \
+	$(srcdir)/asset/assets-xfwm/light-compact/close-prelight.svg \
+	$(srcdir)/asset/assets-xfwm/dark-compact/close-pressed.svg \
+	$(srcdir)/asset/assets-xfwm/dark-compact/close-prelight.svg \
 	$(srcdir)/asset/inkscape.log
 endif
 

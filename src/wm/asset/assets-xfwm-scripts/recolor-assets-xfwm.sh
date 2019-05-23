@@ -31,18 +31,26 @@ if [ -e $KEY_FILE ]; then
 
     cp -f $SRC_DIR/light/$RECOLOR_FILE1.in $SRC_DIR/light/$RECOLOR_FILE1
     cp -f $SRC_DIR/dark/$RECOLOR_FILE1.in $SRC_DIR/dark/$RECOLOR_FILE1
+    cp -f $SRC_DIR/light-compact/$RECOLOR_FILE1.in $SRC_DIR/light-compact/$RECOLOR_FILE1
+    cp -f $SRC_DIR/dark-compact/$RECOLOR_FILE1.in $SRC_DIR/dark-compact/$RECOLOR_FILE1
     cp -f $SRC_DIR/light/$RECOLOR_FILE2.in $SRC_DIR/light/$RECOLOR_FILE2
     cp -f $SRC_DIR/dark/$RECOLOR_FILE2.in $SRC_DIR/dark/$RECOLOR_FILE2
+    cp -f $SRC_DIR/light-compact/$RECOLOR_FILE2.in $SRC_DIR/light-compact/$RECOLOR_FILE2
+    cp -f $SRC_DIR/dark-compact/$RECOLOR_FILE2.in $SRC_DIR/dark-compact/$RECOLOR_FILE2
 
     if [ $selection1 != $selection2 ]; then
         sed -i "s/$selection1/$selection2/gi" $SRC_DIR/light/$RECOLOR_FILE1
         sed -i "s/$selection1/$selection2/gi" $SRC_DIR/dark/$RECOLOR_FILE1
+        sed -i "s/$selection1/$selection2/gi" $SRC_DIR/light-compact/$RECOLOR_FILE1
+        sed -i "s/$selection1/$selection2/gi" $SRC_DIR/dark-compact/$RECOLOR_FILE1
         echo $selection1 is re-colored with $selection2.
     fi
 
     if [ $destruction1 != $destruction2 ]; then
         sed -i "s/$destruction1/$destruction2/gi" $SRC_DIR/light/$RECOLOR_FILE2
         sed -i "s/$destruction1/$destruction2/gi" $SRC_DIR/dark/$RECOLOR_FILE2
+        sed -i "s/$destruction1/$destruction2/gi" $SRC_DIR/light-compact/$RECOLOR_FILE2
+        sed -i "s/$destruction1/$destruction2/gi" $SRC_DIR/dark-compact/$RECOLOR_FILE2
         echo $destruction1 is re-colored with $destruction2.
     fi
 else
