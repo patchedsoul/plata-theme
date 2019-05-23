@@ -100,7 +100,7 @@ $small_widget: $widget_size * 0.9;
 $attention: 6px 6px;
 $separator_narrow: 1px 1px;
 $separator_wide: 1px 1px, 1px 1px;
-$titlebutton_small: if($ref_weight < 1.0, 20px, 28px);
+$titlebutton_small: if($ref_weight < 1.0, 24px, 30px);
 $toolitem_size: $widget_size * 3 / 4;
 $min_combo: $icon_size * 1.5;
 $tab_indicator_size: 2px;
