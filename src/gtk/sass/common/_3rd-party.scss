@@ -2467,6 +2467,53 @@ window#whiskermenu-window {
   }
 }
 
+$tabwin_padding: 12px;
+
+#xfwm-tabwin {
+  -XfwmTabwinWidget-icon-size: $icon_size * 6;
+  -XfwmTabwinWidget-preview-size: $icon_size * 6;
+
+  all: unset;
+
+  > box.vertical {
+    margin: $shadow_margin_4;
+    padding: $tabwin_padding;
+    border: 0 none transparent;
+    border-radius: $r_8;
+    @if $variant == mixed {
+      background-color: track($inv_dark_bg, $a_osd);
+      color: $inv_fg;
+    }
+    @else {
+      background-color: track($dark_bg, $a_osd);
+      color: $fg;
+    }
+    box-shadow: $z-depth-4;
+
+    > label {
+      margin-top: $tabwin_padding;
+      font-weight: 400;
+    }
+  }
+
+  button.flat {
+    @if $variant == mixed { @extend %inv-action-area-button; }
+    @else { @extend %inv-action-area-button; }
+    &:not(:disabled) { background-image: none; } // unset ink-reactions
+    font-weight: 500;
+
+    label { padding: ($tabwin_padding / 2) 0; }
+
+    image { padding-top: $tabwin_padding / 2; }
+  }
+
+  .tabwin-app-grid button.flat {
+    min-width: $icon_size * 6 + $tabwin_padding * 2;
+    min-height: $icon_size * 6 + $tabwin_padding * 2;
+    padding: $tabwin_padding;
+  }
+}
+
 // /**********
 //  * Thunar *
 //  **********/
