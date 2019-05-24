@@ -2467,11 +2467,12 @@ window#whiskermenu-window {
   }
 }
 
-$tabwin_padding: 12px;
+$tabwin_padding: if($ref_weight < 1.0, 8px, 12px);
 
 #xfwm-tabwin {
   -XfwmTabwinWidget-icon-size: $icon_size * 6;
   -XfwmTabwinWidget-preview-size: $icon_size * 6;
+  -XfwmTabwinWidget-listview-icon-size: $icon_size * 2;
 
   all: unset;
 
@@ -2499,18 +2500,28 @@ $tabwin_padding: 12px;
   button.flat {
     @if $variant == mixed { @extend %inv-action-area-button; }
     @else { @extend %inv-action-area-button; }
-    &:not(:disabled) { background-image: none; } // unset ink-reactions
+    padding: $tabwin_padding;
     font-weight: 500;
+    &:not(:disabled) { background-image: none; } // unset ink-reactions
+    &:not(:hover):not(:active):not(:checked):not(:disabled) {
+      color: if($variant == mixed, $inv_sec_fg, $sec_fg);
+    }
 
-    label { padding: ($tabwin_padding / 2) 0; }
+    box.vertical {
+      > label { padding-top: $tabwin_padding / 2; }
 
-    image { padding-top: $tabwin_padding / 2; }
+      > image { padding: ($tabwin_padding / 2) 0; }
+    }
+
+    box.horizontal > label {
+      &:dir(ltr) { padding-left: $tabwin_padding / 2; }
+      &:dir(rtl) { padding-right: $tabwin_padding / 2; }
+    }
   }
 
   .tabwin-app-grid button.flat {
     min-width: $icon_size * 6 + $tabwin_padding * 2;
     min-height: $icon_size * 6 + $tabwin_padding * 2;
-    padding: $tabwin_padding;
   }
 }
 
