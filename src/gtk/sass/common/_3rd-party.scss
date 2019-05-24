@@ -2499,7 +2499,7 @@ $tabwin_padding: if($ref_weight < 1.0, 8px, 12px);
 
   button.flat {
     @if $variant == mixed { @extend %inv-action-area-button; }
-    @else { @extend %inv-action-area-button; }
+    @else { @extend %action-area-button; }
     padding: $tabwin_padding;
     font-weight: 500;
     &:not(:disabled) { background-image: none; } // unset ink-reactions
