@@ -2476,9 +2476,7 @@ $tabwin_padding: if($ref_weight < 1.0, 8px, 12px);
 
   all: unset;
 
-  > box.vertical {
-    margin: $shadow_margin_4;
-    padding: $tabwin_padding;
+  &.background {
     border: 0 none transparent;
     border-radius: $r_8;
     @if $variant == mixed {
@@ -2489,7 +2487,10 @@ $tabwin_padding: if($ref_weight < 1.0, 8px, 12px);
       background-color: track($dark_bg, $a_osd);
       color: $fg;
     }
-    box-shadow: $z-depth-4;
+  }
+
+  > box.vertical {
+    padding: $tabwin_padding;
 
     > label {
       margin-top: $tabwin_padding;
