@@ -2470,7 +2470,7 @@ window#whiskermenu-window {
 $tabwin_padding: if($ref_weight < 1.0, 8px, 12px);
 
 #xfwm-tabwin {
-  -XfwmTabwinWidget-icon-size: $icon_size * 6;
+  -XfwmTabwinWidget-icon-size: $icon_size * 3;
   -XfwmTabwinWidget-preview-size: $icon_size * 6;
   -XfwmTabwinWidget-listview-icon-size: $icon_size * 2;
 
