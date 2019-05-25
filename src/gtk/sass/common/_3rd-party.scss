@@ -2329,6 +2329,8 @@ window.background:not(.csd) > box.vertical {
   }
 }
 
+$panel_child_spacing: if($ref_weight < 1.0, 2px, 3px);
+
 .xfce4-panel {
   background-color: $panel_bg;
   color: if($variant == mixed, $inv_fg, $fg);
@@ -2404,6 +2406,18 @@ window.background:not(.csd) > box.vertical {
     &:checked {
       @if $variant != light { background-color: track($sel_fg, $a_trk_1); }
       @else { background-color: track(black, $a_trk_1); }
+    }
+
+    box.horizontal {
+      label {
+        &:dir(ltr) { padding-right: $panel_child_spacing; }
+        &:dir(rtl) { padding-left: $panel_child_spacing; }
+      }
+
+      image {
+        &:dir(ltr) { margin-left: $panel_child_spacing; }
+        &:dir(rtl) { margin-right: $panel_child_spacing; }
+      }
     }
   }
 }
