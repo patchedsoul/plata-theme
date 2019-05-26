@@ -2374,6 +2374,11 @@ $panel_child_spacing: if($ref_weight < 1.0, 2px, 3px);
 
     label { margin-bottom: 0; } // unset baseline
 
+    &.flat.toggle { // generic panel buttons
+      label,
+      image { padding: 0 $panel_child_spacing; }
+    }
+
     &#launcher-arrow { // launcher applet
       // FIXME: quite weird pseudo-class transitions, especially :hover
       // state can't be cleared properly ( -> an upstream issue)
@@ -2417,6 +2422,19 @@ $panel_child_spacing: if($ref_weight < 1.0, 2px, 3px);
       image {
         &:dir(ltr) { margin-left: $panel_child_spacing; }
         &:dir(rtl) { margin-right: $panel_child_spacing; }
+      }
+    }
+  }
+
+  &.vertical { // unset child spacing in vertical layout
+    button.flat.toggle,
+    widget.tasklist > button.toggle {
+      label,
+      image {
+        &:dir(ltr), &:dir(rtl) {
+          margin: 0;
+          padding: 0;
+        }
       }
     }
   }
