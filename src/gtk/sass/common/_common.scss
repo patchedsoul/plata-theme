@@ -377,6 +377,7 @@ entry {
     @include radius($r_4 $r_4 0 0, none);
   }
 
+  @at-root %flat_entry_styling,
   toolbar *:not(.linked) &,
   popover:not(.linked) > &:not(.combo),
   popover *:not(.linked):not(combobox) > &:not(.combo),

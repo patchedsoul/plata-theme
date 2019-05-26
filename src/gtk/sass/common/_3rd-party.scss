@@ -337,6 +337,11 @@ window.budgie-popover:not(.csd) {
         background-color: track(white, $a_div_2);
       }
     }
+
+    *:not(.linked):not(combobox):not(spinbutton) > entry:not(.combo) {
+      @extend %flat_entry_sizing;
+      @extend %flat_entry_styling;
+    }
   }
 
   > frame.container { // generic popover spacing
