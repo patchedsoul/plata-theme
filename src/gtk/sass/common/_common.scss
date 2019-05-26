@@ -368,6 +368,8 @@ entry {
 
   @at-root %flat_entry_sizing,
   toolbar *:not(.linked) &,
+  popover:not(.linked) > &:not(.combo),
+  popover *:not(.linked):not(combobox) > &:not(.combo),
   &.flat {
     min-height: rem($widget_size);
     min-width: rem($widget_size);
@@ -376,6 +378,8 @@ entry {
   }
 
   toolbar *:not(.linked) &,
+  popover:not(.linked) > &:not(.combo),
+  popover *:not(.linked):not(combobox) > &:not(.combo),
   &.flat {
     @include entry(flat-normal);
     &:focus { @include entry(flat-focus); }
@@ -3368,20 +3372,6 @@ combobox > window.popup { // combobox specific context-menu popup
       &:hover { color: $fg; }
       // enforce insensitive foregrounds
       &:disabled { color: $dis_sec_fg; }
-    }
-  }
-
-  *:not(.linked):not(combobox) {
-    entry:not(.combo) {
-      @extend %flat_entry_sizing;
-      @include entry(flat-normal);
-      &:focus { @include entry(flat-focus); }
-      &:disabled { @include entry(flat-disabled); }
-    }
-
-    spinbutton:not(.vertical),
-    spinbutton.vertical {
-      @extend %spin_entry_reset;
     }
   }
 }
