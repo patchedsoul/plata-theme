@@ -368,7 +368,6 @@ entry {
 
   @at-root %flat_entry_sizing,
   toolbar *:not(.linked) &,
-  popover:not(.linked) > &:not(.combo),
   popover *:not(.linked):not(combobox) > &:not(.combo),
   &.flat {
     min-height: rem($widget_size);
@@ -379,7 +378,6 @@ entry {
 
   @at-root %flat_entry_styling,
   toolbar *:not(.linked) &,
-  popover:not(.linked) > &:not(.combo),
   popover *:not(.linked):not(combobox) > &:not(.combo),
   &.flat {
     @include entry(flat-normal);
