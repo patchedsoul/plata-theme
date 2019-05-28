@@ -738,8 +738,8 @@ style "progressbar" {
 
 style "inline_progress" {
   # do not set normal state background
-  # bg[NORMAL] = mix(0.2, @accent_color, @base_color)
-  bg[SELECTED] = mix(0.8, @accent_color, @fg_color) # progress
+  # bg[NORMAL] = mix(0.2, @accent_bg_color, @base_color)
+  bg[SELECTED] = @accent_fg_color # progress
 }
 
 style "range" { 
@@ -1193,9 +1193,9 @@ style "misc_button_label" {
 }
 
 style "buttonbox_button_label" {
-  fg[NORMAL] = mix(0.87, mix(0.54, @accent_color, @fg_color), @bg_color)
-  fg[PRELIGHT] = mix(0.54, @accent_color, @fg_color)
-  fg[ACTIVE] = mix(0.54, @accent_color, @fg_color)
+  fg[NORMAL] = mix(0.87, @accent_fg_color, @bg_color)
+  fg[PRELIGHT] = @accent_fg_color
+  fg[ACTIVE] = @accent_fg_color
   fg[INSENSITIVE] = mix(0.28, @fg_color, @bg_color)
   font_name = "Bold"
 }
@@ -1265,9 +1265,9 @@ style "buttonbox_flat_button" {
   xthickness = 6
   ythickness = 6
 
-  fg[NORMAL] = mix(0.87, mix(0.6, @accent_color, @fg_color), @bg_color)
-  fg[PRELIGHT] = mix(0.6, @accent_color, @fg_color)
-  fg[ACTIVE] = mix(0.6, @accent_color, @fg_color)
+  fg[NORMAL] = mix(0.87, @accent_fg_color, @bg_color)
+  fg[PRELIGHT] = @accent_fg_color
+  fg[ACTIVE] = @accent_fg_color
   fg[INSENSITIVE] = mix(0.28, @fg_color, @bg_color)
 
   engine "pixmap" {
@@ -2254,7 +2254,7 @@ style "notebook_viewport" {
 }
 
 style "notebook_tab_label" {
-  fg[NORMAL] = @selected_bg_color
+  fg[NORMAL] = @selected_label
   fg[ACTIVE] = mix(0.54, @fg_color, @bg_color)
   font_name = "Medium"
 }

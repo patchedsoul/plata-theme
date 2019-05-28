@@ -15,20 +15,20 @@ style "theme-panel" {
   bg[ACTIVE] = @selected_bg_color
   bg[PRELIGHT] = shade(1.1, @selected_bg_color)
   bg[SELECTED] = @selected_bg_color
-  fg[NORMAL] = @inverted_fg_color
+  fg[NORMAL] = @fg_color
   fg[PRELIGHT] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
-  text[NORMAL] = @inverted_fg_color
-  text[PRELIGHT] = @inverted_fg_color
-  text[ACTIVE] = @inverted_fg_color
-  text[SELECTED] = @inverted_fg_color
+  text[NORMAL] = @fg_color
+  text[PRELIGHT] = @fg_color
+  text[ACTIVE] = @fg_color
+  text[SELECTED] = @fg_color
 
   font_name = "Bold"
 }
 
 style "panelbar" {
-  fg[NORMAL] = @inverted_fg_color
+  fg[NORMAL] = @fg_color
   fg[ACTIVE] = @selected_fg_color
   fg[PRELIGHT] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
@@ -42,12 +42,12 @@ style "panelbuttons" {
   xthickness = 2
   ythickness = 0
 
-  fg[NORMAL] = @inverted_fg_color
+  fg[NORMAL] = @fg_color
   fg[PRELIGHT] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
-  fg[INSENSITIVE] = mix(0.28, @inverted_fg_color, @panel_bg_color)
-  bg[ACTIVE] = mix(0.12, @inverted_fg_color, @panel_bg_color)
+  fg[INSENSITIVE] = mix(0.28, @fg_color, @panel_bg_color)
+  bg[ACTIVE] = mix(0.12, @fg_color, @panel_bg_color)
 
   font_name = "Bold"
 
@@ -93,10 +93,10 @@ style "panelbuttons" {
 }
 
 style "theme-panel-text" {
-  fg[NORMAL] = @inverted_fg_color
+  fg[NORMAL] = @fg_color
   fg[PRELIGHT] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
-  text[NORMAL] = @inverted_fg_color
+  text[NORMAL] = @fg_color
   text[PRELIGHT] = @selected_fg_color
   text[ACTIVE] = @selected_fg_color
 
@@ -108,16 +108,16 @@ style "regular-label" {
 }
 
 style "panel-entry" {
-  fg[NORMAL] = @inverted_fg_color
-  fg[PRELIGHT] = @inverted_fg_color
+  fg[NORMAL] = @fg_color
+  fg[PRELIGHT] = @fg_color
   fg[ACTIVE] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
-  fg[INSENSITIVE] = mix(0.28, @inverted_fg_color, @panel_bg_color)
-  text[NORMAL] = @inverted_fg_color
-  text[PRELIGHT] = @inverted_fg_color
+  fg[INSENSITIVE] = mix(0.28, @fg_color, @panel_bg_color)
+  text[NORMAL] = @fg_color
+  text[PRELIGHT] = @fg_color
   text[ACTIVE] = @selected_fg_color
   text[SELECTED] = @selected_fg_color
-  text[INSENSITIVE] = mix(0.28, @inverted_fg_color, @panel_bg_color)
+  text[INSENSITIVE] = mix(0.28, @fg_color, @panel_bg_color)
 }
 
 style "theme-main-menu-text" = "theme-panel-text" {
@@ -157,21 +157,21 @@ style "xfwm-tabwin" {
   Xfwm4TabwinWidget::border-width = 0
   Xfwm4TabwinWidget::border-alpha = 0
   Xfwm4TabwinWidget::icon-size = 48
-  Xfwm4TabwinWidget::listview-icon-size = 16
-  Xfwm4TabwinWidget::preview-size = 128
+  Xfwm4TabwinWidget::listview-icon-size = 32
+  Xfwm4TabwinWidget::preview-size = 96
   Xfwm4TabwinWidget::alpha = 0.9
-  Xfwm4TabwinWidget::border-radius = 2
+  Xfwm4TabwinWidget::border-radius = 8
 
   font_name = "bold"
 
-  bg[NORMAL]   = @inverted_dark_color
-  bg[PRELIGHT] = mix(0.8, @inverted_dark_color, @accent_color)
-  bg[ACTIVE]   = mix(0.8, @inverted_dark_color, @accent_color)
-  bg[SELECTED] = mix(0.8, @inverted_dark_color, @accent_color)
-  fg[NORMAL]   = mix(0.8, @accent_color, @inverted_fg_color)
-  fg[PRELIGHT] = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[ACTIVE]   = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[SELECTED] = mix(0.6, @accent_color, @inverted_fg_color)
+  bg[NORMAL]   = @dark_color
+  bg[PRELIGHT] = mix(0.12, @accent_fg_color, @dark_color)
+  bg[ACTIVE]   = mix(0.25, @accent_fg_color, @dark_color)
+  bg[SELECTED] = mix(0.25, @accent_fg_color, @dark_color)
+  fg[NORMAL]   = mix(0.87, @accent_fg_color, @dark_color)
+  fg[PRELIGHT] = @accent_fg_color
+  fg[ACTIVE]   = @accent_fg_color
+  fg[SELECTED] = @accent_fg_color
 }
 
 style "xfwm-tabwin-button" {
@@ -179,10 +179,10 @@ style "xfwm-tabwin-button" {
   ythickness = 0
   font_name = "normal"
 
-  fg[NORMAL]   = @inverted_fg_color
-  fg[PRELIGHT] = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[ACTIVE]   = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[SELECTED] = mix(0.6, @accent_color, @inverted_fg_color)
+  fg[NORMAL]   = @fg_color
+  fg[PRELIGHT] = @accent_fg_color
+  fg[ACTIVE]   = @accent_fg_color
+  fg[SELECTED] = @accent_fg_color
 
   engine "pixmap" {
     image {
@@ -427,7 +427,7 @@ style "menubar_libreoffice" {
   xthickness = 0
   ythickness = 0
 
-  bg[NORMAL] = @inverted_dark_color
+  bg[NORMAL] = @dark_color
   fg[NORMAL] = mix(0.8, @fg_color, shade(0.96, @bg_color))
   fg[PRELIGHT] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
@@ -452,8 +452,8 @@ style "menubar_item_libreoffice" {
   xthickness = 3
   ythickness = 6
 
-  bg[PRELIGHT] = @inverted_dark_color
-  bg[SELECTED] = @inverted_dark_color
+  bg[PRELIGHT] = @dark_color
+  bg[SELECTED] = @dark_color
   fg[NORMAL] = mix(0.8, @fg_color, shade(0.96, @bg_color))
   fg[PRELIGHT] = @selected_fg_color
   fg[SELECTED] = @selected_fg_color
@@ -500,10 +500,10 @@ style "fm_side_pane" {
   GtkTreeView::odd_row_color  = @bg_color
   GtkTreeView::even_row_color = @bg_color
 
-  base[ACTIVE] = mix(0.12, @selected_bg_color, @bg_color)
-  base[SELECTED] = mix(0.12, @selected_bg_color, @bg_color)
-  text[ACTIVE] = mix(0.54, @selected_bg_color, @fg_color)
-  text[SELECTED] = mix(0.54, @selected_bg_color, @fg_color)
+  base[ACTIVE] = mix(0.12, @selected_label, @bg_color)
+  base[SELECTED] = mix(0.12, @selected_label, @bg_color)
+  text[ACTIVE] = @selected_label
+  text[SELECTED] = @selected_label
 }
 
 style "fm_toolbar" {

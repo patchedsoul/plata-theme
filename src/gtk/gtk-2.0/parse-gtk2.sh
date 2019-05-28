@@ -11,14 +11,8 @@
 #
 
 RC_FILE="gtkrc"
-RC_DARK_FILE="gtkrc-light"
-RC_LIGHT_FILE="gtkrc-dark"
-
-# Default colours
-selection1="`grep 'Indigo500' ../sass/common/_colors.scss | \
-		cut -d' ' -f3`"
-accent1="`grep 'Indigo300' ../sass/common/_colors.scss | \
-		cut -d' ' -f3`"
+RC_LIGHT_FILE="gtkrc-light"
+RC_DARK_FILE="gtkrc-dark"
 
 # Set variant specific names
 cp -f $RC_FILE.in $RC_FILE && cp -f $RC_DARK_FILE.in $RC_DARK_FILE \
@@ -36,41 +30,83 @@ sed -i "s|@VARIANT[@]|-compact|g" "$RC_FILE"-compact
 sed -i "s|@VARIANT[@]|-compact|g" "$RC_DARK_FILE"-compact
 sed -i "s|@VARIANT[@]|-compact|g" "$RC_LIGHT_FILE"-compact
 
-# Check and re-color 'selection-color' and 'accent-color'
-if [ -e "../sass/common/resources/_key_colors.scss" ]; then
-    selection2="`grep 'key_selection' ../sass/common/resources/_key_colors.scss | \
-                 cut -d' ' -f2 | cut -d';' -f1`"
-    accent2="`grep 'key_accent' ../sass/common/resources/_key_colors.scss | \
-                 cut -d' ' -f2 | cut -d';' -f1`"
+# Generate CSSs for color source
+SASSC="`command -v sassc`"
+SASSC_OPTION="-M -t nested"
 
-    if [ $selection1 != $selection2 ]; then
-        sed -i "s/$selection1/$selection2/gi" $RC_FILE
-        echo $selection1 is re-colored with $selection2 in $RC_FILE.
-        sed -i "s/$selection1/$selection2/gi" $RC_DARK_FILE
-        echo $selection1 is re-colored with $selection2 in $RC_DARK_FILE.
-        sed -i "s/$selection1/$selection2/gi" $RC_LIGHT_FILE
-        echo $selection1 is re-colored with $selection2 in $RC_LIGHT_FILE.
-        sed -i "s/$selection1/$selection2/gi" $RC_FILE-compact
-        echo $selection1 is re-colored with $selection2 in $RC_FILE-compact.
-        sed -i "s/$selection1/$selection2/gi" $RC_DARK_FILE-compact
-        echo $selection1 is re-colored with $selection2 in $RC_DARK_FILE-compact.
-        sed -i "s/$selection1/$selection2/gi" $RC_LIGHT_FILE-compact
-        echo $selection1 is re-colored with $selection2 in $RC_LIGHT_FILE-compact.
-    fi
-    if [ $accent1 != $accent2 ]; then
-        sed -i "s/$accent1/$accent2/gi" $RC_FILE
-        echo $accent1 is re-colored with $accent2 in $RC_FILE.
-        sed -i "s/$accent1/$accent2/gi" $RC_DARK_FILE
-        echo $accent1 is re-colored with $accent2 in $RC_DARK_FILE.
-        sed -i "s/$accent1/$accent2/gi" $RC_LIGHT_FILE
-        echo $accent1 is re-colored with $accent2 in $RC_LIGHT_FILE.
-        sed -i "s/$accent1/$accent2/gi" $RC_FILE-compact
-        echo $accent1 is re-colored with $accent2 in $RC_FILE-compact.
-        sed -i "s/$accent1/$accent2/gi" $RC_DARK_FILE-compact
-        echo $accent1 is re-colored with $accent2 in $RC_DARK_FILE-compact.
-        sed -i "s/$accent1/$accent2/gi" $RC_LIGHT_FILE-compact
-        echo $accent1 is re-colored with $accent2 in $RC_LIGHT_FILE-compact.
-    fi
+$SASSC $SASSC_OPTION ../sass/2.0/gtk-light.scss ../sass/2.0/gtk-light.css
+$SASSC $SASSC_OPTION ../sass/2.0/gtk-dark.scss ../sass/2.0/gtk-dark.css
+
+# Colors in HEXs
+l_sel_bg="`grep -e sel_bg ../sass/2.0/gtk-light.css | cut -c11-17`"
+l_sel_lb="`grep -e sel_lb ../sass/2.0/gtk-light.css | cut -c11-17`"
+l_acc_fg="`grep -e acc_fg ../sass/2.0/gtk-light.css | cut -c11-17`"
+l_acc_bg="`grep -e acc_bg ../sass/2.0/gtk-light.css | cut -c11-17`"
+l_lkn_fg="`grep -e lkn_fg ../sass/2.0/gtk-light.css | cut -c11-17`"
+l_lkv_fg="`grep -e lkv_fg ../sass/2.0/gtk-light.css | cut -c11-17`"
+
+d_sel_bg="`grep -e sel_bg ../sass/2.0/gtk-dark.css | cut -c11-17`"
+d_sel_lb="`grep -e sel_lb ../sass/2.0/gtk-dark.css | cut -c11-17`"
+d_acc_fg="`grep -e acc_fg ../sass/2.0/gtk-dark.css | cut -c11-17`"
+d_acc_bg="`grep -e acc_bg ../sass/2.0/gtk-dark.css | cut -c11-17`"
+d_lkn_fg="`grep -e lkn_fg ../sass/2.0/gtk-dark.css | cut -c11-17`"
+d_lkv_fg="`grep -e lkv_fg ../sass/2.0/gtk-dark.css | cut -c11-17`"
+
+# Check and re-color 'selection', 'accent' and 'link' colors
+if [ -e "../sass/common/resources/_key_colors.scss" ]; then
+    echo Setting selection-color $l_sel_bg \(light and mixed\) $d_sel_bg \(dark\)...
+    sed -i "s/@SEL_BG@/$l_sel_bg/gi" $RC_FILE
+    sed -i "s/@SEL_BG@/$l_sel_bg/gi" $RC_FILE-compact
+    sed -i "s/@SEL_BG@/$l_sel_bg/gi" $RC_LIGHT_FILE
+    sed -i "s/@SEL_BG@/$l_sel_bg/gi" $RC_LIGHT_FILE-compact
+    sed -i "s/@SEL_BG@/$d_sel_bg/gi" $RC_DARK_FILE
+    sed -i "s/@SEL_BG@/$d_sel_bg/gi" $RC_DARK_FILE-compact
+
+    echo Setting selected-label-color $l_sel_lb \(light and mixed\) $d_sel_lb \(dark\)...
+    sed -i "s/@SEL_LB@/$l_sel_lb/gi" $RC_FILE
+    sed -i "s/@SEL_LB@/$l_sel_lb/gi" $RC_FILE-compact
+    sed -i "s/@SEL_LB@/$l_sel_lb/gi" $RC_LIGHT_FILE
+    sed -i "s/@SEL_LB@/$l_sel_lb/gi" $RC_LIGHT_FILE-compact
+    sed -i "s/@SEL_LB@/$d_sel_lb/gi" $RC_DARK_FILE
+    sed -i "s/@SEL_LB@/$d_sel_lb/gi" $RC_DARK_FILE-compact
+
+    echo Setting accent-label-color $l_acc_fg \(light and mixed\) $d_acc_fg \(dark\)...
+    sed -i "s/@ACC_FG@/$l_acc_fg/gi" $RC_FILE
+    sed -i "s/@ACC_FG@/$l_acc_fg/gi" $RC_FILE-compact
+    sed -i "s/@ACC_FG@/$l_acc_fg/gi" $RC_LIGHT_FILE
+    sed -i "s/@ACC_FG@/$l_acc_fg/gi" $RC_LIGHT_FILE-compact
+    sed -i "s/@ACC_FG@/$d_acc_fg/gi" $RC_DARK_FILE
+    sed -i "s/@ACC_FG@/$d_acc_fg/gi" $RC_DARK_FILE-compact
+
+    echo Setting inverted-accent-label-color $d_acc_fg \(mixed\)...
+    sed -i "s/@ACI_FG@/$d_acc_fg/gi" $RC_FILE
+    sed -i "s/@ACI_FG@/$d_acc_fg/gi" $RC_FILE-compact
+
+    echo Setting accent-color $l_acc_bg \(light and mixed\) $d_acc_bg \(dark\)...
+    sed -i "s/@ACC_BG@/$l_acc_bg/gi" $RC_FILE
+    sed -i "s/@ACC_BG@/$l_acc_bg/gi" $RC_FILE-compact
+    sed -i "s/@ACC_BG@/$l_acc_bg/gi" $RC_LIGHT_FILE
+    sed -i "s/@ACC_BG@/$l_acc_bg/gi" $RC_LIGHT_FILE-compact
+    sed -i "s/@ACC_BG@/$d_acc_bg/gi" $RC_DARK_FILE
+    sed -i "s/@ACC_BG@/$d_acc_bg/gi" $RC_DARK_FILE-compact
+
+    echo Setting link-color $l_lkn_fg \(light and mixed\) $d_lkn_fg \(dark\)...
+    sed -i "s/@LKN_FG@/$l_lkn_fg/gi" $RC_FILE
+    sed -i "s/@LKN_FG@/$l_lkn_fg/gi" $RC_FILE-compact
+    sed -i "s/@LKN_FG@/$l_lkn_fg/gi" $RC_LIGHT_FILE
+    sed -i "s/@LKN_FG@/$l_lkn_fg/gi" $RC_LIGHT_FILE-compact
+    sed -i "s/@LKN_FG@/$d_lkn_fg/gi" $RC_DARK_FILE
+    sed -i "s/@LKN_FG@/$d_lkn_fg/gi" $RC_DARK_FILE-compact
+
+    echo Setting visited-link-color $l_lkv_fg \(light and mixed\) $d_lkv_fg \(dark\)...
+    sed -i "s/@LKV_FG@/$l_lkv_fg/gi" $RC_FILE
+    sed -i "s/@LKV_FG@/$l_lkv_fg/gi" $RC_FILE-compact
+    sed -i "s/@LKV_FG@/$l_lkv_fg/gi" $RC_LIGHT_FILE
+    sed -i "s/@LKV_FG@/$l_lkv_fg/gi" $RC_LIGHT_FILE-compact
+    sed -i "s/@LKV_FG@/$d_lkv_fg/gi" $RC_DARK_FILE
+    sed -i "s/@LKV_FG@/$d_lkv_fg/gi" $RC_DARK_FILE-compact
+
+    rm -f ../sass/2.0/gtk-light.css ../sass/2.0/gtk-dark.css # clean up CSSs
 else
     echo ../sass/common/resources/_key_colors.scss was not found. Stopped...
     exit 1

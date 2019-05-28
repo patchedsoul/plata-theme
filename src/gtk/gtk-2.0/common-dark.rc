@@ -738,8 +738,8 @@ style "progressbar" {
 
 style "inline_progress" {
   # do not set normal state background
-  # bg[NORMAL] = mix(0.2, @accent_color, @base_color)
-  bg[SELECTED] = mix(0.6, @accent_color, @base_color) # progress
+  # bg[NORMAL] = mix(0.2, @accent_bg_color, @base_color)
+  bg[SELECTED] = @accent_bg_color # progress
 }
 
 style "range" { 
@@ -1193,9 +1193,9 @@ style "misc_button_label" {
 }
 
 style "buttonbox_button_label" {
-  fg[NORMAL] = mix(0.87, mix(0.54, @accent_color, @fg_color), @bg_color)
-  fg[PRELIGHT] = mix(0.54, @accent_color, @fg_color)
-  fg[ACTIVE] = mix(0.54, @accent_color, @fg_color)
+  fg[NORMAL] = mix(0.87, @accent_fg_color, @bg_color)
+  fg[PRELIGHT] = @accent_fg_color
+  fg[ACTIVE] = @accent_fg_color
   fg[INSENSITIVE] = mix(0.28, @fg_color, @bg_color)
   font_name = "Bold"
 }
@@ -1265,9 +1265,9 @@ style "buttonbox_flat_button" {
   xthickness = 6
   ythickness = 6
 
-  fg[NORMAL] = mix(0.87, mix(0.6, @accent_color, @fg_color), @bg_color)
-  fg[PRELIGHT] = mix(0.6, @accent_color, @fg_color)
-  fg[ACTIVE] = mix(0.6, @accent_color, @fg_color)
+  fg[NORMAL] = mix(0.87, @accent_fg_color, @bg_color)
+  fg[PRELIGHT] = @accent_fg_color
+  fg[ACTIVE] = @accent_fg_color
   fg[INSENSITIVE] = mix(0.28, @fg_color, @bg_color)
 
   engine "pixmap" {
@@ -1828,21 +1828,21 @@ style "menubar" {
   xthickness = 0
   ythickness = 0
 
-  bg[NORMAL] = @inverted_dark_color
-  fg[NORMAL] = mix(0.87, @inverted_fg_color, @inverted_dark_color)
-  fg[PRELIGHT] = @inverted_fg_color
-  fg[INSENSITIVE] = mix(0.28, @inverted_fg_color, @inverted_dark_color)
+  bg[NORMAL] = @dark_color
+  fg[NORMAL] = mix(0.87, @fg_color, @dark_color)
+  fg[PRELIGHT] = @fg_color
+  fg[INSENSITIVE] = mix(0.28, @fg_color, @dark_color)
 }
 
 style "menubar_item" {
   xthickness = 3
   ythickness = 6
 
-  bg[NORMAL] = @inverted_dark_color
-  bg[PRELIGHT] = mix(0.12, @inverted_fg_color, @inverted_dark_color)
-  fg[NORMAL] = mix(0.87, @inverted_fg_color, @inverted_dark_color)
-  fg[PRELIGHT] = @inverted_fg_color
-  fg[INSENSITIVE] = mix(0.28, @inverted_fg_color, @inverted_dark_color)
+  bg[NORMAL] = @dark_color
+  bg[PRELIGHT] = mix(0.12, @fg_color, @dark_color)
+  fg[NORMAL] = mix(0.87, @fg_color, @dark_color)
+  fg[PRELIGHT] = @fg_color
+  fg[INSENSITIVE] = mix(0.28, @fg_color, @dark_color)
 }
 
 style "menubar_item_label" {
@@ -2254,7 +2254,7 @@ style "notebook_viewport" {
 }
 
 style "notebook_tab_label" {
-  fg[NORMAL] = mix(0.54, @selected_bg_color, @fg_color)
+  fg[NORMAL] = @selected_label
   fg[ACTIVE] = mix(0.54, @fg_color, @bg_color)
   font_name = "Medium"
 }

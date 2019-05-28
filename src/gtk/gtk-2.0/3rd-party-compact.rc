@@ -185,21 +185,21 @@ style "xfwm-tabwin" {
   Xfwm4TabwinWidget::border-width = 0
   Xfwm4TabwinWidget::border-alpha = 0
   Xfwm4TabwinWidget::icon-size = 48
-  Xfwm4TabwinWidget::listview-icon-size = 16
-  Xfwm4TabwinWidget::preview-size = 128
+  Xfwm4TabwinWidget::listview-icon-size = 32
+  Xfwm4TabwinWidget::preview-size = 96
   Xfwm4TabwinWidget::alpha = 0.9
-  Xfwm4TabwinWidget::border-radius = 2
+  Xfwm4TabwinWidget::border-radius = 8
 
   font_name = "bold"
 
   bg[NORMAL]   = @inverted_dark_color
-  bg[PRELIGHT] = mix(0.8, @inverted_dark_color, @accent_color)
-  bg[ACTIVE]   = mix(0.8, @inverted_dark_color, @accent_color)
-  bg[SELECTED] = mix(0.8, @inverted_dark_color, @accent_color)
-  fg[NORMAL]   = mix(0.8, @accent_color, @inverted_fg_color)
-  fg[PRELIGHT] = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[ACTIVE]   = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[SELECTED] = mix(0.6, @accent_color, @inverted_fg_color)
+  bg[PRELIGHT] = mix(0.12, @inverted_accent_fg_color, @inverted_dark_color)
+  bg[ACTIVE]   = mix(0.25, @inverted_accent_fg_color, @inverted_dark_color)
+  bg[SELECTED] = mix(0.25, @inverted_accent_fg_color, @inverted_dark_color)
+  fg[NORMAL]   = mix(0.87, @inverted_accent_fg_color, @inverted_dark_color)
+  fg[PRELIGHT] = @inverted_accent_fg_color
+  fg[ACTIVE]   = @inverted_accent_fg_color
+  fg[SELECTED] = @inverted_accent_fg_color
 }
 
 style "xfwm-tabwin-button" {
@@ -208,9 +208,9 @@ style "xfwm-tabwin-button" {
   font_name = "normal"
 
   fg[NORMAL]   = @inverted_fg_color
-  fg[PRELIGHT] = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[ACTIVE]   = mix(0.6, @accent_color, @inverted_fg_color)
-  fg[SELECTED] = mix(0.6, @accent_color, @inverted_fg_color)
+  fg[PRELIGHT] = @inverted_accent_fg_color
+  fg[ACTIVE]   = @inverted_accent_fg_color
+  fg[SELECTED] = @inverted_accent_fg_color
 
   engine "pixmap" {
     image {
@@ -528,10 +528,10 @@ style "fm_side_pane" {
   GtkTreeView::odd_row_color  = @bg_color
   GtkTreeView::even_row_color = @bg_color
 
-  base[ACTIVE] = mix(0.12, @selected_bg_color, @bg_color)
-  base[SELECTED] = mix(0.12, @selected_bg_color, @bg_color)
-  text[ACTIVE] = @selected_bg_color
-  text[SELECTED] = @selected_bg_color
+  base[ACTIVE] = mix(0.12, @selected_label, @bg_color)
+  base[SELECTED] = mix(0.12, @selected_label, @bg_color)
+  text[ACTIVE] = @selected_label
+  text[SELECTED] = @selected_label
 }
 
 style "fm_toolbar" {

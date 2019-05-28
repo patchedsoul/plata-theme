@@ -1,0 +1,20 @@
+//
+// Import resources
+//
+
+// Import key color-scheme defined at build-time.
+@import '../../../gtk/sass/common/resources/color_palette';
+@import '../../../gtk/sass/common/resources/functions';
+@import '../../../gtk/sass/common/resources/variables';
+@import '../../../gtk/sass/common/colors';
+
+colors {
+  sel_bg: $sel_bg;
+  sel_lb: $sel_label;
+
+  acc_fg: $acc_fg;
+  acc_bg: $acc_bg;
+
+  lkn_fg: $link_fg;
+  lkv_fg: $link_vst_fg;
+}
