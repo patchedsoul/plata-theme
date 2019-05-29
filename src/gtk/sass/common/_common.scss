@@ -3408,16 +3408,20 @@ combobox > window.popup { // combobox specific context-menu popup
 @else {
   %popover,
   popover {
+    &.background {
+      padding: 0;
+      background-color: transparent;
+    }
+
+    &.menu > arrow,
     > arrow { @extend %popover_boxpointer; }
 
     > contents {
-      &.background {
-        .csd & { @include radius($r_4, none); }
+      .csd & { @include radius($r_4, none); }
 
-        @extend %popover_basic;
-        @extend %popover_border;
-        &:backdrop { @extend %popover_backdrop; }
-      }
+      @extend %popover_basic;
+      @extend %popover_border;
+      &:backdrop { @extend %popover_backdrop; }
 
       &.menu { @extend %popover_menu; }
     }
@@ -6197,13 +6201,19 @@ popover.emoji {
   }
 
   &-completion {
-    arrow {
-      border: none;
-      background: none;
+    @if $maj_ver == 3 {
+      arrow {
+        border: none;
+        background: none;
+      }
     }
 
     contents row box { padding: 2px 10px; } // NEEDS_REVIEW
   }
+}
+
+@if $maj_ver == 4 {
+  popover.entry-completion contents { padding: 0; }
 }
 
 flowboxchild.emoji { // emoji tiled view
