@@ -55,10 +55,22 @@ panel-toplevel > grid.horizontal > widget > widget {
 gp-applet > menubar,
 #clock-applet-button { @extend %gnome_panel_menubar; }
 
-.gnome-panel-menu-bar > menuitem,
-gp-applet menubar > menuitem {
-  @extend %gnome_panel_menuitem;
+@if $maj_ver == 3 {
+  .gnome-panel-menu-bar > menuitem,
+  gp-applet menubar > menuitem {
+    @extend %gnome_panel_menuitem;
+    @extend %gnome_panel_menuitem_misc;
+  }
+}
+@else {
+  .gnome-panel-menu-bar > box > menuitem,
+  gp-applet menubar > box > menuitem {
+    @extend %gnome_panel_menuitem;
+    @extend %gnome_panel_menuitem_misc;
+  }
+}
 
+%gnome_panel_menuitem_misc {
   .vertical & { padding: rem($menu_padding, $sw: 1.0) 0; }
 
   @each $_layout, $_line in (top, 0 2px),

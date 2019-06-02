@@ -3101,20 +3101,27 @@ menubar {
     @extend %fade_effect; // add fade_effect
   }
 
-  > menuitem {
-    padding: rem($menuitem_padding, $sw: 1.0) rem($entry_lr_space, $sw: 1.0);
-    @include radius($r_4 $r_4 0 0, none);
-    background-color: transparent;
-    color: if($variant == light, $sec_fg, $inv_sec_fg);
-    @include transition(std);
-    &:hover { // Seems like it :hover even with keyboard focus
-      background-color: $trk_bg;
-      color: if($variant == light, $fg, $inv_fg);
-    }
-    &:disabled { color: if($variant == light, $dis_fg, $dis_inv_fg); }
-
-    label { padding-bottom: rem($baseline, $sw: 1.0); }
+  @if $maj_ver == 3 {
+    > menuitem { @extend %menuitem; }
   }
+  @else {
+a    > box > menuitem { @extend %menuitem; }
+  }
+}
+
+%menuitem {
+  padding: rem($menuitem_padding, $sw: 1.0) rem($entry_lr_space, $sw: 1.0);
+  @include radius($r_4 $r_4 0 0, none);
+  background-color: transparent;
+  color: if($variant == light, $sec_fg, $inv_sec_fg);
+  @include transition(std);
+  &:hover { // Seems like it :hover even with keyboard focus
+    background-color: $trk_bg;
+    color: if($variant == light, $fg, $inv_fg);
+  }
+  &:disabled { color: if($variant == light, $dis_fg, $dis_inv_fg); }
+
+  label { padding-bottom: rem($baseline, $sw: 1.0); }
 }
 
 .menu,
