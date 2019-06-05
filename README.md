@@ -74,6 +74,7 @@ Installation from Package(s)
  * Arch (AUR): [**plata-theme**](https://aur.archlinux.org/packages/plata-theme)
  * OpenSUSE: [**Official repository**](https://software.opensuse.org/package/plata-theme)
  * Solus: Official repository
+ * Void: [**Official repository**](https://github.com/void-linux/void-packages/tree/master/srcpkgs/plata-theme)
  * Flatpak: Official flathub repository (current package branch = **3.22**)
  * My Personal Package Archives (PPA): [**plata-theme**](https://launchpad.net/~tista/+archive/ubuntu/plata-theme)
 
