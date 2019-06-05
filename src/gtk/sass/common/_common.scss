@@ -5375,15 +5375,12 @@ paned {
     -gtk-icon-source: none; // defeats the ugly default handle decoration
     // using background instead of a border
     // since the border will get rendered twice (?)
-    background-image: image($div_fg);
+    // FIXME: some damned non-native apps (like wxGtk3) can't render
+    // alpha-blended pane separators at all.
+    background-image: image($div_sld_fg);
     background-size: $separator_narrow;
 
-    &:backdrop,
-    &:selected { // FIXME: is this needed?
-      background-image: image($div_sld_fg);
-    }
-
-    window & {
+    .background & {
       // do not across over GtkHeaderBar with solid border
       &,
       &:backdrop,
@@ -5393,7 +5390,7 @@ paned {
       }
     }
 
-    window > grid.vertical & { // do not use transparentize
+    .background > grid.vertical & { // do not use transparentize
       &,
       &:backdrop,
       &:selected {

@@ -3786,3 +3786,17 @@ window.background > stack > box.horizontal > revealer { // left/right stack
     }
   }
 }
+
+// /*************
+//  * Filezilla *
+//  *************/
+
+// FIXME: this is not our issue, wxPizza should use GtkFrame instead.
+window.background {
+  > widget:not(combobox):not(spinbutton):not(toolbar) {
+    entry {
+      border-radius: 0;
+      border: 1px solid $div_sld_fg;
+    }
+  }
+}
