@@ -2212,6 +2212,22 @@ $close_button_size: 32px;
   }
 }
 
+// /*************
+//  * Pie Timer *
+//  *************/
+
+@if $ver > 3.31 {
+  $progress_width: 3px;
+
+  .pie-timer { // >= 3.33/3.34 cycle
+    width: $ripple_d + ($progress_width * 2);
+    height: $ripple_d + ($progress_width * 2);
+    -pie-border-width: $progress_width;
+    -pie-border-color: $acc_bg; // progress bit
+    -pie-background-color: opacity($acc_bg, $a_trk_out); // trough
+  }
+}
+
 // /*******************
 //  * Network Dialogs *
 //  *******************/
