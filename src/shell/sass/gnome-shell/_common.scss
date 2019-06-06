@@ -2117,15 +2117,26 @@ $avatar_width: $icon_size * 1.5;
 //  * Activities Ripples *
 //  **********************/
 
+$ripple_d: 52px;
+
 .ripple-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 0 0 52px 0; // top-left corner
+  width: $ripple_d;
+  height: $ripple_d;
+  border-radius: 0 0 $ripple_d 0; // top-left corner
   background-image: none; // need to unset the stock asset images
   background-color: opacity($acc_bg, $a_trk_out);
   box-shadow: $empty_shadow;
 
-  &:rtl { border-radius: 0 0 0 52px; } // top-right corner
+  &:rtl { border-radius: 0 0 0 $ripple_d; } // top-right corner
+}
+
+@if $ver > 3.31 {
+  ripple-pointer-location { // >= 3.33/3.34 cycle
+    width: $ripple_d;
+    height: $ripple_d;
+    border-radius: $ripple_d / 2;
+    @extend %rubberband;
+  }
 }
 
 // /**************
