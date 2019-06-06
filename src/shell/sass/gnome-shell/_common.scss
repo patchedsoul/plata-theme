@@ -2131,7 +2131,7 @@ $ripple_d: 52px;
 }
 
 @if $ver > 3.31 {
-  ripple-pointer-location { // >= 3.33/3.34 cycle
+  .ripple-pointer-location { // >= 3.33/3.34 cycle
     width: $ripple_d;
     height: $ripple_d;
     border-radius: $ripple_d / 2;
