@@ -2119,13 +2119,18 @@ $avatar_width: $icon_size * 1.5;
 
 $ripple_d: 52px;
 
+%ripple_bg {
+  border: 0 none transparent; // for safety
+  background-color: opacity($acc_bg, $a_fg_3rd);
+  box-shadow: $empty_shadow;
+}
+
 .ripple-box {
   width: $ripple_d;
   height: $ripple_d;
   border-radius: 0 0 $ripple_d 0; // top-left corner
   background-image: none; // need to unset the stock asset images
-  background-color: opacity($acc_bg, $a_trk_out);
-  box-shadow: $empty_shadow;
+  @extend %ripple_bg;
 
   &:rtl { border-radius: 0 0 0 $ripple_d; } // top-right corner
 }
@@ -2135,7 +2140,7 @@ $ripple_d: 52px;
     width: $ripple_d;
     height: $ripple_d;
     border-radius: $ripple_d / 2;
-    @extend %rubberband;
+    @extend %ripple_bg;
   }
 }
 
@@ -2146,6 +2151,7 @@ $ripple_d: 52px;
 %rubberband {
   border: 1px solid $sel_bg;
   background-color: opacity($sel_bg, $a_trk_out);
+  box-shadow: $empty_shadow; // for safety
 }
 
 @if $ver > 3.31 {
