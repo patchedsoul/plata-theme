@@ -983,14 +983,16 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
 //  * Activities Ripples *
 //  **********************/
 
+$ripple_r: 52px;
+
 .ripple-box {
   &:ltr,
   &:rtl {
-    width: 52px * 2;
-    height: 52px * 2;
-    border-radius: 52px * 2;
+    width: $ripple_r * 2;
+    height: $ripple_r * 2;
+    border-radius: $ripple_r * 2;
     background-image: none;
-    background-color: opacity($acc_bg, $a_trk_out);
+    background-color: opacity($acc_bg, $a_fg_3rd);
     box-shadow: $empty_shadow;
   }
 }
