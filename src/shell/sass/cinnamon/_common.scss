@@ -844,7 +844,11 @@ $ws_thumb_spacing: 2.25em; // this affects to name-entry as well
   .menu &,
   .popup-menu & {
     &, &.multi-line-notification {
-      border-image: url("assets/misc/message.svg") 9 9 9 9;
+      padding: 9px;
+      border-radius: 0;
+      border: 1px solid if($variant == dark, opacity(white, $a_div_1),
+                                             opacity(black, $a_div_1));
+      background-color: $base;
       color: $fg;
       box-shadow: $empty_shadow;
     }

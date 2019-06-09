@@ -411,7 +411,6 @@ cinnamon_asset_misc_file = \
 	$(cinnamondir)/assets/misc/close-active.svg \
 	$(cinnamondir)/assets/misc/close-hover.svg \
 	$(cinnamondir)/assets/misc/close.svg \
-	$(cinnamondir)/assets/misc/message.svg \
 	$(cinnamondir)/assets/misc/osd.svg \
 	$(cinnamondir)/assets/misc/overview-hover.svg \
 	$(cinnamondir)/assets/misc/overview.svg \
@@ -442,7 +441,6 @@ cinnamon_lumine_asset_misc_file = \
 	$(cinnamonluminedir)/assets/misc/close-active.svg \
 	$(cinnamonluminedir)/assets/misc/close-hover.svg \
 	$(cinnamonluminedir)/assets/misc/close.svg \
-	$(cinnamonluminedir)/assets/misc/message.svg \
 	$(cinnamonluminedir)/assets/misc/osd.svg \
 	$(cinnamonluminedir)/assets/misc/overview-hover.svg \
 	$(cinnamonluminedir)/assets/misc/overview.svg \
@@ -473,7 +471,6 @@ cinnamon_noir_asset_misc_file = \
 	$(cinnamonnoirdir)/assets/misc/close-active.svg \
 	$(cinnamonnoirdir)/assets/misc/close-hover.svg \
 	$(cinnamonnoirdir)/assets/misc/close.svg \
-	$(cinnamonnoirdir)/assets/misc/message.svg \
 	$(cinnamonnoirdir)/assets/misc/osd.svg \
 	$(cinnamonnoirdir)/assets/misc/overview-hover.svg \
 	$(cinnamonnoirdir)/assets/misc/overview.svg \
@@ -938,7 +935,6 @@ CLEANFILES += \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close-active.svg \
 	$(srcdir)/asset/assets-cinnamon/common/misc/close-hover.svg \
-	$(srcdir)/asset/assets-cinnamon/common/misc/message.svg \
 	$(srcdir)/asset/assets-cinnamon/common/panel/activities-active.svg \
 	$(srcdir)/asset/assets-cinnamon/common/panel/window-list-active-bottom.svg \
 	$(srcdir)/asset/assets-cinnamon/common/panel/window-list-active-top.svg \
