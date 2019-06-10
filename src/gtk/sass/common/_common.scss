@@ -3105,7 +3105,18 @@ menubar {
     > menuitem { @extend %menuitem; }
   }
   @else {
-a    > box > menuitem { @extend %menuitem; }
+    > box > menuitem,
+    > item { // item nodes for inline-menubar inside the popover nodes
+      @extend %menuitem;
+    }
+
+    > item:active { // = menuitem:hover pseudo-class styling
+      background-color: $trk_bg;
+      color: if($variant == light, $fg, $inv_fg);
+    }
+
+    // remove padding and rounding from menubar submenu decoration
+    .csd.popup decoration { border-radius: 0; }
   }
 }
 
