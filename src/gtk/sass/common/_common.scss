@@ -3445,10 +3445,24 @@ combobox > window.popup { // combobox specific context-menu popup
     }
 
     &.menu {
-      min-height: $menuitem_height;
-      padding: 0 rem($entry_lr_space);
+      box { // button containers
+        &.inline-buttons {
+          padding: 0 $popover_padding;
+          border: none;
+        }
+
+        &.circular-buttons { padding-bottom: $popover_padding; }
+      }
+
+      // NEEDS_REVIEW: we might revert to standard T/B margins
+      separator { margin: $popover_padding 0; }
+
+      accelerator { // = check/radio spacing
+        margin: 0 rem($menuitem_padding);
+        padding: 0 ($icon_size / 3);
+      }
     }
-    
+
     @extend %popover_misc;
   }
 }
