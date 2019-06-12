@@ -3421,22 +3421,22 @@ $grid_size: 136px;
 @if $ver > 3.25 {
   .key-container { // current
     // no need to set variant specific spacing
-    padding: $ref_size * 0.3px;
-    spacing: $ref_size * 0.3px;
+    padding: $ref_size * 0.3;
+    spacing: $ref_size * 0.3;
   }
 }
 
 .keyboard {
   &-layout { // legacy
-    spacing: $ref_size * 0.3px;
-    padding: $ref_size * 0.3px;
+    spacing: $ref_size * 0.3;
+    padding: $ref_size * 0.3;
   }
 
-  &-row { spacing: $ref_size * 0.3px; } // legacy
+  &-row { spacing: $ref_size * 0.3; } // legacy
 
   &-key {
-    min-height: $ref_size * 2px;
-    min-width: $ref_size * 2px;
+    min-height: $ref_size * 2;
+    min-width: $ref_size * 2;
     padding: 0;
     border-radius: $r_2;
     border: 1px solid mix($osd_sec_fg, $osd_bg, percentage($a_div_1));
@@ -3445,7 +3445,7 @@ $grid_size: 136px;
     box-shadow: $empty_shadow;
     text-shadow: none;
     icon-shadow: none;
-    font-size: $ref_size * 2px; // use unscalable unit
+    font-size: $ref_size * 2; // use unscalable unit
     font-weight: 700;
     transition-timing-function: $tr_t_std;
     &:focus,
@@ -3473,7 +3473,7 @@ $grid_size: 136px;
     @if $ver > 3.25 {
       &.default-key {
         background-color: mix($osd_bg, $panel_bg, percentage(1 - $a_trk_2));
-        background-size: ($ref_size - 0.33) * 2px;
+        background-size: ($ref_size - 0.33) * 2;
         color: $osd_sec_fg;
         &:focus,
         &:hover,
@@ -3579,7 +3579,7 @@ $grid_size: 136px;
     -arrow-border-color: transparent;
     -arrow-base: 0;
     -arrow-rise: 0;
-    -boxpointer-gap: $ref_size * 0.3px;
+    -boxpointer-gap: $ref_size * 0.3;
     background-color: $sggt_bg;
     color: $sel_fg;
     box-shadow: $z-depth-2;
@@ -3612,12 +3612,12 @@ $grid_size: 136px;
   .word-suggestions {
     @include fontscaling(1.3);
     min-height: 1.6em;
-    spacing: $ref_size * 1.3px;
-    padding: $ref_size * 0.3px 0 0;
+    spacing: $ref_size * 1.3;
+    padding: $ref_size * 0.3 0 0;
     font-weight: 500;
 
     StButton {
-      padding: 0 $ref_size * 1.3px;
+      padding: 0 $ref_size * 1.3;
       border-radius: $r;
       background-color: $sggt_bg;
       color: $sec_sel_fg;

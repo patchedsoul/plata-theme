@@ -169,9 +169,9 @@ StScrollBar {
 
 %check_radio_childs {
   CinnamonGenericContainer {
-    min-height: $ref_size * 2px;
+    min-height: $ref_size * 2;
     spacing: 0.4em;
-    padding-top: ($ref_size * 2px - $icon_size) / 2;
+    padding-top: ($ref_size * 2 - $icon_size) / 2;
   }
 
   StLabel {
@@ -1177,15 +1177,15 @@ $ripple_r: 52px;
 
 .keyboard {
   &-layout {
-    spacing: $ref_size * 0.3px;
-    padding: $ref_size * 0.3px;
+    spacing: $ref_size * 0.3;
+    padding: $ref_size * 0.3;
   }
 
-  &-row { spacing: $ref_size * 0.3px; }
+  &-row { spacing: $ref_size * 0.3; }
 
   &-key {
-    min-height: $ref_size * 2px;
-    min-width: $ref_size * 2px;
+    min-height: $ref_size * 2;
+    min-width: $ref_size * 2;
     border-radius: $r_2;
     border: 1px solid mix($osd_sec_fg, $osd_bg, percentage($a_div_1));
     background-color: $osd_bg;
@@ -1193,7 +1193,7 @@ $ripple_r: 52px;
     box-shadow: $empty_shadow;
     text-shadow: none;
     icon-shadow: none;
-    font-size: $ref_size * 2px; // use unscalable unit
+    font-size: $ref_size * 2; // use unscalable unit
     font-weight: 700;
     transition-timing-function: $tr_t_dec;
     &:focus,
@@ -1228,7 +1228,7 @@ $ripple_r: 52px;
     -arrow-border-color: transparent;
     -arrow-base: 0;
     -arrow-rise: 0;
-    -boxpointer-gap: $ref_size * 0.3px;
+    -boxpointer-gap: $ref_size * 0.3;
     background-color: $sggt_bg;
     color: $sel_fg;
     box-shadow: $z-depth-2;
