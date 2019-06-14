@@ -5075,6 +5075,11 @@ messagedialog {
   @if $maj_ver == 4 {
     // prevent labels running into action-area
     box.dialog-vbox.vertical { border-spacing: 10px; }
+
+    label.title {
+      font-size: 15px;
+      font-weight: 700;
+    }
   }
 
   .titlebar {
