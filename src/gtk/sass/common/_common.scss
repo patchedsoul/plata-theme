@@ -3110,7 +3110,7 @@ menubar {
       @extend %menuitem;
     }
 
-    > item:active { // = menuitem:hover pseudo-class styling
+    > item:selected { // = menuitem:hover pseudo-class styling
       background-color: $trk_bg;
       color: if($variant == light, $fg, $inv_fg);
     }
@@ -3460,6 +3460,13 @@ combobox > window.popup { // combobox specific context-menu popup
       accelerator { // = check/radio spacing
         margin: 0 rem($menuitem_padding);
         padding: 0 ($icon_size / 3);
+      }
+
+      &:not(.osd) {
+        button.flat.image-button.model,
+        modelbutton {
+          &:selected { @include button(flat-checked); }
+        }
       }
     }
 
