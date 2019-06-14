@@ -5998,7 +5998,13 @@ decoration {
 }
 
 .csd headerbar.titlebar.default-decoration {
-  button.titlebutton { @extend %ssd_button; }
+  @if $maj_ver == 3 {
+    button.titlebutton { @extend %ssd_button; }
+  }
+  @else {
+    button.titlebutton,
+    menubutton.titlebutton { @extend %ssd_button; } // for appmenu
+  }
 }
 
 .ssd .titlebar,
@@ -6045,6 +6051,10 @@ headerbar.titlebar.default-decoration {
         }
       }
     }
+  }
+
+  @if $maj_ver == 4 {
+    menubutton.titlebutton { @extend %ssd_button; } // for appmenu
   }
 }
 
