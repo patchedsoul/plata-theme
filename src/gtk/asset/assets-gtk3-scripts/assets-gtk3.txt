@@ -93,3 +93,7 @@ toggle-on-selected-row
 toggle-on-selected-row-hover
 handle-start
 handle-end
+panel-grip
+panel-grip-dark
+panel-grip-v
+panel-grip-v-dark

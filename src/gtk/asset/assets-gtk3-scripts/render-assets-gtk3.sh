@@ -50,7 +50,7 @@ case "$1" in
         INDEX=($(grep -e checkbox $INDEX_SRC))
         ;;
     misc)
-        INDEX=($(grep -e thumb -e dev -e needs -e handle $INDEX_SRC))
+        INDEX=($(grep -e thumb -e dev -e needs -e handle -e grip $INDEX_SRC))
         ;;
     radio)
         INDEX=($(grep -e radio $INDEX_SRC))

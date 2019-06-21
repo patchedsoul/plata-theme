@@ -1208,6 +1208,7 @@ window.budgie-popover.workspace-popover {
 }
 
 // notifications
+%budgie_notification_window,
 .budgie-notification-window,
 .budgie-osd-window {
   border-radius: $r_8;
@@ -1228,6 +1229,7 @@ window.budgie-popover.workspace-popover {
   }
 }
 
+%budgie_notification,
 .budgie-notification,
 .budgie-osd {
   background-color: transparent;
@@ -2894,10 +2896,509 @@ window.background:not(.solid-csd) > box.vertical {
   }
 }
 
-// /***********
-//  * Xreader *
-//  ***********/
+@import 'resources/mate_flag';
 
+@if $mate_support == yes {
+  // /**************
+  //  * Mate-Panel *
+  //  **************/
+
+  // Most parts are themed in Gnome-panel section
+  PanelToplevel.background { @extend %gnome_panel_toplevel; }
+
+  #PanelWidget,
+  #PanelPlug,
+  #PanelApplet {
+    @extend %gnome_panel_applet;
+    background-color: $panel_bg; // >= 1.18.6
+  }
+
+  PanelSeparator {
+    border-width: 0;
+    background: none;
+    background-image: none;
+    color: $panel_div_fg;
+  }
+
+  @each $layout, $size, $dir in (horizontal, 7px 14px, right),
+                                (vertical, 14px 7px, bottom) {
+    // a grip
+    PanelToplevel.#{$layout} MatePanelAppletFrameDBus {
+      background-repeat: no-repeat;
+      background-size: #{$size};
+      background-color: transparent;
+
+      @if $layout == horizontal {
+        @if $variant == light {
+          background-image: -gtk-scaled(url("assets/panel-grip.png"),
+                                        url("assets/panel-grip@2.png"));
+        }
+        @else {
+          background-image: -gtk-scaled(url("assets/panel-grip-dark.png"),
+                                        url("assets/panel-grip-dark@2.png"));
+        }
+        &:dir(ltr) { background-position: left; }
+        &:dir(rtl) { background-position: right; }
+      }
+      @else if $layout == vertical {
+        @if $variant == light {
+          background-image: -gtk-scaled(url("assets/panel-grip-v.png"),
+                                        url("assets/panel-grip-v@2.png"));
+        }
+        @else {
+          background-image: -gtk-scaled(url("assets/panel-grip-v-dark.png"),
+                                        url("assets/panel-grip-v-dark@2.png"));
+        }
+        background-position: top;
+      }
+
+      > MatePanelAppletFrameDBus { background: none; }
+    }
+  }
+
+  // 'hide' arrow buttons
+  PanelToplevel.mate-panel-menu-bar > grid.horizontal > button {
+    min-height: 4px;
+    min-width: 4px;
+    padding: 0;
+    @include radius(0);
+    border-style: solid;
+    border-color: $panel_div_fg;
+    @if $variant == mixed { @extend %inv_flat_button; }
+    @else { @extend %flat_button; }
+
+    > image { padding: 0 rem(4px, $sw: 1.0); }
+
+    &:first-child {
+      &:dir(ltr) { border-width: 0 1px 0 0; }
+      &:dir(rtl) { border-width: 0 0 0 1px; }
+    }
+    &:not(:first-child) {
+      &:dir(ltr) { border-width: 0 0 0 1px; }
+      &:dir(rtl) { border-width: 0 1px 0 0; }
+    }
+  }
+
+  .mate-panel-menu-bar {
+    menubar,
+    #PanelApplet-window-menu-applet-button {
+      @extend %gnome_panel_menubar;
+
+      > menuitem { @extend %gnome_panel_menuitem; }
+    }
+
+    #clock-applet-button label {
+      // embed padding into label node directly (x 1.5)
+      padding: 0 rem(4px * 1.5, $sw: 1.0);
+    }
+  }
+
+  .mate-panel-menu-bar.vertical { // vertical layout
+    menubar,
+    #PanelApplet-window-menu-applet-button {
+      > menuitem {
+        padding: rem(4px, $sw: 1.0) 0;
+        &:hover { box-shadow: inset 2px 0 $sel_bg; }
+      }
+    }
+
+    #tasklist-button,
+    #clock-applet-button,
+    #showdesktop-button {
+      &:hover { box-shadow: inset 2px 0 $trk_out_fg; }
+      &:checked,
+      &:hover:checked { box-shadow: inset 2px 0 $sel_bg; }
+
+      label { margin-bottom: 0; } // unset baseline
+    }
+
+    #clock-applet-button label { padding: rem(4px * 1.5, $sw: 1.0) 0; }
+  }
+
+  // Brisk-Menu applet
+  .mate-panel-menu-bar button.flat.toggle {
+    &.brisk-button {
+      padding: 0 rem(4px, $sw: 1.0);
+      @include radius(0);
+      @if $variant == mixed { @extend %inv_flat_button; }
+      @else { @extend %flat_button; }
+      font-weight: 700;
+      &:hover {
+        @if $variant != light {
+          @include button(flat-normal, $tc: $sel_fg);
+        }
+        @else {
+          @include button(flat-normal, $tc: black);
+        }
+        box-shadow: inset 0 -2px $trk_out_fg;
+      }
+      &:active { animation: none; }
+      &:checked {
+        @if $variant != light {
+          @include button(flat-lined-checked, $tc: $sel_fg);
+        }
+        @else {
+          @include button(flat-lined-checked, $tc: black);
+        }
+      }
+
+      label { margin-bottom: 0; } // unset baseline
+    }
+
+    // vertical panel mode?
+    &.brisk-button-vertical {
+      padding: 0;
+      &:hover { box-shadow: inset 2px 0 $trk_out_fg; }
+      &:checked { box-shadow: inset 2px 0 $sel_bg; }
+    }
+  }
+
+  .brisk-menu {
+    border: 1px solid $div_sld_fg;
+    background-color: $dark_bg;
+
+    entry { // search-entry
+      margin: rem(4px);
+      @extend %flat_entry_sizing;
+      @include radius($r_4 $r_4 0 0, none);
+      @include entry(flat-normal);
+      &:focus { @include entry(flat-focus); }
+      &:disabled { @include entry(flat-disabled); }
+    }
+
+    box.horizontal scrolledwindow { // right-pane
+      &:dir(ltr) { margin: rem(4px) rem(4px) rem(4px) 0; }
+      &:dir(rtl) { margin: rem(4px) 0 rem(4px) rem(4px); }
+
+      &.frame {
+        border: unset;
+        &:dir(ltr) {
+          border-left: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                      $div_fg);
+        }
+        &:dir(rtl) {
+          border-right: 1px solid if($variant == dark, track(white, $a_div_2),
+                                                       $div_fg);
+        }
+      }
+    }
+
+    .categories-list { // left-pane
+      &:dir(ltr) { margin: rem(4px) 0 rem(4px) rem(4px); }
+      &:dir(rtl) { margin: rem(4px) rem(4px) rem(4px) 0; }
+
+      button.flat {
+        font-weight: 500;
+        transition-duration: $tr_d_sht; // shorter duration
+        // almost covers :hover pseudo-class
+        &:checked {
+          background-color: $trk_bg;
+          color: $sel_label;
+          &:dir(ltr) { @include radius($r_2 $r $r $r_2); }
+          &:dir(rtl) { @include radius($r $r_2 $r_2 $r); }
+        }
+
+        image { padding: rem(8px) 0; }
+      }
+
+      separator.horizontal {
+        background-color: if($variant == dark, track(white, $a_div_2),
+                                               $div_fg);
+      }
+    }
+
+    // hide separator above session-buttons
+    box.vertical > box.horizontal > box.vertical > separator.horizontal {
+      min-height: 0;
+      background-color: transparent;
+    }
+
+    button.flat.image-button.session-button { // enlarge L/R padding
+      padding: 0 rem($txt_button_lr_space);
+    }
+
+    @at-root %brisk_right_pane,
+    list.content-view.view { // right-pane
+      background-color: $dark_bg;
+
+      row.activatable {
+        padding: 0;
+        background-image: none;
+        transition-duration: $tr_d_non;
+
+        > button.flat {
+          font-weight: 400;
+          transition-duration: $tr_d_non; // needs quicker response
+
+          // set vertical padding with icon's padding
+          > box.horizontal > image { padding: rem(5.3px) 0; }
+        }
+      }
+    }
+
+    @if $maj_ver == 3 {
+      @if $mnr_ver < 23 {
+        .apps-list { @extend  %brisk_right_pane; }
+      }
+    }
+  }
+
+  .mate-panel-applet-slider {
+    background-color: transparent;
+
+    frame { // draw actual widget
+      border: 1px solid $div_sld_fg;
+      border-radius: $r_4;
+      background-color: $dark_bg;
+
+      // unset borders
+      *,
+      > border { border: unset; }
+    }
+  }
+
+  // /********
+  //  * Caja *
+  //  ********/
+
+  .caja {
+    &-canvas-item { @extend .nautilus-canvas-item; }
+
+    &-list-dim-label { @extend .nautilus-list-dim-label; }
+  }
+
+  .caja-desktop { // desktop icon-grid styling
+    &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+    > widget.entry { // = EelEditableLabel.entry
+      &, &:focus {
+        transition: none;
+
+        &:selected { // FIXME: selection node doesn't work?
+          @extend %selected_items;
+        }
+      }
+    }
+  }
+
+  .caja-navigation-window {
+    // side-panel styling
+    .caja-side-pane {
+      scrolledwindow {
+        @extend %sidebar_template;
+
+        treeview.view {
+          background-color: transparent;
+          // font-weight: 500;
+          &:selected { @extend %selected_items; }
+        }
+      }
+
+      notebook {
+        border-top: 1px solid $div_fg;
+
+        .frame { border: none; }
+      }
+
+      button.flat:last-child { // 'close' button on header
+        @extend %toolitem_size;
+      }
+    }
+
+    // main toolbar styling
+    toolbar.primary-toolbar {
+      border-bottom: 1px solid $div_fg;
+    }
+
+    // path-bar styling
+    .caja-pathbar {
+      button {
+        &:first-child { // remove meaningless gaps
+          &:dir(ltr) {
+            margin-right: -2px;
+            @include radius($r_2 0 0 $r_2);
+          }
+          &:dir(rtl) {
+            margin-left: -2px;
+            @include radius(0 $r_2 $r_2 0);
+          }
+        }
+        &:not(:first-child):not(:last-child) {
+          margin: 0 -2px;
+          @include radius(0);
+        }
+        &:last-child {
+          &:dir(ltr) {
+            margin-left: -2px;
+            @include radius(0 $r_2 $r_2 0);
+          }
+          &:dir(rtl) {
+            margin-right: -2px;
+            @include radius($r_2 0 0 $r_2);
+          }
+        }
+
+        &, &.slider-button { @extend %toolitem_size; }
+      }
+    }
+
+    button.image-button.toggle { // most-left toggle button in path-bar pane
+      @extend %toolitem_size;
+      @include radius($r_2);
+    }
+
+    .caja-notebook {
+      border-top: 1px solid $div_fg; // top only
+
+      .frame { border-width: 0 0 1px; } // bottom only
+
+      treeview.view:not(:focus):selected {
+        // protect selection backgrounds in 'extra pane' mode
+        background-image: image($sel_bg);
+      }
+    }
+
+    statusbar {
+      margin: 0 -10px; // hide weird lateral gaps
+      padding: 0 $toolbar_padding;
+      background-color: $dark_bg;
+    }
+
+    // workaround for invisible text in rename entry
+    scrolledwindow widget > widget.entry {
+      &, &:focus {
+        transition: none;
+
+        &:selected { // FIXME: selection node doesn't work?
+          @extend %selected_items;
+        }
+      }
+    }
+  }
+
+  #caja-extra-view-widget {
+    border-bottom: 1px solid $div_fg;
+    background-color: $bg; // needs overriding
+
+    > box > box > label { font-weight: 700; }
+  }
+
+  // /***********************
+  //  * Mate-Control-Center *
+  //  ***********************/
+
+  // almost out of control, and looks ugly
+  window#MyControlCenter > frame > box.horizontal {
+    > widget > scrolledwindow.frame {
+      border: none;
+      // draw pane-separator with borders
+      // FIXME: rendering quality is quite poor
+      &:dir(ltr) { border-left: 1px solid $div_sld_fg; }
+      &:dir(rtl) { border-right: 1px solid $div_sld_fg; }
+
+      > widget.view { // content-view
+        all: unset;
+        background-color: $bg; // does not work
+      }
+    }
+  }
+
+  // /**************
+  //  * Mate-Tweak *
+  //  **************/
+
+  .background:not(.csd) > box.horizontal {
+    > notebook { // right-pane
+      // remove unwanted frames/borders
+      &.frame {
+        border: none;
+
+        @if $maj_ver == 3 {
+          > stack {
+            border-width: 1px;
+            border-style: solid;
+            border-color: $bg;
+            box-shadow: none;
+            &:dir(ltr) { border-left-color: $div_pane_fg; }
+            &:dir(rtl) { border-right-color: $div_pane_fg; }
+          }
+        }
+        @else {
+          > box > stack {
+            border-width: 1px;
+            border-style: solid;
+            border-color: $bg;
+            box-shadow: none;
+            &:dir(ltr) { border-left-color: $div_pane_fg; }
+            &:dir(rtl) { border-right-color: $div_pane_fg; }
+          }
+        }
+      }
+    }
+  }
+
+  // /*******
+  //  * Eom *
+  //  *******/
+
+  .eom-window {
+    statusbar { // always use dark-variant
+      margin: 0 -10px; // hide weird lateral gaps
+      padding: 0 $toolbar_padding;
+      background-color: $inv_dark_bg;
+      color: $inv_fg;
+    }
+  }
+
+  // /*********
+  //  * Pluma *
+  //  *********/
+
+  .pluma-window {
+    paned.horizontal notebook {
+      @if maj_ver == 3 {
+        > header.top { // revive top-border when tabs are shown
+          border-top: 1px solid $div_fg;
+          background-color: $bg;
+        }
+      }
+      @else {
+        > box > header.top { // revive top-border when tabs are shown
+          border-top: 1px solid $div_fg;
+          background-color: $bg;
+        }
+      }
+    }
+
+    statusbar {
+      margin: 0 -10px; // hide weird lateral gaps
+      padding: 0 $toolbar_padding;
+      background-color: $dark_bg;
+
+      frame,
+      .frame { border-style: none; }
+    }
+
+    // side-pane styling
+    paned.horizontal box.vertical notebook {
+      &.frame { border-style: solid none; }
+    }
+
+    // print-preview styling
+    .pluma-print-preview toolbar.horizontal {
+      border-width: 1px 0;
+      border-style: solid none;
+      border-color: $div_fg transparent;
+      background-color: $dark_bg;
+    }
+  }
+}
+
+// /*****************
+//  * Atril/Xreader *
+//  *****************/
+
+.atril-window,
 .xreader-window {
   scrolledwindow.frame {
     border-style: solid none none;
@@ -2925,6 +3426,67 @@ window.background:not(.solid-csd) > box.vertical {
 
     // revert to standard backgrounds
     > paned.horizontal { background-color: $bg; }
+  }
+}
+
+@if $mate_support == yes {
+  // /*************************
+  //  * Mate-MediaControl-OSD *
+  //  *************************/
+
+  // OSDs are much blurred?
+  MsdOsdWindow {
+    &.background.osd {
+      border-radius: $r_8;
+      @if $variant == mixed {
+        border: 1px solid track($inv_dark_bg, $a_osd);
+        background-color: track($inv_dark_bg, $a_osd);
+      }
+      @else {
+        border: 1px solid track($dark_bg, $a_osd);
+        background-color: track($dark_bg, $a_osd);
+      }
+      box-shadow: none;
+
+      // FIXME: seems images have inverted fore/back colors?
+      image { color: if($variant == mixed, $inv_fg, $fg); }
+
+      .trough {
+        border-radius: 0;
+        border: none;
+        @if $variant == mixed {
+          background-color: track($inv_fg, $a_trk_out);
+        }
+        @else {
+          background-color: track($fg, $a_trk_out);
+        }
+      }
+
+      .progressbar {
+        border-radius: 0;
+        border: none;
+        background-color: $sccs_bg;
+      }
+    }
+  }
+
+  // /***************************
+  //  * Mate-Notification-Slate *
+  //  ***************************/
+
+  // use budgie-style OSDs
+  .slate-notification {
+    &-window {
+      @extend %budgie_notification_window;
+
+      .drop-shadow {
+        margin: $shadow_margin_3; // enlarge the shadow area
+        border-radius: $r_8;
+      }
+    }
+
+    @extend %budgie_notification;
+    border-radius: $r_8;
   }
 }
 
