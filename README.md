@@ -55,6 +55,7 @@ Supported Desktop Environments
  * Budgie-Desktop  >= 10.4
  * Cinnamon        >= 3.2.0
  * XFce4           >= 4.12.2
+ * Mate            >= 1.22 (Marco >= 1.22.2)
  * LXDE            >= 0.99.1 (Gtk 2.x only)
  ```
 
@@ -102,6 +103,8 @@ Installation from Git Source
  * libxml2-utils (libxml2)
  * pkg-config (pkgconfig)
  * sassc                                     >= 3.3
+
+ * libmarco-dev (marco-devel)                >= 1.22.2 (if --enable-mate)
 
  * parallel                                  (if --enable-parallel)
  * zip                                       (if --enable-telegram)
@@ -158,13 +161,14 @@ Installation from Git Source
  --disable-cinnamon      disable cinnamon support (type: bool)
  --disable-flashback     disable flashback support (type: bool)
  --disable-xfce          disable xfce support (type: bool)
+ --disable-mate          disable mate support (type: bool)
  --disable-openbox       disable openbox support (type: bool)
  ```
 
  > **Note:**
  >
  >   * The installer installs Budgie-Desktop support even if all of options above were applied.
- >   * Cinnamon hooks `metacity-1` directory even if GNOME-Flashback support was disabled.
+ >   * Cinnamon/Mate support hooks metacity-1 directory even if GNOME-Flashback support was disabled.
 
 6. To enable extra Gtk release support, pass these options:
 

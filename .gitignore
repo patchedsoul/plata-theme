@@ -28,6 +28,7 @@ gtk-4.0-lumine-compact
 gtk-4.0-noir
 gtk-4.0-noir-compact
 gtk.gresource
+_mate_flag.scss
 _key_colors.scss
 gtkrc
 gtkrc-compact
