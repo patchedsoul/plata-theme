@@ -413,6 +413,14 @@ if !ENABLE_FLASHBACK
 endif
 endif
 
+if ENABLE_MATE
+if !ENABLE_FLASHBACK
+	cd $(srcdir)/asset/assets-metacity-scripts && \
+	./clone-assets-metacity.sh && \
+	./render-assets-metacity.sh
+endif
+endif
+
 if ENABLE_XFCE
 if ENABLE_PARALLEL
 	cd $(srcdir)/asset/assets-xfwm-scripts && \
@@ -464,6 +472,29 @@ if ENABLE_FLASHBACK
 endif
 
 if ENABLE_CINNAMON
+if !ENABLE_FLASHBACK
+	$(MKDIR_P) $(platadir)/metacity-1
+	$(MKDIR_P) $(luminedir)/metacity-1
+	$(MKDIR_P) $(noirdir)/metacity-1
+	$(MKDIR_P) $(platacompactdir)/metacity-1
+	$(MKDIR_P) $(luminecompactdir)/metacity-1
+	$(MKDIR_P) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_xml_file) $(platadir)/metacity-1
+	cp -Rv $(metacity_xml_file) $(noirdir)/metacity-1
+	cp -Rv $(metacity_lumine_xml_file) $(luminedir)/metacity-1
+	cp -Rv $(metacity_compact_xml_file) $(platacompactdir)/metacity-1
+	cp -Rv $(metacity_compact_xml_file) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_lumine_compact_xml_file) $(luminecompactdir)/metacity-1
+	cp -Rv $(metacity_asset_file) $(platadir)/metacity-1
+	cp -Rv $(metacity_asset_file) $(noirdir)/metacity-1
+	cp -Rv $(metacity_lumine_asset_file) $(luminedir)/metacity-1
+	cp -Rv $(metacity_compact_asset_file) $(platacompactdir)/metacity-1
+	cp -Rv $(metacity_compact_asset_file) $(noircompactdir)/metacity-1
+	cp -Rv $(metacity_lumine_compact_asset_file) $(luminecompactdir)/metacity-1
+endif
+endif
+
+if ENABLE_MATE
 if !ENABLE_FLASHBACK
 	$(MKDIR_P) $(platadir)/metacity-1
 	$(MKDIR_P) $(luminedir)/metacity-1
@@ -539,6 +570,17 @@ if !ENABLE_FLASHBACK
 endif
 endif
 
+if ENABLE_MATE
+if !ENABLE_FLASHBACK
+	test -e $(noirdir)/metacity-1 && rm -rfv $(noirdir)/metacity-1
+	test -e $(luminedir)/metacity-1 && rm -rfv $(luminedir)/metacity-1
+	test -e $(platadir)/metacity-1 && rm -rfv $(platadir)/metacity-1
+	test -e $(noircompactdir)/metacity-1 && rm -rfv $(noircompactdir)/metacity-1
+	test -e $(luminecompactdir)/metacity-1 && rm -rfv $(luminecompactdir)/metacity-1
+	test -e $(platacompactdir)/metacity-1 && rm -rfv $(platacompactdir)/metacity-1
+endif
+endif
+
 if ENABLE_XFCE
 	test -e $(noirdir)/xfwm4 && rm -rfv $(noirdir)/xfwm4
 	test -e $(luminedir)/xfwm4 && rm -rfv $(luminedir)/xfwm4
@@ -575,6 +617,25 @@ CLEANFILES += \
 endif
 
 if ENABLE_CINNAMON
+if !ENABLE_FLASHBACK
+CLEANFILES += \
+	$(metacitydir)/light/*.svg \
+	$(metacitydir)/light/*.png \
+	$(metacitydir)/dark/*.svg \
+	$(metacitydir)/dark/*.png \
+	$(metacitydir)/light-compact/*.svg \
+	$(metacitydir)/light-compact/*.png \
+	$(metacitydir)/dark-compact/*.svg \
+	$(metacitydir)/dark-compact/*.png \
+	$(srcdir)/asset/assets-metacity/common/button_close_pressed.svg \
+	$(srcdir)/asset/assets-metacity/common/button_close_prelight.svg \
+	$(srcdir)/asset/assets-metacity/common-compact/button_close_pressed.svg \
+	$(srcdir)/asset/assets-metacity/common-compact/button_close_prelight.svg \
+	$(srcdir)/asset/inkscape.log
+endif
+endif
+
+if ENABLE_MATE
 if !ENABLE_FLASHBACK
 CLEANFILES += \
 	$(metacitydir)/light/*.svg \
