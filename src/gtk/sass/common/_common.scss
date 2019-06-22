@@ -5519,82 +5519,20 @@ infobar {
   padding: $toolbar_padding;
   border-width: 0 0 1px;
   border-style: solid;
-  // do not use transparentize
-  border-color: $div_sld_fg;
+  border-color: $div_sld_fg; // do not use transparentize
   background-color: $dark_bg;
 
-  &.info,
-  &.question,
-  &.warning { // dark text colors
-    color: if($variant == light, $sec_fg,
-                                 $sec_fix_fg);
-
-    selection {
-      &, &:focus {
-        background-color: darken($sel_bg, percentage($a_trk_1));
-        color: $sel_fg;
-      }
-    }
-
-    *:link {
-      color: mix($fix_fg, $sel_bg, percentage($a_fg_2nd));
-    }
-
-    progressbar { // use 'white' bit and trough
-      trough { background-color: track($fix_fg, $a_trk_out); }
-
-      progress { background-color: $fix_fg; }
-    }
-  }
-
-  &.error { // use white text for this
-    color: $sel_fg;
-
-    selection {
-      &, &:focus {
-        background-color: $sel_fg;
-        color: $err;
-      }
-    }
-
-    *:link {
-      color: mix($sel_fg, $err_bg, percentage($a_fg_2nd));
-    }
-
-    progressbar { // use 'white' bit and trough
-      trough { background-color: track($sel_fg, $a_trk_out); }
-
-      progress { background-color: $sel_fg; }
-    }
+  selection {
+    &, &:focus { @extend %selected_items; }
   }
 
   &.info,
   &.question,
   &.warning,
   &.error {
-    button:not(.destructive-action):not(.suggested-action) {
-      min-width: rem($widget_size);
-      min-height: rem($widget_size);
-      @include button(flat-normal, $tc: $sec_fix_fg);
-      @include ink-reaction(normal, $fc: $fix_fg, $tr: ink-normal-dec);
-      &:hover {
-        @include button(flat-hover, $tc: $fix_fg);
-      }
-      &:active {
-        @include button(flat-active, $tc: $fix_fg);
-        @include ink-reaction(active-dec, $fc: $fix_fg, $tr: ink-active-dec);
-      }
-      &:disabled {
-        @include button(flat-disabled, $tc: $fix_fg);
-
-        label, // override generic disabled labels/images color
-        image { color: track($fix_fg, $a_fg_dis); }
-      }
-      &:checked {
-        @include button(flat-checked, $tc: $fix_fg);
-        &:disabled {
-          @include button(flat-checked-disabled, $tc: $fix_fg);
-        }
+    &, buttonbox:not(.linked) {
+      button:not(.destructive-action):not(.suggested-action) {
+        @extend %flat_button;
       }
     }
   }
@@ -5604,7 +5542,19 @@ infobar {
                          (question, $ques_bg),
                          (warning, $warn_bg),
                          (error, $err_bg) {
-  .#{$_type} { background-color: $_color; }
+  infobar.#{$_type} {
+    background-color: if($variant == dark,
+                         mix($_color, $bg, percentage($a_trk_1)),
+                         mix($_color, $dark_bg, percentage($a_trk_2)));
+    color: mix($fg, $_color, percentage($a_fg_3rd));
+
+    progressbar { // use 'white' bit and trough
+      trough { background-color: track($_color, $a_trk_out); }
+
+      progress { background-color: $_color; }
+    }
+
+  }
 }
 
 // /************

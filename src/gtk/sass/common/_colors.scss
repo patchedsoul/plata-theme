@@ -169,9 +169,9 @@ $warn: color($orange, $primary_level);
 $err: color($red, $primary_level);
 
 $sccs_bg: color($green, $primary_level);
-$info_bg: color($teal, $secondary_level - 100);
-$ques_bg: color($yellow, $secondary_level - 100);
-$warn_bg: color($orange, $secondary_level - 100);
+$info_bg: color($teal, $secondary_level);
+$ques_bg: color($yellow, $secondary_level);
+$warn_bg: color($orange, $secondary_level);
 $err_bg: $err;
 
 //
