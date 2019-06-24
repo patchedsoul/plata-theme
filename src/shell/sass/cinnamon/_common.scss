@@ -1785,6 +1785,36 @@ $large_item: 10px;
   }
 }
 
+// /*****************
+//  * Spacer applet *
+//  *****************/
+
+.spacer {
+  &-box {
+    border-radius: 0;
+    border: 0 none transparent;
+
+    &:highlight { background-color: $acc_fill_bg; }
+
+    @each $position, $_color in (Left, $err),
+                                (Right, $link),
+                                (Center, $sccs) {
+      .panel#{$position}:dnd &,
+      #panel#{$position}:dnd & {
+        &.edit-mode {
+          &, &:highlight {
+            background-color: opacity($_color, $a_trk_2);
+            box-shadow: inset 0 0 0 1px $_color;
+          }
+        }
+      }
+    }
+  }
+
+  &.vertical {
+  }
+}
+
 // /****************************************************
 //  * Workspace Switcher applet (workspaceSwitcher.js) *
 //  ****************************************************/
