@@ -1875,6 +1875,7 @@ $large_item: 10px;
       }
     }
   }
+  &:shaded { color: $osd_ter_fg; } // empty workspace(s)
 }
 
 // Controls the style when using the "Visual representation" option
