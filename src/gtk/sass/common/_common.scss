@@ -3339,6 +3339,8 @@ combobox > window.popup { // combobox specific context-menu popup
 %popover_border {
   @include radius(0, none);
   border: 1px solid $div_sld_fg;
+
+  .csd & { @include radius($r_4, none); }
 }
 
 %popover_menu {
@@ -3412,8 +3414,6 @@ combobox > window.popup { // combobox specific context-menu popup
     padding: 0;
     &:backdrop { @extend %popover_backdrop; }
 
-    .csd & { @include radius($r_4, none); }
-
     &.menu {
       @extend %popover_menu;
       // compensate outer margins
@@ -3435,8 +3435,6 @@ combobox > window.popup { // combobox specific context-menu popup
     > arrow { @extend %popover_boxpointer; }
 
     > contents {
-      .csd & { @include radius($r_4, none); }
-
       @extend %popover_basic;
       @extend %popover_border;
       &:backdrop { @extend %popover_backdrop; }
