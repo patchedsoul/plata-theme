@@ -1875,7 +1875,10 @@ $large_item: 10px;
       }
     }
   }
-  &:shaded { color: $osd_ter_fg; } // empty workspace(s)
+  &:shaded { // empty workspace(s)
+    color: $osd_ter_fg;
+    &:hover { color: $osd_sec_fg; }
+  }
 }
 
 // Controls the style when using the "Visual representation" option
