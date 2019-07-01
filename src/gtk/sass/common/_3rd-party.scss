@@ -3157,132 +3157,6 @@ window.background:not(.solid-csd) > box.vertical {
     }
   }
 
-  // /********
-  //  * Caja *
-  //  ********/
-
-  .caja {
-    &-canvas-item { @extend .nautilus-canvas-item; }
-
-    &-list-dim-label { @extend .nautilus-list-dim-label; }
-  }
-
-  .caja-desktop { // desktop icon-grid styling
-    &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
-
-    > widget.entry { // = EelEditableLabel.entry
-      &, &:focus {
-        transition: none;
-
-        &:selected { // FIXME: selection node doesn't work?
-          @extend %selected_items;
-        }
-      }
-    }
-  }
-
-  .caja-navigation-window {
-    // side-panel styling
-    .caja-side-pane {
-      scrolledwindow {
-        @extend %sidebar_template;
-
-        treeview.view {
-          background-color: transparent;
-          // font-weight: 500;
-          &:selected { @extend %selected_items; }
-        }
-      }
-
-      notebook {
-        border-top: 1px solid $div_fg;
-
-        .frame { border: none; }
-      }
-
-      button.flat:last-child { // 'close' button on header
-        @extend %toolitem_size;
-      }
-    }
-
-    // main toolbar styling
-    toolbar.primary-toolbar {
-      border-bottom: 1px solid $div_fg;
-    }
-
-    // path-bar styling
-    .caja-pathbar {
-      button {
-        &:first-child { // remove meaningless gaps
-          &:dir(ltr) {
-            margin-right: -2px;
-            @include radius($r_2 0 0 $r_2);
-          }
-          &:dir(rtl) {
-            margin-left: -2px;
-            @include radius(0 $r_2 $r_2 0);
-          }
-        }
-        &:not(:first-child):not(:last-child) {
-          margin: 0 -2px;
-          @include radius(0);
-        }
-        &:last-child {
-          &:dir(ltr) {
-            margin-left: -2px;
-            @include radius(0 $r_2 $r_2 0);
-          }
-          &:dir(rtl) {
-            margin-right: -2px;
-            @include radius($r_2 0 0 $r_2);
-          }
-        }
-
-        &, &.slider-button { @extend %toolitem_size; }
-      }
-    }
-
-    button.image-button.toggle { // most-left toggle button in path-bar pane
-      @extend %toolitem_size;
-      @include radius($r_2);
-    }
-
-    .caja-notebook {
-      border-top: 1px solid $div_fg; // top only
-
-      .frame { border-width: 0 0 1px; } // bottom only
-
-      treeview.view:not(:focus):selected {
-        // protect selection backgrounds in 'extra pane' mode
-        background-image: image($sel_bg);
-      }
-    }
-
-    statusbar {
-      margin: 0 -10px; // hide weird lateral gaps
-      padding: 0 $toolbar_padding;
-      background-color: $dark_bg;
-    }
-
-    // workaround for invisible text in rename entry
-    scrolledwindow widget > widget.entry {
-      &, &:focus {
-        transition: none;
-
-        &:selected { // FIXME: selection node doesn't work?
-          @extend %selected_items;
-        }
-      }
-    }
-  }
-
-  #caja-extra-view-widget {
-    border-bottom: 1px solid $div_fg;
-    background-color: $bg; // needs overriding
-
-    > box > box > label { font-weight: 700; }
-  }
-
   // /***********************
   //  * Mate-Control-Center *
   //  ***********************/
@@ -3392,6 +3266,123 @@ window.background:not(.solid-csd) > box.vertical {
       background-color: $dark_bg;
     }
   }
+}
+
+// /********
+//  * Caja *
+//  ********/
+
+.caja {
+  &-canvas-item { @extend .nautilus-canvas-item; }
+
+  &-list-dim-label { @extend .nautilus-list-dim-label; }
+}
+
+.caja-desktop { // desktop icon-grid styling
+  &.caja-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+  > widget.entry { // = EelEditableLabel.entry
+    &, &:focus {
+      transition: none;
+      &:selected { @extend %selected_items; }
+    }
+  }
+}
+
+.caja-navigation-window {
+  // side-panel styling
+  .caja-side-pane {
+    scrolledwindow {
+      @extend %sidebar_template;
+
+      treeview.view {
+        background-color: transparent;
+        // font-weight: 500;
+        &:selected { @extend %selected_items; }
+      }
+    }
+
+    notebook {
+      border-top: 1px solid $div_fg;
+
+      .frame { border: none; }
+    }
+
+    button.flat:last-child { // 'close' button on header
+      @extend %toolitem_size;
+    }
+  }
+
+  // main toolbar styling
+  toolbar.primary-toolbar { border-bottom: 1px solid $div_fg; }
+
+  .caja-pathbar { // path-bar styling
+    button {
+      &:first-child { // remove meaningless gaps
+        &:dir(ltr) {
+          margin-right: -2px;
+          @include radius($r_2 0 0 $r_2);
+        }
+        &:dir(rtl) {
+          margin-left: -2px;
+          @include radius(0 $r_2 $r_2 0);
+        }
+      }
+      &:not(:first-child):not(:last-child) {
+        margin: 0 -2px;
+        @include radius(0);
+      }
+      &:last-child {
+        &:dir(ltr) {
+          margin-left: -2px;
+          @include radius(0 $r_2 $r_2 0);
+        }
+        &:dir(rtl) {
+          margin-right: -2px;
+          @include radius($r_2 0 0 $r_2);
+        }
+      }
+
+      &, &.slider-button { @extend %toolitem_size; }
+    }
+  }
+
+  button.image-button.toggle { // most-left toggle button in path-bar pane
+    @extend %toolitem_size;
+    @include radius($r_2);
+  }
+
+  .caja-notebook {
+    border-top: 1px solid $div_fg; // top only
+
+    .frame { border-width: 0 0 1px; } // bottom only
+
+    treeview.view:not(:focus):selected {
+      // protect selection backgrounds in 'extra pane' mode
+      background-image: image($sel_bg);
+    }
+  }
+
+  statusbar {
+    margin: 0 -10px; // hide weird lateral gaps
+    padding: 0 $toolbar_padding;
+    background-color: $dark_bg;
+  }
+
+  // workaround for invisible text in rename entry
+  scrolledwindow widget > widget.entry {
+    &, &:focus {
+      transition: none;
+      &:selected { @extend %selected_items; }
+    }
+  }
+}
+
+#caja-extra-view-widget {
+  border-bottom: 1px solid $div_fg;
+  background-color: $bg; // needs overriding
+
+  > box > box > label { font-weight: 700; }
 }
 
 // /*****************
