@@ -953,6 +953,7 @@ $avatar_width: $icon_size * 1.5;
     }
   }
   @else {
+    // deprecated >= 3.33, use .popup-menu-icon class instead
     icon-size: $icon_size;
     padding: 0 if($ref_weight >= 1.0,
                   ($avatar_width - $icon_size + $extra_spacing) / 2,
