@@ -2142,6 +2142,11 @@ headerbar > widget > box.horizontal button.image-button.popup.toggle {
   }
 }
 
+// side-pane row height
+grid.sidebar.view {
+  row.activatable.row-big { min-height: 0; } // unlock min-height
+}
+
 // /***************************
 //  * Cinnamon-Control-Center *
 //  ***************************/
