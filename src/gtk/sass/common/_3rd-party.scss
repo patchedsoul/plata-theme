@@ -2142,8 +2142,10 @@ headerbar > widget > box.horizontal button.image-button.popup.toggle {
   }
 }
 
-// side-pane row height
 grid.sidebar.view {
+  viewport.frame > list { background-color: $bg; }
+
+  // side-pane row height
   row.activatable.row-big { min-height: 0; } // unlock min-height
 }
 
